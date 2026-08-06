@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DocumentProcessingPipeline.AppHost/DocumentProcessingPipeline.AppHost.csproj" />
+  <Project Path="DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.csproj" />
+</Solution>

@@ -1,0 +1,5 @@
+{
+  "appHost": {
+    "path": "DocumentProcessingPipeline.AppHost/DocumentProcessingPipeline.AppHost.csproj"
+  }
+}
