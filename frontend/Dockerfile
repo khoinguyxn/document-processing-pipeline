@@ -1,0 +1,17 @@
+# Use the official Bun image to run the application
+FROM oven/bun:canary-alpine
+
+# Copy the package.json and bun.lock into the container
+COPY package.json bun.lock ./
+
+# Install the dependencies
+RUN bun install --production --frozen-lockfile
+
+# Copy the rest of the application into the container
+COPY . .
+
+# Build the application
+CMD ["bun", "run", "build"]
+
+# Run the application
+CMD ["bun", "run", "start"]
