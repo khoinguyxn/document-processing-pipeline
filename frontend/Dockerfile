@@ -1,17 +1,38 @@
-# Use the official Bun image to run the application
-FROM oven/bun:canary-alpine
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
+FROM oven/bun:canary-alpine AS base
+WORKDIR /usr/src/app
 
-# Copy the package.json and bun.lock into the container
-COPY package.json bun.lock ./
+# install dependencies into temp directory
+# this will cache them and speed up future builds
+FROM base AS install
+RUN mkdir -p /temp/dev
+COPY package.json bun.lock /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
 
-# Install the dependencies
-RUN bun install --production --frozen-lockfile
+# install with --production (exclude devDependencies)
+RUN mkdir -p /temp/prod
+COPY package.json bun.lock /temp/prod/
+RUN cd /temp/prod && bun install --frozen-lockfile --production
 
-# Copy the rest of the application into the container
+# copy node_modules from temp directory
+# then copy all (non-ignored) project files into the image
+FROM base AS prerelease
+COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
 
-# Build the application
-CMD ["bun", "run", "build"]
+# build the TanStack Start app with Vite
+ENV NODE_ENV=production
+RUN bun run build
 
-# Run the application
+# copy production dependencies and built output into final image
+FROM base AS release
+COPY --from=install /temp/prod/node_modules node_modules
+COPY --from=prerelease /usr/src/app/.output ./.output
+COPY --from=prerelease /usr/src/app/public ./public
+COPY --from=prerelease /usr/src/app/package.json .
+
+# run the app
+USER bun
+EXPOSE 8080/tcp
 CMD ["bun", "run", "start"]
