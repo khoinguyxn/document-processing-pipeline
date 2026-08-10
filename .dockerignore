@@ -163,3 +163,8 @@ appsettings.Test.json
 web.config.local
 web.debug.config
 web.release.config
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# Other services
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+frontend
