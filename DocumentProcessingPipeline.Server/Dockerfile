@@ -5,8 +5,13 @@ EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
 ARG BUILD_CONFIGURATION=Release
-COPY . /src
+
 WORKDIR /src
+
+COPY . .
+
+WORKDIR /src/DocumentProcessingPipeline.Server
+
 RUN dotnet build "DocumentProcessingPipeline.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build -p:UseSharedCompilation=false
 
 FROM build AS publish
