@@ -1,4 +1,5 @@
 using Carter;
+using DocumentProcessingPipeline.Server.Domain;
 using DocumentProcessingPipeline.Server.Infrastructure;
 using Scalar.AspNetCore;
 
@@ -12,6 +13,9 @@ builder.Services.AddProblemDetails();
 
 // Add Carter modules
 builder.Services.AddCarter();
+
+// Add domain services.
+builder.Services.AddDomain();
 
 // Add infrastructure services.
 builder.Services.AddInfrastructure(builder.Configuration);
