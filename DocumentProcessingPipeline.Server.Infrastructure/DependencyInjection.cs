@@ -1,5 +1,4 @@
 ﻿using Google.Api.Gax;
-using Google.Cloud.Firestore;
 using Google.Cloud.Storage.V1;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +23,6 @@ public static class DependencyInjection
             return services;
         }
 
-
         private IServiceCollection AddStorage() =>
             services.AddSingleton<StorageClient>(_ =>
                 new StorageClientBuilder
@@ -33,11 +31,11 @@ public static class DependencyInjection
                 }.Build());
 
         private IServiceCollection AddFirestore() =>
-            services.AddSingleton<FirestoreDb>(sp => new FirestoreDbBuilder
+            services.AddFirestoreDb(action: (sp, builder) =>
             {
-                ProjectId = sp.GetRequiredService<IOptions<GcpOptions>>().Value.ProjectId,
-                EmulatorDetection = EmulatorDetection.EmulatorOrProduction
-            }.Build());
+                builder.ProjectId = sp.GetRequiredService<IOptions<GcpOptions>>().Value.ProjectId;
+                builder.EmulatorDetection = EmulatorDetection.EmulatorOrProduction;
+            });
 
         private IServiceCollection AddDocumentAi() =>
             services.AddDocumentProcessorServiceClient(action: (sp, builder) =>
