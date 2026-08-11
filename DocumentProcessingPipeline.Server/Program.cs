@@ -1,3 +1,4 @@
+using Carter;
 using DocumentProcessingPipeline.Server.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,9 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
+
+// Add Carter modules
+builder.Services.AddCarter();
 
 // Add infrastructure services.
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -50,6 +54,8 @@ api.MapGet("weatherforecast", () =>
         return forecast;
     })
     .WithName("GetWeatherForecast");
+
+app.MapCarter();
 
 app.MapDefaultEndpoints();
 
