@@ -14,10 +14,16 @@ public static class DependencyInjection
     {
         public IServiceCollection
             AddInfrastructure(IConfiguration configuration) =>
-            services.AddOptions(configuration).AddStorage().AddFirestore();
+            services.AddOptions(configuration).AddStorage().AddFirestore().AddDocumentAi();
 
-        private IServiceCollection AddOptions(IConfiguration configuration) =>
+        private IServiceCollection AddOptions(IConfiguration configuration)
+        {
             services.Configure<GcpOptions>(configuration.GetSection("GCP"));
+            services.Configure<DocumentAiOptions>(configuration.GetSection("DocumentAi"));
+
+            return services;
+        }
+
 
         private IServiceCollection AddStorage() =>
             services.AddSingleton<StorageClient>(_ =>
@@ -32,5 +38,9 @@ public static class DependencyInjection
                 ProjectId = sp.GetRequiredService<IOptions<GcpOptions>>().Value.ProjectId,
                 EmulatorDetection = EmulatorDetection.EmulatorOrProduction
             }.Build());
+
+        private IServiceCollection AddDocumentAi() =>
+            services.AddDocumentProcessorServiceClient(action: (sp, builder) =>
+                builder.Endpoint = sp.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint);
     }
 }
