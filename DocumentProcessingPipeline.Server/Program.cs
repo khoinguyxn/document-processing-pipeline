@@ -1,5 +1,6 @@
 using Carter;
 using DocumentProcessingPipeline.Server.Infrastructure;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ builder.Services.AddCarter();
 // Add infrastructure services.
 builder.Services.AddInfrastructure(builder.Configuration);
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// Add OpenApi docs
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -34,6 +35,7 @@ app.UseExceptionHandler();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 
