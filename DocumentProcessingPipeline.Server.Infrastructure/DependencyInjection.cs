@@ -21,7 +21,10 @@ public static class DependencyInjection
 
         private IServiceCollection AddStorage() =>
             services.AddSingleton<StorageClient>(_ =>
-                StorageClient.Create());
+                new StorageClientBuilder
+                {
+                    EmulatorDetection = EmulatorDetection.EmulatorOrProduction
+                }.Build());
 
         private IServiceCollection AddFirestore() =>
             services.AddSingleton<FirestoreDb>(sp => new FirestoreDbBuilder
