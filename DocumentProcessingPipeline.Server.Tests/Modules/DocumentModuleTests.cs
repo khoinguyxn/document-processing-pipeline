@@ -23,6 +23,7 @@ public class DocumentModuleTests(DistributedAppFixture distributedAppFixture)
 
         // Act
         using var httpClient = _app.CreateHttpClient("server");
+        
         await _app.ResourceNotifications.WaitForResourceHealthyAsync("server", _cancellationToken);
         
         var response = await httpClient.PostAsync("/documents/upload", content, _cancellationToken);
