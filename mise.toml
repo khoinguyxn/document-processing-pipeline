@@ -10,6 +10,3 @@ GITHUB_ORG = "khoinguyxn"
 
 [tasks.server-test]
 run = "dotnet test -c Release"
-
-[tasks.web-test]
-run = "bun run test"
