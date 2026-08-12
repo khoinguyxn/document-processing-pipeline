@@ -19,8 +19,9 @@ public class DistributedAppFixture : IAsyncLifetime
         var appHost =
             await DistributedApplicationTestingBuilder.CreateAsync<Projects.DocumentProcessingPipeline_AppHost>(
                 args: [],
-                configureBuilder: (options, _) => options.EnableResourceLogging = true, cancellationToken:
-                _cancellationToken);
+                configureBuilder: (options, _) => options.EnableResourceLogging = true,
+                cancellationToken: _cancellationToken
+            );
 
         appHost.Services.AddLogging(loggingBuilder =>
         {
