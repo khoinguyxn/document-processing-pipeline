@@ -58,3 +58,4 @@ nunit-*.xml
 
 # Jetbrain IDE
 .idea
+*.DotSettings.*

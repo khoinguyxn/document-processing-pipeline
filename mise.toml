@@ -1,0 +1,22 @@
+[tools]
+bun = "latest"
+dotnet = "latest"
+java = "latest"
+node = "latest"
+
+[env]
+PROJECT_ID = "document-pipeline-2026"
+GITHUB_ORG = "khoinguyxn"
+
+[tasks.server-test]
+run = "dotnet test -c Release"
+
+[tasks.web-lint]
+run = "bun run lint"
+
+[tasks.web-format]
+run = "bun run format"
+
+[tasks.web-test]
+depends = ["web-lint", "web-format"]
+run = "bun run test"
