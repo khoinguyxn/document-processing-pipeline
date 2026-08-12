@@ -8,17 +8,26 @@ var firestore = builder.AddContainer("firestore", "google/cloud-sdk:emulators").
     .WithArgs("beta", "emulators", "firestore", "start", "--host-port=0.0.0.0:4444")
     .WithHttpEndpoint(targetPort: 4444, name: "http");
 
-var server = builder.AddProject<Projects.DocumentProcessingPipeline_Server>("server")
+#pragma warning disable ASPIRECERTIFICATES001
+var server = builder
+    .AddProject<Projects.DocumentProcessingPipeline_Server>("server")
     .WithHttpHealthCheck("/health").WithEnvironment("FIREBASE_EMULATOR_HOST",
         $"{firestore.GetEndpoint("http").Property(EndpointProperty.Host)}:{firestore.GetEndpoint("http").Property(EndpointProperty.TargetPort)}")
     .WithEnvironment("STORAGE_EMULATOR_HOST",
         $"{cloudStorage.GetEndpoint("http").Property(EndpointProperty.Host)}:{cloudStorage.GetEndpoint("http").Property(EndpointProperty.TargetPort)}")
     .WithEnvironment("GCP__ProjectId", "document-processing-pipeline")
-    .WithExternalHttpEndpoints().WaitFor(firestore).WaitFor(cloudStorage);
+    .WithExternalHttpEndpoints()
+    .WithHttpsDeveloperCertificate()
+    .WaitFor(firestore)
+    .WaitFor(cloudStorage);
 
-var webfrontend = builder.AddViteApp("webfrontend", "../frontend")
-    .WithReference(server).WithBun()
+var webfrontend = builder
+    .AddViteApp("webfrontend", "../frontend")
+    .WithHttpsDeveloperCertificate()
+    .WithReference(server)
+    .WithBun()
     .WaitFor(server);
+#pragma warning restore ASPIRECERTIFICATES001
 
 server.PublishWithContainerFiles(webfrontend, "wwwroot");
 

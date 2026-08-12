@@ -6,6 +6,6 @@ public class DocumentService : IDocumentService
 {
     public Task UploadAsync(Stream file, string fileName, string contentType, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }
