@@ -1,5 +1,12 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
+var home = Environment.GetEnvironmentVariable("HOME") ?? "";
+if (!string.IsNullOrEmpty(home))
+{
+    var miseShimsPath = Path.Combine(home, ".local/share/mise/shims");
+    Environment.SetEnvironmentVariable("PATH", $"{miseShimsPath}:{Environment.GetEnvironmentVariable("PATH")}");
+}
+
 var cloudStorage = builder.AddContainer("cloud-storage", "fsouza/fake-gcs-server")
     .WithArgs("-scheme", "http", "-port", "4443", "-external-url", "http://localhost:4443")
     .WithHttpEndpoint(targetPort: 4443, name: "http");
@@ -21,11 +28,14 @@ var server = builder
     .WaitFor(firestore)
     .WaitFor(cloudStorage);
 
+#pragma warning disable ASPIREJAVASCRIPT001
 var webfrontend = builder
-    .AddViteApp("webfrontend", "../frontend")
+    .AddViteApp("web", "../frontend")
+    .PublishAsNodeServer(".output/server/index.mjs", ".output")
+#pragma warning restore ASPIREJAVASCRIPT001
     .WithHttpsDeveloperCertificate()
     .WithReference(server)
-    .WithBun()
+    .WithBun()  
     .WaitFor(server);
 #pragma warning restore ASPIRECERTIFICATES001
 
