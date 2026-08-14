@@ -13,10 +13,19 @@ env:
   WEB_SERVICE: ${{ secrets.WEB_SERVICE }}
   WORKLOAD_IDENTITY_PROVIDER: projects/338747081006/locations/global/workloadIdentityPools/github/providers/my-repo
   SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
-  SERVER_IMAGE_TAG: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVER_SERVICE }}:${{ github.sha }}
-  WEB_IMAGE_TAG: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.WEB_SERVICE }}:${{ github.sha }}
 
 jobs:
+  initialize:
+    runs-on: ubuntu-latest
+    outputs:
+      SERVER_IMAGE_TAG: ${{ steps.set-tags.outputs.SERVER_IMAGE_TAG }}
+      WEB_IMAGE_TAG: ${{ steps.set-tags.outputs.WEB_IMAGE_TAG }}
+    steps:
+      - id: set-tags
+        run: |
+          echo "SERVER_IMAGE_TAG=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVER_SERVICE }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+          echo "WEB_IMAGE_TAG=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.WEB_SERVICE }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+
   server-tests:
     runs-on: ubuntu-latest
     
@@ -32,7 +41,7 @@ jobs:
   
   build-server:
     runs-on: ubuntu-latest
-    needs: [ server-tests ]
+    needs: [ server-tests, initialize ]
     
     permissions:
       contents: 'read'
@@ -58,12 +67,12 @@ jobs:
 
       - name: Build and push server image
         run: |
-          podman build --format docker -t ${{ env.SERVER_IMAGE_TAG }} ./DocumentProcessingPipeline.Server
-          podman push ${{ env.SERVER_IMAGE_TAG }}
+          podman build --format docker -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} ./DocumentProcessingPipeline.Server
+          podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   build-web:
     runs-on: ubuntu-latest
-    needs: [ server-tests ]
+    needs: [ server-tests, initialize ]
     if: github.ref == 'refs/heads/main'
     
     permissions:
@@ -90,12 +99,12 @@ jobs:
 
       - name: Build and push web image
         run: |
-          podman build --format docker -t ${{ env.WEB_IMAGE_TAG }} ./frontend
-          podman push ${{ env.WEB_IMAGE_TAG }}
+          podman build --format docker -t ${{ needs.initialize.outputs.WEB_IMAGE_TAG }} ./frontend
+          podman push ${{ needs.initialize.outputs.WEB_IMAGE_TAG }}
 
   deploy-server:
     runs-on: ubuntu-latest
-    needs: build-server
+    needs: [ build-server, initialize ]
     
     permissions:
       contents: 'read'
@@ -104,21 +113,21 @@ jobs:
     steps:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
+        id: auth
         with:
+          project_id: ${{ env.PROJECT_ID }}
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
-          token_format: 'access_token'
-          service_account: ${{ env.SERVICE_ACCOUNT }}
 
       - name: Deploy ${{ env.SERVER_SERVICE }} to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: 'backend-dev'
           region: ${{ env.REGION }}
-          image: ${{ env.SERVER_IMAGE_TAG }}
+          image: ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   deploy-web:
     runs-on: ubuntu-latest
-    needs: build-web
+    needs: [ build-web, initialize ]
     if: github.ref == 'refs/heads/main'
     
     permissions:
@@ -138,4 +147,4 @@ jobs:
         with:
           service: ${{ env.WEB_SERVICE }}
           region: ${{ env.REGION }}
-          image: ${{ env.WEB_IMAGE_TAG }}
+          image: ${{ needs.initialize.outputs.WEB_IMAGE_TAG }}
