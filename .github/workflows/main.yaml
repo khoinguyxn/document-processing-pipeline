@@ -47,7 +47,6 @@ jobs:
         with:
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
           token_format: 'access_token'
-          service_account: ${{ env.SERVICE_ACCOUNT }}
 
       - name: Login to Google Cloud Artifact Registry
         run: |
