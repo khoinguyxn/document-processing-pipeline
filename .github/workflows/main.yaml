@@ -40,37 +40,37 @@ jobs:
       - name: Run Server Tests
         run: mise run server-test
   
-    build-server:
-      runs-on: ubuntu-latest
-      needs: [ server-tests, initialize ]
-      
-      permissions:
-        contents: read
-        packages: write
-        id-token: write
-      
-      steps:
-        - name: Checkout Code
-          uses: actions/checkout@v6
-  
-        - name: Authenticate to Google Cloud
-          uses: google-github-actions/auth@v3
-          id: auth
-          with:
-            project_id: ${{ env.PROJECT_ID }}
-            workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
-  
-        - name: Login to Google Cloud Artifact Registry
-          run: |
-            echo ${{ steps.auth.outputs.access_token }} >  | podman login \
-                -u oauth2accesstoken \
-                --password-stdin \
-                ${{ env.REGION }}-docker.pkg.dev
-  
-        - name: Build and push server image
-          run: |
-            podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
-            podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
+  build-server:
+    runs-on: ubuntu-latest
+    needs: [ server-tests, initialize ]
+    
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        id: auth
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+
+      - name: Login to Google Cloud Artifact Registry
+        run: |
+          echo ${{ steps.auth.outputs.access_token }} >  | podman login \
+              -u oauth2accesstoken \
+              --password-stdin \
+              ${{ env.REGION }}-docker.pkg.dev
+
+      - name: Build and push server image
+        run: |
+          podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
+          podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   build-web:
     runs-on: ubuntu-latest
