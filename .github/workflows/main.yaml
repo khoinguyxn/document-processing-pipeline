@@ -42,8 +42,7 @@ jobs:
   
   build-server:
     runs-on: ubuntu-latest
-    needs: initialize
-    #    needs: [ server-tests, initialize ]
+    needs: [ server-tests, initialize ]
 
     permissions:
       contents: read
