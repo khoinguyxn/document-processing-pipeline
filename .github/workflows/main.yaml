@@ -13,8 +13,8 @@ env:
   WEB_SERVICE: ${{ secrets.WEB_SERVICE }}
   WORKLOAD_IDENTITY_PROVIDER: projects/338747081006/locations/global/workloadIdentityPools/github/providers/my-repo
   SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
-  SERVER_IMAGE_TAG: ${{ secrets.REGION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.SERVER_SERVICE }}:${{ github.sha }}
-  WEB_IMAGE_TAG: ${{ secrets.REGION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.WEB_SERVICE }}:${{ github.sha }}
+  SERVER_IMAGE_TAG: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVER_SERVICE }}:${{ github.sha }}
+  WEB_IMAGE_TAG: ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.WEB_SERVICE }}:${{ github.sha }}
 
 jobs:
   server-tests:
