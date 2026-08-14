@@ -84,27 +84,39 @@ jobs:
       id-token: 'write'
     
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v6
-
-      - name: Authenticate to Google Cloud
+#      - name: Checkout Code
+#        uses: actions/checkout@v6
+#
+#      - name: Authenticate to Google Cloud
+#        uses: google-github-actions/auth@v3
+#        with:
+#          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+#          token_format: 'access_token'
+#          service_account: ${{ env.SERVICE_ACCOUNT }}
+#
+#      - name: Login to Google Cloud Artifact Registry
+#        run: |
+#          echo "${{ steps.auth.outputs.access_token }}" | podman login \
+#          ${{ env.REGION }}-docker.pkg.dev \
+#          -u oauth2accesstoken \
+#          --password-stdin
+#
+#      - name: Build and push web image
+#        run: |
+#          podman build --format docker -t ${{ needs.initialize.outputs.WEB_IMAGE_TAG }} -f ./frontend/Dockerfile .
+#          podman push ${{ needs.initialize.outputs.WEB_IMAGE_TAG }}
+      - name: Authenticate and test
         uses: google-github-actions/auth@v3
         with:
+          project_id: ${{ env.PROJECT_ID }}
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
-          token_format: 'access_token'
           service_account: ${{ env.SERVICE_ACCOUNT }}
+          create_credentials_file: true
 
-      - name: Login to Google Cloud Artifact Registry
+      - name: Test GCP access
         run: |
-          echo "${{ steps.auth.outputs.access_token }}" | podman login \
-          ${{ env.REGION }}-docker.pkg.dev \
-          -u oauth2accesstoken \
-          --password-stdin
-
-      - name: Build and push web image
-        run: |
-          podman build --format docker -t ${{ needs.initialize.outputs.WEB_IMAGE_TAG }} -f ./frontend/Dockerfile .
-          podman push ${{ needs.initialize.outputs.WEB_IMAGE_TAG }}
+          gcloud auth list
+          gcloud artifacts repositories list --location=asia-southeast1
 
   deploy-server:
     runs-on: ubuntu-latest
