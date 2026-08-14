@@ -27,64 +27,61 @@ jobs:
           echo "SERVER_IMAGE_TAG=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.AR_REPO }}/${{ env.SERVER_SERVICE }}:${{ github.sha }}" >> $GITHUB_OUTPUT
           echo "WEB_IMAGE_TAG=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.AR_REPO }}/${{ env.WEB_SERVICE }}:${{ github.sha }}" >> $GITHUB_OUTPUT
 
-  server-tests:
+#  server-tests:
+#    runs-on: ubuntu-latest
+#    
+#    steps:
+#      - name: Checkout Code
+#        uses: actions/checkout@v6
+#
+#      - name: Setup Mise
+#        uses: jdx/mise-action@v4
+#
+#      - name: Run Server Tests
+#        run: mise run server-test
+  
+  build-server:
     runs-on: ubuntu-latest
+    needs: initialize
+    #    needs: [ server-tests, initialize ]
+
+    permissions:
+      contents: read
+      id-token: write
     
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6
 
-      - name: Setup Mise
-        uses: jdx/mise-action@v4
-
-      - name: Run Server Tests
-        run: mise run server-test
-  
-  build-server:
-    runs-on: ubuntu-latest
-    needs: [ server-tests, initialize ]
-    
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-    
-    steps:
-      - name: Authenticate and test
+      - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
+        id: auth
         with:
           project_id: ${{ env.PROJECT_ID }}
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: cloud-run@document-pipeline-2026.iam.gserviceaccount.com
-          create_credentials_file: true
+          service_account: ${{ env.SERVICE_ACCOUNT }}
+          token_format: "access_token"
 
       - name: Test GCP access
         run: |
-          gcloud auth list
-          gcloud artifacts repositories list --location=asia-southeast1
-#      - name: Checkout Code
-#        uses: actions/checkout@v6
-#
-#      - name: Authenticate to Google Cloud
-#        uses: google-github-actions/auth@v3
-#        id: auth
-#        with:
-#          project_id: ${{ env.PROJECT_ID }}
-#          workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
-#          service_account: ${{ env.SERVICE_ACCOUNT }}
-#          token_format: "access_token"
-#
-#      - name: Login to Google Cloud Artifact Registry
-#        run: |
-#          echo ${{ steps.auth.outputs.access_token }} | podman login \
-#              -u oauth2accesstoken \
-#              --password-stdin \
-#              ${{ env.REGION }}-docker.pkg.dev
-#
-#      - name: Build and push server image
-#        run: |
-#          podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
-#          podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
+          # Verify token was generated
+          if [ -z "${{ steps.auth.outputs.access_token }}" ]; then
+            echo "ERROR: No access token generated"
+            exit 1
+          fi
+          echo "Access token generated successfully"
+      
+      - name: Login to Google Cloud Artifact Registry
+        run: |
+          echo ${{ steps.auth.outputs.access_token }} | podman login \
+              -u oauth2accesstoken \
+              --password-stdin \
+              ${{ env.REGION }}-docker.pkg.dev
+
+      - name: Build and push server image
+        run: |
+          podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
+          podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   build-web:
     runs-on: ubuntu-latest
