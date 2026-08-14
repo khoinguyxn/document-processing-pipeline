@@ -61,18 +61,14 @@ jobs:
 
       - name: Login to Google Cloud Artifact Registry
         run: |
-          podman login \
-          ${{ env.REGION }}-docker.pkg.dev \
-          -u oauth2accesstoken \
-          -p ${{ steps.auth.outputs.auth_token }}
-
-      - name: Configure Podman auth via gcloud
-        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+              gcloud auth print-access-token | podman login \
+                                              -u oauth2accesstoken \
+                                              --password-stdin \
+                                              ${{ env.REGION }}-docker.pkg.dev
 
       - name: Build and push server image
         run: |
           podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
-          echo "Finished building server image"
           podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   build-web:
