@@ -45,8 +45,9 @@ jobs:
     needs: [ server-tests, initialize ]
     
     permissions:
-      contents: 'read'
-      id-token: 'write'
+      contents: read
+      packages: write
+      id-token: write
     
     steps:
       - name: Checkout Code
@@ -61,10 +62,10 @@ jobs:
 
       - name: Login to Google Cloud Artifact Registry
         run: |
-              gcloud auth print-access-token | podman login \
-                                              -u oauth2accesstoken \
-                                              --password-stdin \
-                                              ${{ env.REGION }}-docker.pkg.dev
+          gcloud auth print-access-token | podman login \
+                                          -u oauth2accesstoken \
+                                          --password-stdin \
+                                          ${{ env.REGION }}-docker.pkg.dev
 
       - name: Build and push server image
         run: |
