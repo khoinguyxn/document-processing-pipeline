@@ -62,7 +62,7 @@ jobs:
 
       - name: Login to Google Cloud Artifact Registry
         run: |
-          echo ${{ steps.auth.outputs.access_token }} >  | podman login \
+          echo ${{ steps.auth.outputs.access_token }} | podman login \
               -u oauth2accesstoken \
               --password-stdin \
               ${{ env.REGION }}-docker.pkg.dev
