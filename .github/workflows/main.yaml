@@ -67,7 +67,7 @@ jobs:
 
       - name: Build and push server image
         run: |
-          podman build --format docker -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} ./DocumentProcessingPipeline.Server
+          podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
           podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   build-web:
@@ -99,7 +99,7 @@ jobs:
 
       - name: Build and push web image
         run: |
-          podman build --format docker -t ${{ needs.initialize.outputs.WEB_IMAGE_TAG }} ./frontend
+          podman build --format docker -t ${{ needs.initialize.outputs.WEB_IMAGE_TAG }} -f ./frontend/Dockerfile .
           podman push ${{ needs.initialize.outputs.WEB_IMAGE_TAG }}
 
   deploy-server:
