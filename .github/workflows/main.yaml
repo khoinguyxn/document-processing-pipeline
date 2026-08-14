@@ -27,18 +27,18 @@ jobs:
           echo "SERVER_IMAGE_TAG=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.AR_REPO }}/${{ env.SERVER_SERVICE }}:${{ github.sha }}" >> $GITHUB_OUTPUT
           echo "WEB_IMAGE_TAG=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.AR_REPO }}/${{ env.WEB_SERVICE }}:${{ github.sha }}" >> $GITHUB_OUTPUT
 
-#  server-tests:
-#    runs-on: ubuntu-latest
-#    
-#    steps:
-#      - name: Checkout Code
-#        uses: actions/checkout@v6
-#
-#      - name: Setup Mise
-#        uses: jdx/mise-action@v4
-#
-#      - name: Run Server Tests
-#        run: mise run server-test
+  server-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Setup Mise
+        uses: jdx/mise-action@v4
+
+      - name: Run Server Tests
+        run: mise run server-test
   
   build-server:
     runs-on: ubuntu-latest
