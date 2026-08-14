@@ -68,6 +68,7 @@ jobs:
       - name: Build and push server image
         run: |
           podman build -t ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
+          echo "Finished building server image"
           podman push ${{ needs.initialize.outputs.SERVER_IMAGE_TAG }}
 
   build-web:
