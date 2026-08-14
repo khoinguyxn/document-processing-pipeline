@@ -7,11 +7,11 @@ on:
     branches: [ main ]
 
 env:
-  PROJECT_ID: ${{ secrets.PROJECT_ID }}
-  REGION: ${{ secrets.REGION }}
-  SERVER_SERVICE: ${{ secrets.SERVER_SERVICE }}
+  PROJECT_ID: document-pipeline-2026
+  REGION: asia-southeast1
+  SERVER_SERVICE: backend-dev
   WEB_SERVICE: ${{ secrets.WEB_SERVICE }}
-  WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+  WORKLOAD_IDENTITY_PROVIDER: projects/338747081006/locations/global/workloadIdentityPools/github/providers/my-repo
   SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
   SERVER_IMAGE_TAG: ${{ secrets.REGION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.SERVER_SERVICE }}:${{ github.sha }}
   WEB_IMAGE_TAG: ${{ secrets.REGION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.WEB_SERVICE }}:${{ github.sha }}
@@ -95,7 +95,6 @@ jobs:
   deploy-server:
     runs-on: ubuntu-latest
     needs: build-server
-    if: github.ref == 'refs/heads/main'
     
     permissions:
       contents: 'read'
