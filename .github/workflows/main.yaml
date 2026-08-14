@@ -44,16 +44,17 @@ jobs:
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
+        id: auth
         with:
           project_id: ${{ env.PROJECT_ID }}
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
 
       - name: Login to Google Cloud Artifact Registry
         run: |
-          echo "${{ steps.auth.outputs.access_token }}" | podman login \
+          podman login \
           ${{ env.REGION }}-docker.pkg.dev \
           -u oauth2accesstoken \
-          --password-stdin
+          -p ${{ steps.auth.outputs.auth_token }}
 
       - name: Build and push server image
         run: |
