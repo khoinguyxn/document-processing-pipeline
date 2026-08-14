@@ -12,7 +12,7 @@ env:
   SERVER_SERVICE: backend-dev
   WEB_SERVICE: ${{ secrets.WEB_SERVICE }}
   WORKLOAD_IDENTITY_PROVIDER: projects/338747081006/locations/global/workloadIdentityPools/github/providers/my-repo
-  SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+  SERVICE_ACCOUNT: cloud-run@document-pipeline-2026.iam.gserviceaccount.com
   AR_REPO: cloud-run-source-deploy
 
 jobs:
@@ -59,10 +59,12 @@ jobs:
         with:
           project_id: ${{ env.PROJECT_ID }}
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ env.SERVICE_ACCOUNT }}
+          token_format: "access_token"
 
       - name: Login to Google Cloud Artifact Registry
         run: |
-          echo ${{ steps.auth.outputs.auth_token }} | podman login \
+          echo ${{ steps.auth.outputs.access_token }} | podman login \
               -u oauth2accesstoken \
               --password-stdin \
               ${{ env.REGION }}-docker.pkg.dev
