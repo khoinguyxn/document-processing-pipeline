@@ -3,3 +3,7 @@ bun = "latest"
 dotnet = "latest"
 java = "latest"
 node = "latest"
+
+[tasks.server-test]
+run = "dotnet test -c Release"
+    
