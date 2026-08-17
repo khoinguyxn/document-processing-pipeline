@@ -109,6 +109,9 @@ jobs:
       id-token: write
       
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         id: auth
@@ -117,7 +120,6 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WIF }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           token_format: "access_token"
-          create_credentials_file: false
 
       - name: Deploy ${{ vars.GCP_SERVER_SERVICE }} to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v3
@@ -135,6 +137,9 @@ jobs:
       id-token: write
       
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         id: auth
@@ -143,7 +148,6 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WIF }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           token_format: "access_token"
-          create_credentials_file: false
 
       - name: Deploy ${{ vars.GCP_WEB_SERVICE }} to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v3
