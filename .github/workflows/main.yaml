@@ -47,6 +47,7 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WIF }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           token_format: "access_token"
+          create_credentials_file: false
 
       - name: Login to Google Cloud Artifact Registry
         env:
@@ -83,6 +84,7 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WIF }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           token_format: "access_token"
+          create_credentials_file: false
 
       - name: Login to Google Cloud Artifact Registry
         env:
@@ -95,7 +97,7 @@ jobs:
 
       - name: Build and push web image
         run: |
-          podman build --format docker -t ${{ env.WEB_IMAGE_TAG }} -f ./frontend/Dockerfile .
+          podman build --format docker -t ${{ env.WEB_IMAGE_TAG }} -f ./frontend/Dockerfile ./frontend
           podman push ${{ env.WEB_IMAGE_TAG }}
 
   deploy-server:
@@ -115,6 +117,7 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WIF }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           token_format: "access_token"
+          create_credentials_file: false
 
       - name: Deploy ${{ vars.GCP_SERVER_SERVICE }} to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v3
@@ -140,6 +143,7 @@ jobs:
           workload_identity_provider: ${{ secrets.GCP_WIF }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           token_format: "access_token"
+          create_credentials_file: false
 
       - name: Deploy ${{ vars.GCP_WEB_SERVICE }} to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v3
