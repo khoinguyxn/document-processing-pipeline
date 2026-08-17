@@ -1,13 +1,12 @@
 using System.Net;
 using System.Net.Http.Headers;
-using Aspire.Hosting;
+using DocumentProcessingPipeline.Server.Tests.Fixtures;
 
 namespace DocumentProcessingPipeline.Server.Tests.Modules;
 
-public class DocumentModuleTests(DistributedAppFixture distributedAppFixture)
-    : IClassFixture<DistributedAppFixture>
+public class DocumentModuleTests(GcpFixture fixture) : IClassFixture<GcpFixture>
 {
-    private readonly DistributedApplication _app = distributedAppFixture.App;
+    private readonly HttpClient _httpClient = fixture.CreateClient();
     private readonly CancellationToken _cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(30)).Token;
 
     [Fact]
@@ -22,11 +21,7 @@ public class DocumentModuleTests(DistributedAppFixture distributedAppFixture)
         content.Add(fileContent, "file", "hello.txt");
 
         // Act
-        using var httpClient = _app.CreateHttpClient("server");
-        
-        await _app.ResourceNotifications.WaitForResourceHealthyAsync("server", _cancellationToken);
-        
-        var response = await httpClient.PostAsync("/documents/upload", content, _cancellationToken);
+        var response = await _httpClient.PostAsync("/documents/upload", content, _cancellationToken);
 
         // Assert
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
