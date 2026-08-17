@@ -58,3 +58,7 @@ nunit-*.xml
 
 # Jetbrain IDE
 .idea
+*.DotSettings.*
+
+# Mise
+mise.local.toml

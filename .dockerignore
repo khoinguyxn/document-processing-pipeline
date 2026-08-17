@@ -157,6 +157,7 @@ TestResult.xml
 *.vsp
 *.vspscc
 *.vspx
+*.Dotsettings.*
 
 Properties/launchSettings.json
 appsettings.Test.json
