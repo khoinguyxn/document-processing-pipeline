@@ -60,16 +60,6 @@ jobs:
           workload_identity_provider: ${{ env.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ env.SERVICE_ACCOUNT }}
           token_format: "access_token"
-          create_credentials_file: false
-
-      - name: Test GCP access
-        run: |
-          # Verify token was generated
-          if [ -z "${{ steps.auth.outputs.access_token }}" ]; then
-            echo "ERROR: No access token generated"
-            exit 1
-          fi
-          echo "Access token generated successfully"
       
       - name: Login to Google Cloud Artifact Registry
         run: |

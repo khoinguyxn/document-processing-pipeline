@@ -7,6 +7,9 @@ node = "latest"
 [env]
 PROJECT_ID = "document-pipeline-2026"
 GITHUB_ORG = "khoinguyxn"
+PROJECT_NUMBER = "338747081006"
+SERVICE_ACCOUNT = "cloud-run@document-pipeline-2026.iam.gserviceaccount.com"
 
 [tasks.server-test]
 run = "dotnet test -c Release"
+    
