@@ -2,6 +2,7 @@ using Carter;
 using DocumentProcessingPipeline.Server;
 using DocumentProcessingPipeline.Server.Domain;
 using DocumentProcessingPipeline.Server.Infrastructure;
+using FluentValidation;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,9 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
+
+// Add FluentValidation validators
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 // Add Carter modules
 builder.Services.AddCarter();
