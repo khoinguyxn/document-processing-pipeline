@@ -11,9 +11,11 @@ public static class DependencyInjection
 {
     extension(IServiceCollection services)
     {
-        public IServiceCollection
-            AddInfrastructure(IConfiguration configuration) =>
+        public void
+            AddInfrastructure(IConfiguration configuration)
+        {
             services.AddOptions(configuration).AddStorage().AddFirestore().AddDocumentAi();
+        }
 
         private IServiceCollection AddOptions(IConfiguration configuration)
         {
@@ -37,8 +39,10 @@ public static class DependencyInjection
                 builder.EmulatorDetection = EmulatorDetection.EmulatorOrProduction;
             });
 
-        private IServiceCollection AddDocumentAi() =>
+        private void AddDocumentAi()
+        {
             services.AddDocumentProcessorServiceClient(action: (sp, builder) =>
                 builder.Endpoint = sp.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint);
+        }
     }
 }
