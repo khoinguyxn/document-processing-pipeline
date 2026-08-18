@@ -34,7 +34,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-      
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
@@ -50,18 +50,19 @@ jobs:
           create_credentials_file: false
 
       - name: Login to Google Cloud Artifact Registry
-        env:
-          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
-        run: |
-          echo "$ACCESS_TOKEN" | podman login \
-              -u oauth2accesstoken \
-              --password-stdin \
-              ${{ vars.GCP_REGION }}-docker.pkg.dev
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ vars.GCP_REGION }}-docker.pkg.dev
+          username: oauth2accesstoken
+          password: ${{ steps.auth.outputs.access_token }}
 
       - name: Build and push server image
-        run: |
-          podman build -t ${{ env.SERVER_IMAGE_TAG }} --format docker -f ./DocumentProcessingPipeline.Server/Dockerfile .
-          podman push ${{ env.SERVER_IMAGE_TAG }}
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: ./DocumentProcessingPipeline.Server/Dockerfile
+          push: true
+          tags: ${{ env.SERVER_IMAGE_TAG }}
 
   build-web:
     runs-on: ubuntu-latest
@@ -71,7 +72,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-      
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
@@ -87,18 +88,19 @@ jobs:
           create_credentials_file: false
 
       - name: Login to Google Cloud Artifact Registry
-        env:
-          ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
-        run: |
-          echo "$ACCESS_TOKEN" | podman login \
-              -u oauth2accesstoken \
-              --password-stdin \
-              ${{ vars.GCP_REGION }}-docker.pkg.dev
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ vars.GCP_REGION }}-docker.pkg.dev
+          username: oauth2accesstoken
+          password: ${{ steps.auth.outputs.access_token }}
 
       - name: Build and push web image
-        run: |
-          podman build --format docker -t ${{ env.WEB_IMAGE_TAG }} -f ./frontend/Dockerfile ./frontend
-          podman push ${{ env.WEB_IMAGE_TAG }}
+        uses: docker/build-push-action@v7
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          push: true
+          tags: ${{ env.WEB_IMAGE_TAG }}
 
   deploy-server:
     runs-on: ubuntu-latest
@@ -107,7 +109,7 @@ jobs:
     
     permissions:
       id-token: write
-      
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
@@ -135,11 +137,11 @@ jobs:
     
     permissions:
       id-token: write
-      
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
-        
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         id: auth
