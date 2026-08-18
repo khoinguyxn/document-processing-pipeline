@@ -2,10 +2,14 @@ using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
 
 namespace DocumentProcessingPipeline.Server.Domain.Services;
 
-public class DocumentService : IDocumentService
+public class DocumentService(IStorageService storageService) : IDocumentService
 {
-    public Task UploadAsync(Stream file, string fileName, string contentType, CancellationToken cancellationToken)
+    public async Task UploadAsync(Stream fileStream, string fileName, string contentType, CancellationToken cancellationToken)
     {
-        return Task.CompletedTask;
+        var documentId = Guid.NewGuid().ToString();
+        var fileNameWithUtc = $"{fileName}_{DateTime.UtcNow:yyyyMMddHHmmss}";
+        var storagePath = $"documents/{documentId}/{fileNameWithUtc}";
+        
+        await storageService.UploadFileAsync(fileStream, storagePath, contentType, cancellationToken);
     }
 }
