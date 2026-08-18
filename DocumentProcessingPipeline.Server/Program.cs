@@ -1,4 +1,5 @@
 using Carter;
+using DocumentProcessingPipeline.Server;
 using DocumentProcessingPipeline.Server.Domain;
 using DocumentProcessingPipeline.Server.Infrastructure;
 using Scalar.AspNetCore;
