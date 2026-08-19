@@ -1,8 +1,10 @@
-﻿using Google.Api.Gax;
+﻿using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
+using Google.Api.Gax;
 using Google.Cloud.Storage.V1;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
+using DocumentProcessingPipeline.Server.Infrastructure.Services;
 using Microsoft.Extensions.Options;
 
 namespace DocumentProcessingPipeline.Server.Infrastructure;
@@ -14,7 +16,12 @@ public static class DependencyInjection
         public void
             AddInfrastructure(IConfiguration configuration)
         {
-            services.AddOptions(configuration).AddStorage().AddFirestore().AddDocumentAi();
+            services
+                .AddOptions(configuration)
+                .AddStorage()
+                .AddFirestore()
+                .AddDocumentAi()
+                .AddServices();
         }
 
         private IServiceCollection AddOptions(IConfiguration configuration)
@@ -39,10 +46,10 @@ public static class DependencyInjection
                 builder.EmulatorDetection = EmulatorDetection.EmulatorOrProduction;
             });
 
-        private void AddDocumentAi()
-        {
+        private IServiceCollection AddDocumentAi() =>
             services.AddDocumentProcessorServiceClient(action: (sp, builder) =>
                 builder.Endpoint = sp.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint);
-        }
+
+        private void AddServices() => services.AddScoped<IStorageService, GcpStorageService>();
     }
 }

@@ -5,6 +5,7 @@ using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
 using DocumentProcessingPipeline.Server.Models;
 using FluentValidation;
 using Microsoft.AspNetCore.Http.HttpResults;
+using CreatedResult = Microsoft.AspNetCore.Http.HttpResults.Created;
 
 namespace DocumentProcessingPipeline.Server.Modules;
 
@@ -17,12 +18,13 @@ public class DocumentModule : ICarterModule
             .DisableAntiforgery()
             .Produces(StatusCodes.Status201Created)
             .ProducesValidationProblem()
+            .ProducesProblem(StatusCodes.Status500InternalServerError)
             .WithTags("documents")
             .WithName("UploadDocument")
             .IncludeInOpenApi();
     }
 
-    private static async Task<Results<Created, ValidationProblem>> UploadDocument(
+    private static async Task<Results<CreatedResult, ValidationProblem, ProblemHttpResult>> UploadDocument(
         IFormFile file,
         IDocumentService documentService,
         IValidator<UploadDocumentRequest> validator,
@@ -41,8 +43,22 @@ public class DocumentModule : ICarterModule
         }
 
         await using var stream = request.File.OpenReadStream();
-        await documentService.UploadAsync(stream, request.File.FileName, request.File.ContentType, cancellationToken);
+        var uploadResult = await documentService.UploadAsync(stream, request.File.FileName, request.File.ContentType, cancellationToken);
 
-        return TypedResults.Created();
+        return uploadResult.Match<Results<CreatedResult, ValidationProblem, ProblemHttpResult>>(
+            _ => TypedResults.Created(),
+            errors =>
+            {
+                var firstError = errors[0];
+                var statusCode = firstError.Type switch
+                {
+                    _ => StatusCodes.Status500InternalServerError
+                };
+
+                return TypedResults.Problem(
+                    title: firstError.Code,
+                    detail: firstError.Description,
+                    statusCode: statusCode);
+            });
     }
 }
