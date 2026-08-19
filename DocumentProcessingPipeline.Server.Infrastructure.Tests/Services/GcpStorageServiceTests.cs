@@ -38,11 +38,17 @@ public class GcpStorageServiceTests
         var fileContent = new ByteArrayContent([.. "Hello World!"u8]);
         var fileStream = await fileContent.ReadAsStreamAsync(_cancellationToken);
 
-        _mockStorageClient.Setup(x => x.GetBucketAsync(
+        var conflictException = new GoogleApiException("Storage", "Bucket already exists")
+        {
+            HttpStatusCode = HttpStatusCode.Conflict
+        };
+
+        _mockStorageClient.Setup(x => x.CreateBucketAsync(
+                ProjectId,
                 BucketName,
-                It.IsAny<GetBucketOptions>(),
+                It.IsAny<CreateBucketOptions>(),
                 It.IsAny<CancellationToken>()))
-            .ReturnsAsync(new Bucket { Name = BucketName });
+            .ThrowsAsync(conflictException);
 
         _mockStorageClient.Setup(x => x.UploadObjectAsync(
                 It.IsAny<string>(),
@@ -66,18 +72,12 @@ public class GcpStorageServiceTests
         Assert.False(result.IsError);
         Assert.Equal(Result.Success, result.Value);
 
-        _mockStorageClient.Verify(x => x.GetBucketAsync(
-                BucketName,
-                It.IsAny<GetBucketOptions>(),
-                _cancellationToken),
-            Times.Once);
-
         _mockStorageClient.Verify(x => x.CreateBucketAsync(
                 ProjectId,
                 BucketName,
                 It.IsAny<CreateBucketOptions>(),
                 _cancellationToken),
-            Times.Never);
+            Times.Once);
 
         _mockStorageClient.Verify(x => x.UploadObjectAsync(
                 BucketName,
@@ -95,17 +95,6 @@ public class GcpStorageServiceTests
         // Arrange
         var fileContent = new ByteArrayContent([.. "Hello World!"u8]);
         var fileStream = await fileContent.ReadAsStreamAsync(_cancellationToken);
-
-        var notFoundException = new GoogleApiException("Storage", "Bucket not found")
-        {
-            HttpStatusCode = HttpStatusCode.NotFound
-        };
-
-        _mockStorageClient.Setup(x => x.GetBucketAsync(
-                BucketName,
-                It.IsAny<GetBucketOptions>(),
-                It.IsAny<CancellationToken>()))
-            .ThrowsAsync(notFoundException);
 
         _mockStorageClient.Setup(x => x.CreateBucketAsync(
                 ProjectId,
@@ -139,12 +128,6 @@ public class GcpStorageServiceTests
         Assert.False(result.IsError);
         Assert.Equal(Result.Success, result.Value);
 
-        _mockStorageClient.Verify(x => x.GetBucketAsync(
-                BucketName,
-                It.IsAny<GetBucketOptions>(),
-                _cancellationToken),
-            Times.Once);
-
         _mockStorageClient.Verify(x => x.CreateBucketAsync(
                 ProjectId,
                 BucketName,
@@ -160,6 +143,44 @@ public class GcpStorageServiceTests
                 It.IsAny<UploadObjectOptions>(),
                 _cancellationToken),
             Times.Once);
+    }
+
+    [Fact]
+    public async Task UploadFileAsync_ShouldReturnError_WhenBucketCreationThrowsException()
+    {
+        // Arrange
+        var fileContent = new ByteArrayContent([.. "Hello World!"u8]);
+        var fileStream = await fileContent.ReadAsStreamAsync(_cancellationToken);
+
+        _mockStorageClient.Setup(x => x.CreateBucketAsync(
+                ProjectId,
+                BucketName,
+                It.IsAny<CreateBucketOptions>(),
+                It.IsAny<CancellationToken>()))
+            .ThrowsAsync(new InvalidOperationException("Failed to create bucket"));
+
+        // Act
+        var result = await _service.UploadFileAsync(
+            fileStream,
+            BucketName,
+            StoragePath,
+            ContentType,
+            _cancellationToken
+        );
+
+        // Assert
+        Assert.True(result.IsError);
+        Assert.Equal("Storage.BucketCreationFailed", result.FirstError.Code);
+        Assert.Equal(ErrorType.Failure, result.FirstError.Type);
+
+        _mockStorageClient.Verify(x => x.UploadObjectAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.IsAny<UploadObjectOptions>(),
+                It.IsAny<CancellationToken>()),
+            Times.Never);
     }
 
     [Fact]
