@@ -1,22 +1,33 @@
 using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
+using ErrorOr;
 using Google.Cloud.Storage.V1;
+using Microsoft.Extensions.Logging;
 
 namespace DocumentProcessingPipeline.Server.Infrastructure.Services;
 
-public class GcpStorageService(StorageClient storageClient) : IStorageService
+public class GcpStorageService(StorageClient storageClient, ILogger<GcpStorageService> logger) : IStorageService
 {
-    private const string BucketName = "document-processing-pipeline-bucket";
-
-    public async Task UploadFileAsync(Stream fileStream, string storagePath, string contentType,
+    public async Task<ErrorOr<Success>> UploadFileAsync(Stream fileStream, string bucketName, string storagePath, string contentType,
         CancellationToken cancellationToken)
     {
-        await storageClient.UploadObjectAsync(
-            BucketName,
-            storagePath,
-            contentType,
-            fileStream,
-            null,
-            cancellationToken
-        );
+        try
+        {
+            await storageClient.UploadObjectAsync(
+                bucketName,
+                storagePath,
+                contentType,
+                fileStream,
+                null,
+                cancellationToken
+            );
+
+            return Result.Success;
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Failed to upload file to GCS bucket '{BucketName}' at path '{StoragePath}'", bucketName, storagePath);
+            
+            return Error.Failure("Storage.UploadFailed", $"Failed to upload file to storage: {ex.Message}");
+        }
     }
 }
