@@ -2,5 +2,5 @@ namespace DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
 
 public record GcpOptions
 {
-    public string? ProjectId { get; init; }
+    public required string ProjectId { get; init; }
 }

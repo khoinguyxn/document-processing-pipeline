@@ -18,10 +18,15 @@ public class GcpStorageService(
         string contentType,
         CancellationToken cancellationToken)
     {
+        var result = await EnsureBucketCreatedAsync(bucketName, cancellationToken);
+        
+        if (result.IsError)
+        {
+            return result.Errors;
+        }
+
         try
         {
-            await EnsureBucketCreatedAsync(bucketName, cancellationToken);
-
             await storageClient.UploadObjectAsync(
                 bucketName,
                 storagePath,
@@ -35,23 +40,41 @@ public class GcpStorageService(
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Failed to upload file to GCS bucket '{BucketName}' at path '{StoragePath}'",
+            logger.LogError(ex,
+                "GcpStorageService.UploadFileAsync: Failed to upload file to GCS bucket '{BucketName}' at path '{StoragePath}'",
                 bucketName, storagePath);
 
             return Error.Failure("Storage.UploadFailed", $"Failed to upload file to storage: {ex.Message}");
         }
     }
 
-    private async Task EnsureBucketCreatedAsync(string bucketName, CancellationToken cancellationToken)
+    private async Task<ErrorOr<Success>> EnsureBucketCreatedAsync(string bucketName,
+        CancellationToken cancellationToken)
     {
         try
         {
-            await storageClient.GetBucketAsync(bucketName, cancellationToken: cancellationToken);
-        }
-        catch (GoogleApiException ex) when (ex.HttpStatusCode == HttpStatusCode.NotFound)
-        {
             await storageClient.CreateBucketAsync(options.Value.ProjectId, bucketName,
                 cancellationToken: cancellationToken);
+
+            logger.LogInformation("GcpStorageService.EnsureBucketCreatedAsync: Bucket '{BucketName}' created",
+                bucketName);
+
+            return Result.Success;
+        }
+        catch (GoogleApiException ex) when (ex.HttpStatusCode == HttpStatusCode.Conflict)
+        {
+            logger.LogDebug("GcpStorageService.EnsureBucketCreatedAsync: Bucket '{BucketName}' already exists",
+                bucketName);
+
+            return Result.Success;
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "GcpStorageService.EnsureBucketCreatedAsync: Failed to create bucket '{BucketName}'",
+                bucketName);
+
+            return Error.Failure("Storage.BucketCreationFailed",
+                $"Failed to create bucket '{bucketName}': {ex.Message}");
         }
     }
 }

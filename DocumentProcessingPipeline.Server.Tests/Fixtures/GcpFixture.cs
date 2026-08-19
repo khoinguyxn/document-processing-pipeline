@@ -1,5 +1,3 @@
-using Google.Api.Gax;
-using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Testcontainers.FakeGcsServer;
 using Testcontainers.Firestore;
@@ -24,7 +22,7 @@ public class GcpFixture : WebApplicationFactory<ServerApp::Program>, IAsyncLifet
         {
             var settings = new Dictionary<string, string?>
             {
-                ["GCP:ProjectId"] = "test-project",
+                ["Gcp:ProjectId"] = "test-project",
                 ["STORAGE_EMULATOR_HOST"] = StorageContainer.GetConnectionString(),
                 ["FIRESTORE_EMULATOR_HOST"] = FirestoreContainer.GetEmulatorEndpoint()
             };
@@ -44,13 +42,6 @@ public class GcpFixture : WebApplicationFactory<ServerApp::Program>, IAsyncLifet
 
         Environment.SetEnvironmentVariable("FIRESTORE_EMULATOR_HOST", FirestoreContainer.GetEmulatorEndpoint());
         Environment.SetEnvironmentVariable("STORAGE_EMULATOR_HOST", StorageContainer.GetConnectionString());
-
-        var storageClient = await new StorageClientBuilder
-        {
-            EmulatorDetection = EmulatorDetection.EmulatorOrProduction
-        }.BuildAsync();
-
-        await storageClient.CreateBucketAsync("test-project", "document-processing-pipeline-bucket");
     }
 
     public override async ValueTask DisposeAsync()
