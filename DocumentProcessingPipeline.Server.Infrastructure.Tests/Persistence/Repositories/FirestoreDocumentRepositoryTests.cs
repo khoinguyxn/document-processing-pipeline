@@ -31,9 +31,9 @@ public class FirestoreDocumentRepositoryTests
         _documentFaker = new Faker<Document>()
             .RuleFor(d => d.Id, f => f.Random.Guid().ToString())
             .RuleFor(d => d.FileName, f => f.System.FileName("pdf"))
-            .RuleFor(d => d.ContentType, f => "application/pdf")
+            .RuleFor(d => d.ContentType, _ => "application/pdf")
             .RuleFor(d => d.BucketName, f => f.Internet.DomainWord() + "-bucket")
-            .RuleFor(d => d.StoragePath, (f, d) => $"documents/{d.Id}/{d.FileName}")
+            .RuleFor(d => d.StoragePath, (_, d) => $"documents/{d.Id}/{d.FileName}")
             .RuleFor(d => d.Status, f => f.PickRandom<DocumentStatus>())
             .RuleFor(d => d.CreatedAt, f => f.Date.RecentOffset());
     }
@@ -53,7 +53,7 @@ public class FirestoreDocumentRepositoryTests
                 CommitTime = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(DateTimeOffset.UtcNow),
                 WriteResults =
                 {
-                    new Google.Cloud.Firestore.V1.WriteResult
+                    new WriteResult
                     {
                         UpdateTime = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(DateTimeOffset.UtcNow)
                     }

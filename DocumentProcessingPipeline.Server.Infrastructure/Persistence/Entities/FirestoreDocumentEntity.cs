@@ -21,20 +21,6 @@ public record FirestoreDocumentEntity
 
 public static class DocumentMappingExtensions
 {
-    public static Document ToModel(this FirestoreDocumentEntity entity) => new()
-    {
-        Id = entity.Id,
-        FileName = entity.FileName,
-        ContentType = entity.ContentType,
-        Status = Enum.TryParse<DocumentStatus>(entity.Status, ignoreCase: true, out var status)
-            ? status
-            : DocumentStatus.Pending,
-        ExtractedContent = entity.ExtractedContent,
-        BucketName = entity.BucketName,
-        StoragePath = entity.StoragePath,
-        CreatedAt = entity.CreatedAt
-    };
-
     public static FirestoreDocumentEntity ToEntity(this Document entity) => new()
     {
         Id = entity.Id,
