@@ -24,7 +24,7 @@ var firestore = builder.AddContainer("firestore", "google/cloud-sdk:emulators")
 var server = builder
     .AddProject<Projects.DocumentProcessingPipeline_Server>("server")
     .WithHttpHealthCheck("/health")
-    .WithEnvironment("FIREBASE_EMULATOR_HOST", firestore.GetEndpoint("http"))
+    .WithEnvironment("FIRESTORE_EMULATOR_HOST", firestore.GetEndpoint("http"))
     .WithEnvironment("STORAGE_EMULATOR_HOST", $"{cloudStorage.GetEndpoint("http")}/storage/v1/")
     .WithExternalHttpEndpoints()
     .WithHttpsDeveloperCertificate()
