@@ -43,7 +43,8 @@ public class DocumentModule : ICarterModule
         }
 
         await using var stream = request.File.OpenReadStream();
-        var uploadResult = await documentService.UploadAsync(stream, request.File.FileName, request.File.ContentType, cancellationToken);
+        var uploadResult = await documentService.UploadAsync(stream, request.File.FileName, request.File.ContentType,
+            cancellationToken);
 
         return uploadResult.Match<Results<CreatedResult, ValidationProblem, ProblemHttpResult>>(
             _ => TypedResults.Created(),
