@@ -12,14 +12,19 @@ namespace DocumentProcessingPipeline.Server.Infrastructure.Services;
 public class GcpStorageService(
     StorageClient storageClient,
     ILogger<GcpStorageService> logger,
-    IOptions<GcpOptions> options) : IStorageService
+    IOptions<GcpOptions> options
+) : IStorageService
 {
-    public async Task<ErrorOr<Success>> UploadFileAsync(Stream fileStream, string bucketName, string storagePath,
+    public async Task<ErrorOr<Success>> UploadFileAsync(
+        Stream fileStream,
+        string bucketName,
+        string storagePath,
         string contentType,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken
+    )
     {
         var result = await EnsureBucketCreatedAsync(bucketName, cancellationToken);
-        
+
         if (result.IsError)
         {
             return result.Errors;

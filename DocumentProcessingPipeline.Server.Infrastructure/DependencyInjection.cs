@@ -4,6 +4,7 @@ using Google.Cloud.Storage.V1;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
+using DocumentProcessingPipeline.Server.Infrastructure.Persistence.Repositories;
 using DocumentProcessingPipeline.Server.Infrastructure.Services;
 using Microsoft.Extensions.Options;
 
@@ -50,6 +51,10 @@ public static class DependencyInjection
             services.AddDocumentProcessorServiceClient(action: (sp, builder) =>
                 builder.Endpoint = sp.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint);
 
-        private void AddServices() => services.AddScoped<IStorageService, GcpStorageService>();
+        private void AddServices()
+        {
+            services.AddScoped<IStorageService, GcpStorageService>();
+            services.AddScoped<IDocumentRepository, FirestoreDocumentRepository>();
+        }
     }
 }

@@ -13,6 +13,6 @@ public static class DependencyInjection
             services.AddServices();
         }
 
-        private void AddServices() => services.AddTransient<IDocumentService, DocumentService>();
+        private void AddServices() => services.AddScoped<IDocumentService, DocumentService>();
     }
 }
