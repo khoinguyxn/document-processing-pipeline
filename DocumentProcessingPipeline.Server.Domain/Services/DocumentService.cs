@@ -4,7 +4,11 @@ using ErrorOr;
 
 namespace DocumentProcessingPipeline.Server.Domain.Services;
 
-public class DocumentService(IStorageService storageService, IDocumentRepository documentRepository) : IDocumentService
+public class DocumentService(
+    IStorageService storageService,
+    IDocumentRepository documentRepository,
+    IOcrService ocrService
+) : IDocumentService
 {
     private const string BucketName = "document-processing-pipeline-bucket";
 
@@ -39,6 +43,39 @@ public class DocumentService(IStorageService storageService, IDocumentRepository
         if (createdResult.IsError)
         {
             return createdResult.Errors;
+        }
+
+        var extractedResult = await ocrService.ExtractDocumentAsync(
+            documentId,
+            BucketName,
+            storagePath,
+            contentType,
+            cancellationToken
+        );
+
+        if (extractedResult.IsError)
+        {
+            var failedDocument = document with
+            {
+                Status = DocumentStatus.Failed
+            };
+
+            await documentRepository.UpdateDocumentAsync(failedDocument, CancellationToken.None);
+
+            return extractedResult.Errors;
+        }
+
+        var updatedDocument = document with
+        {
+            Status = DocumentStatus.Completed,
+            ExtractedFormFields = extractedResult.Value
+        };
+
+        var updatedResult = await documentRepository.UpdateDocumentAsync(updatedDocument, cancellationToken);
+
+        if (updatedResult.IsError)
+        {
+            return updatedResult.Errors;
         }
 
         return Result.Created;
