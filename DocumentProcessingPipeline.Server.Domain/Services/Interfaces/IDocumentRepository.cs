@@ -8,9 +8,7 @@ public interface IDocumentRepository
     Task<ErrorOr<Created>> CreateDocumentAsync(Document document, CancellationToken cancellationToken);
 
     Task<ErrorOr<Updated>> UpdateDocumentAsync(
-        string documentId,
-        IDictionary<string, object> extractedContent,
-        DocumentStatus status,
+        Document updatedDocument,
         CancellationToken cancellationToken
     );
 }

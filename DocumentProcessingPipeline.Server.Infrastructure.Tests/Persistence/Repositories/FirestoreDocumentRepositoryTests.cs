@@ -108,12 +108,7 @@ public class FirestoreDocumentRepositoryTests
     public async Task UpdateDocumentAsync_ShouldReturnUpdated_WhenSuccessful()
     {
         // Arrange
-        var documentId = _faker.Random.Guid().ToString();
-        var extractedContent = new Dictionary<string, object>
-        {
-            { _faker.Random.Word(), _faker.Lorem.Paragraph() }
-        };
-        var status = _faker.PickRandom<DocumentStatus>();
+        var document = _documentFaker.Generate();
 
         _mockFirestoreClient
             .Setup(x => x.CommitAsync(
@@ -132,12 +127,7 @@ public class FirestoreDocumentRepositoryTests
             });
 
         // Act
-        var result = await _repository.UpdateDocumentAsync(
-            documentId,
-            extractedContent,
-            status,
-            _cancellationToken
-        );
+        var result = await _repository.UpdateDocumentAsync(document, _cancellationToken);
 
         // Assert
         Assert.False(result.IsError);
@@ -148,8 +138,8 @@ public class FirestoreDocumentRepositoryTests
                 req.Database == $"projects/{ProjectId}/databases/(default)" &&
                 req.Writes.Count == 1 &&
                 req.Writes[0].Update.Name ==
-                $"projects/{ProjectId}/databases/(default)/documents/documents/{documentId}" &&
-                req.Writes[0].Update.Fields["status"].StringValue == status.ToString()),
+                $"projects/{ProjectId}/databases/(default)/documents/documents/{document.Id}" &&
+                req.Writes[0].Update.Fields["status"].StringValue == document.Status.ToString()),
             It.IsAny<CallSettings>()), Times.Once);
     }
 
@@ -157,13 +147,8 @@ public class FirestoreDocumentRepositoryTests
     public async Task UpdateDocumentAsync_ShouldReturnFailure_WhenExceptionIsThrown()
     {
         // Arrange
-        var documentId = _faker.Random.Guid().ToString();
-        var extractedContent = new Dictionary<string, object>
-        {
-            { _faker.Random.Word(), _faker.Lorem.Paragraph() }
-        };
-        var status = _faker.PickRandom<DocumentStatus>();
-        var errorMessage = _faker.Lorem.Sentence();
+        var document = _documentFaker.Generate();
+        var errorMessage = $"Failed to update document '{document.Id}'";
 
         _mockFirestoreClient
             .Setup(x => x.CommitAsync(
@@ -172,11 +157,7 @@ public class FirestoreDocumentRepositoryTests
             .ThrowsAsync(new Exception(errorMessage));
 
         // Act
-        var result = await _repository.UpdateDocumentAsync(
-            documentId,
-            extractedContent,
-            status,
-            _cancellationToken);
+        var result = await _repository.UpdateDocumentAsync(document, _cancellationToken);
 
         // Assert
         Assert.True(result.IsError);

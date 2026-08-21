@@ -55,6 +55,7 @@ public static class DependencyInjection
         {
             services.AddScoped<IStorageService, GcpStorageService>();
             services.AddScoped<IDocumentRepository, FirestoreDocumentRepository>();
+            services.AddScoped<IOcrService, GcpDocumentAiService>();
         }
     }
 }

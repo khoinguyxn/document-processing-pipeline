@@ -1,4 +1,11 @@
+using DocumentProcessingPipeline.Server.Domain.Models;
+using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging.Abstractions;
+using Moq;
 using Testcontainers.FakeGcsServer;
 using Testcontainers.Firestore;
 
@@ -30,6 +37,28 @@ public class GcpFixture : WebApplicationFactory<ServerApp::Program>, IAsyncLifet
             config.AddInMemoryCollection(settings);
         });
 
+        builder.ConfigureTestServices(services =>
+        {
+            var mockOcrService = new Mock<IOcrService>();
+
+            mockOcrService.Setup(x => x.ExtractDocumentAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<CancellationToken>()
+            )).ReturnsAsync(Enumerable.Empty<ExtractedFormField>().ToErrorOr());
+
+            services.RemoveAll<IOcrService>();
+            services.AddScoped<IOcrService>(_ => mockOcrService.Object);
+        });
+
+        builder.ConfigureTestServices(services =>
+        {
+            services.RemoveAll<ILogger>();
+            services.AddSingleton<ILogger, NullLogger>();
+        });
+
         builder.UseEnvironment("TEST");
     }
 
@@ -46,14 +75,19 @@ public class GcpFixture : WebApplicationFactory<ServerApp::Program>, IAsyncLifet
 
     public override async ValueTask DisposeAsync()
     {
-        await base.DisposeAsync();
+        try
+        {
+            await base.DisposeAsync();
 
-        await Task.WhenAll(
-            FirestoreContainer.DisposeAsync().AsTask(),
-            StorageContainer.DisposeAsync().AsTask()
-        );
-
-        Environment.SetEnvironmentVariable("FIRESTORE_EMULATOR_HOST", null);
-        Environment.SetEnvironmentVariable("STORAGE_EMULATOR_HOST", null);
+            await Task.WhenAll(
+                FirestoreContainer.DisposeAsync().AsTask(),
+                StorageContainer.DisposeAsync().AsTask()
+            );
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("FIRESTORE_EMULATOR_HOST", null);
+            Environment.SetEnvironmentVariable("STORAGE_EMULATOR_HOST", null);
+        }
     }
 }

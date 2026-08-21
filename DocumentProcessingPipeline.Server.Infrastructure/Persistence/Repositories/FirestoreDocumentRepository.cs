@@ -16,10 +16,9 @@ public class FirestoreDocumentRepository(FirestoreDb firestoreDb, ILogger<Firest
     {
         try
         {
-            var entity = document.ToEntity();
-            var documentReference = firestoreDb.Collection(Collection).Document(entity.Id);
+            var documentReference = firestoreDb.Collection(Collection).Document(document.Id);
 
-            await documentReference.SetAsync(entity, cancellationToken: cancellationToken);
+            await documentReference.SetAsync(document.ToEntity(), cancellationToken: cancellationToken);
 
             return Result.Created;
         }
@@ -33,32 +32,25 @@ public class FirestoreDocumentRepository(FirestoreDb firestoreDb, ILogger<Firest
         }
     }
 
-    public async Task<ErrorOr<Updated>> UpdateDocumentAsync(
-        string documentId,
-        IDictionary<string, object> extractedContent,
-        DocumentStatus status,
+    public async Task<ErrorOr<Updated>> UpdateDocumentAsync(Document updatedDocument,
         CancellationToken cancellationToken)
     {
         try
         {
-            var documentReference = firestoreDb.Collection(Collection).Document(documentId);
+            var documentReference = firestoreDb.Collection(Collection).Document(updatedDocument.Id);
 
-            await documentReference.UpdateAsync(new Dictionary<string, object>
-                {
-                    { "extractedContent", extractedContent },
-                    { "status", status.ToString() }
-                },
-                cancellationToken: cancellationToken);
+            await documentReference.SetAsync(updatedDocument.ToEntity(), SetOptions.MergeAll,
+                cancellationToken);
 
             return Result.Updated;
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "FirestoreDocumentRepository: Failed to update document with ID {DocumentId}",
-                documentId);
+            logger.LogError(ex, "FirestoreDocumentRepository.UpdateDocumentAsync: Failed to update document {DocumentId}: {ErrorMessage}",
+                updatedDocument.Id, ex.Message);
 
             return Error.Failure("FirestoreDocumentRepository.UpdateDocumentAsync",
-                $"Failed to update document '{documentId}': {ex.Message}");
+                $"Failed to update document '{updatedDocument.Id}'");
         }
     }
 }
