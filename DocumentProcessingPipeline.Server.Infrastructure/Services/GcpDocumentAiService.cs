@@ -1,14 +1,20 @@
 using DocumentProcessingPipeline.Server.Domain.Models;
 using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
+using DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
 using ErrorOr;
 using Google.Cloud.DocumentAI.V1;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Document = DocumentProcessingPipeline.Server.Domain.Models.Document;
 using Vertex = DocumentProcessingPipeline.Server.Domain.Models.Vertex;
 
 namespace DocumentProcessingPipeline.Server.Infrastructure.Services;
 
-public class GcpDocumentAiService(DocumentProcessorServiceClient client, ILogger<GcpDocumentAiService> logger)
+public class GcpDocumentAiService(
+    DocumentProcessorServiceClient client,
+    ILogger<GcpDocumentAiService> logger,
+    IOptions<GcpOptions> gcpOptions,
+    IOptions<DocumentAiOptions> documentAiOptions)
     : IOcrService
 {
     public async Task<ErrorOr<IEnumerable<ExtractedFormField>>> ExtractDocumentAsync(
@@ -22,6 +28,8 @@ public class GcpDocumentAiService(DocumentProcessorServiceClient client, ILogger
         {
             var response = await client.ProcessDocumentAsync(new ProcessRequest
             {
+                Name = ProcessorName.FormatProjectLocationProcessor(gcpOptions.Value.ProjectNumber,
+                    gcpOptions.Value.LocationId, documentAiOptions.Value.ProcessorId),
                 GcsDocument = new GcsDocument
                 {
                     GcsUri = $"gs://{bucketName}/{storagePath}",

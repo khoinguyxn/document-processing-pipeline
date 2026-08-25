@@ -28,7 +28,7 @@ public static class DependencyInjection
         private IServiceCollection AddOptions(IConfiguration configuration)
         {
             services.Configure<GcpOptions>(configuration.GetSection("Gcp"));
-            services.Configure<DocumentAiOptions>(configuration.GetSection("DocumentAi"));
+            services.Configure<DocumentAiOptions>(configuration.GetSection("Gcp:DocumentAi"));
 
             return services;
         }
