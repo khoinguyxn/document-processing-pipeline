@@ -5,10 +5,9 @@ using ErrorOr;
 using Google.Cloud.DocumentAI.V1;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Document = DocumentProcessingPipeline.Server.Domain.Models.Document;
 using Vertex = DocumentProcessingPipeline.Server.Domain.Models.Vertex;
 
-namespace DocumentProcessingPipeline.Server.Infrastructure.Services;
+namespace DocumentProcessingPipeline.Server.Infrastructure.Services.DocumentAiServices;
 
 public class GcpDocumentAiService(
     DocumentProcessorServiceClient client,
