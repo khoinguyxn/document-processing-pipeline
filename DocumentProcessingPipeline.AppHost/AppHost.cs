@@ -1,3 +1,5 @@
+using DocumentProcessingPipeline.AppHost.Fixtures;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 var home = Environment.GetEnvironmentVariable("HOME") ?? "";
@@ -6,6 +8,12 @@ if (!string.IsNullOrEmpty(home))
     var miseShimsPath = Path.Combine(home, ".local/share/mise/shims");
     Environment.SetEnvironmentVariable("PATH", $"{miseShimsPath}:{Environment.GetEnvironmentVariable("PATH")}");
 }
+
+var documentAi = builder
+    .AddWireMock("document-ai")
+    .AsHttp2Service()
+    .WithDocumentAiFixture()
+    .WithOpenTelemetry();
 
 var cloudStorage = builder.AddContainer("cloud-storage", "fsouza/fake-gcs-server")
     .WithArgs(
@@ -26,10 +34,13 @@ var server = builder
     .WithHttpHealthCheck("/health")
     .WithEnvironment("FIRESTORE_EMULATOR_HOST", firestore.GetEndpoint("http"))
     .WithEnvironment("STORAGE_EMULATOR_HOST", $"{cloudStorage.GetEndpoint("http")}/storage/v1/")
+    .WithEnvironment("Gcp__DocumentAi__Endpoint", documentAi.GetEndpoint("http"))
     .WithExternalHttpEndpoints()
     .WithHttpsDeveloperCertificate()
+    .WithReference(documentAi)
     .WaitFor(firestore)
-    .WaitFor(cloudStorage);
+    .WaitFor(cloudStorage)
+    .WaitFor(documentAi);
 
 #pragma warning disable ASPIREJAVASCRIPT001
 var webfrontend = builder

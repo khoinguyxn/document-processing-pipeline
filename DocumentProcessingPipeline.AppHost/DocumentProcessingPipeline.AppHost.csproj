@@ -9,10 +9,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DocumentProcessingPipeline.Server\DocumentProcessingPipeline.Server.csproj"/>
+        <ProjectReference Include="..\DocumentProcessingPipeline.Server\DocumentProcessingPipeline.Server.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.JavaScript" Version="13.4.6"/>
+        <PackageReference Include="Aspire.Hosting.JavaScript" Version="13.4.6" />
+        <PackageReference Include="Bogus" Version="35.6.5" />
+        <PackageReference Include="Google.Cloud.DocumentAI.V1" Version="3.25.0" />
+        <PackageReference Include="Google.Protobuf" Version="3.36.0" />
+        <PackageReference Include="WireMock.Net" Version="2.15.0" />
+        <PackageReference Include="WireMock.Net.Aspire" Version="2.15.0" />
     </ItemGroup>
 </Project>
