@@ -32,7 +32,8 @@ public static class DocumentAiFixtureExtensions
             .WithResponse(res => res
                 .WithStatusCode(HttpStatusCode.OK)
                 .WithHeaders(headers => headers
-                    .Add("Content-Type", "application/grpc")
+                    .Add("Content-Type", "application/grpc"))
+                .WithTrailingHeaders(headers => headers
                     .Add("grpc-status", "0"))
                 .WithBodyAsBytes(framedBytes)));
 
