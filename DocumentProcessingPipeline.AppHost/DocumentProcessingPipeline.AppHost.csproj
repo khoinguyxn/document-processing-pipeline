@@ -6,6 +6,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <UserSecretsId>5de90e01-b58c-4571-8dec-fe423eee9494</UserSecretsId>
+        <!-- Aspire.Hosting.JavaScript pulls Humanizer.Core 3.0.10 directly, while its own transitive
+             dependency (Handlebars.Net.Helpers.Humanizer -> Humanizer 2.14.1 -> Humanizer.Core.* locale
+             satellites) pins the locale satellites to exactly 2.14.1. NuGet resolves Humanizer.Core to
+             the higher 3.0.10, which trips NU1608 for every Humanizer.Core.* locale package even though
+             restore/build succeed without any actual conflict for our code. -->
+        <NoWarn>$(NoWarn);NU1608</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,7 +22,8 @@
         <PackageReference Include="Aspire.Hosting.JavaScript" Version="13.4.6" />
         <PackageReference Include="Bogus" Version="35.6.5" />
         <PackageReference Include="Google.Cloud.DocumentAI.V1" Version="3.25.0" />
-        <PackageReference Include="Google.Protobuf" Version="3.36.0" />
+        <PackageReference Include="Google.Protobuf" Version="3.36.1" />
+        <PackageReference Include="WireMock.Grpc.Protobuf" Version="1.2.0" />
         <PackageReference Include="WireMock.Net" Version="2.15.0" />
         <PackageReference Include="WireMock.Net.Aspire" Version="2.15.0" />
     </ItemGroup>

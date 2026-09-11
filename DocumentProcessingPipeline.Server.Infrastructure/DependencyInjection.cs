@@ -7,7 +7,8 @@ using DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
 using DocumentProcessingPipeline.Server.Infrastructure.Persistence.Repositories;
 using DocumentProcessingPipeline.Server.Infrastructure.Services;
 using DocumentProcessingPipeline.Server.Infrastructure.Services.DocumentAiServices;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Grpc.Core;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
 namespace DocumentProcessingPipeline.Server.Infrastructure;
@@ -60,43 +61,21 @@ public static class DependencyInjection
             return services;
         }
 
-
         private void AddDocumentAi()
         {
-            var sp = services.BuildServiceProvider();
-            var options = sp.GetRequiredService<IOptions<DocumentAiOptions>>().Value;
-
-            var ocrProviderType = GetOcrProviderType(options);
-
-            if (ocrProviderType == OcrProvider.Live)
+            services.AddDocumentProcessorServiceClient(action: (provider, builder) =>
             {
-                services.AddDocumentProcessorServiceClient(action: (provider, builder) =>
-                    builder.Endpoint = provider.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint);
+                var environment = provider.GetRequiredService<IHostEnvironment>();
 
-                services.AddScoped<IOcrService, GcpDocumentAiService>();
-            }
-            else
-            {
-                services.AddScoped<IOcrService, FixtureOcrService>();
+                builder.Endpoint = provider.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint;
 
-                services.AddHealthChecks()
-                    .AddCheck("DocumentAi", () => HealthCheckResult.Healthy("Running in Fixture mode"));
-            }
+                if (environment.IsDevelopment())
+                {
+                    builder.ChannelCredentials = ChannelCredentials.Insecure;
+                }
+            });
+
+            services.AddScoped<IOcrService, GcpDocumentAiService>();
         }
-    }
-
-    private static OcrProvider GetOcrProviderType(DocumentAiOptions options)
-    {
-        if (options.OcrProvider == OcrProvider.Fixture)
-        {
-            return OcrProvider.Fixture;
-        }
-
-        var hasCredentials = File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-            ".config/gcloud/application_default_credentials.json"));
-
-        var hasValidConfig = !string.IsNullOrWhiteSpace(options.ProcessorId);
-
-        return hasValidConfig && hasCredentials ? OcrProvider.Live : OcrProvider.Fixture;
     }
 }

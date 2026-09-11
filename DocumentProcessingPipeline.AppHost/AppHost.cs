@@ -1,6 +1,9 @@
+using Bogus;
 using DocumentProcessingPipeline.AppHost.Fixtures;
 
 var builder = DistributedApplication.CreateBuilder(args);
+
+var faker = new Faker();
 
 var home = Environment.GetEnvironmentVariable("HOME") ?? "";
 if (!string.IsNullOrEmpty(home))
@@ -11,6 +14,7 @@ if (!string.IsNullOrEmpty(home))
 
 var documentAi = builder
     .AddWireMock("document-ai")
+    .WithArgs("--UseHttp2", "true")
     .AsHttp2Service()
     .WithDocumentAiFixture()
     .WithOpenTelemetry();
@@ -35,6 +39,10 @@ var server = builder
     .WithEnvironment("FIRESTORE_EMULATOR_HOST", firestore.GetEndpoint("http"))
     .WithEnvironment("STORAGE_EMULATOR_HOST", $"{cloudStorage.GetEndpoint("http")}/storage/v1/")
     .WithEnvironment("Gcp__DocumentAi__Endpoint", documentAi.GetEndpoint("http"))
+    .WithEnvironment("Gcp__DocumentAi__ProcessorId", faker.Random.Guid().ToString())
+    .WithEnvironment("Gcp__ProjectId", faker.Random.AlphaNumeric(20))
+    .WithEnvironment("Gcp__ProjectNumber", faker.Random.Number(100000000, 999999999).ToString())
+    .WithEnvironment("Gcp__LocationId", faker.PickRandom("us", "eu", "asia"))
     .WithExternalHttpEndpoints()
     .WithHttpsDeveloperCertificate()
     .WithReference(documentAi)

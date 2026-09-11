@@ -8,18 +8,26 @@ namespace DocumentProcessingPipeline.AppHost.Fixtures;
 
 public static class DocumentAiFixtureExtensions
 {
-    public static async Task ConfigureDocumentAiFixtureAsync(
-        this AdminApiMappingBuilder builder,
-        ProcessResponse? processResponse = null,
-        CancellationToken cancellationToken = default)
+    public static IResourceBuilder<WireMockServerResource> WithDocumentAiFixture(
+        this IResourceBuilder<WireMockServerResource> builder)
     {
-        var response = processResponse ?? CreateDefaultProcessResponse();
+        return builder.WithApiMappingBuilder((apiBuilder, cancellationToken) =>
+            apiBuilder.ConfigureDocumentAiFixtureAsync(cancellationToken));
+    }
+
+    private static async Task ConfigureDocumentAiFixtureAsync(
+        this AdminApiMappingBuilder builder,
+        CancellationToken cancellationToken
+    )
+    {
+        var response = CreateDefaultProcessResponse();
         var rawBytes = response.ToByteArray();
         var framedBytes = FrameGrpcMessage(rawBytes);
 
         builder.Given(action => action
             .WithRequest(request => request
                 .UsingPost()
+                .WithHttpVersion("2")
                 .WithPath("/google.cloud.documentai.v1.DocumentProcessorService/ProcessDocument"))
             .WithResponse(res => res
                 .WithStatusCode(HttpStatusCode.OK)
@@ -31,15 +39,7 @@ public static class DocumentAiFixtureExtensions
         await builder.BuildAndPostAsync(cancellationToken);
     }
 
-    public static IResourceBuilder<WireMockServerResource> WithDocumentAiFixture(
-        this IResourceBuilder<WireMockServerResource> builder,
-        ProcessResponse? processResponse = null)
-    {
-        return builder.WithApiMappingBuilder((apiBuilder, cancellationToken) =>
-            apiBuilder.ConfigureDocumentAiFixtureAsync(processResponse, cancellationToken));
-    }
-
-    public static ProcessResponse CreateDefaultProcessResponse()
+    private static ProcessResponse CreateDefaultProcessResponse()
     {
         var faker = new Faker();
         var page = new Document.Types.Page { PageNumber = 1 };
@@ -56,7 +56,7 @@ public static class DocumentAiFixtureExtensions
         {
             page.FormFields.Add(new Document.Types.Page.Types.FormField
             {
-                FieldName = CreateLayout(name, faker.Random.Float(0.9f, 1.0f)),
+                FieldName = CreateLayout(name, faker.Random.Float(0.9f)),
                 FieldValue = CreateLayout(value, faker.Random.Float(0.85f, 0.99f))
             });
         }
