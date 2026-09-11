@@ -1,13 +1,13 @@
 ﻿using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
-using Google.Api.Gax;
-using Google.Cloud.Storage.V1;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
 using DocumentProcessingPipeline.Server.Infrastructure.Persistence.Repositories;
 using DocumentProcessingPipeline.Server.Infrastructure.Services;
 using DocumentProcessingPipeline.Server.Infrastructure.Services.DocumentAiServices;
+using Google.Api.Gax;
+using Google.Cloud.Storage.V1;
 using Grpc.Core;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
@@ -69,7 +69,7 @@ public static class DependencyInjection
 
                 builder.Endpoint = provider.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint;
 
-                if (environment.IsDevelopment())
+                if (environment.IsDevelopment() || environment.IsEnvironment("Test"))
                 {
                     builder.ChannelCredentials = ChannelCredentials.Insecure;
                 }
