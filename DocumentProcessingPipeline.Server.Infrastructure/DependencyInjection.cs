@@ -1,11 +1,14 @@
 ﻿using DocumentProcessingPipeline.Server.Domain.Services.Interfaces;
-using Google.Api.Gax;
-using Google.Cloud.Storage.V1;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using DocumentProcessingPipeline.Server.Infrastructure.Options.GcpOptions;
 using DocumentProcessingPipeline.Server.Infrastructure.Persistence.Repositories;
 using DocumentProcessingPipeline.Server.Infrastructure.Services;
+using DocumentProcessingPipeline.Server.Infrastructure.Services.DocumentAiServices;
+using Google.Api.Gax;
+using Google.Cloud.Storage.V1;
+using Grpc.Core;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
 namespace DocumentProcessingPipeline.Server.Infrastructure;
@@ -21,40 +24,58 @@ public static class DependencyInjection
                 .AddOptions(configuration)
                 .AddStorage()
                 .AddFirestore()
-                .AddDocumentAi()
-                .AddServices();
+                .AddDocumentAi();
         }
 
         private IServiceCollection AddOptions(IConfiguration configuration)
         {
             services.Configure<GcpOptions>(configuration.GetSection("Gcp"));
-            services.Configure<DocumentAiOptions>(configuration.GetSection("DocumentAi"));
+            services.Configure<DocumentAiOptions>(configuration.GetSection("Gcp:DocumentAi"));
 
             return services;
         }
 
-        private IServiceCollection AddStorage() =>
+        private IServiceCollection AddStorage()
+        {
             services.AddSingleton<StorageClient>(_ =>
                 new StorageClientBuilder
                 {
                     EmulatorDetection = EmulatorDetection.EmulatorOrProduction
                 }.Build());
 
-        private IServiceCollection AddFirestore() =>
+            services.AddScoped<IStorageService, GcpStorageService>();
+
+            return services;
+        }
+
+        private IServiceCollection AddFirestore()
+        {
             services.AddFirestoreDb(action: (sp, builder) =>
             {
                 builder.ProjectId = sp.GetRequiredService<IOptions<GcpOptions>>().Value.ProjectId;
                 builder.EmulatorDetection = EmulatorDetection.EmulatorOrProduction;
             });
 
-        private IServiceCollection AddDocumentAi() =>
-            services.AddDocumentProcessorServiceClient(action: (sp, builder) =>
-                builder.Endpoint = sp.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint);
-
-        private void AddServices()
-        {
-            services.AddScoped<IStorageService, GcpStorageService>();
             services.AddScoped<IDocumentRepository, FirestoreDocumentRepository>();
+
+            return services;
+        }
+
+        private void AddDocumentAi()
+        {
+            services.AddDocumentProcessorServiceClient(action: (provider, builder) =>
+            {
+                var environment = provider.GetRequiredService<IHostEnvironment>();
+
+                builder.Endpoint = provider.GetRequiredService<IOptions<DocumentAiOptions>>().Value.Endpoint;
+
+                if (environment.IsDevelopment() || environment.IsEnvironment("Test"))
+                {
+                    builder.ChannelCredentials = ChannelCredentials.Insecure;
+                }
+            });
+
+            services.AddScoped<IOcrService, GcpDocumentAiService>();
         }
     }
 }

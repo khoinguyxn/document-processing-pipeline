@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="DocumentProcessingPipeline.AppHost/DocumentProcessingPipeline.AppHost.csproj" />
+  <Project Path="DocumentProcessingPipeline.Server.Domain.Tests/DocumentProcessingPipeline.Server.Domain.Tests.csproj" />
   <Project Path="DocumentProcessingPipeline.Server.Domain/DocumentProcessingPipeline.Server.Domain.csproj" />
   <Project Path="DocumentProcessingPipeline.Server.Infrastructure.Tests/DocumentProcessingPipeline.Server.Infrastructure.Tests.csproj" />
   <Project Path="DocumentProcessingPipeline.Server.Infrastructure/DocumentProcessingPipeline.Server.Infrastructure.csproj" />

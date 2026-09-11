@@ -27,7 +27,12 @@ public class GcpStorageServiceTests
 
     public GcpStorageServiceTests()
     {
-        _mockOptions.Setup(x => x.Value).Returns(new GcpOptions { ProjectId = ProjectId });
+        _mockOptions.Setup(x => x.Value).Returns(new GcpOptions
+        {
+            ProjectId = ProjectId,
+            ProjectNumber = "",
+            LocationId = ""
+        });
         _service = new GcpStorageService(_mockStorageClient.Object, _mockLogger.Object, _mockOptions.Object);
     }
 

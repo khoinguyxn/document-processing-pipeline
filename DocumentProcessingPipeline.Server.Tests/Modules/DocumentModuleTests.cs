@@ -4,10 +4,11 @@ using DocumentProcessingPipeline.Server.Tests.Fixtures;
 
 namespace DocumentProcessingPipeline.Server.Tests.Modules;
 
-public class DocumentModuleTests(GcpFixture fixture) : IClassFixture<GcpFixture>
+public class DocumentModuleTests(DocumentProcessingPipelineServerFactoryFixture fixture)
+    : IClassFixture<DocumentProcessingPipelineServerFactoryFixture>
 {
-    private readonly HttpClient _httpClient = fixture.CreateClient();
     private readonly CancellationToken _cancellationToken = CancellationToken.None;
+    private readonly HttpClient _httpClient = fixture.CreateClient();
 
     [Theory]
     [InlineData("application/pdf", "document.pdf")]
@@ -54,7 +55,8 @@ public class DocumentModuleTests(GcpFixture fixture) : IClassFixture<GcpFixture>
         var allowedMimeTypes = new[] { "application/pdf", "image/jpeg", "image/png", "image/webp" };
         var expectedErrorMessage = $"File type must be one of: {string.Join(", ", allowedMimeTypes)}";
 
-        Assert.True(problemDetails.Errors.TryGetValue("File", out var errors) || problemDetails.Errors.TryGetValue("file", out errors));
+        Assert.True(problemDetails.Errors.TryGetValue("File", out var errors) ||
+                    problemDetails.Errors.TryGetValue("file", out errors));
         Assert.NotNull(errors);
         Assert.Contains(expectedErrorMessage, errors);
     }
