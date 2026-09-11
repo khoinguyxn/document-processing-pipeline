@@ -57,6 +57,6 @@ app.MapCarter();
 
 app.MapDefaultEndpoints();
 
-app.UseFileServer();
+if (Directory.Exists(app.Environment.WebRootPath)) app.UseFileServer();
 
 app.Run();

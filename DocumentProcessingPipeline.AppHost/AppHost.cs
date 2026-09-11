@@ -1,5 +1,6 @@
 using Bogus;
 using DocumentProcessingPipeline.AppHost.Fixtures;
+using Projects;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
@@ -33,11 +34,12 @@ var firestore = builder.AddContainer("firestore", "google/cloud-sdk:emulators")
 
 #pragma warning disable ASPIRECERTIFICATES001
 var server = builder
-    .AddProject<Projects.DocumentProcessingPipeline_Server>("server")
+    .AddProject<DocumentProcessingPipeline_Server>("server")
     .WithHttpHealthCheck("/health")
     .WithEnvironment("FIRESTORE_EMULATOR_HOST", firestore.GetEndpoint("http"))
     .WithEnvironment("STORAGE_EMULATOR_HOST", $"{cloudStorage.GetEndpoint("http")}/storage/v1/")
-    .WithEnvironment("Gcp__DocumentAi__Endpoint", documentAi.GetEndpoint("grpc-9093").Property(EndpointProperty.HostAndPort))
+    .WithEnvironment("Gcp__DocumentAi__Endpoint",
+        documentAi.GetEndpoint("grpc-9093").Property(EndpointProperty.HostAndPort))
     .WithEnvironment("Gcp__DocumentAi__ProcessorId", faker.Random.Guid().ToString())
     .WithEnvironment("Gcp__ProjectId", faker.Random.AlphaNumeric(20))
     .WithEnvironment("Gcp__ProjectNumber", faker.Random.Number(100000000, 999999999).ToString())
@@ -50,8 +52,8 @@ var server = builder
     .WaitFor(documentAi);
 
 #pragma warning disable ASPIREJAVASCRIPT001
-var webfrontend = builder
-    .AddViteApp("web", "../frontend")
+var web = builder
+    .AddViteApp("web", "../web")
     .PublishAsNodeServer(".output/server/index.mjs", ".output")
 #pragma warning restore ASPIREJAVASCRIPT001
     .WithHttpsDeveloperCertificate()
@@ -60,6 +62,6 @@ var webfrontend = builder
     .WaitFor(server);
 #pragma warning restore ASPIRECERTIFICATES001
 
-server.PublishWithContainerFiles(webfrontend, "wwwroot");
+server.PublishWithContainerFiles(web, "wwwroot");
 
 builder.Build().Run();
