@@ -4,5 +4,4 @@ public record DocumentAiOptions
 {
     public required string ProcessorId { get; init; }
     public required string Endpoint { get; init; }
-    public int SimulatedDelayMs { get; init; } = 0;
 }
