@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "shadcn": "^4.21.0"
+  },
+  "intent": {
+    "skills": [
+      "*"
+    ]
+  }
+}

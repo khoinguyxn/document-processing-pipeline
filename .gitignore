@@ -62,3 +62,9 @@ nunit-*.xml
 
 # Mise
 mise.local.toml
+
+# Node
+node_modules/
+
+# .DS_Store
+.DS_Store

@@ -62,7 +62,7 @@ The **Document Processing Pipeline** is an end-to-end cloud-native solution desi
 - **Server (`DocumentProcessingPipeline.Server`)**: ASP.NET Core application providing Carter Minimal API endpoints, OpenAPI/Scalar API documentation, and OpenTelemetry telemetry.
 - **Domain (`DocumentProcessingPipeline.Server.Domain`)**: Clean architecture domain layer defining core business logic, document entities, OCR models, and interfaces using `ErrorOr`.
 - **Infrastructure (`DocumentProcessingPipeline.Server.Infrastructure`)**: Implementation of integrations with Google Cloud Storage, Google Cloud Firestore, and Google Cloud Document AI.
-- **Frontend (`frontend`)**: Modern full-stack web UI built with TanStack Start, React 19, Vite, Tailwind CSS, and Radix UI / shadcn components.
+- **Frontend (`web`)**: Modern full-stack web UI built with TanStack Start, React 19, Vite, Tailwind CSS, and Radix UI / shadcn components.
 
 ---
 
@@ -85,7 +85,7 @@ Key NuGet packages used across the backend projects:
 | **Server** | `Carter`, `FluentValidation`, `Scalar.AspNetCore`, `Microsoft.AspNetCore.OpenApi`, `OpenTelemetry.*` | API routing, request validation, API documentation, metrics/tracing |
 | **Infrastructure** | `Google.Cloud.DocumentAI.V1`, `Google.Cloud.Firestore`, `Google.Cloud.Storage.V1`, `Microsoft.Extensions.Options` | GCP service clients for OCR, NoSQL storage, and blob storage |
 | **Domain** | `ErrorOr`, `Microsoft.Extensions.DependencyInjection` | Functional error handling and domain abstractions |
-| **Tests** | `xunit`, `Moq`, `FluentAssertions`, `Microsoft.AspNetCore.Mvc.Testing` | Unit and integration testing suites |
+| **Tests** | `xunit.v3`, `Moq`, `Bogus`, `Testcontainers`, `WireMock.Net`, `Microsoft.AspNetCore.Mvc.Testing` | Unit and integration testing suites |
 
 ### Frontend Dependencies (React / Vite / Bun)
 
@@ -133,10 +133,10 @@ If you are not using Mise, verify and install the following tools manually:
 
 ### 4. Frontend Dependencies Installation
 
-Navigate to the `frontend` folder and install dependencies via Bun:
+Navigate to the `web` folder and install dependencies via Bun:
 
 ```bash
-cd frontend
+cd web
 bun install
 cd ..
 ```
@@ -158,9 +158,12 @@ If connecting to actual Google Cloud Platform services instead of local emulator
 {
   "Gcp": {
     "ProjectId": "your-gcp-project-id",
-  },
-  "DocumentAi": {
-    "Endpoint": "your-document-ai-endpoint"
+    "ProjectNumber": "your-gcp-project-number",
+    "LocationId": "your-gcp-location-id",
+    "DocumentAi": {
+      "ProcessorId": "your-document-ai-processor-id",
+      "Endpoint": "your-document-ai-endpoint"
+    }
   }
 }
 ```
@@ -183,7 +186,7 @@ dotnet run --project DocumentProcessingPipeline.AppHost
 ```
 
 Once running:
-- **Aspire Dashboard**: Accessible via the link shown in the terminal output (e.g. `http://localhost:18888`).
+- **Aspire Dashboard**: Accessible via the link shown in the terminal output (e.g. `http://localhost:15279`).
 - **Web Frontend**: Started and proxied automatically.
 - **Backend API Server**: Health checks and endpoint endpoints mapped with automatic emulator bindings.
 
@@ -195,14 +198,14 @@ To run only the backend API server:
 dotnet run --project DocumentProcessingPipeline.Server
 ```
 
-By default, the server will listen on configured ports (e.g. `https://localhost:7001` or `http://localhost:5000` / `$PORT`).
+By default, the server will listen on `http://localhost:5328` (or `https://localhost:7454` with the `https` profile). The `PORT` environment variable overrides these when set.
 
 ### Running the Frontend Application Standalone
 
 To run the React / Vite frontend development server:
 
 ```bash
-cd frontend
+cd web
 bun run dev
 ```
 
@@ -239,13 +242,13 @@ mise run server-test
 
 #### Run frontend unit tests with Vitest:
 ```bash
-cd frontend
+cd web
 bun run test
 ```
 
 #### Run frontend linting & type checks:
 ```bash
-cd frontend
+cd web
 bun run lint
 bun run typecheck
 ```
