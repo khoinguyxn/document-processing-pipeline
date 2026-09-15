@@ -9,13 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppRouteRouteImport } from './routes/app/route'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as ReadyRouteImport } from './routes/ready'
+import { Route as AppIndexRouteImport } from './routes/app/index'
+import { Route as AppExportsRouteImport } from './routes/app/exports'
+import { Route as AppSuppliersRouteImport } from './routes/app/suppliers'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AppRouteRoute = AppRouteRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HealthRoute = HealthRouteImport.update({
@@ -28,44 +31,75 @@ const ReadyRoute = ReadyRouteImport.update({
   path: '/ready',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppExportsRoute = AppExportsRouteImport.update({
+  id: '/exports',
+  path: '/exports',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppSuppliersRoute = AppSuppliersRouteImport.update({
+  id: '/suppliers',
+  path: '/suppliers',
+  getParentRoute: () => AppRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/app': typeof AppRouteRouteWithChildren
   '/health': typeof HealthRoute
   '/ready': typeof ReadyRoute
+  '/app/exports': typeof AppExportsRoute
+  '/app/suppliers': typeof AppSuppliersRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
   '/health': typeof HealthRoute
   '/ready': typeof ReadyRoute
+  '/app/exports': typeof AppExportsRoute
+  '/app/suppliers': typeof AppSuppliersRoute
+  '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/app': typeof AppRouteRouteWithChildren
   '/health': typeof HealthRoute
   '/ready': typeof ReadyRoute
+  '/app/exports': typeof AppExportsRoute
+  '/app/suppliers': typeof AppSuppliersRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/health' | '/ready'
+  fullPaths:
+    '/app' | '/health' | '/ready' | '/app/exports' | '/app/suppliers' | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/health' | '/ready'
-  id: '__root__' | '/' | '/health' | '/ready'
+  to: '/health' | '/ready' | '/app/exports' | '/app/suppliers' | '/app'
+  id:
+    | '__root__'
+    | '/app'
+    | '/health'
+    | '/ready'
+    | '/app/exports'
+    | '/app/suppliers'
+    | '/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  AppRouteRoute: typeof AppRouteRouteWithChildren
   HealthRoute: typeof HealthRoute
   ReadyRoute: typeof ReadyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/health': {
@@ -82,11 +116,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReadyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/exports': {
+      id: '/app/exports'
+      path: '/exports'
+      fullPath: '/app/exports'
+      preLoaderRoute: typeof AppExportsRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/suppliers': {
+      id: '/app/suppliers'
+      path: '/suppliers'
+      fullPath: '/app/suppliers'
+      preLoaderRoute: typeof AppSuppliersRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
   }
 }
 
+interface AppRouteRouteChildren {
+  AppExportsRoute: typeof AppExportsRoute
+  AppSuppliersRoute: typeof AppSuppliersRoute
+  AppIndexRoute: typeof AppIndexRoute
+}
+
+const AppRouteRouteChildren: AppRouteRouteChildren = {
+  AppExportsRoute: AppExportsRoute,
+  AppSuppliersRoute: AppSuppliersRoute,
+  AppIndexRoute: AppIndexRoute,
+}
+
+const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
+  AppRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  AppRouteRoute: AppRouteRouteWithChildren,
   HealthRoute: HealthRoute,
   ReadyRoute: ReadyRoute,
 }

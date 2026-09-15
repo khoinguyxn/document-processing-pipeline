@@ -4,7 +4,7 @@ export const Route = createFileRoute("/ready")({
   server: {
     handlers: {
       GET: async () => {
-        const isReady = await checkCriticalDependencies()
+        const isReady = await CHECK_CRITICAL_DEPENDENCIES()
 
         if (isReady) {
           return Response.json({
@@ -25,4 +25,4 @@ export const Route = createFileRoute("/ready")({
   },
 })
 
-const checkCriticalDependencies = () => Promise.resolve(true)
+const CHECK_CRITICAL_DEPENDENCIES = () => Promise.resolve(true)
