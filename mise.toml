@@ -8,4 +8,5 @@ node = "latest"
 run = "dotnet test -c Release"
 
 [tasks.web-test]
+dir = "web"
 run = "bun run test"
