@@ -88,14 +88,15 @@ Prefer running a single test project while iterating, e.g.
 
 ```bash
 cd web
-bun install
-bun run dev          # vite dev on port 3000
-bun run build        # vite build
-bun run test         # vitest run
-bun run lint         # eslint
-bun run typecheck    # tsc --noEmit
-bun run format       # prettier --write
-bun run check        # prettier --check
+bun install           # install dependencies
+bun run dev           # vite dev on port 3000
+bun run build         # vite build
+bun run test          # vitest run
+bun run test:coverage # vitest run --coverage (istanbul, writes web/coverage)
+bun run lint          # eslint
+bun run typecheck     # tsc --noEmit
+bun run format        # prettier --write
+bun run check         # prettier --check
 ```
 
 ### API documentation
@@ -304,11 +305,14 @@ Configuration is bound to strongly typed options in `AddOptions()`:
 
 1. **`server-tests`** — on every push/PR to `main`; sets up mise and runs
    `mise run server-test` (`dotnet test -c Release`). This is the required gate.
-2. **`build-server` / `build-web`** — `main` only, after tests pass. Authenticate to
+2. **`web-tests`** — on every push/PR to `main`; runs `mise run web-test-coverage`
+   (Vitest with the Istanbul provider) and uploads the `web-coverage` artifact from
+   `web/coverage` (`actions/upload-artifact`, always, 7-day retention).
+3. **`build-server` / `build-web`** — `main` only, after tests pass. Authenticate to
    Google Cloud via workload identity federation, log in to Artifact Registry, and push
    images tagged with `${{ github.sha }}`. The server image builds from the repo root
    (`context: .`); the web image builds from `./web`.
-3. **`deploy-server` / `deploy-web`** — `main` only, deploying the pushed image to
+4. **`deploy-server` / `deploy-web`** — `main` only, deploying the pushed image to
    Cloud Run.
 
 Required repository variables: `GCP_REGION`, `GCP_PROJECT_ID`, `GCP_AR_REPO`,

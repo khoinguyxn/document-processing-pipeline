@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-16T14:09:51.972Z",
+    "lastScanned": "2026-09-16T14:22:39.339Z",
     "fileCount": 104,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "61d9b763b905cc336e4ddc539a19c6c4202d6da838cbb884a7254204e7ef70c2",
-    "storeUpdatedAt": "2026-09-16T14:09:51.979Z",
+    "renderedHash": "3f8d66002bd56f200d9daea47cfaef6e14e8ca5e83153b882a4a47d0fcb82832",
+    "storeUpdatedAt": "2026-09-16T14:22:39.339Z",
     "rootHash": "6c1979d46757c5ff"
   },
   "files": {
@@ -21,14 +21,13 @@
       "importance": 0.2817
     },
     ".github/workflows/main.yaml": {
-      "description": "CI: main",
-      "tokens": 1367,
-      "hash": "be91b4861a71a3e7",
-      "size": 4784,
-      "mtimeMs": 1789558883067.1724,
-      "updatedAt": "2026-09-16T13:42:24.735Z",
-      "source": "scan",
-      "importance": 0.2817
+      "description": "",
+      "tokens": 1438,
+      "hash": "6c4981a6b48f1b4c",
+      "size": 5031,
+      "mtimeMs": 1789568486728.7524,
+      "updatedAt": "2026-09-16T14:21:26.731Z",
+      "source": "hook"
     },
     ".gitignore": {
       "description": "Git ignore rules",
@@ -42,11 +41,11 @@
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 5593,
-      "hash": "801ab58aae7cd609",
-      "size": 22449,
-      "mtimeMs": 1789567791963.2224,
-      "updatedAt": "2026-09-16T14:09:51.972Z",
+      "tokens": 5682,
+      "hash": "e5f111b2a427f403",
+      "size": 22808,
+      "mtimeMs": 1789568559335.1477,
+      "updatedAt": "2026-09-16T14:22:39.339Z",
       "source": "hook"
     },
     "aspire.config.json": {
@@ -511,13 +510,12 @@
     },
     "mise.toml": {
       "description": "",
-      "tokens": 85,
-      "hash": "6a52699c77e0fd92",
-      "size": 295,
-      "mtimeMs": 1789531909107.4292,
-      "updatedAt": "2026-09-16T13:42:24.753Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 104,
+      "hash": "c1810abe89485b99",
+      "size": 390,
+      "mtimeMs": 1789568483194.057,
+      "updatedAt": "2026-09-16T14:21:23.196Z",
+      "source": "hook"
     },
     "package.json": {
       "description": "Node.js package manifest",
@@ -641,13 +639,12 @@
     },
     "web/package.json": {
       "description": "Node.js package manifest",
-      "tokens": 534,
-      "hash": "498b6c7109be13dc",
-      "size": 1867,
-      "mtimeMs": 1789566014292.5293,
-      "updatedAt": "2026-09-16T13:42:24.757Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 559,
+      "hash": "de7ccd2a0830c74c",
+      "size": 1956,
+      "mtimeMs": 1789568461098.4226,
+      "updatedAt": "2026-09-16T14:21:01.105Z",
+      "source": "hook"
     },
     "web/public/manifest.json": {
       "description": "",
@@ -1771,13 +1768,12 @@
     },
     "web/vitest.config.ts": {
       "description": "Declares tests",
-      "tokens": 591,
-      "hash": "8dc0af5f4c0b738f",
-      "size": 2066,
-      "mtimeMs": 1789565751687.804,
-      "updatedAt": "2026-09-16T13:42:24.765Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 764,
+      "hash": "b7325f93a36fb64f",
+      "size": 2673,
+      "mtimeMs": 1789568457126.4192,
+      "updatedAt": "2026-09-16T14:20:57.132Z",
+      "source": "hook"
     }
   },
   "preamble": [

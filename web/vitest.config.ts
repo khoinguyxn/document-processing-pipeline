@@ -21,6 +21,19 @@ const config = defineConfig({
     typecheck: { enabled: true },
     watch: false,
     globals: true,
+    // Istanbul is used instead of the default v8 provider so coverage is
+    // instrumented at the source level and works the same in the node and
+    // browser projects. `enabled: false` keeps `bun run test` fast; the
+    // `test:coverage` script and CI opt in with `--coverage`.
+    coverage: {
+      provider: "istanbul",
+      enabled: false,
+      reporter: ["text", "html", "lcov", "json-summary"],
+      reportsDirectory: "./coverage",
+      reportOnFailure: true,
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: ["src/**/*.d.ts", "src/**/*.gen.ts", "src/types/**"],
+    },
     projects: [
       {
         extends: true,

@@ -15,3 +15,8 @@ run = ["bun install", "bunx playwright install --with-deps"]
 depends = ["web-install"]
 dir = "web"
 run = "bun run test"
+
+[tasks.web-test-coverage]
+depends = ["web-install"]
+dir = "web"
+run = "bun run test:coverage"

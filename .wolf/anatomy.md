@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T14:09:51.972Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T14:22:39.339Z
 > Files: 104 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -11,12 +11,12 @@
 
 - `.dockerignore` — Docker ignore rules (~1025 tok)
 - `.gitignore` — Git ignore rules (~311 tok)
-- `AGENTS.md` — Skill Loading (~5593 tok)
+- `AGENTS.md` — Skill Loading (~5682 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
 - `global.json` — .NET SDK configuration (~31 tok)
-- `mise.toml` (~85 tok)
+- `mise.toml` (~104 tok)
 - `package.json` — Node.js package manifest (~40 tok)
 - `qodana.yaml` — -------------------------------------------------------------------------------# (~553 tok)
 - `README.md` — Project documentation (~2336 tok)
@@ -24,7 +24,7 @@
 
 ## .github/workflows/
 
-- `main.yaml` — CI: main (~1367 tok)
+- `main.yaml` (~1438 tok)
 
 ## DocumentProcessingPipeline.AppHost/
 
@@ -156,11 +156,11 @@
 - `components.json` (~151 tok)
 - `Dockerfile` — Docker container definition (~319 tok)
 - `eslint.config.js` — ESLint flat configuration (~123 tok)
-- `package.json` — Node.js package manifest (~534 tok)
+- `package.json` — Node.js package manifest (~559 tok)
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
 - `vite.config.ts` — Declares config (~163 tok)
-- `vitest.config.ts` — Declares tests (~591 tok)
+- `vitest.config.ts` — Declares tests (~764 tok)
 
 ## web/public/
 
