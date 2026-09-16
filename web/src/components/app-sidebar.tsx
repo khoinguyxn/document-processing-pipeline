@@ -10,6 +10,7 @@ import {
 import type { Page } from "@/types/pages";
 
 import { Link } from "@tanstack/react-router"
+import { H3 } from "./ui/typography";
 
 type AppSidebarProps = React.ComponentProps<typeof Sidebar> & { pages: Page[] };
 
@@ -26,9 +27,9 @@ export function AppSidebar({ pages, ...props }: AppSidebarProps) {
               <span className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                 BN
               </span>
-              <span className="min-w-0 truncate text-lg leading-4 font-medium">
+              <H3 className="min-w-0 truncate text-lg leading-4 font-medium">
                 Bắc Nam
-              </span>
+              </H3>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

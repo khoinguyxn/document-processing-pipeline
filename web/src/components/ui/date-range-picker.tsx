@@ -99,7 +99,7 @@ function DateRangePicker({
         <Button
           data-slot="date-range-picker"
           variant="outline"
-          className={cn("justify-start gap-2 font-normal", className)}
+          className={cn("justify-start gap-2 font-normal bg-background", className)}
           {...props}
         >
           <CalendarIcon data-icon="inline-start" />

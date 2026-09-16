@@ -20,7 +20,7 @@ export const Route = createFileRoute("/app")({
   component: AppLayout,
 })
 
-const PAGES: Page[] = [
+export const PAGES: Page[] = [
   {
     title: "Hòm thư",
     to: "/app",
