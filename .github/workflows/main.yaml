@@ -24,8 +24,7 @@ jobs:
         uses: jdx/mise-action@v4
 
       - name: Run Web Tests
-        working-directory: ./web
-        run: mise run web-test
+        run: cd web && mise run web-test
 
   server-tests:
     runs-on: ubuntu-latest
@@ -37,8 +36,7 @@ jobs:
         uses: jdx/mise-action@v4
 
       - name: Run Server Tests
-        working-directory: ./DocumentProcessingPipeline.Server
-        run: mise run server-test
+        run: cd DocumentProcessingPipeline.Server && mise run server-test
 
   build-server:
     runs-on: ubuntu-latest
