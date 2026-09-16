@@ -55,7 +55,7 @@ function AppLayout() {
       <SidebarProvider>
         <AppSidebar pages={PAGES} />
         <SidebarInset>
-          <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+          <header className="border-b flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
             <SidebarTrigger className="ml-2" />
             <div className="flex flex-1 items-center gap-4">
               <H1>{CURRENT_PAGE_TITLE}</H1>

@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T04:37:04.946Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T13:26:48.409Z
 > Files: 102 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -159,7 +159,7 @@
 - `package.json` — Node.js package manifest (~548 tok)
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
-- `vite.config.ts` — Vite build configuration (~141 tok)
+- `vite.config.ts` — Declares config (~163 tok)
 - `vitest.config.ts` — Vitest test configuration (~552 tok)
 
 ## web/public/
@@ -209,7 +209,7 @@
 ## web/src/routes/app/
 
 - `exports.tsx` — Route (~62 tok)
-- `index.tsx` — Route (~58 tok)
+- `index.tsx` — Exports Route (~484 tok)
 - `route.tsx` — Route (~587 tok)
 - `suppliers.tsx` — Route (~63 tok)
 

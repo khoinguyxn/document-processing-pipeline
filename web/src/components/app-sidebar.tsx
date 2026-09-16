@@ -7,12 +7,12 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import type { Page } from "@/types/pages";
+import type { Page } from "@/types/pages"
 
 import { Link } from "@tanstack/react-router"
-import { H3 } from "./ui/typography";
+import { H3 } from "./ui/typography"
 
-type AppSidebarProps = React.ComponentProps<typeof Sidebar> & { pages: Page[] };
+type AppSidebarProps = React.ComponentProps<typeof Sidebar> & { pages: Page[] }
 
 export function AppSidebar({ pages, ...props }: AppSidebarProps) {
   return (

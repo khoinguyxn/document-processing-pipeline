@@ -1,4 +1,47 @@
 {
   "version": 1,
-  "bugs": []
+  "bugs": [
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/routes/app/index.tsx",
+      "root_cause": "Had \"w-full items-center justify-center\"",
+      "fix": "Changed to \"w-full items-center justify-center justify-items-",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-001",
+      "timestamp": "2026-09-16T13:04:17.097Z",
+      "last_seen": "2026-09-16T13:04:17.097Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/routes/app/index.tsx",
+      "root_cause": "Had \"col-span-2 row-span-1 col-start-1 row-start-1 gri",
+      "fix": "Changed to \"col-span-2 col-start-1 row-span-1 row-start-1 gri",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-002",
+      "timestamp": "2026-09-16T13:20:45.819Z",
+      "last_seen": "2026-09-16T13:26:48.414Z",
+      "occurrences": 2,
+      "related_bugs": []
+    }
+  ],
+  "applied_observations": {
+    "ad88426f-ee7d-4f2c-941e-54b76847c3b8": true,
+    "72d031f1-4951-4db8-a922-5758cf3049c4": true,
+    "4bee1b48-560c-4045-9bd5-bce8a2a388fe": true
+  },
+  "next_id": 3
 }
