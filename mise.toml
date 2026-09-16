@@ -9,7 +9,7 @@ run = "dotnet test -c Release"
 
 [tasks.web-install]
 dir = "web"
-run = "bun install"
+run = ["bun install", "bunx playwright install --with-deps"]
 
 [tasks.web-test]
 depends = ["web-install"]
