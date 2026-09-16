@@ -77,6 +77,7 @@ dotnet build                                        # restore + build the soluti
 dotnet test                                         # all test projects, Debug
 dotnet test -c Release                              # same as the mise/CI task
 mise run server-test                                # CI equivalent: dotnet test -c Release
+mise run server-test-coverage                       # tests + coverlet + ReportGenerator -> ./coverage
 dotnet run --project DocumentProcessingPipeline.AppHost    # full stack + emulators
 dotnet run --project DocumentProcessingPipeline.Server     # API only (http://localhost:5328)
 ```
@@ -304,7 +305,9 @@ Configuration is bound to strongly typed options in `AddOptions()`:
 [.github/workflows/main.yaml](./.github/workflows/main.yaml) runs:
 
 1. **`server-tests`** — on every push/PR to `main`; sets up mise and runs
-   `mise run server-test` (`dotnet test -c Release`). This is the required gate.
+   `mise run server-test-coverage` (coverlet `XPlat Code Coverage` + ReportGenerator) and
+   uploads the `server-coverage` artifact (`coverage/` HTML/lcov/Cobertura plus the raw
+   `TestResults/`), always, 7-day retention. This is the required gate.
 2. **`web-tests`** — on every push/PR to `main`; runs `mise run web-test-coverage`
    (Vitest with the Istanbul provider) and uploads the `web-coverage` artifact from
    `web/coverage` (`actions/upload-artifact`, always, 7-day retention).

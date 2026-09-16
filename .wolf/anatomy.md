@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T14:22:39.339Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T14:39:58.396Z
 > Files: 104 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -10,13 +10,13 @@
 ## ./
 
 - `.dockerignore` — Docker ignore rules (~1025 tok)
-- `.gitignore` — Git ignore rules (~311 tok)
-- `AGENTS.md` — Skill Loading (~5682 tok)
+- `.gitignore` — Git ignore rules (~313 tok)
+- `AGENTS.md` — Skill Loading (~5750 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
 - `global.json` — .NET SDK configuration (~31 tok)
-- `mise.toml` (~104 tok)
+- `mise.toml` (~186 tok)
 - `package.json` — Node.js package manifest (~40 tok)
 - `qodana.yaml` — -------------------------------------------------------------------------------# (~553 tok)
 - `README.md` — Project documentation (~2336 tok)
@@ -24,7 +24,7 @@
 
 ## .github/workflows/
 
-- `main.yaml` (~1438 tok)
+- `main.yaml` (~1520 tok)
 
 ## DocumentProcessingPipeline.AppHost/
 

@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-16T14:22:39.339Z",
+    "lastScanned": "2026-09-16T14:39:58.396Z",
     "fileCount": 104,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "3f8d66002bd56f200d9daea47cfaef6e14e8ca5e83153b882a4a47d0fcb82832",
-    "storeUpdatedAt": "2026-09-16T14:22:39.339Z",
+    "renderedHash": "51eac6e0ce58267909ca38130ee34115384fa12621ae8a1cd6681d36275a43c0",
+    "storeUpdatedAt": "2026-09-16T14:39:58.398Z",
     "rootHash": "6c1979d46757c5ff"
   },
   "files": {
@@ -22,30 +22,29 @@
     },
     ".github/workflows/main.yaml": {
       "description": "",
-      "tokens": 1438,
-      "hash": "6c4981a6b48f1b4c",
-      "size": 5031,
-      "mtimeMs": 1789568486728.7524,
-      "updatedAt": "2026-09-16T14:21:26.731Z",
+      "tokens": 1520,
+      "hash": "4defbdaf520f4c43",
+      "size": 5318,
+      "mtimeMs": 1789569568093.8123,
+      "updatedAt": "2026-09-16T14:39:28.097Z",
       "source": "hook"
     },
     ".gitignore": {
       "description": "Git ignore rules",
-      "tokens": 311,
-      "hash": "ffad89b5fe275c47",
-      "size": 1163,
-      "mtimeMs": 1789529969925.0906,
-      "updatedAt": "2026-09-16T13:42:24.735Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 313,
+      "hash": "385a0789305c0f36",
+      "size": 1173,
+      "mtimeMs": 1789569572693.6792,
+      "updatedAt": "2026-09-16T14:39:32.696Z",
+      "source": "hook"
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 5682,
-      "hash": "e5f111b2a427f403",
-      "size": 22808,
-      "mtimeMs": 1789568559335.1477,
-      "updatedAt": "2026-09-16T14:22:39.339Z",
+      "tokens": 5750,
+      "hash": "26e32e7578eb0490",
+      "size": 23080,
+      "mtimeMs": 1789569598388.203,
+      "updatedAt": "2026-09-16T14:39:58.396Z",
       "source": "hook"
     },
     "aspire.config.json": {
@@ -510,11 +509,11 @@
     },
     "mise.toml": {
       "description": "",
-      "tokens": 104,
-      "hash": "c1810abe89485b99",
-      "size": 390,
-      "mtimeMs": 1789568483194.057,
-      "updatedAt": "2026-09-16T14:21:23.196Z",
+      "tokens": 186,
+      "hash": "c81c13043a820d46",
+      "size": 695,
+      "mtimeMs": 1789569564567.6013,
+      "updatedAt": "2026-09-16T14:39:24.575Z",
       "source": "hook"
     },
     "package.json": {
