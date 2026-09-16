@@ -349,6 +349,31 @@ Observed in history — follow it:
   already gitignored.
 - Always update \*.md instruction files (`READMEN.md`, `AGENTS.md`)
 
+---
+
+## 13. OpenWolf (manual mode)
+
+The OpenWolf dashboard/daemon is deliberately **not** run in this repository. Its source
+watcher rescans on every source change *and* on `git HEAD`/`index`/`refs` updates, so a
+`git pull` triggers a rewrite of the tracked `.wolf/anatomy.md` and
+`.wolf/anatomy-index.json`, which then blocks the next pull ("local changes would be
+overwritten"). Do not start it with `openwolf dashboard` or `openwolf daemon start`.
+
+Prompt-time memory and anatomy hints are unaffected — those are hook-driven through
+`.claude/settings.json` (`.wolf/hooks/*.js`), independent of the daemon. Only the background
+jobs stop, so run them manually:
+
+- `openwolf scan` — refresh `anatomy.md` / `anatomy-index.json`. Run it after a turn that
+  changed files, instead of relying on the daemon's watcher.
+- `openwolf memory` — consolidate/archive session memory (replaces the nightly cron).
+- `openwolf report` — token-usage report (replaces the weekly cron).
+- `openwolf find <query>` / `openwolf map` — look up a symbol or file.
+
+The regenerated `.wolf/anatomy.md`, `anatomy-index.json`, and `memory.md` are tracked on
+purpose (see `.wolf/.gitignore`). Commit them with the code change
+(`Chore: refresh openwolf anatomy`) or discard them with `git checkout -- .wolf` before
+pulling.
+
 <!-- openwolf:begin -->
 # OpenWolf
 

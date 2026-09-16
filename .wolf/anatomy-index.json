@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-16T13:42:24.798Z",
+    "lastScanned": "2026-09-16T14:09:51.972Z",
     "fileCount": 104,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "85c44a4897b6fda862f39de51d6fd24f87d1c9ba35c858548999ed9529b0bba7",
-    "storeUpdatedAt": "2026-09-16T13:42:24.799Z",
+    "renderedHash": "61d9b763b905cc336e4ddc539a19c6c4202d6da838cbb884a7254204e7ef70c2",
+    "storeUpdatedAt": "2026-09-16T14:09:51.979Z",
     "rootHash": "6c1979d46757c5ff"
   },
   "files": {
@@ -42,13 +42,12 @@
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 5269,
-      "hash": "e60e2623d6b3ad29",
-      "size": 21144,
-      "mtimeMs": 1789565853549.9758,
-      "updatedAt": "2026-09-16T13:42:24.735Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 5593,
+      "hash": "801ab58aae7cd609",
+      "size": 22449,
+      "mtimeMs": 1789567791963.2224,
+      "updatedAt": "2026-09-16T14:09:51.972Z",
+      "source": "hook"
     },
     "aspire.config.json": {
       "description": "",
