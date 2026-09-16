@@ -1,0 +1,1721 @@
+{
+  "version": 1,
+  "meta": {
+    "lastScanned": "2026-09-16T04:37:04.946Z",
+    "fileCount": 102,
+    "hits": 0,
+    "misses": 0,
+    "renderedHash": "75be3fc71960a1a90c65c14599df99f02b876f1b8e9dea78a424a944178ce6ec",
+    "storeUpdatedAt": "2026-09-16T04:37:04.947Z",
+    "rootHash": "a5b4af66756a196b"
+  },
+  "files": {
+    ".dockerignore": {
+      "description": "Docker ignore rules",
+      "tokens": 1025,
+      "hash": "e2b99e7295dfe1f4",
+      "size": 6352,
+      "mtimeMs": 1788703552133.092,
+      "updatedAt": "2026-09-16T04:37:04.862Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    ".github/workflows/main.yaml": {
+      "description": "CI: main",
+      "tokens": 1367,
+      "hash": "be91b4861a71a3e7",
+      "size": 4784,
+      "mtimeMs": 1789531488232.098,
+      "updatedAt": "2026-09-16T04:37:04.863Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    ".gitignore": {
+      "description": "Git ignore rules",
+      "tokens": 311,
+      "hash": "ffad89b5fe275c47",
+      "size": 1163,
+      "mtimeMs": 1789529969925.0906,
+      "updatedAt": "2026-09-16T04:37:04.863Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "AGENTS.md": {
+      "description": "Skill Loading",
+      "tokens": 5092,
+      "hash": "970df14b2270eca9",
+      "size": 20432,
+      "mtimeMs": 1789533103120.925,
+      "updatedAt": "2026-09-16T04:37:04.863Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "aspire.config.json": {
+      "description": "",
+      "tokens": 33,
+      "hash": "afbeaafc9269fa26",
+      "size": 114,
+      "mtimeMs": 1788703552140.5537,
+      "updatedAt": "2026-09-16T04:37:04.863Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "CLAUDE.md": {
+      "description": "OpenWolf",
+      "tokens": 99,
+      "hash": "074d6b42b583729a",
+      "size": 395,
+      "mtimeMs": 1789533103103.8628,
+      "updatedAt": "2026-09-16T04:37:04.863Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/.gitignore": {
+      "description": "Git ignore rules",
+      "tokens": 260,
+      "hash": "493c9f860a6bbc11",
+      "size": 973,
+      "mtimeMs": 1788703552133.77,
+      "updatedAt": "2026-09-16T04:37:04.865Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/AppHost.cs": {
+      "description": "Class: AppHost",
+      "tokens": 683,
+      "hash": "69174a9d2398bd65",
+      "size": 2561,
+      "mtimeMs": 1789182714003.0334,
+      "updatedAt": "2026-09-16T04:37:04.865Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/appsettings.Development.json": {
+      "description": "",
+      "tokens": 34,
+      "hash": "817db0bf2ecca783",
+      "size": 119,
+      "mtimeMs": 1788703552134.3413,
+      "updatedAt": "2026-09-16T04:37:04.866Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/appsettings.json": {
+      "description": ".NET application settings",
+      "tokens": 46,
+      "hash": "42f506bc3a9d676e",
+      "size": 158,
+      "mtimeMs": 1788703552134.4558,
+      "updatedAt": "2026-09-16T04:37:04.866Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/DocumentProcessingPipeline.AppHost.csproj": {
+      "description": "",
+      "tokens": 403,
+      "hash": "12c6049735fb78b5",
+      "size": 1511,
+      "mtimeMs": 1789182714004.1394,
+      "updatedAt": "2026-09-16T04:37:04.867Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/Fixtures/DocumentAiFixtureExtensions.cs": {
+      "description": "DocumentAiFixtureExtensions: WithDocumentAiFixture",
+      "tokens": 986,
+      "hash": "af2ffe61bc2a62d6",
+      "size": 3697,
+      "mtimeMs": 1789182714004.3926,
+      "updatedAt": "2026-09-16T04:37:04.868Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.AppHost/Properties/launchSettings.json": {
+      "description": "",
+      "tokens": 287,
+      "hash": "a4c0bf12d9952405",
+      "size": 1003,
+      "mtimeMs": 1788703552134.2344,
+      "updatedAt": "2026-09-16T04:37:04.868Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/appsettings.Development.json": {
+      "description": "",
+      "tokens": 34,
+      "hash": "817db0bf2ecca783",
+      "size": 119,
+      "mtimeMs": 1789182566618.8005,
+      "updatedAt": "2026-09-16T04:37:04.869Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/appsettings.json": {
+      "description": ".NET application settings",
+      "tokens": 41,
+      "hash": "2d8bb40059df2208",
+      "size": 142,
+      "mtimeMs": 1788703552140.0999,
+      "updatedAt": "2026-09-16T04:37:04.869Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/Dockerfile": {
+      "description": "Docker container definition",
+      "tokens": 187,
+      "hash": "c1f9f8067ac41afb",
+      "size": 701,
+      "mtimeMs": 1788703552138.6445,
+      "updatedAt": "2026-09-16T04:37:04.869Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.csproj": {
+      "description": "",
+      "tokens": 475,
+      "hash": "ec750ac636269b3b",
+      "size": 1781,
+      "mtimeMs": 1788703552138.7754,
+      "updatedAt": "2026-09-16T04:37:04.871Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.http": {
+      "description": "",
+      "tokens": 33,
+      "hash": "63c39db798fd3d3c",
+      "size": 122,
+      "mtimeMs": 1788703552138.9,
+      "updatedAt": "2026-09-16T04:37:04.871Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/Extensions.cs": {
+      "description": "Extensions: MapDefaultEndpoints",
+      "tokens": 1248,
+      "hash": "f9393dcea0eb9563",
+      "size": 4680,
+      "mtimeMs": 1788703552139.0344,
+      "updatedAt": "2026-09-16T04:37:04.871Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/Models/UploadDocumentRequest.cs": {
+      "description": "Class: UploadDocumentRequestValidator",
+      "tokens": 179,
+      "hash": "20057da9bcf80377",
+      "size": 670,
+      "mtimeMs": 1788703552139.2944,
+      "updatedAt": "2026-09-16T04:37:04.872Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/Modules/DocumentModule.cs": {
+      "description": "DocumentModule: AddRoutes",
+      "tokens": 619,
+      "hash": "392d409621268baa",
+      "size": 2320,
+      "mtimeMs": 1788703552139.5151,
+      "updatedAt": "2026-09-16T04:37:04.872Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/Program.cs": {
+      "description": "Application entry point",
+      "tokens": 378,
+      "hash": "eae21eba2ee9fde8",
+      "size": 1417,
+      "mtimeMs": 1789182714010.4268,
+      "updatedAt": "2026-09-16T04:37:04.872Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server/Properties/launchSettings.json": {
+      "description": "",
+      "tokens": 177,
+      "hash": "5ce9c7f12933ce33",
+      "size": 618,
+      "mtimeMs": 1788703552139.855,
+      "updatedAt": "2026-09-16T04:37:04.872Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/DependencyInjection.cs": {
+      "description": "DependencyInjection: AddDomain",
+      "tokens": 136,
+      "hash": "e842de9729c9aa92",
+      "size": 512,
+      "mtimeMs": 1788703552134.6611,
+      "updatedAt": "2026-09-16T04:37:04.873Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/DocumentProcessingPipeline.Server.Domain.csproj": {
+      "description": "",
+      "tokens": 112,
+      "hash": "03d4f4705e07d3a2",
+      "size": 421,
+      "mtimeMs": 1788703552134.7917,
+      "updatedAt": "2026-09-16T04:37:04.873Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/Models/Document.cs": {
+      "description": "Class: Document",
+      "tokens": 306,
+      "hash": "9b4bfe065ea704fd",
+      "size": 1146,
+      "mtimeMs": 1789182714005.0276,
+      "updatedAt": "2026-09-16T04:37:04.873Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/Services/DocumentService.cs": {
+      "description": "Class: DocumentService",
+      "tokens": 673,
+      "hash": "e616d547caabcc1d",
+      "size": 2523,
+      "mtimeMs": 1789182714005.314,
+      "updatedAt": "2026-09-16T04:37:04.873Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IDocumentRepository.cs": {
+      "description": "Interface: IDocumentRepository (0 members)",
+      "tokens": 113,
+      "hash": "1d732fe0f2b1a1df",
+      "size": 422,
+      "mtimeMs": 1789182714005.8655,
+      "updatedAt": "2026-09-16T04:37:04.874Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IDocumentService.cs": {
+      "description": "Interface: IDocumentService (0 members)",
+      "tokens": 70,
+      "hash": "b56c7977c1d345a5",
+      "size": 259,
+      "mtimeMs": 1788703552135.5195,
+      "updatedAt": "2026-09-16T04:37:04.874Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IOcrService.cs": {
+      "description": "Interface: IOcrService (0 members)",
+      "tokens": 108,
+      "hash": "934d73eae9324a60",
+      "size": 402,
+      "mtimeMs": 1789182714005.9487,
+      "updatedAt": "2026-09-16T04:37:04.874Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IStorageService.cs": {
+      "description": "Interface: IStorageService (0 members)",
+      "tokens": 78,
+      "hash": "d1863a2a409922c3",
+      "size": 292,
+      "mtimeMs": 1788703552135.6516,
+      "updatedAt": "2026-09-16T04:37:04.874Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain.Tests/DocumentProcessingPipeline.Server.Domain.Tests.csproj": {
+      "description": "",
+      "tokens": 348,
+      "hash": "bba5cec57ce9b3d7",
+      "size": 1305,
+      "mtimeMs": 1789182714004.5042,
+      "updatedAt": "2026-09-16T04:37:04.874Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Domain.Tests/Services/DocumentServiceTests.cs": {
+      "description": "DocumentServiceTests: UploadAsync_ShouldReturnCreated_WhenSuccessful, UploadAsync_ShouldReturnErrors_WhenStorageUploadFails, UploadAsync_ShouldRetu...",
+      "tokens": 3675,
+      "hash": "26bdaa4d8f7a5abf",
+      "size": 13782,
+      "mtimeMs": 1789182714004.864,
+      "updatedAt": "2026-09-16T04:37:04.875Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/DependencyInjection.cs": {
+      "description": "DependencyInjection: AddInfrastructure",
+      "tokens": 751,
+      "hash": "35bbd94d8ecf1a53",
+      "size": 2816,
+      "mtimeMs": 1789182714007.418,
+      "updatedAt": "2026-09-16T04:37:04.875Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/DocumentProcessingPipeline.Server.Infrastructure.csproj": {
+      "description": "",
+      "tokens": 296,
+      "hash": "5844c7f98ccf7db4",
+      "size": 1112,
+      "mtimeMs": 1789182714007.7021,
+      "updatedAt": "2026-09-16T04:37:04.875Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/Options/GcpOptions/DocumentAiOptions.cs": {
+      "description": "Class: DocumentAiOptions",
+      "tokens": 59,
+      "hash": "97be461fe1e93a85",
+      "size": 220,
+      "mtimeMs": 1789182714008.4866,
+      "updatedAt": "2026-09-16T04:37:04.876Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/Options/GcpOptions/GcpOptions.cs": {
+      "description": "Class: GcpOptions",
+      "tokens": 72,
+      "hash": "af9d49601580706b",
+      "size": 269,
+      "mtimeMs": 1789182714008.8247,
+      "updatedAt": "2026-09-16T04:37:04.877Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/Persistence/Entities/FirestoreDocumentEntity.cs": {
+      "description": "DocumentMappingExtensions: ToEntity",
+      "tokens": 866,
+      "hash": "e51d6567ff8c4841",
+      "size": 3245,
+      "mtimeMs": 1789182714008.9644,
+      "updatedAt": "2026-09-16T04:37:04.877Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/Persistence/Repositories/FirestoreDocumentRepository.cs": {
+      "description": "Class: FirestoreDocumentRepository",
+      "tokens": 572,
+      "hash": "e47b5dadc03d1877",
+      "size": 2144,
+      "mtimeMs": 1789182714009.092,
+      "updatedAt": "2026-09-16T04:37:04.877Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/Services/DocumentAiServices/GcpDocumentAiService.cs": {
+      "description": "Class: GcpDocumentAiService",
+      "tokens": 862,
+      "hash": "cda34de298c3be6a",
+      "size": 3230,
+      "mtimeMs": 1789182714009.276,
+      "updatedAt": "2026-09-16T04:37:04.878Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure/Services/GcpStorageService.cs": {
+      "description": "Class: GcpStorageService",
+      "tokens": 722,
+      "hash": "da6973506bbc28a6",
+      "size": 2704,
+      "mtimeMs": 1788703552137.877,
+      "updatedAt": "2026-09-16T04:37:04.878Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure.Tests/DocumentProcessingPipeline.Server.Infrastructure.Tests.csproj": {
+      "description": "",
+      "tokens": 352,
+      "hash": "06c5ea97a3be54de",
+      "size": 1321,
+      "mtimeMs": 1788703552135.855,
+      "updatedAt": "2026-09-16T04:37:04.878Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure.Tests/Persistence/Entities/FirestoreDocumentEntityTests.cs": {
+      "description": "FirestoreDocumentEntityTests: ToEntity_ShouldMapAllPropertiesCorrectly_WhenDocumentIsValid, ToEntity_ShouldHandleNullOptionalFields, ToEntity_Shoul...",
+      "tokens": 1426,
+      "hash": "3af608e5a83c7abd",
+      "size": 5344,
+      "mtimeMs": 1789182714006.199,
+      "updatedAt": "2026-09-16T04:37:04.879Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure.Tests/Persistence/Repositories/FirestoreDocumentRepositoryTests.cs": {
+      "description": "FirestoreDocumentRepositoryTests: CreateDocumentAsync_ShouldReturnCreated_WhenSuccessful, CreateDocumentAsync_ShouldReturnFailure_WhenExceptionIsTh...",
+      "tokens": 1819,
+      "hash": "7aaf13d2eae92a18",
+      "size": 6819,
+      "mtimeMs": 1789182714006.4973,
+      "updatedAt": "2026-09-16T04:37:04.879Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Infrastructure.Tests/Services/GcpStorageServiceTests.cs": {
+      "description": "GcpStorageServiceTests: UploadFileAsync_ShouldSucceed_WhenBucketAlreadyExists, UploadFileAsync_ShouldCreateBucketAndSucceed_WhenBucketDoesNotExist,...",
+      "tokens": 1985,
+      "hash": "94f03c621acb5037",
+      "size": 7445,
+      "mtimeMs": 1789182714006.926,
+      "updatedAt": "2026-09-16T04:37:04.880Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Tests/DocumentProcessingPipeline.Server.Tests.csproj": {
+      "description": "",
+      "tokens": 484,
+      "hash": "1aaab70d3d4ee085",
+      "size": 1816,
+      "mtimeMs": 1789182714009.6946,
+      "updatedAt": "2026-09-16T04:37:04.881Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Tests/Fixtures/DocumentProcessingPipelineServerFactoryFixture.cs": {
+      "description": "DocumentProcessingPipelineServerFactoryFixture: InitializeAsync",
+      "tokens": 1749,
+      "hash": "38d89393e1c337d0",
+      "size": 6558,
+      "mtimeMs": 1789182714009.8896,
+      "updatedAt": "2026-09-16T04:37:04.881Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.Server.Tests/Modules/DocumentModuleTests.cs": {
+      "description": "DocumentModuleTests: UploadDocument_ShouldReturnCreated_WhenMimeTypeIsSupported, UploadDocument_ShouldReturnBadRequest_WhenMimeTypeIsNotSupported",
+      "tokens": 674,
+      "hash": "df633b9d2d200fb2",
+      "size": 2524,
+      "mtimeMs": 1789182714010.1396,
+      "updatedAt": "2026-09-16T04:37:04.881Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "DocumentProcessingPipeline.slnx": {
+      "description": "",
+      "tokens": 219,
+      "hash": "ae72fcad27775e3a",
+      "size": 821,
+      "mtimeMs": 1789182714010.593,
+      "updatedAt": "2026-09-16T04:37:04.881Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "global.json": {
+      "description": ".NET SDK configuration",
+      "tokens": 31,
+      "hash": "1259bebb60dbe2b6",
+      "size": 106,
+      "mtimeMs": 1788703552144.9119,
+      "updatedAt": "2026-09-16T04:37:04.881Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "mise.toml": {
+      "description": "",
+      "tokens": 85,
+      "hash": "6a52699c77e0fd92",
+      "size": 295,
+      "mtimeMs": 1789531909107.4292,
+      "updatedAt": "2026-09-16T04:37:04.882Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "package.json": {
+      "description": "Node.js package manifest",
+      "tokens": 40,
+      "hash": "34c8ab8d83d4b3b8",
+      "size": 137,
+      "mtimeMs": 1789533154795.9512,
+      "updatedAt": "2026-09-16T04:37:04.882Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "qodana.yaml": {
+      "description": "-------------------------------------------------------------------------------#",
+      "tokens": 553,
+      "hash": "3eb688ca3d7e345f",
+      "size": 1935,
+      "mtimeMs": 1788703552145.1206,
+      "updatedAt": "2026-09-16T04:37:04.882Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "README.md": {
+      "description": "Project documentation",
+      "tokens": 2336,
+      "hash": "d21abc9c8af4e0eb",
+      "size": 9983,
+      "mtimeMs": 1789195828090.0974,
+      "updatedAt": "2026-09-16T04:37:04.882Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "skills-lock.json": {
+      "description": "",
+      "tokens": 1897,
+      "hash": "2fa7e7b6ca6f772f",
+      "size": 6637,
+      "mtimeMs": 1789393872289.069,
+      "updatedAt": "2026-09-16T04:37:04.882Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/.cta.json": {
+      "description": "",
+      "tokens": 94,
+      "hash": "282db78c04682079",
+      "size": 327,
+      "mtimeMs": 1789182714010.7007,
+      "updatedAt": "2026-09-16T04:37:04.883Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/.dockerignore": {
+      "description": "Docker ignore rules",
+      "tokens": 41,
+      "hash": "bcb5f99bd42c47da",
+      "size": 152,
+      "mtimeMs": 1789182714010.7656,
+      "updatedAt": "2026-09-16T04:37:04.884Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/.gitignore": {
+      "description": "Git ignore rules",
+      "tokens": 463,
+      "hash": "f658bb3156c86341",
+      "size": 1733,
+      "mtimeMs": 1789182714010.9446,
+      "updatedAt": "2026-09-16T04:37:04.884Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/.prettierignore": {
+      "description": "",
+      "tokens": 12,
+      "hash": "c4e2f836fd703f43",
+      "size": 42,
+      "mtimeMs": 1789182714011.0208,
+      "updatedAt": "2026-09-16T04:37:04.884Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/.prettierrc": {
+      "description": "Prettier configuration",
+      "tokens": 68,
+      "hash": "2a6f29448b68a9bb",
+      "size": 254,
+      "mtimeMs": 1789459902521.1458,
+      "updatedAt": "2026-09-16T04:37:04.884Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/components.json": {
+      "description": "",
+      "tokens": 151,
+      "hash": "eaace538fdb4dda4",
+      "size": 527,
+      "mtimeMs": 1789182714012.6382,
+      "updatedAt": "2026-09-16T04:37:04.884Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/Dockerfile": {
+      "description": "Docker container definition",
+      "tokens": 319,
+      "hash": "ccbb15ec0f71add5",
+      "size": 1196,
+      "mtimeMs": 1789182714011.2905,
+      "updatedAt": "2026-09-16T04:37:04.885Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/eslint.config.js": {
+      "description": "ESLint flat configuration",
+      "tokens": 123,
+      "hash": "657ad8664f5a9c17",
+      "size": 428,
+      "mtimeMs": 1789459957832.4775,
+      "updatedAt": "2026-09-16T04:37:04.885Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/package.json": {
+      "description": "Node.js package manifest",
+      "tokens": 548,
+      "hash": "b629924e25ab22a9",
+      "size": 1916,
+      "mtimeMs": 1789481084525.9636,
+      "updatedAt": "2026-09-16T04:37:04.885Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/public/manifest.json": {
+      "description": "",
+      "tokens": 143,
+      "hash": "13b73a709f53bfa2",
+      "size": 498,
+      "mtimeMs": 1789182714013.5835,
+      "updatedAt": "2026-09-16T04:37:04.885Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/public/robots.txt": {
+      "description": "https://www.robotstxt.org/robotstxt.html",
+      "tokens": 17,
+      "hash": "90d24bc3bf698ac1",
+      "size": 67,
+      "mtimeMs": 1789182714013.6545,
+      "updatedAt": "2026-09-16T04:37:04.886Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/README.md": {
+      "description": "Project documentation",
+      "tokens": 113,
+      "hash": "01784ddc7e7edd61",
+      "size": 452,
+      "mtimeMs": 1789182714011.493,
+      "updatedAt": "2026-09-16T04:37:04.887Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/components/app-sidebar.tsx": {
+      "description": "AppSidebar",
+      "tokens": 580,
+      "hash": "f4a84e225816414c",
+      "size": 2034,
+      "mtimeMs": 1789528608338.6743,
+      "updatedAt": "2026-09-16T04:37:04.888Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "AppSidebarProps",
+          "kind": "section",
+          "startLine": 15,
+          "endLine": 15,
+          "tokens": 23
+        },
+        {
+          "name": "AppSidebar",
+          "kind": "fn",
+          "startLine": 17,
+          "endLine": 58,
+          "tokens": 475
+        }
+      ],
+      "symbolSource": "ts",
+      "imports": [
+        "web/src/components/ui/typography.tsx"
+      ],
+      "importance": 0.3704
+    },
+    "web/src/components/ui/button.tsx": {
+      "description": "BUTTON_VARIANTS",
+      "tokens": 843,
+      "hash": "4d65141732b48403",
+      "size": 2948,
+      "mtimeMs": 1789460182359.6343,
+      "updatedAt": "2026-09-16T04:37:04.888Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "Button",
+          "kind": "fn",
+          "startLine": 41,
+          "endLine": 62,
+          "tokens": 130
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/calendar.tsx": {
+      "description": "Calendar — uses useEffect",
+      "tokens": 2383,
+      "hash": "8ef96c309f150623",
+      "size": 8339,
+      "mtimeMs": 1789460182360.3652,
+      "updatedAt": "2026-09-16T04:37:04.889Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "Calendar",
+          "kind": "fn",
+          "startLine": 13,
+          "endLine": 182,
+          "tokens": 1739
+        },
+        {
+          "name": "CalendarDayButton",
+          "kind": "fn",
+          "startLine": 184,
+          "endLine": 221,
+          "tokens": 536
+        }
+      ],
+      "symbolSource": "ts",
+      "skeleton": "function Calendar({\nfunction CalendarDayButton({",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/card.tsx": {
+      "description": "Card",
+      "tokens": 709,
+      "hash": "2d865755e507998a",
+      "size": 2481,
+      "mtimeMs": 1789457687676.9414,
+      "updatedAt": "2026-09-16T04:37:04.889Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "Card",
+          "kind": "fn",
+          "startLine": 4,
+          "endLine": 20,
+          "tokens": 173
+        },
+        {
+          "name": "CardHeader",
+          "kind": "fn",
+          "startLine": 22,
+          "endLine": 33,
+          "tokens": 132
+        },
+        {
+          "name": "CardTitle",
+          "kind": "fn",
+          "startLine": 35,
+          "endLine": 43,
+          "tokens": 64
+        },
+        {
+          "name": "CardDescription",
+          "kind": "fn",
+          "startLine": 45,
+          "endLine": 53,
+          "tokens": 66
+        },
+        {
+          "name": "CardAction",
+          "kind": "fn",
+          "startLine": 55,
+          "endLine": 66,
+          "tokens": 80
+        },
+        {
+          "name": "CardContent",
+          "kind": "fn",
+          "startLine": 68,
+          "endLine": 76,
+          "tokens": 61
+        },
+        {
+          "name": "CardFooter",
+          "kind": "fn",
+          "startLine": 78,
+          "endLine": 89,
+          "tokens": 85
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/date-range-picker.tsx": {
+      "description": "DATE_FORMATTER — uses useState",
+      "tokens": 1226,
+      "hash": "a9db0f78da5736b3",
+      "size": 4308,
+      "mtimeMs": 1789479783242.8203,
+      "updatedAt": "2026-09-16T04:37:04.889Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "formatDate",
+          "kind": "fn",
+          "startLine": 22,
+          "endLine": 24,
+          "tokens": 21
+        },
+        {
+          "name": "getMonthRange",
+          "kind": "fn",
+          "startLine": 26,
+          "endLine": 34,
+          "tokens": 70
+        },
+        {
+          "name": "getYearRange",
+          "kind": "fn",
+          "startLine": 36,
+          "endLine": 43,
+          "tokens": 57
+        },
+        {
+          "name": "getCurrentMonthRange",
+          "kind": "fn",
+          "startLine": 45,
+          "endLine": 47,
+          "tokens": 21
+        },
+        {
+          "name": "Preset",
+          "kind": "section",
+          "startLine": 49,
+          "endLine": 52,
+          "tokens": 21
+        },
+        {
+          "name": "PRESETS",
+          "kind": "fn",
+          "startLine": 54,
+          "endLine": 58,
+          "tokens": 71
+        },
+        {
+          "name": "getMonthSpan",
+          "kind": "fn",
+          "startLine": 60,
+          "endLine": 68,
+          "tokens": 75
+        },
+        {
+          "name": "DateRangePicker",
+          "kind": "fn",
+          "startLine": 70,
+          "endLine": 151,
+          "tokens": 676
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/input.tsx": {
+      "description": "Input",
+      "tokens": 257,
+      "hash": "8b4102e35e3f5721",
+      "size": 898,
+      "mtimeMs": 1789195983274.148,
+      "updatedAt": "2026-09-16T04:37:04.890Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/popover.tsx": {
+      "description": "Popover",
+      "tokens": 674,
+      "hash": "c9d3665df31269c6",
+      "size": 2356,
+      "mtimeMs": 1789397111133.6013,
+      "updatedAt": "2026-09-16T04:37:04.890Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "Popover",
+          "kind": "fn",
+          "startLine": 5,
+          "endLine": 9,
+          "tokens": 44
+        },
+        {
+          "name": "PopoverTrigger",
+          "kind": "fn",
+          "startLine": 11,
+          "endLine": 15,
+          "tokens": 50
+        },
+        {
+          "name": "PopoverContent",
+          "kind": "fn",
+          "startLine": 17,
+          "endLine": 37,
+          "tokens": 267
+        },
+        {
+          "name": "PopoverAnchor",
+          "kind": "fn",
+          "startLine": 39,
+          "endLine": 43,
+          "tokens": 49
+        },
+        {
+          "name": "PopoverHeader",
+          "kind": "fn",
+          "startLine": 45,
+          "endLine": 53,
+          "tokens": 64
+        },
+        {
+          "name": "PopoverTitle",
+          "kind": "fn",
+          "startLine": 55,
+          "endLine": 63,
+          "tokens": 62
+        },
+        {
+          "name": "PopoverDescription",
+          "kind": "fn",
+          "startLine": 65,
+          "endLine": 76,
+          "tokens": 66
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/separator.tsx": {
+      "description": "Separator",
+      "tokens": 178,
+      "hash": "42aa6209fe9bec17",
+      "size": 620,
+      "mtimeMs": 1789195982686.356,
+      "updatedAt": "2026-09-16T04:37:04.890Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/sheet.tsx": {
+      "description": "Sheet",
+      "tokens": 1302,
+      "hash": "78636e5c7a0bae8d",
+      "size": 4555,
+      "mtimeMs": 1789195984057.7197,
+      "updatedAt": "2026-09-16T04:37:04.890Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "Sheet",
+          "kind": "fn",
+          "startLine": 10,
+          "endLine": 12,
+          "tokens": 42
+        },
+        {
+          "name": "SheetTrigger",
+          "kind": "fn",
+          "startLine": 14,
+          "endLine": 18,
+          "tokens": 48
+        },
+        {
+          "name": "SheetClose",
+          "kind": "fn",
+          "startLine": 20,
+          "endLine": 24,
+          "tokens": 46
+        },
+        {
+          "name": "SheetPortal",
+          "kind": "fn",
+          "startLine": 26,
+          "endLine": 30,
+          "tokens": 47
+        },
+        {
+          "name": "SheetOverlay",
+          "kind": "fn",
+          "startLine": 32,
+          "endLine": 46,
+          "tokens": 126
+        },
+        {
+          "name": "SheetContent",
+          "kind": "fn",
+          "startLine": 48,
+          "endLine": 87,
+          "tokens": 597
+        },
+        {
+          "name": "SheetHeader",
+          "kind": "fn",
+          "startLine": 89,
+          "endLine": 97,
+          "tokens": 63
+        },
+        {
+          "name": "SheetFooter",
+          "kind": "fn",
+          "startLine": 99,
+          "endLine": 107,
+          "tokens": 64
+        },
+        {
+          "name": "SheetTitle",
+          "kind": "fn",
+          "startLine": 109,
+          "endLine": 123,
+          "tokens": 88
+        },
+        {
+          "name": "SheetDescription",
+          "kind": "fn",
+          "startLine": 125,
+          "endLine": 136,
+          "tokens": 82
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/sidebar.tsx": {
+      "description": "SIDEBAR_COOKIE_NAME — uses useContext, useState, useCallback, useEffect",
+      "tokens": 6100,
+      "hash": "1955b53d7a99abf5",
+      "size": 21348,
+      "mtimeMs": 1789460285290.9512,
+      "updatedAt": "2026-09-16T04:37:04.891Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "SidebarContextProps",
+          "kind": "section",
+          "startLine": 33,
+          "endLine": 41,
+          "tokens": 65
+        },
+        {
+          "name": "useSidebar",
+          "kind": "fn",
+          "startLine": 45,
+          "endLine": 52,
+          "tokens": 55
+        },
+        {
+          "name": "SidebarProvider",
+          "kind": "fn",
+          "startLine": 54,
+          "endLine": 148,
+          "tokens": 784
+        },
+        {
+          "name": "Sidebar",
+          "kind": "fn",
+          "startLine": 150,
+          "endLine": 250,
+          "tokens": 1021
+        },
+        {
+          "name": "SidebarTrigger",
+          "kind": "fn",
+          "startLine": 252,
+          "endLine": 276,
+          "tokens": 147
+        },
+        {
+          "name": "SidebarRail",
+          "kind": "fn",
+          "startLine": 278,
+          "endLine": 301,
+          "tokens": 339
+        },
+        {
+          "name": "SidebarInset",
+          "kind": "fn",
+          "startLine": 303,
+          "endLine": 314,
+          "tokens": 137
+        },
+        {
+          "name": "SidebarInput",
+          "kind": "fn",
+          "startLine": 316,
+          "endLine": 328,
+          "tokens": 78
+        },
+        {
+          "name": "SidebarHeader",
+          "kind": "fn",
+          "startLine": 330,
+          "endLine": 342,
+          "tokens": 86
+        },
+        {
+          "name": "SidebarFooter",
+          "kind": "fn",
+          "startLine": 344,
+          "endLine": 353,
+          "tokens": 71
+        },
+        {
+          "name": "SidebarSeparator",
+          "kind": "fn",
+          "startLine": 355,
+          "endLine": 367,
+          "tokens": 82
+        },
+        {
+          "name": "SidebarContent",
+          "kind": "fn",
+          "startLine": 369,
+          "endLine": 381,
+          "tokens": 111
+        },
+        {
+          "name": "SidebarGroup",
+          "kind": "fn",
+          "startLine": 383,
+          "endLine": 392,
+          "tokens": 76
+        },
+        {
+          "name": "SidebarGroupLabel",
+          "kind": "fn",
+          "startLine": 394,
+          "endLine": 412,
+          "tokens": 190
+        },
+        {
+          "name": "SidebarGroupAction",
+          "kind": "fn",
+          "startLine": 414,
+          "endLine": 432,
+          "tokens": 209
+        },
+        {
+          "name": "SidebarGroupContent",
+          "kind": "fn",
+          "startLine": 434,
+          "endLine": 446,
+          "tokens": 76
+        },
+        {
+          "name": "SidebarMenu",
+          "kind": "fn",
+          "startLine": 448,
+          "endLine": 457,
+          "tokens": 72
+        },
+        {
+          "name": "SidebarMenuItem",
+          "kind": "fn",
+          "startLine": 459,
+          "endLine": 468,
+          "tokens": 73
+        },
+        {
+          "name": "SidebarMenuButton",
+          "kind": "fn",
+          "startLine": 492,
+          "endLine": 540,
+          "tokens": 308
+        },
+        {
+          "name": "SidebarMenuAction",
+          "kind": "fn",
+          "startLine": 542,
+          "endLine": 566,
+          "tokens": 332
+        },
+        {
+          "name": "SidebarMenuBadge",
+          "kind": "fn",
+          "startLine": 568,
+          "endLine": 583,
+          "tokens": 202
+        },
+        {
+          "name": "SidebarMenuSkeleton",
+          "kind": "fn",
+          "startLine": 585,
+          "endLine": 621,
+          "tokens": 247
+        },
+        {
+          "name": "SidebarMenuSub",
+          "kind": "fn",
+          "startLine": 623,
+          "endLine": 635,
+          "tokens": 110
+        },
+        {
+          "name": "SidebarMenuSubItem",
+          "kind": "fn",
+          "startLine": 637,
+          "endLine": 649,
+          "tokens": 79
+        },
+        {
+          "name": "SidebarMenuSubButton",
+          "kind": "fn",
+          "startLine": 651,
+          "endLine": 677,
+          "tokens": 327
+        }
+      ],
+      "symbolSource": "ts",
+      "skeleton": "type SidebarContextProps = {\nfunction useSidebar() {\nfunction SidebarProvider({\nfunction Sidebar({\nfunction SidebarTrigger({\nfunction SidebarRail({ className, ...props }: React.ComponentProps<\"button\">) {\nfunction SidebarInset({ className, ...props }: React.ComponentProps<\"main\">) {\nfunction SidebarInput({\nfunction SidebarHeader({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarFooter({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarSeparator({\nfunction SidebarContent({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarGroupLabel({\nfunction SidebarGroupAction({\nfunction SidebarGroupContent({\nfunction SidebarMenu({ className, ...props }: React.ComponentProps<\"ul\">) {\nfunction SidebarMenuItem({ className, ...props }: React.ComponentProps<\"li\">) {\nfunction SidebarMenuButton({\nfunction SidebarMenuAction({\nfunction SidebarMenuBadge({\nfunction SidebarMenuSkeleton({\nfunction SidebarMenuSub({ className, ...props }: React.ComponentProps<\"ul\">) {\nfunction SidebarMenuSubItem({\nfunction SidebarMenuSubButton({",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/skeleton.tsx": {
+      "description": "Skeleton",
+      "tokens": 76,
+      "hash": "b3c3c2b5449693bc",
+      "size": 266,
+      "mtimeMs": 1789195983476.3896,
+      "updatedAt": "2026-09-16T04:37:04.892Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/tooltip.tsx": {
+      "description": "TooltipProvider",
+      "tokens": 623,
+      "hash": "912a9c9f8110c1c5",
+      "size": 2179,
+      "mtimeMs": 1789195983087.701,
+      "updatedAt": "2026-09-16T04:37:04.892Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "TooltipProvider",
+          "kind": "fn",
+          "startLine": 7,
+          "endLine": 18,
+          "tokens": 75
+        },
+        {
+          "name": "Tooltip",
+          "kind": "fn",
+          "startLine": 20,
+          "endLine": 24,
+          "tokens": 44
+        },
+        {
+          "name": "TooltipTrigger",
+          "kind": "fn",
+          "startLine": 26,
+          "endLine": 30,
+          "tokens": 50
+        },
+        {
+          "name": "TooltipContent",
+          "kind": "fn",
+          "startLine": 32,
+          "endLine": 54,
+          "tokens": 397
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.3704
+    },
+    "web/src/components/ui/typography.tsx": {
+      "description": "HEADING_BASE",
+      "tokens": 299,
+      "hash": "6bcfc6d053bd6afa",
+      "size": 1045,
+      "mtimeMs": 1789460182366.623,
+      "updatedAt": "2026-09-16T04:37:04.894Z",
+      "source": "scan",
+      "importance": 0.6852
+    },
+    "web/src/hooks/use-mobile.ts": {
+      "description": "Exports useIsMobile",
+      "tokens": 162,
+      "hash": "ad0936f84f1df79d",
+      "size": 565,
+      "mtimeMs": 1789195983410.0076,
+      "updatedAt": "2026-09-16T04:37:04.894Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/lib/utils.ts": {
+      "description": "Exports cn",
+      "tokens": 48,
+      "hash": "7c8c3dfc0cdd370d",
+      "size": 166,
+      "mtimeMs": 1789182714014.3145,
+      "updatedAt": "2026-09-16T04:37:04.894Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/router.tsx": {
+      "description": "getRouter",
+      "tokens": 118,
+      "hash": "6a4b707a2e6205df",
+      "size": 412,
+      "mtimeMs": 1789182714014.5947,
+      "updatedAt": "2026-09-16T04:37:04.894Z",
+      "source": "scan",
+      "imports": [
+        "web/src/routeTree.gen.ts"
+      ],
+      "importance": 0.3704
+    },
+    "web/src/routes/__root.tsx": {
+      "description": "Route",
+      "tokens": 380,
+      "hash": "4c7efcc92f54dcf3",
+      "size": 1330,
+      "mtimeMs": 1789182714014.699,
+      "updatedAt": "2026-09-16T04:37:04.895Z",
+      "source": "scan",
+      "importance": 0.4536
+    },
+    "web/src/routes/app/exports.tsx": {
+      "description": "Route",
+      "tokens": 62,
+      "hash": "b905c4dd96747020",
+      "size": 214,
+      "mtimeMs": 1789392462352.1775,
+      "updatedAt": "2026-09-16T04:37:04.896Z",
+      "source": "scan",
+      "importance": 0.4536
+    },
+    "web/src/routes/app/index.tsx": {
+      "description": "Route",
+      "tokens": 58,
+      "hash": "1af62718860dea31",
+      "size": 203,
+      "mtimeMs": 1789392816540.664,
+      "updatedAt": "2026-09-16T04:37:04.897Z",
+      "source": "scan",
+      "importance": 0.4536
+    },
+    "web/src/routes/app/route.tsx": {
+      "description": "Route",
+      "tokens": 587,
+      "hash": "8392738ef3931e98",
+      "size": 2063,
+      "mtimeMs": 1789483434711.6074,
+      "updatedAt": "2026-09-16T04:37:04.897Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "AppLayout",
+          "kind": "fn",
+          "startLine": 41,
+          "endLine": 76,
+          "tokens": 313
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.4536
+    },
+    "web/src/routes/app/suppliers.tsx": {
+      "description": "Route",
+      "tokens": 63,
+      "hash": "3ba3e4b1003fb607",
+      "size": 218,
+      "mtimeMs": 1789359564377.4229,
+      "updatedAt": "2026-09-16T04:37:04.898Z",
+      "source": "scan",
+      "importance": 0.4536
+    },
+    "web/src/routes/health.ts": {
+      "description": "Exports Route",
+      "tokens": 116,
+      "hash": "54f5482ad61575b2",
+      "size": 405,
+      "mtimeMs": 1789182714014.7686,
+      "updatedAt": "2026-09-16T04:37:04.898Z",
+      "source": "scan",
+      "importance": 0.4536
+    },
+    "web/src/routes/ready.ts": {
+      "description": "Exports Route",
+      "tokens": 192,
+      "hash": "501e3eeb4514b351",
+      "size": 671,
+      "mtimeMs": 1789460182370.773,
+      "updatedAt": "2026-09-16T04:37:04.898Z",
+      "source": "scan",
+      "importance": 0.4536
+    },
+    "web/src/routeTree.gen.ts": {
+      "description": "@ts-nocheck",
+      "tokens": 1385,
+      "hash": "b4b1b26238fde2ba",
+      "size": 4845,
+      "mtimeMs": 1789483673581.6768,
+      "updatedAt": "2026-09-16T04:37:04.898Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "FileRoutesByFullPath",
+          "kind": "section",
+          "startLine": 50,
+          "endLine": 57,
+          "tokens": 76
+        },
+        {
+          "name": "FileRoutesByTo",
+          "kind": "section",
+          "startLine": 58,
+          "endLine": 64,
+          "tokens": 62
+        },
+        {
+          "name": "FileRoutesById",
+          "kind": "section",
+          "startLine": 65,
+          "endLine": 73,
+          "tokens": 84
+        },
+        {
+          "name": "FileRouteTypes",
+          "kind": "section",
+          "startLine": 74,
+          "endLine": 89,
+          "tokens": 125
+        },
+        {
+          "name": "RootRouteChildren",
+          "kind": "section",
+          "startLine": 90,
+          "endLine": 94,
+          "tokens": 44
+        },
+        {
+          "name": "AppRouteRouteChildren",
+          "kind": "section",
+          "startLine": 143,
+          "endLine": 147,
+          "tokens": 46
+        }
+      ],
+      "symbolSource": "ts",
+      "imports": [
+        "web/src/routes/__root.tsx",
+        "web/src/routes/app/route.tsx",
+        "web/src/routes/health.ts",
+        "web/src/routes/ready.ts",
+        "web/src/routes/app/index.tsx",
+        "web/src/routes/app/exports.tsx",
+        "web/src/routes/app/suppliers.tsx"
+      ],
+      "importance": 0.6852
+    },
+    "web/src/styles.css": {
+      "description": "Styles: 9 rules, 103 vars, 1 layers",
+      "tokens": 1445,
+      "hash": "fab149dd2483200b",
+      "size": 5055,
+      "mtimeMs": 1789182714014.9973,
+      "updatedAt": "2026-09-16T04:37:04.899Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/src/types/pages.d.ts": {
+      "description": "Exports Page",
+      "tokens": 41,
+      "hash": "0aff054fbf1e3f51",
+      "size": 142,
+      "mtimeMs": 1789394583907.3032,
+      "updatedAt": "2026-09-16T04:37:04.899Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/tests/components/app-sidebar.test.tsx": {
+      "description": "TEST_PAGES",
+      "tokens": 970,
+      "hash": "bca947e30dc88191",
+      "size": 3415,
+      "mtimeMs": 1789529181744.4934,
+      "updatedAt": "2026-09-16T04:37:04.900Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "renderSidebar",
+          "kind": "fn",
+          "startLine": 16,
+          "endLine": 25,
+          "tokens": 76
+        }
+      ],
+      "symbolSource": "ts",
+      "imports": [
+        "web/tests/utils/router.tsx"
+      ],
+      "importance": 0.3704
+    },
+    "web/tests/components/ui/date-range-picker.component.test.tsx": {
+      "description": "EMPTY_LABEL",
+      "tokens": 2782,
+      "hash": "08d1c46f0bb6d7c6",
+      "size": 9820,
+      "mtimeMs": 1789529919096.5476,
+      "updatedAt": "2026-09-16T04:37:04.901Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "countRenderedMonths",
+          "kind": "fn",
+          "startLine": 13,
+          "endLine": 15,
+          "tokens": 26
+        },
+        {
+          "name": "getTrigger",
+          "kind": "fn",
+          "startLine": 17,
+          "endLine": 21,
+          "tokens": 37
+        },
+        {
+          "name": "getLabel",
+          "kind": "fn",
+          "startLine": 23,
+          "endLine": 27,
+          "tokens": 38
+        },
+        {
+          "name": "ControlledPicker",
+          "kind": "fn",
+          "startLine": 31,
+          "endLine": 35,
+          "tokens": 63
+        }
+      ],
+      "symbolSource": "ts",
+      "skeleton": "function countRenderedMonths() {\nfunction getTrigger() {\nfunction getLabel() {\nfunction ControlledPicker({ initialValue }: { initialValue?: DateRange }) {",
+      "importance": 0.3704
+    },
+    "web/tests/components/ui/date-range-picker.test.ts": {
+      "description": "Declares toParts",
+      "tokens": 2432,
+      "hash": "bd933eb9f07e4740",
+      "size": 8518,
+      "mtimeMs": 1789463292600.5515,
+      "updatedAt": "2026-09-16T04:37:04.901Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "toParts",
+          "kind": "fn",
+          "startLine": 15,
+          "endLine": 19,
+          "tokens": 40
+        }
+      ],
+      "symbolSource": "ts",
+      "skeleton": "function toParts(date: Date | undefined) {",
+      "importance": 0.3704
+    },
+    "web/tests/components/ui/typography.test.tsx": {
+      "description": "`font-semibold` is intentionally absent: `cn` runs tailwind-merge, so the",
+      "tokens": 1108,
+      "hash": "4d419afd44061b29",
+      "size": 3910,
+      "mtimeMs": 1789480251315.6743,
+      "updatedAt": "2026-09-16T04:37:04.902Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/tests/routes/app/route.test.tsx": {
+      "description": "`AppLayout` renders `<Outlet />`, so it has to be mounted through a real",
+      "tokens": 937,
+      "hash": "4166e66fd29ce49d",
+      "size": 3293,
+      "mtimeMs": 1789528233749.0269,
+      "updatedAt": "2026-09-16T04:37:04.903Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "renderAppLayout",
+          "kind": "fn",
+          "startLine": 8,
+          "endLine": 12,
+          "tokens": 40
+        },
+        {
+          "name": "getDateRangeLabel",
+          "kind": "fn",
+          "startLine": 14,
+          "endLine": 17,
+          "tokens": 42
+        }
+      ],
+      "symbolSource": "ts",
+      "imports": [
+        "web/tests/utils/router.tsx"
+      ],
+      "importance": 0.3704
+    },
+    "web/tests/utils/router.tsx": {
+      "description": "Renders `ui` inside a real router so `Link`/navigation hooks work, but skips",
+      "tokens": 720,
+      "hash": "f77a3aadb34c23d4",
+      "size": 2518,
+      "mtimeMs": 1789529204036.291,
+      "updatedAt": "2026-09-16T04:37:04.903Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "ShellComponent",
+          "kind": "section",
+          "startLine": 10,
+          "endLine": 10,
+          "tokens": 21
+        },
+        {
+          "name": "ROUTE_CHILDREN_ONLY",
+          "kind": "fn",
+          "startLine": 21,
+          "endLine": 21,
+          "tokens": 22
+        },
+        {
+          "name": "RenderWithFileRoutesOptions",
+          "kind": "section",
+          "startLine": 23,
+          "endLine": 26,
+          "tokens": 37
+        },
+        {
+          "name": "createTestRouter",
+          "kind": "fn",
+          "startLine": 28,
+          "endLine": 36,
+          "tokens": 66
+        },
+        {
+          "name": "renderRoute",
+          "kind": "fn",
+          "startLine": 38,
+          "endLine": 59,
+          "tokens": 140
+        },
+        {
+          "name": "renderWithRouter",
+          "kind": "fn",
+          "startLine": 66,
+          "endLine": 83,
+          "tokens": 128
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 1
+    },
+    "web/tsconfig.json": {
+      "description": "TypeScript configuration",
+      "tokens": 202,
+      "hash": "82d6f1ae0afa817c",
+      "size": 707,
+      "mtimeMs": 1789182714015.062,
+      "updatedAt": "2026-09-16T04:37:04.903Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/vite.config.ts": {
+      "description": "Vite build configuration",
+      "tokens": 141,
+      "hash": "15dcbb313b20e7bf",
+      "size": 491,
+      "mtimeMs": 1789182714015.126,
+      "updatedAt": "2026-09-16T04:37:04.903Z",
+      "source": "scan",
+      "importance": 0.3704
+    },
+    "web/vitest.config.ts": {
+      "description": "Vitest test configuration",
+      "tokens": 552,
+      "hash": "d40e1fe080063663",
+      "size": 1930,
+      "mtimeMs": 1789481243028.4272,
+      "updatedAt": "2026-09-16T04:37:04.904Z",
+      "source": "scan",
+      "importance": 0.3704
+    }
+  },
+  "preamble": [
+    "> Project structure index. Auto-maintained by OpenWolf hooks and daemon.",
+    "> Run `openwolf scan` to generate, or wait for the first Claude Code session.",
+    "> Status: Pending initial scan"
+  ]
+}
