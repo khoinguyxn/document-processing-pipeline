@@ -227,9 +227,18 @@ The `web` Vite app is added via `AddViteApp(...).WithBun()` and, on publish,
 
 - **Runner:** Vitest (`bun run test`), configured by `web/vitest.config.ts`. That config is
   standalone on purpose — it keeps `resolve.tsconfigPaths` so `@/*` resolves, but omits the
-  TanStack Start / Nitro / Tailwind plugins, which unit tests don't need.
+  TanStack Start / Nitro plugins, which tests don't need.
+- **Two projects:** `*.test.ts` runs in the fast `node` environment `unit` project; `*.test.tsx`
+  runs in the real-browser `browser` project (Playwright/chromium, 1280×720).
+- **The `browser` project loads Tailwind.** It runs `@tailwindcss/vite` and
+  `tests/setup.ts` imports `@/styles.css`, so layout tests can read real computed styles.
+  The `unit` project stays CSS-free for speed. The `tanstackRouter` Vite plugin is
+  intentionally **not** registered — it would rewrite the tracked `src/routeTree.gen.ts`
+  (dropping TanStack Start's `Register` block); tests import the committed tree instead.
 - **Test layout mirrors `web/src/`** under `web/tests/` — e.g.
   `src/components/ui/date-range-picker.tsx` → `tests/components/ui/date-range-picker.test.ts`.
+  Browser/component tests use the `.test.tsx` suffix and `renderRoute`/`renderWithRouter`
+  from `tests/utils/router.tsx`.
 - **Naming and structure follow the same house rules as the .NET tests:**
   `MethodUnderTest_ShouldExpectedOutcome_WhenCondition` with explicit `// Arrange`,
   `// Act`, `// Assert` sections.

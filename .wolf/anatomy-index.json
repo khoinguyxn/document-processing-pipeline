@@ -1,13 +1,13 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-16T13:26:48.409Z",
-    "fileCount": 102,
+    "lastScanned": "2026-09-16T13:42:24.798Z",
+    "fileCount": 104,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "b629acb2721d92efeff374934259fa33b792ac64be9e833237fa3a580e8d6cd5",
-    "storeUpdatedAt": "2026-09-16T13:26:48.411Z",
-    "rootHash": "5be23ad09278c617"
+    "renderedHash": "85c44a4897b6fda862f39de51d6fd24f87d1c9ba35c858548999ed9529b0bba7",
+    "storeUpdatedAt": "2026-09-16T13:42:24.799Z",
+    "rootHash": "6c1979d46757c5ff"
   },
   "files": {
     ".dockerignore": {
@@ -16,9 +16,9 @@
       "hash": "e2b99e7295dfe1f4",
       "size": 6352,
       "mtimeMs": 1788703552133.092,
-      "updatedAt": "2026-09-16T11:42:24.010Z",
+      "updatedAt": "2026-09-16T13:42:24.734Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     ".github/workflows/main.yaml": {
       "description": "CI: main",
@@ -26,9 +26,9 @@
       "hash": "be91b4861a71a3e7",
       "size": 4784,
       "mtimeMs": 1789558883067.1724,
-      "updatedAt": "2026-09-16T11:42:24.011Z",
+      "updatedAt": "2026-09-16T13:42:24.735Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     ".gitignore": {
       "description": "Git ignore rules",
@@ -36,19 +36,19 @@
       "hash": "ffad89b5fe275c47",
       "size": 1163,
       "mtimeMs": 1789529969925.0906,
-      "updatedAt": "2026-09-16T11:42:24.011Z",
+      "updatedAt": "2026-09-16T13:42:24.735Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 5092,
-      "hash": "970df14b2270eca9",
-      "size": 20432,
-      "mtimeMs": 1789533103120.925,
-      "updatedAt": "2026-09-16T11:42:24.013Z",
+      "tokens": 5269,
+      "hash": "e60e2623d6b3ad29",
+      "size": 21144,
+      "mtimeMs": 1789565853549.9758,
+      "updatedAt": "2026-09-16T13:42:24.735Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "aspire.config.json": {
       "description": "",
@@ -56,9 +56,9 @@
       "hash": "afbeaafc9269fa26",
       "size": 114,
       "mtimeMs": 1788703552140.5537,
-      "updatedAt": "2026-09-16T11:42:24.013Z",
+      "updatedAt": "2026-09-16T13:42:24.735Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "CLAUDE.md": {
       "description": "OpenWolf",
@@ -66,9 +66,9 @@
       "hash": "074d6b42b583729a",
       "size": 395,
       "mtimeMs": 1789533103103.8628,
-      "updatedAt": "2026-09-16T11:42:24.013Z",
+      "updatedAt": "2026-09-16T13:42:24.735Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/.gitignore": {
       "description": "Git ignore rules",
@@ -76,9 +76,9 @@
       "hash": "493c9f860a6bbc11",
       "size": 973,
       "mtimeMs": 1788703552133.77,
-      "updatedAt": "2026-09-16T11:42:24.013Z",
+      "updatedAt": "2026-09-16T13:42:24.737Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/AppHost.cs": {
       "description": "Class: AppHost",
@@ -86,9 +86,9 @@
       "hash": "69174a9d2398bd65",
       "size": 2561,
       "mtimeMs": 1789182714003.0334,
-      "updatedAt": "2026-09-16T11:42:24.014Z",
+      "updatedAt": "2026-09-16T13:42:24.737Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/appsettings.Development.json": {
       "description": "",
@@ -96,9 +96,9 @@
       "hash": "817db0bf2ecca783",
       "size": 119,
       "mtimeMs": 1788703552134.3413,
-      "updatedAt": "2026-09-16T11:42:24.014Z",
+      "updatedAt": "2026-09-16T13:42:24.737Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/appsettings.json": {
       "description": ".NET application settings",
@@ -106,9 +106,9 @@
       "hash": "42f506bc3a9d676e",
       "size": 158,
       "mtimeMs": 1788703552134.4558,
-      "updatedAt": "2026-09-16T11:42:24.014Z",
+      "updatedAt": "2026-09-16T13:42:24.738Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/DocumentProcessingPipeline.AppHost.csproj": {
       "description": "",
@@ -116,9 +116,9 @@
       "hash": "12c6049735fb78b5",
       "size": 1511,
       "mtimeMs": 1789182714004.1394,
-      "updatedAt": "2026-09-16T11:42:24.015Z",
+      "updatedAt": "2026-09-16T13:42:24.738Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/Fixtures/DocumentAiFixtureExtensions.cs": {
       "description": "DocumentAiFixtureExtensions: WithDocumentAiFixture",
@@ -126,9 +126,9 @@
       "hash": "af2ffe61bc2a62d6",
       "size": 3697,
       "mtimeMs": 1789182714004.3926,
-      "updatedAt": "2026-09-16T11:42:24.016Z",
+      "updatedAt": "2026-09-16T13:42:24.739Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.AppHost/Properties/launchSettings.json": {
       "description": "",
@@ -136,9 +136,9 @@
       "hash": "a4c0bf12d9952405",
       "size": 1003,
       "mtimeMs": 1788703552134.2344,
-      "updatedAt": "2026-09-16T11:42:24.016Z",
+      "updatedAt": "2026-09-16T13:42:24.739Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/appsettings.Development.json": {
       "description": "",
@@ -146,9 +146,9 @@
       "hash": "817db0bf2ecca783",
       "size": 119,
       "mtimeMs": 1789182566618.8005,
-      "updatedAt": "2026-09-16T11:42:24.016Z",
+      "updatedAt": "2026-09-16T13:42:24.739Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/appsettings.json": {
       "description": ".NET application settings",
@@ -156,9 +156,9 @@
       "hash": "2d8bb40059df2208",
       "size": 142,
       "mtimeMs": 1788703552140.0999,
-      "updatedAt": "2026-09-16T11:42:24.017Z",
+      "updatedAt": "2026-09-16T13:42:24.740Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/Dockerfile": {
       "description": "Docker container definition",
@@ -166,9 +166,9 @@
       "hash": "c1f9f8067ac41afb",
       "size": 701,
       "mtimeMs": 1788703552138.6445,
-      "updatedAt": "2026-09-16T11:42:24.017Z",
+      "updatedAt": "2026-09-16T13:42:24.740Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.csproj": {
       "description": "",
@@ -176,9 +176,9 @@
       "hash": "ec750ac636269b3b",
       "size": 1781,
       "mtimeMs": 1788703552138.7754,
-      "updatedAt": "2026-09-16T11:42:24.018Z",
+      "updatedAt": "2026-09-16T13:42:24.740Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.http": {
       "description": "",
@@ -186,9 +186,9 @@
       "hash": "63c39db798fd3d3c",
       "size": 122,
       "mtimeMs": 1788703552138.9,
-      "updatedAt": "2026-09-16T11:42:24.018Z",
+      "updatedAt": "2026-09-16T13:42:24.742Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/Extensions.cs": {
       "description": "Extensions: MapDefaultEndpoints",
@@ -196,9 +196,9 @@
       "hash": "f9393dcea0eb9563",
       "size": 4680,
       "mtimeMs": 1788703552139.0344,
-      "updatedAt": "2026-09-16T11:42:24.018Z",
+      "updatedAt": "2026-09-16T13:42:24.742Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/Models/UploadDocumentRequest.cs": {
       "description": "Class: UploadDocumentRequestValidator",
@@ -206,9 +206,9 @@
       "hash": "20057da9bcf80377",
       "size": 670,
       "mtimeMs": 1788703552139.2944,
-      "updatedAt": "2026-09-16T11:42:24.019Z",
+      "updatedAt": "2026-09-16T13:42:24.742Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/Modules/DocumentModule.cs": {
       "description": "DocumentModule: AddRoutes",
@@ -216,9 +216,9 @@
       "hash": "392d409621268baa",
       "size": 2320,
       "mtimeMs": 1788703552139.5151,
-      "updatedAt": "2026-09-16T11:42:24.019Z",
+      "updatedAt": "2026-09-16T13:42:24.742Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/Program.cs": {
       "description": "Application entry point",
@@ -226,9 +226,9 @@
       "hash": "eae21eba2ee9fde8",
       "size": 1417,
       "mtimeMs": 1789182714010.4268,
-      "updatedAt": "2026-09-16T11:42:24.019Z",
+      "updatedAt": "2026-09-16T13:42:24.743Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server/Properties/launchSettings.json": {
       "description": "",
@@ -236,9 +236,9 @@
       "hash": "5ce9c7f12933ce33",
       "size": 618,
       "mtimeMs": 1788703552139.855,
-      "updatedAt": "2026-09-16T11:42:24.019Z",
+      "updatedAt": "2026-09-16T13:42:24.743Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/DependencyInjection.cs": {
       "description": "DependencyInjection: AddDomain",
@@ -246,9 +246,9 @@
       "hash": "e842de9729c9aa92",
       "size": 512,
       "mtimeMs": 1788703552134.6611,
-      "updatedAt": "2026-09-16T11:42:24.019Z",
+      "updatedAt": "2026-09-16T13:42:24.743Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/DocumentProcessingPipeline.Server.Domain.csproj": {
       "description": "",
@@ -256,9 +256,9 @@
       "hash": "03d4f4705e07d3a2",
       "size": 421,
       "mtimeMs": 1788703552134.7917,
-      "updatedAt": "2026-09-16T11:42:24.020Z",
+      "updatedAt": "2026-09-16T13:42:24.744Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/Models/Document.cs": {
       "description": "Class: Document",
@@ -266,9 +266,9 @@
       "hash": "9b4bfe065ea704fd",
       "size": 1146,
       "mtimeMs": 1789182714005.0276,
-      "updatedAt": "2026-09-16T11:42:24.020Z",
+      "updatedAt": "2026-09-16T13:42:24.744Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/Services/DocumentService.cs": {
       "description": "Class: DocumentService",
@@ -276,9 +276,9 @@
       "hash": "e616d547caabcc1d",
       "size": 2523,
       "mtimeMs": 1789182714005.314,
-      "updatedAt": "2026-09-16T11:42:24.020Z",
+      "updatedAt": "2026-09-16T13:42:24.745Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IDocumentRepository.cs": {
       "description": "Interface: IDocumentRepository (0 members)",
@@ -286,9 +286,9 @@
       "hash": "1d732fe0f2b1a1df",
       "size": 422,
       "mtimeMs": 1789182714005.8655,
-      "updatedAt": "2026-09-16T11:42:24.020Z",
+      "updatedAt": "2026-09-16T13:42:24.745Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IDocumentService.cs": {
       "description": "Interface: IDocumentService (0 members)",
@@ -296,9 +296,9 @@
       "hash": "b56c7977c1d345a5",
       "size": 259,
       "mtimeMs": 1788703552135.5195,
-      "updatedAt": "2026-09-16T11:42:24.021Z",
+      "updatedAt": "2026-09-16T13:42:24.746Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IOcrService.cs": {
       "description": "Interface: IOcrService (0 members)",
@@ -306,9 +306,9 @@
       "hash": "934d73eae9324a60",
       "size": 402,
       "mtimeMs": 1789182714005.9487,
-      "updatedAt": "2026-09-16T11:42:24.021Z",
+      "updatedAt": "2026-09-16T13:42:24.746Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain/Services/Interfaces/IStorageService.cs": {
       "description": "Interface: IStorageService (0 members)",
@@ -316,9 +316,9 @@
       "hash": "d1863a2a409922c3",
       "size": 292,
       "mtimeMs": 1788703552135.6516,
-      "updatedAt": "2026-09-16T11:42:24.021Z",
+      "updatedAt": "2026-09-16T13:42:24.746Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain.Tests/DocumentProcessingPipeline.Server.Domain.Tests.csproj": {
       "description": "",
@@ -326,9 +326,9 @@
       "hash": "bba5cec57ce9b3d7",
       "size": 1305,
       "mtimeMs": 1789182714004.5042,
-      "updatedAt": "2026-09-16T11:42:24.021Z",
+      "updatedAt": "2026-09-16T13:42:24.746Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Domain.Tests/Services/DocumentServiceTests.cs": {
       "description": "DocumentServiceTests: UploadAsync_ShouldReturnCreated_WhenSuccessful, UploadAsync_ShouldReturnErrors_WhenStorageUploadFails, UploadAsync_ShouldRetu...",
@@ -336,9 +336,9 @@
       "hash": "26bdaa4d8f7a5abf",
       "size": 13782,
       "mtimeMs": 1789182714004.864,
-      "updatedAt": "2026-09-16T11:42:24.022Z",
+      "updatedAt": "2026-09-16T13:42:24.747Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/DependencyInjection.cs": {
       "description": "DependencyInjection: AddInfrastructure",
@@ -346,9 +346,9 @@
       "hash": "35bbd94d8ecf1a53",
       "size": 2816,
       "mtimeMs": 1789182714007.418,
-      "updatedAt": "2026-09-16T11:42:24.022Z",
+      "updatedAt": "2026-09-16T13:42:24.747Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/DocumentProcessingPipeline.Server.Infrastructure.csproj": {
       "description": "",
@@ -356,9 +356,9 @@
       "hash": "5844c7f98ccf7db4",
       "size": 1112,
       "mtimeMs": 1789182714007.7021,
-      "updatedAt": "2026-09-16T11:42:24.022Z",
+      "updatedAt": "2026-09-16T13:42:24.747Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/Options/GcpOptions/DocumentAiOptions.cs": {
       "description": "Class: DocumentAiOptions",
@@ -366,9 +366,9 @@
       "hash": "97be461fe1e93a85",
       "size": 220,
       "mtimeMs": 1789182714008.4866,
-      "updatedAt": "2026-09-16T11:42:24.023Z",
+      "updatedAt": "2026-09-16T13:42:24.747Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/Options/GcpOptions/GcpOptions.cs": {
       "description": "Class: GcpOptions",
@@ -376,9 +376,9 @@
       "hash": "af9d49601580706b",
       "size": 269,
       "mtimeMs": 1789182714008.8247,
-      "updatedAt": "2026-09-16T11:42:24.023Z",
+      "updatedAt": "2026-09-16T13:42:24.748Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/Persistence/Entities/FirestoreDocumentEntity.cs": {
       "description": "DocumentMappingExtensions: ToEntity",
@@ -386,9 +386,9 @@
       "hash": "e51d6567ff8c4841",
       "size": 3245,
       "mtimeMs": 1789182714008.9644,
-      "updatedAt": "2026-09-16T11:42:24.024Z",
+      "updatedAt": "2026-09-16T13:42:24.749Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/Persistence/Repositories/FirestoreDocumentRepository.cs": {
       "description": "Class: FirestoreDocumentRepository",
@@ -396,9 +396,9 @@
       "hash": "e47b5dadc03d1877",
       "size": 2144,
       "mtimeMs": 1789182714009.092,
-      "updatedAt": "2026-09-16T11:42:24.024Z",
+      "updatedAt": "2026-09-16T13:42:24.749Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/Services/DocumentAiServices/GcpDocumentAiService.cs": {
       "description": "Class: GcpDocumentAiService",
@@ -406,9 +406,9 @@
       "hash": "cda34de298c3be6a",
       "size": 3230,
       "mtimeMs": 1789182714009.276,
-      "updatedAt": "2026-09-16T11:42:24.024Z",
+      "updatedAt": "2026-09-16T13:42:24.750Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure/Services/GcpStorageService.cs": {
       "description": "Class: GcpStorageService",
@@ -416,9 +416,9 @@
       "hash": "da6973506bbc28a6",
       "size": 2704,
       "mtimeMs": 1788703552137.877,
-      "updatedAt": "2026-09-16T11:42:24.024Z",
+      "updatedAt": "2026-09-16T13:42:24.750Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure.Tests/DocumentProcessingPipeline.Server.Infrastructure.Tests.csproj": {
       "description": "",
@@ -426,9 +426,9 @@
       "hash": "06c5ea97a3be54de",
       "size": 1321,
       "mtimeMs": 1788703552135.855,
-      "updatedAt": "2026-09-16T11:42:24.024Z",
+      "updatedAt": "2026-09-16T13:42:24.750Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure.Tests/Persistence/Entities/FirestoreDocumentEntityTests.cs": {
       "description": "FirestoreDocumentEntityTests: ToEntity_ShouldMapAllPropertiesCorrectly_WhenDocumentIsValid, ToEntity_ShouldHandleNullOptionalFields, ToEntity_Shoul...",
@@ -436,9 +436,9 @@
       "hash": "3af608e5a83c7abd",
       "size": 5344,
       "mtimeMs": 1789182714006.199,
-      "updatedAt": "2026-09-16T11:42:24.025Z",
+      "updatedAt": "2026-09-16T13:42:24.750Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure.Tests/Persistence/Repositories/FirestoreDocumentRepositoryTests.cs": {
       "description": "FirestoreDocumentRepositoryTests: CreateDocumentAsync_ShouldReturnCreated_WhenSuccessful, CreateDocumentAsync_ShouldReturnFailure_WhenExceptionIsTh...",
@@ -446,9 +446,9 @@
       "hash": "7aaf13d2eae92a18",
       "size": 6819,
       "mtimeMs": 1789182714006.4973,
-      "updatedAt": "2026-09-16T11:42:24.025Z",
+      "updatedAt": "2026-09-16T13:42:24.751Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Infrastructure.Tests/Services/GcpStorageServiceTests.cs": {
       "description": "GcpStorageServiceTests: UploadFileAsync_ShouldSucceed_WhenBucketAlreadyExists, UploadFileAsync_ShouldCreateBucketAndSucceed_WhenBucketDoesNotExist,...",
@@ -456,9 +456,9 @@
       "hash": "94f03c621acb5037",
       "size": 7445,
       "mtimeMs": 1789182714006.926,
-      "updatedAt": "2026-09-16T11:42:24.026Z",
+      "updatedAt": "2026-09-16T13:42:24.752Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Tests/DocumentProcessingPipeline.Server.Tests.csproj": {
       "description": "",
@@ -466,9 +466,9 @@
       "hash": "1aaab70d3d4ee085",
       "size": 1816,
       "mtimeMs": 1789182714009.6946,
-      "updatedAt": "2026-09-16T11:42:24.026Z",
+      "updatedAt": "2026-09-16T13:42:24.752Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Tests/Fixtures/DocumentProcessingPipelineServerFactoryFixture.cs": {
       "description": "DocumentProcessingPipelineServerFactoryFixture: InitializeAsync",
@@ -476,9 +476,9 @@
       "hash": "38d89393e1c337d0",
       "size": 6558,
       "mtimeMs": 1789182714009.8896,
-      "updatedAt": "2026-09-16T11:42:24.026Z",
+      "updatedAt": "2026-09-16T13:42:24.752Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.Server.Tests/Modules/DocumentModuleTests.cs": {
       "description": "DocumentModuleTests: UploadDocument_ShouldReturnCreated_WhenMimeTypeIsSupported, UploadDocument_ShouldReturnBadRequest_WhenMimeTypeIsNotSupported",
@@ -486,9 +486,9 @@
       "hash": "df633b9d2d200fb2",
       "size": 2524,
       "mtimeMs": 1789182714010.1396,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.752Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "DocumentProcessingPipeline.slnx": {
       "description": "",
@@ -496,9 +496,9 @@
       "hash": "ae72fcad27775e3a",
       "size": 821,
       "mtimeMs": 1789182714010.593,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.752Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "global.json": {
       "description": ".NET SDK configuration",
@@ -506,9 +506,9 @@
       "hash": "1259bebb60dbe2b6",
       "size": 106,
       "mtimeMs": 1788703552144.9119,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.752Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "mise.toml": {
       "description": "",
@@ -516,9 +516,9 @@
       "hash": "6a52699c77e0fd92",
       "size": 295,
       "mtimeMs": 1789531909107.4292,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.753Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "package.json": {
       "description": "Node.js package manifest",
@@ -526,9 +526,9 @@
       "hash": "34c8ab8d83d4b3b8",
       "size": 137,
       "mtimeMs": 1789533154795.9512,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.753Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "qodana.yaml": {
       "description": "-------------------------------------------------------------------------------#",
@@ -536,9 +536,9 @@
       "hash": "3eb688ca3d7e345f",
       "size": 1935,
       "mtimeMs": 1788703552145.1206,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.753Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "README.md": {
       "description": "Project documentation",
@@ -546,9 +546,9 @@
       "hash": "d21abc9c8af4e0eb",
       "size": 9983,
       "mtimeMs": 1789195828090.0974,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.753Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "skills-lock.json": {
       "description": "",
@@ -556,9 +556,9 @@
       "hash": "2fa7e7b6ca6f772f",
       "size": 6637,
       "mtimeMs": 1789393872289.069,
-      "updatedAt": "2026-09-16T11:42:24.027Z",
+      "updatedAt": "2026-09-16T13:42:24.753Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/.cta.json": {
       "description": "",
@@ -566,9 +566,9 @@
       "hash": "282db78c04682079",
       "size": 327,
       "mtimeMs": 1789182714010.7007,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.754Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/.dockerignore": {
       "description": "Docker ignore rules",
@@ -576,9 +576,9 @@
       "hash": "bcb5f99bd42c47da",
       "size": 152,
       "mtimeMs": 1789182714010.7656,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.754Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/.gitignore": {
       "description": "Git ignore rules",
@@ -586,9 +586,9 @@
       "hash": "f658bb3156c86341",
       "size": 1733,
       "mtimeMs": 1789182714010.9446,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.754Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/.prettierignore": {
       "description": "",
@@ -596,9 +596,9 @@
       "hash": "c4e2f836fd703f43",
       "size": 42,
       "mtimeMs": 1789182714011.0208,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.754Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/.prettierrc": {
       "description": "Prettier configuration",
@@ -606,9 +606,9 @@
       "hash": "2a6f29448b68a9bb",
       "size": 254,
       "mtimeMs": 1789459902521.1458,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.754Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/components.json": {
       "description": "",
@@ -616,9 +616,9 @@
       "hash": "eaace538fdb4dda4",
       "size": 527,
       "mtimeMs": 1789182714012.6382,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.757Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/Dockerfile": {
       "description": "Docker container definition",
@@ -626,9 +626,9 @@
       "hash": "ccbb15ec0f71add5",
       "size": 1196,
       "mtimeMs": 1789182714011.2905,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.757Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/eslint.config.js": {
       "description": "ESLint flat configuration",
@@ -636,19 +636,19 @@
       "hash": "657ad8664f5a9c17",
       "size": 428,
       "mtimeMs": 1789459957832.4775,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.757Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/package.json": {
       "description": "Node.js package manifest",
-      "tokens": 548,
-      "hash": "b629924e25ab22a9",
-      "size": 1916,
-      "mtimeMs": 1789481084525.9636,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "tokens": 534,
+      "hash": "498b6c7109be13dc",
+      "size": 1867,
+      "mtimeMs": 1789566014292.5293,
+      "updatedAt": "2026-09-16T13:42:24.757Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/public/manifest.json": {
       "description": "",
@@ -656,9 +656,9 @@
       "hash": "13b73a709f53bfa2",
       "size": 498,
       "mtimeMs": 1789182714013.5835,
-      "updatedAt": "2026-09-16T11:42:24.028Z",
+      "updatedAt": "2026-09-16T13:42:24.757Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/public/robots.txt": {
       "description": "https://www.robotstxt.org/robotstxt.html",
@@ -666,9 +666,9 @@
       "hash": "90d24bc3bf698ac1",
       "size": 67,
       "mtimeMs": 1789182714013.6545,
-      "updatedAt": "2026-09-16T11:42:24.029Z",
+      "updatedAt": "2026-09-16T13:42:24.758Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/README.md": {
       "description": "Project documentation",
@@ -676,17 +676,17 @@
       "hash": "01784ddc7e7edd61",
       "size": 452,
       "mtimeMs": 1789182714011.493,
-      "updatedAt": "2026-09-16T11:42:24.029Z",
+      "updatedAt": "2026-09-16T13:42:24.759Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/app-sidebar.tsx": {
       "description": "AppSidebar",
       "tokens": 580,
-      "hash": "f4a84e225816414c",
-      "size": 2034,
-      "mtimeMs": 1789528608338.6743,
-      "updatedAt": "2026-09-16T11:42:24.029Z",
+      "hash": "47e911009247e141",
+      "size": 2031,
+      "mtimeMs": 1789565178569.4277,
+      "updatedAt": "2026-09-16T13:42:24.759Z",
       "source": "scan",
       "symbols": [
         {
@@ -708,7 +708,7 @@
       "imports": [
         "web/src/components/ui/typography.tsx"
       ],
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/button.tsx": {
       "description": "BUTTON_VARIANTS",
@@ -716,7 +716,7 @@
       "hash": "4d65141732b48403",
       "size": 2948,
       "mtimeMs": 1789460182359.6343,
-      "updatedAt": "2026-09-16T11:42:24.029Z",
+      "updatedAt": "2026-09-16T13:42:24.759Z",
       "source": "scan",
       "symbols": [
         {
@@ -728,7 +728,7 @@
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/calendar.tsx": {
       "description": "Calendar — uses useEffect",
@@ -736,7 +736,7 @@
       "hash": "8ef96c309f150623",
       "size": 8339,
       "mtimeMs": 1789460182360.3652,
-      "updatedAt": "2026-09-16T11:42:24.029Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
       "symbols": [
         {
@@ -756,7 +756,7 @@
       ],
       "symbolSource": "ts",
       "skeleton": "function Calendar({\nfunction CalendarDayButton({",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/card.tsx": {
       "description": "Card",
@@ -764,7 +764,7 @@
       "hash": "2d865755e507998a",
       "size": 2481,
       "mtimeMs": 1789457687676.9414,
-      "updatedAt": "2026-09-16T11:42:24.029Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
       "symbols": [
         {
@@ -818,7 +818,7 @@
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/date-range-picker.tsx": {
       "description": "DATE_FORMATTER — uses useState",
@@ -826,7 +826,7 @@
       "hash": "a9db0f78da5736b3",
       "size": 4308,
       "mtimeMs": 1789479783242.8203,
-      "updatedAt": "2026-09-16T11:42:24.030Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
       "symbols": [
         {
@@ -887,7 +887,7 @@
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/input.tsx": {
       "description": "Input",
@@ -895,9 +895,9 @@
       "hash": "8b4102e35e3f5721",
       "size": 898,
       "mtimeMs": 1789195983274.148,
-      "updatedAt": "2026-09-16T11:42:24.030Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/popover.tsx": {
       "description": "Popover",
@@ -905,7 +905,7 @@
       "hash": "c9d3665df31269c6",
       "size": 2356,
       "mtimeMs": 1789397111133.6013,
-      "updatedAt": "2026-09-16T11:42:24.030Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
       "symbols": [
         {
@@ -959,7 +959,7 @@
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/separator.tsx": {
       "description": "Separator",
@@ -967,9 +967,9 @@
       "hash": "42aa6209fe9bec17",
       "size": 620,
       "mtimeMs": 1789195982686.356,
-      "updatedAt": "2026-09-16T11:42:24.030Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/sheet.tsx": {
       "description": "Sheet",
@@ -977,7 +977,7 @@
       "hash": "78636e5c7a0bae8d",
       "size": 4555,
       "mtimeMs": 1789195984057.7197,
-      "updatedAt": "2026-09-16T11:42:24.030Z",
+      "updatedAt": "2026-09-16T13:42:24.760Z",
       "source": "scan",
       "symbols": [
         {
@@ -1052,7 +1052,7 @@
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/sidebar.tsx": {
       "description": "SIDEBAR_COOKIE_NAME — uses useContext, useState, useCallback, useEffect",
@@ -1060,7 +1060,7 @@
       "hash": "1955b53d7a99abf5",
       "size": 21348,
       "mtimeMs": 1789460285290.9512,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
       "symbols": [
         {
@@ -1241,7 +1241,7 @@
       ],
       "symbolSource": "ts",
       "skeleton": "type SidebarContextProps = {\nfunction useSidebar() {\nfunction SidebarProvider({\nfunction Sidebar({\nfunction SidebarTrigger({\nfunction SidebarRail({ className, ...props }: React.ComponentProps<\"button\">) {\nfunction SidebarInset({ className, ...props }: React.ComponentProps<\"main\">) {\nfunction SidebarInput({\nfunction SidebarHeader({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarFooter({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarSeparator({\nfunction SidebarContent({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarGroupLabel({\nfunction SidebarGroupAction({\nfunction SidebarGroupContent({\nfunction SidebarMenu({ className, ...props }: React.ComponentProps<\"ul\">) {\nfunction SidebarMenuItem({ className, ...props }: React.ComponentProps<\"li\">) {\nfunction SidebarMenuButton({\nfunction SidebarMenuAction({\nfunction SidebarMenuBadge({\nfunction SidebarMenuSkeleton({\nfunction SidebarMenuSub({ className, ...props }: React.ComponentProps<\"ul\">) {\nfunction SidebarMenuSubItem({\nfunction SidebarMenuSubButton({",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/skeleton.tsx": {
       "description": "Skeleton",
@@ -1249,9 +1249,9 @@
       "hash": "b3c3c2b5449693bc",
       "size": 266,
       "mtimeMs": 1789195983476.3896,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/tooltip.tsx": {
       "description": "TooltipProvider",
@@ -1259,7 +1259,7 @@
       "hash": "912a9c9f8110c1c5",
       "size": 2179,
       "mtimeMs": 1789195983087.701,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
       "symbols": [
         {
@@ -1292,7 +1292,7 @@
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/components/ui/typography.tsx": {
       "description": "HEADING_BASE",
@@ -1300,9 +1300,9 @@
       "hash": "6bcfc6d053bd6afa",
       "size": 1045,
       "mtimeMs": 1789460182366.623,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
-      "importance": 0.6852
+      "importance": 0.5211
     },
     "web/src/hooks/use-mobile.ts": {
       "description": "Exports useIsMobile",
@@ -1310,9 +1310,9 @@
       "hash": "ad0936f84f1df79d",
       "size": 565,
       "mtimeMs": 1789195983410.0076,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/lib/utils.ts": {
       "description": "Exports cn",
@@ -1320,9 +1320,9 @@
       "hash": "7c8c3dfc0cdd370d",
       "size": 166,
       "mtimeMs": 1789182714014.3145,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/router.tsx": {
       "description": "getRouter",
@@ -1330,12 +1330,12 @@
       "hash": "6a4b707a2e6205df",
       "size": 412,
       "mtimeMs": 1789182714014.5947,
-      "updatedAt": "2026-09-16T11:42:24.031Z",
+      "updatedAt": "2026-09-16T13:42:24.761Z",
       "source": "scan",
       "imports": [
         "web/src/routeTree.gen.ts"
       ],
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/routes/__root.tsx": {
       "description": "Route",
@@ -1343,9 +1343,9 @@
       "hash": "4c7efcc92f54dcf3",
       "size": 1330,
       "mtimeMs": 1789182714014.699,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
-      "importance": 0.4536
+      "importance": 0.345
     },
     "web/src/routes/app/exports.tsx": {
       "description": "Route",
@@ -1353,9 +1353,9 @@
       "hash": "b905c4dd96747020",
       "size": 214,
       "mtimeMs": 1789392462352.1775,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
-      "importance": 0.4536
+      "importance": 0.345
     },
     "web/src/routes/app/index.tsx": {
       "description": "Exports Route",
@@ -1363,16 +1363,17 @@
       "hash": "78612834916d80e7",
       "size": 1739,
       "mtimeMs": 1789565208389.6135,
-      "updatedAt": "2026-09-16T13:26:48.409Z",
-      "source": "hook"
+      "updatedAt": "2026-09-16T13:42:24.762Z",
+      "source": "scan",
+      "importance": 0.345
     },
     "web/src/routes/app/route.tsx": {
       "description": "Route",
-      "tokens": 587,
-      "hash": "8392738ef3931e98",
-      "size": 2063,
-      "mtimeMs": 1789558539808.1516,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "tokens": 589,
+      "hash": "8bb08a884fc98bb0",
+      "size": 2072,
+      "mtimeMs": 1789562885911.1887,
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
       "symbols": [
         {
@@ -1380,11 +1381,11 @@
           "kind": "fn",
           "startLine": 41,
           "endLine": 76,
-          "tokens": 313
+          "tokens": 316
         }
       ],
       "symbolSource": "ts",
-      "importance": 0.4536
+      "importance": 0.345
     },
     "web/src/routes/app/suppliers.tsx": {
       "description": "Route",
@@ -1392,9 +1393,9 @@
       "hash": "3ba3e4b1003fb607",
       "size": 218,
       "mtimeMs": 1789359564377.4229,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
-      "importance": 0.4536
+      "importance": 0.345
     },
     "web/src/routes/health.ts": {
       "description": "Exports Route",
@@ -1402,9 +1403,9 @@
       "hash": "54f5482ad61575b2",
       "size": 405,
       "mtimeMs": 1789182714014.7686,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
-      "importance": 0.4536
+      "importance": 0.345
     },
     "web/src/routes/ready.ts": {
       "description": "Exports Route",
@@ -1412,17 +1413,17 @@
       "hash": "501e3eeb4514b351",
       "size": 671,
       "mtimeMs": 1789460182370.773,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
-      "importance": 0.4536
+      "importance": 0.345
     },
     "web/src/routeTree.gen.ts": {
       "description": "@ts-nocheck",
-      "tokens": 1385,
-      "hash": "b4b1b26238fde2ba",
-      "size": 4845,
-      "mtimeMs": 1789558942890.0845,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "tokens": 1453,
+      "hash": "b43ffff988ec27ca",
+      "size": 5083,
+      "mtimeMs": 1789565743227.7263,
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
       "symbols": [
         {
@@ -1478,7 +1479,7 @@
         "web/src/routes/app/exports.tsx",
         "web/src/routes/app/suppliers.tsx"
       ],
-      "importance": 0.6852
+      "importance": 0.5211
     },
     "web/src/styles.css": {
       "description": "Styles: 9 rules, 103 vars, 1 layers",
@@ -1486,9 +1487,9 @@
       "hash": "fab149dd2483200b",
       "size": 5055,
       "mtimeMs": 1789182714014.9973,
-      "updatedAt": "2026-09-16T11:42:24.032Z",
+      "updatedAt": "2026-09-16T13:42:24.762Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/src/types/pages.d.ts": {
       "description": "Exports Page",
@@ -1496,9 +1497,9 @@
       "hash": "0aff054fbf1e3f51",
       "size": 142,
       "mtimeMs": 1789394583907.3032,
-      "updatedAt": "2026-09-16T11:42:24.033Z",
+      "updatedAt": "2026-09-16T13:42:24.763Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/tests/components/app-sidebar.test.tsx": {
       "description": "TEST_PAGES",
@@ -1506,7 +1507,7 @@
       "hash": "bca947e30dc88191",
       "size": 3415,
       "mtimeMs": 1789529181744.4934,
-      "updatedAt": "2026-09-16T11:42:24.033Z",
+      "updatedAt": "2026-09-16T13:42:24.763Z",
       "source": "scan",
       "symbols": [
         {
@@ -1521,7 +1522,7 @@
       "imports": [
         "web/tests/utils/router.tsx"
       ],
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/tests/components/ui/date-range-picker.component.test.tsx": {
       "description": "EMPTY_LABEL",
@@ -1529,7 +1530,7 @@
       "hash": "08d1c46f0bb6d7c6",
       "size": 9820,
       "mtimeMs": 1789529919096.5476,
-      "updatedAt": "2026-09-16T11:42:24.033Z",
+      "updatedAt": "2026-09-16T13:42:24.763Z",
       "source": "scan",
       "symbols": [
         {
@@ -1563,7 +1564,7 @@
       ],
       "symbolSource": "ts",
       "skeleton": "function countRenderedMonths() {\nfunction getTrigger() {\nfunction getLabel() {\nfunction ControlledPicker({ initialValue }: { initialValue?: DateRange }) {",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/tests/components/ui/date-range-picker.test.ts": {
       "description": "Declares toParts",
@@ -1571,7 +1572,7 @@
       "hash": "bd933eb9f07e4740",
       "size": 8518,
       "mtimeMs": 1789463292600.5515,
-      "updatedAt": "2026-09-16T11:42:24.033Z",
+      "updatedAt": "2026-09-16T13:42:24.764Z",
       "source": "scan",
       "symbols": [
         {
@@ -1584,7 +1585,7 @@
       ],
       "symbolSource": "ts",
       "skeleton": "function toParts(date: Date | undefined) {",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/tests/components/ui/typography.test.tsx": {
       "description": "`font-semibold` is intentionally absent: `cn` runs tailwind-merge, so the",
@@ -1592,9 +1593,67 @@
       "hash": "4d419afd44061b29",
       "size": 3910,
       "mtimeMs": 1789480251315.6743,
-      "updatedAt": "2026-09-16T11:42:24.034Z",
+      "updatedAt": "2026-09-16T13:42:24.764Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
+    },
+    "web/tests/routes/app/index.test.tsx": {
+      "description": "Declares CARD_SELECTOR",
+      "tokens": 1530,
+      "hash": "26e07a6f9163914c",
+      "size": 5384,
+      "mtimeMs": 1789565824857.7769,
+      "updatedAt": "2026-09-16T13:42:24.764Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "renderEmptyState",
+          "kind": "fn",
+          "startLine": 16,
+          "endLine": 18,
+          "tokens": 26
+        },
+        {
+          "name": "getCard",
+          "kind": "fn",
+          "startLine": 20,
+          "endLine": 22,
+          "tokens": 31
+        },
+        {
+          "name": "getAction",
+          "kind": "fn",
+          "startLine": 24,
+          "endLine": 26,
+          "tokens": 36
+        },
+        {
+          "name": "getIconButton",
+          "kind": "fn",
+          "startLine": 28,
+          "endLine": 32,
+          "tokens": 41
+        },
+        {
+          "name": "getActionButtons",
+          "kind": "fn",
+          "startLine": 34,
+          "endLine": 38,
+          "tokens": 42
+        },
+        {
+          "name": "centerX",
+          "kind": "fn",
+          "startLine": 40,
+          "endLine": 43,
+          "tokens": 36
+        }
+      ],
+      "symbolSource": "ts",
+      "imports": [
+        "web/tests/utils/router.tsx"
+      ],
+      "importance": 0.2817
     },
     "web/tests/routes/app/route.test.tsx": {
       "description": "`AppLayout` renders `<Outlet />`, so it has to be mounted through a real",
@@ -1602,7 +1661,7 @@
       "hash": "4166e66fd29ce49d",
       "size": 3293,
       "mtimeMs": 1789528233749.0269,
-      "updatedAt": "2026-09-16T11:42:24.034Z",
+      "updatedAt": "2026-09-16T13:42:24.764Z",
       "source": "scan",
       "symbols": [
         {
@@ -1624,7 +1683,17 @@
       "imports": [
         "web/tests/utils/router.tsx"
       ],
-      "importance": 0.3704
+      "importance": 0.2817
+    },
+    "web/tests/setup.ts": {
+      "description": "",
+      "tokens": 7,
+      "hash": "751df1883b14c88a",
+      "size": 22,
+      "mtimeMs": 1789565689834.99,
+      "updatedAt": "2026-09-16T13:42:24.764Z",
+      "source": "scan",
+      "importance": 0.2817
     },
     "web/tests/utils/router.tsx": {
       "description": "Renders `ui` inside a real router so `Link`/navigation hooks work, but skips",
@@ -1632,7 +1701,7 @@
       "hash": "f77a3aadb34c23d4",
       "size": 2518,
       "mtimeMs": 1789529204036.291,
-      "updatedAt": "2026-09-16T11:42:24.034Z",
+      "updatedAt": "2026-09-16T13:42:24.765Z",
       "source": "scan",
       "symbols": [
         {
@@ -1687,9 +1756,9 @@
       "hash": "82d6f1ae0afa817c",
       "size": 707,
       "mtimeMs": 1789182714015.062,
-      "updatedAt": "2026-09-16T11:42:24.034Z",
+      "updatedAt": "2026-09-16T13:42:24.765Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     },
     "web/vite.config.ts": {
       "description": "Declares config",
@@ -1697,18 +1766,19 @@
       "hash": "28210014a327bb63",
       "size": 568,
       "mtimeMs": 1789559427150.5447,
-      "updatedAt": "2026-09-16T11:50:27.155Z",
-      "source": "hook"
+      "updatedAt": "2026-09-16T13:42:24.765Z",
+      "source": "scan",
+      "importance": 0.2817
     },
     "web/vitest.config.ts": {
-      "description": "Vitest test configuration",
-      "tokens": 552,
-      "hash": "d40e1fe080063663",
-      "size": 1930,
-      "mtimeMs": 1789481243028.4272,
-      "updatedAt": "2026-09-16T11:42:24.034Z",
+      "description": "Declares tests",
+      "tokens": 591,
+      "hash": "8dc0af5f4c0b738f",
+      "size": 2066,
+      "mtimeMs": 1789565751687.804,
+      "updatedAt": "2026-09-16T13:42:24.765Z",
       "source": "scan",
-      "importance": 0.3704
+      "importance": 0.2817
     }
   },
   "preamble": [

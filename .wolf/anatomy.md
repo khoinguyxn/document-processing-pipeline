@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T13:26:48.409Z
-> Files: 102 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T13:42:24.798Z
+> Files: 104 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -11,7 +11,7 @@
 
 - `.dockerignore` — Docker ignore rules (~1025 tok)
 - `.gitignore` — Git ignore rules (~311 tok)
-- `AGENTS.md` — Skill Loading (~5092 tok)
+- `AGENTS.md` — Skill Loading (~5269 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
@@ -156,11 +156,11 @@
 - `components.json` (~151 tok)
 - `Dockerfile` — Docker container definition (~319 tok)
 - `eslint.config.js` — ESLint flat configuration (~123 tok)
-- `package.json` — Node.js package manifest (~548 tok)
+- `package.json` — Node.js package manifest (~534 tok)
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
 - `vite.config.ts` — Declares config (~163 tok)
-- `vitest.config.ts` — Vitest test configuration (~552 tok)
+- `vitest.config.ts` — Declares tests (~591 tok)
 
 ## web/public/
 
@@ -170,7 +170,7 @@
 ## web/src/
 
 - `router.tsx` — getRouter (~118 tok)
-- `routeTree.gen.ts` — @ts-nocheck (~1385 tok)
+- `routeTree.gen.ts` — @ts-nocheck (~1453 tok)
 - `styles.css` — Styles: 9 rules, 103 vars, 1 layers (~1445 tok)
 
 ## web/src/components/
@@ -210,12 +210,16 @@
 
 - `exports.tsx` — Route (~62 tok)
 - `index.tsx` — Exports Route (~484 tok)
-- `route.tsx` — Route (~587 tok)
+- `route.tsx` — Route (~589 tok)
 - `suppliers.tsx` — Route (~63 tok)
 
 ## web/src/types/
 
 - `pages.d.ts` — Exports Page (~41 tok)
+
+## web/tests/
+
+- `setup.ts` (~7 tok)
 
 ## web/tests/components/
 
@@ -229,6 +233,7 @@
 
 ## web/tests/routes/app/
 
+- `index.test.tsx` — Declares CARD_SELECTOR (~1530 tok)
 - `route.test.tsx` — `AppLayout` renders `<Outlet />`, so it has to be mounted through a real (~937 tok)
 
 ## web/tests/utils/
