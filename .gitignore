@@ -68,3 +68,10 @@ node_modules/
 
 # .DS_Store
 .DS_Store
+
+# Tanstack Router
+.tanstack
+
+# Vitest stubs
+__screenshots__/
+.vitest-attachments/

@@ -6,4 +6,12 @@ node = "latest"
 
 [tasks.server-test]
 run = "dotnet test -c Release"
-    
+
+[tasks.web-install]
+dir = "web"
+run = ["bun install", "bunx playwright install --with-deps"]
+
+[tasks.web-test]
+depends = ["web-install"]
+dir = "web"
+run = "bun run test"

@@ -7,6 +7,11 @@ import { nitro } from "nitro/vite"
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  server: {
+    watch: {
+      ignored: ["**/routeTree.gen.ts"],
+    },
+  },
   plugins: [
     devtools(),
     tailwindcss(),
