@@ -109,6 +109,12 @@
       "skillPath": "skills/observability-and-instrumentation/SKILL.md",
       "computedHash": "e5eba32f952a29d20c0383728a9505d0ca2a90f1d8d075603e53804b441b2dd2"
     },
+    "open-code-review-delegate": {
+      "source": "alibaba/open-code-review",
+      "sourceType": "github",
+      "skillPath": "skills/open-code-review-delegate/SKILL.md",
+      "computedHash": "8aff90347afaf66929c91860009cabb6e34dc01afeb6de5f3f655872836fb244"
+    },
     "performance-optimization": {
       "source": "addyosmani/agent-skills",
       "sourceType": "github",

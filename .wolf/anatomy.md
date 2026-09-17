@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T14:39:58.396Z
-> Files: 104 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-17T14:46:21.240Z
+> Files: 105 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -10,21 +10,25 @@
 ## ./
 
 - `.dockerignore` — Docker ignore rules (~1025 tok)
-- `.gitignore` — Git ignore rules (~313 tok)
-- `AGENTS.md` — Skill Loading (~5750 tok)
+- `.gitignore` — Git ignore rules (~314 tok)
+- `AGENTS.md` — Skill Loading (~5796 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
 - `global.json` — .NET SDK configuration (~31 tok)
-- `mise.toml` (~186 tok)
+- `mise.toml` — /coverage.cobertura.xml" "-targetdir:coverage" "-reporttypes:Html;lcov;Cobertura;TextSummary" (~272 tok)
 - `package.json` — Node.js package manifest (~40 tok)
 - `qodana.yaml` — -------------------------------------------------------------------------------# (~553 tok)
 - `README.md` — Project documentation (~2336 tok)
-- `skills-lock.json` (~1897 tok)
+- `skills-lock.json` (~2105 tok)
+
+## .config/
+
+- `dotnet-tools.json` (~61 tok)
 
 ## .github/workflows/
 
-- `main.yaml` (~1520 tok)
+- `main.yaml` — CI: main (~1520 tok)
 
 ## DocumentProcessingPipeline.AppHost/
 
@@ -160,7 +164,7 @@
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
 - `vite.config.ts` — Declares config (~163 tok)
-- `vitest.config.ts` — Declares tests (~764 tok)
+- `vitest.config.ts` — Vitest test configuration (~759 tok)
 
 ## web/public/
 
