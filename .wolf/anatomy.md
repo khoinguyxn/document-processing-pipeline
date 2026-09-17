@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-17T15:07:00.611Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-17T15:24:14.111Z
 > Files: 105 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -9,9 +9,9 @@
 
 ## ./
 
-- `.dockerignore` — Docker ignore rules (~1260 tok)
+- `.dockerignore` — Docker ignore rules (~1258 tok)
 - `.gitignore` — Git ignore rules (~314 tok)
-- `AGENTS.md` — Skill Loading (~6030 tok)
+- `AGENTS.md` — Skill Loading (~6112 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
