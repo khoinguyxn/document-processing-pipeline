@@ -385,6 +385,25 @@ purpose (see `.wolf/.gitignore`). Commit them with the code change
 (`Chore: refresh openwolf anatomy`) or discard them with `git checkout -- .wolf` before
 pulling.
 
+---
+
+## 14. Post-Prompt Code Review (OCR)
+
+After **every** prompt, before reporting back, run the `open-code-review-delegate` skill
+(`.agents/skills/open-code-review-delegate/SKILL.md`) over the changes made in that turn.
+This is not optional and does not depend on the size of the change.
+
+1. Load the skill and read its workflow.
+2. Run `ocr delegate preview --format json` to get the reviewable file list for the
+   workspace, or pass `--from`/`--to`/`-c` for a branch or commit range.
+3. Resolve rules with `ocr delegate rule --format json <paths>`.
+4. Review each reviewable file using the diffs and rules, then report findings grouped by
+   severity. Account for every previewed file (`reviewed_files` / `skipped_files`).
+5. Fix or explicitly call out any Critical/High finding before finishing the turn.
+
+Do not skip this when no files changed; a no-op review with an explicit "nothing to review"
+summary is the expected result.
+
 <!-- openwolf:begin -->
 # OpenWolf
 
