@@ -100,6 +100,10 @@ bun run format        # prettier --write
 bun run check         # prettier --check
 ```
 
+From the repo root, `mise run web-test` and `mise run web-test-coverage` are the CI
+equivalents (they install dependencies first, then run `bun run test` /
+`bun run test:coverage`).
+
 ### API documentation
 
 Available only in the `Development` environment:
