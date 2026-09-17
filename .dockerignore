@@ -168,4 +168,49 @@ web.release.config
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # Other services
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-frontend
+web
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# document-processing-pipeline specifics (server image builds from the repo root)
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# Frontend + orchestrator are separate concerns and unused by the server image
+DocumentProcessingPipeline.AppHost/
+web/
+
+# Test projects are not referenced by the server project graph
+**/*.Tests/
+TestResults/
+
+# Node/bun tooling at the repo root (shadcn, Aspire vite helpers)
+**/node_modules/
+bun.lock
+bun.lockb
+package-lock.json
+package.json
+
+# Agent/tooling state and metadata
+.agents/
+.claude/
+.config/
+.opencode/
+.vscode/
+.idea/
+.vs/
+.wolf/
+.github/
+**/*.md
+AGENTS.md
+CLAUDE.md
+README.md
+skills-lock.json
+qodana.yaml
+.dockerignore
+
+# OS / editor noise
+**/.DS_Store
+**/Thumbs.db
+**/*.swp
+
+# mise task tooling
+mise.toml
+mise.lock
