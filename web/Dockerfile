@@ -1,6 +1,7 @@
 # use the official Bun image
 # see all versions at https://hub.docker.com/r/oven/bun/tags
-FROM oven/bun:canary-alpine AS base
+# pinned to the released 1.x line rather than `canary` for reproducible builds
+FROM oven/bun:1-alpine AS base
 WORKDIR /usr/src/app
 
 # install dependencies into temp directory
@@ -27,10 +28,12 @@ RUN bun run build
 
 # copy production dependencies and built output into final image
 FROM base AS release
+# `.output` already contains the built `public/` assets, so only it is copied
 COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /usr/src/app/.output ./.output
-COPY --from=prerelease /usr/src/app/public ./public
 COPY --from=prerelease /usr/src/app/package.json .
+
+ENV NODE_ENV=production
 
 # run the app
 USER bun

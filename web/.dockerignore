@@ -4,12 +4,39 @@ docker-compose*
 .dockerignore
 .git
 .gitignore
-README.md
-LICENSE
 .vscode
+.idea
+.editorconfig
 Makefile
 helm-charts
-.env
-.editorconfig
-.idea
+
+# Build output and generated caches — always rebuilt inside the image
+.output
+.nitro
+.tanstack
+.vitest-attachments
+coverage
 coverage*
+
+# Tests and CI-only tooling are not needed to build the app
+tests
+vitest.config.ts
+.agents
+.continue
+.cta.json
+
+# Lint/format config and docs
+eslint.config.js
+.prettierignore
+.prettierrc
+components.json
+README.md
+**/*.md
+LICENSE
+.env
+.env.*
+
+# OS / editor noise
+**/.DS_Store
+**/Thumbs.db
+**/*.swp

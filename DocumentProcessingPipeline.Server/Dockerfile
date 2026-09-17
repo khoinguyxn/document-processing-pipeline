@@ -8,17 +8,23 @@ ARG BUILD_CONFIGURATION=Release
 
 WORKDIR /src
 
+# Copy only the project files first so `dotnet restore` stays cached until a
+# csproj changes, instead of being invalidated by every source edit.
+COPY global.json ./
+COPY DocumentProcessingPipeline.Server.Domain/DocumentProcessingPipeline.Server.Domain.csproj DocumentProcessingPipeline.Server.Domain/
+COPY DocumentProcessingPipeline.Server.Infrastructure/DocumentProcessingPipeline.Server.Infrastructure.csproj DocumentProcessingPipeline.Server.Infrastructure/
+COPY DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.csproj DocumentProcessingPipeline.Server/
+RUN dotnet restore DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.csproj
+
 COPY . .
-
-WORKDIR /src/DocumentProcessingPipeline.Server
-
-RUN dotnet build "DocumentProcessingPipeline.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build -p:UseSharedCompilation=false
-
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "DocumentProcessingPipeline.Server.csproj" -c $BUILD_CONFIGURATION -o /app/publish -p:UseSharedCompilation=false
+RUN dotnet publish "DocumentProcessingPipeline.Server/DocumentProcessingPipeline.Server.csproj" \
+    -c $BUILD_CONFIGURATION \
+    -o /app/publish \
+    --no-restore \
+    -p:UseSharedCompilation=false
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+USER app
 ENTRYPOINT ["dotnet", "DocumentProcessingPipeline.Server.dll"]

@@ -344,6 +344,10 @@ Required repository variables: `GCP_REGION`, `GCP_PROJECT_ID`, `GCP_AR_REPO`,
 - `qodana.yaml` sets the IDE inspection baseline (`QDNET`, `qodana.starter` profile) with
   a few extra inspections enabled — keep new code clean under those (e.g. no unused
   parameters, no invertible `if`, no private members that could be more private).
+- **Container runtime:** this machine uses **Podman**, with `docker` aliased to `podman`
+  in the user's shell. `docker` itself is not installed, so whenever any instruction or
+  command says `docker`, run `podman` instead (e.g. `podman build`, `podman ps`,
+  `podman images`). Agents should not shell out to `docker` directly.
 
 ---
 

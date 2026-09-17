@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-17T14:48:00.191Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-17T15:24:14.111Z
 > Files: 105 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -9,9 +9,9 @@
 
 ## ./
 
-- `.dockerignore` — Docker ignore rules (~1025 tok)
+- `.dockerignore` — Docker ignore rules (~1258 tok)
 - `.gitignore` — Git ignore rules (~314 tok)
-- `AGENTS.md` — Skill Loading (~6030 tok)
+- `AGENTS.md` — Skill Loading (~6112 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
@@ -132,7 +132,7 @@
 
 - `appsettings.Development.json` (~34 tok)
 - `appsettings.json` — .NET application settings (~41 tok)
-- `Dockerfile` — Docker container definition (~187 tok)
+- `Dockerfile` — Docker container definition (~326 tok)
 - `DocumentProcessingPipeline.Server.csproj` (~475 tok)
 - `DocumentProcessingPipeline.Server.http` (~33 tok)
 - `Extensions.cs` — Extensions: MapDefaultEndpoints (~1248 tok)
@@ -153,12 +153,12 @@
 ## web/
 
 - `.cta.json` (~94 tok)
-- `.dockerignore` — Docker ignore rules (~41 tok)
+- `.dockerignore` — Docker ignore rules (~148 tok)
 - `.gitignore` — Git ignore rules (~463 tok)
 - `.prettierignore` (~12 tok)
 - `.prettierrc` — Prettier configuration (~68 tok)
 - `components.json` (~151 tok)
-- `Dockerfile` — Docker container definition (~319 tok)
+- `Dockerfile` — Docker container definition (~353 tok)
 - `eslint.config.js` — ESLint flat configuration (~123 tok)
 - `package.json` — Node.js package manifest (~559 tok)
 - `README.md` — Project documentation (~113 tok)
