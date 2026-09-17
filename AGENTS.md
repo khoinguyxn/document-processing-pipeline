@@ -77,6 +77,7 @@ dotnet build                                        # restore + build the soluti
 dotnet test                                         # all test projects, Debug
 dotnet test -c Release                              # same as the mise/CI task
 mise run server-test                                # CI equivalent: dotnet test -c Release
+mise run server-test-coverage                       # tests + coverlet + ReportGenerator -> ./coverage
 dotnet run --project DocumentProcessingPipeline.AppHost    # full stack + emulators
 dotnet run --project DocumentProcessingPipeline.Server     # API only (http://localhost:5328)
 ```
@@ -88,15 +89,20 @@ Prefer running a single test project while iterating, e.g.
 
 ```bash
 cd web
-bun install
-bun run dev          # vite dev on port 3000
-bun run build        # vite build
-bun run test         # vitest run
-bun run lint         # eslint
-bun run typecheck    # tsc --noEmit
-bun run format       # prettier --write
-bun run check        # prettier --check
+bun install           # install dependencies
+bun run dev           # vite dev on port 3000
+bun run build         # vite build
+bun run test          # vitest run
+bun run test:coverage # vitest run --coverage (istanbul, writes web/coverage)
+bun run lint          # eslint
+bun run typecheck     # tsc --noEmit
+bun run format        # prettier --write
+bun run check         # prettier --check
 ```
+
+From the repo root, `mise run web-test` and `mise run web-test-coverage` are the CI
+equivalents (they install dependencies first, then run `bun run test` /
+`bun run test:coverage`).
 
 ### API documentation
 
@@ -303,12 +309,17 @@ Configuration is bound to strongly typed options in `AddOptions()`:
 [.github/workflows/main.yaml](./.github/workflows/main.yaml) runs:
 
 1. **`server-tests`** — on every push/PR to `main`; sets up mise and runs
-   `mise run server-test` (`dotnet test -c Release`). This is the required gate.
-2. **`build-server` / `build-web`** — `main` only, after tests pass. Authenticate to
+   `mise run server-test-coverage` (coverlet `XPlat Code Coverage` + ReportGenerator) and
+   uploads the `server-coverage` artifact (`coverage/` HTML/lcov/Cobertura plus the raw
+   `TestResults/`), always, 7-day retention. This is the required gate.
+2. **`web-tests`** — on every push/PR to `main`; runs `mise run web-test-coverage`
+   (Vitest with the Istanbul provider) and uploads the `web-coverage` artifact from
+   `web/coverage` (`actions/upload-artifact`, always, 7-day retention).
+3. **`build-server` / `build-web`** — `main` only, after tests pass. Authenticate to
    Google Cloud via workload identity federation, log in to Artifact Registry, and push
    images tagged with `${{ github.sha }}`. The server image builds from the repo root
    (`context: .`); the web image builds from `./web`.
-3. **`deploy-server` / `deploy-web`** — `main` only, deploying the pushed image to
+4. **`deploy-server` / `deploy-web`** — `main` only, deploying the pushed image to
    Cloud Run.
 
 Required repository variables: `GCP_REGION`, `GCP_PROJECT_ID`, `GCP_AR_REPO`,
@@ -348,6 +359,50 @@ Observed in history — follow it:
 - Never commit build output (`bin/`, `obj/`), `node_modules/`, or `.idea/` — all are
   already gitignored.
 - Always update \*.md instruction files (`READMEN.md`, `AGENTS.md`)
+
+---
+
+## 13. OpenWolf (manual mode)
+
+The OpenWolf dashboard/daemon is deliberately **not** run in this repository. Its source
+watcher rescans on every source change *and* on `git HEAD`/`index`/`refs` updates, so a
+`git pull` triggers a rewrite of the tracked `.wolf/anatomy.md` and
+`.wolf/anatomy-index.json`, which then blocks the next pull ("local changes would be
+overwritten"). Do not start it with `openwolf dashboard` or `openwolf daemon start`.
+
+Prompt-time memory and anatomy hints are unaffected — those are hook-driven through
+`.claude/settings.json` (`.wolf/hooks/*.js`), independent of the daemon. Only the background
+jobs stop, so run them manually:
+
+- `openwolf scan` — refresh `anatomy.md` / `anatomy-index.json`. Run it after a turn that
+  changed files, instead of relying on the daemon's watcher.
+- `openwolf memory` — consolidate/archive session memory (replaces the nightly cron).
+- `openwolf report` — token-usage report (replaces the weekly cron).
+- `openwolf find <query>` / `openwolf map` — look up a symbol or file.
+
+The regenerated `.wolf/anatomy.md`, `anatomy-index.json`, and `memory.md` are tracked on
+purpose (see `.wolf/.gitignore`). Commit them with the code change
+(`Chore: refresh openwolf anatomy`) or discard them with `git checkout -- .wolf` before
+pulling.
+
+---
+
+## 14. Post-Prompt Code Review (OCR)
+
+After **every** prompt, before reporting back, run the `open-code-review-delegate` skill
+(`.agents/skills/open-code-review-delegate/SKILL.md`) over the changes made in that turn.
+This is not optional and does not depend on the size of the change.
+
+1. Load the skill and read its workflow.
+2. Run `ocr delegate preview --format json` to get the reviewable file list for the
+   workspace, or pass `--from`/`--to`/`-c` for a branch or commit range.
+3. Resolve rules with `ocr delegate rule --format json <paths>`.
+4. Review each reviewable file using the diffs and rules, then report findings grouped by
+   severity. Account for every previewed file (`reviewed_files` / `skipped_files`).
+5. Fix or explicitly call out any Critical/High finding before finishing the turn.
+
+Do not skip this when no files changed; a no-op review with an explicit "nothing to review"
+summary is the expected result.
 
 <!-- openwolf:begin -->
 # OpenWolf

@@ -24,7 +24,16 @@ jobs:
         uses: jdx/mise-action@v4
 
       - name: Run Web Tests
-        run: mise run web-test
+        run: mise run web-test-coverage
+
+      - name: Upload Web Coverage Report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: web-coverage
+          path: web/coverage
+          if-no-files-found: warn
+          retention-days: 7
 
   server-tests:
     runs-on: ubuntu-latest
@@ -36,7 +45,18 @@ jobs:
         uses: jdx/mise-action@v4
 
       - name: Run Server Tests
-        run: mise run server-test
+        run: mise run server-test-coverage
+
+      - name: Upload Server Coverage Report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: server-coverage
+          path: |
+            coverage
+            TestResults
+          if-no-files-found: warn
+          retention-days: 7
 
   build-server:
     runs-on: ubuntu-latest

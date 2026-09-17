@@ -7,6 +7,21 @@ node = "latest"
 [tasks.server-test]
 run = "dotnet test -c Release"
 
+[tasks.server-test-coverage]
+# Generate the report even when the tests fail, otherwise a red CI run uploads
+# no coverage. The test exit code is preserved so the gate still fails.
+run = '''
+dotnet test -c Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
+test_status=$?
+dotnet tool restore
+dotnet reportgenerator "-reports:TestResults/**/coverage.cobertura.xml" "-targetdir:coverage" "-reporttypes:Html;lcov;Cobertura;TextSummary"
+report_status=$?
+if [ "$test_status" -ne 0 ]; then
+  exit "$test_status"
+fi
+exit "$report_status"
+'''
+
 [tasks.web-install]
 dir = "web"
 run = ["bun install", "bunx playwright install --with-deps"]
@@ -15,3 +30,8 @@ run = ["bun install", "bunx playwright install --with-deps"]
 depends = ["web-install"]
 dir = "web"
 run = "bun run test"
+
+[tasks.web-test-coverage]
+depends = ["web-install"]
+dir = "web"
+run = "bun run test:coverage"
