@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-18T09:25:00.918Z",
-    "fileCount": 116,
+    "lastScanned": "2026-09-18T09:58:51.938Z",
+    "fileCount": 119,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "2311f953dae644a189754fe63ff001774c4bb9dbb3c51724279d6ed594931654",
-    "storeUpdatedAt": "2026-09-18T09:25:00.919Z",
+    "renderedHash": "139aef0dd7d88fdd50c6c85374a089b0587cdf2ff0e0583d2e428336a03e52ca",
+    "storeUpdatedAt": "2026-09-18T09:58:51.945Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -52,11 +52,11 @@
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 6276,
-      "hash": "f2dab3bdcb31f2c1",
-      "size": 25183,
-      "mtimeMs": 1789723500913.2087,
-      "updatedAt": "2026-09-18T09:25:00.918Z",
+      "tokens": 6358,
+      "hash": "6462653dd2365333",
+      "size": 25513,
+      "mtimeMs": 1789725318569.8335,
+      "updatedAt": "2026-09-18T09:55:18.576Z",
       "source": "hook"
     },
     "aspire.config.json": {
@@ -689,34 +689,13 @@
       "importance": 0.2817
     },
     "web/src/components/app-sidebar.tsx": {
-      "description": "AppSidebar",
+      "description": "Exports AppSidebar",
       "tokens": 580,
-      "hash": "47e911009247e141",
-      "size": 2031,
-      "mtimeMs": 1789567164532.9016,
-      "updatedAt": "2026-09-17T15:24:13.971Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "AppSidebarProps",
-          "kind": "section",
-          "startLine": 15,
-          "endLine": 15,
-          "tokens": 23
-        },
-        {
-          "name": "AppSidebar",
-          "kind": "fn",
-          "startLine": 17,
-          "endLine": 58,
-          "tokens": 475
-        }
-      ],
-      "symbolSource": "ts",
-      "imports": [
-        "web/src/components/ui/typography.tsx"
-      ],
-      "importance": 0.2817
+      "hash": "c10f320e2abd6720",
+      "size": 2032,
+      "mtimeMs": 1789725364367.9019,
+      "updatedAt": "2026-09-18T09:56:04.408Z",
+      "source": "hook"
     },
     "web/src/components/ui/button.tsx": {
       "description": "BUTTON_VARIANTS",
@@ -739,32 +718,13 @@
       "importance": 0.2817
     },
     "web/src/components/ui/calendar.tsx": {
-      "description": "Calendar — uses useEffect",
-      "tokens": 2383,
-      "hash": "8ef96c309f150623",
-      "size": 8339,
-      "mtimeMs": 1789567164533.7693,
-      "updatedAt": "2026-09-17T15:24:13.973Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "Calendar",
-          "kind": "fn",
-          "startLine": 13,
-          "endLine": 182,
-          "tokens": 1739
-        },
-        {
-          "name": "CalendarDayButton",
-          "kind": "fn",
-          "startLine": 184,
-          "endLine": 221,
-          "tokens": 536
-        }
-      ],
-      "symbolSource": "ts",
-      "skeleton": "function Calendar({\nfunction CalendarDayButton({",
-      "importance": 0.2817
+      "description": "Declares Calendar",
+      "tokens": 2444,
+      "hash": "01fda0df49f3edea",
+      "size": 8554,
+      "mtimeMs": 1789725531889.55,
+      "updatedAt": "2026-09-18T09:58:51.938Z",
+      "source": "hook"
     },
     "web/src/components/ui/card.tsx": {
       "description": "Declares Card",
@@ -776,73 +736,13 @@
       "source": "hook"
     },
     "web/src/components/ui/date-range-picker.tsx": {
-      "description": "DATE_FORMATTER — uses useState",
-      "tokens": 1226,
-      "hash": "a9db0f78da5736b3",
-      "size": 4308,
-      "mtimeMs": 1789567164535.2861,
-      "updatedAt": "2026-09-17T15:24:13.974Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "formatDate",
-          "kind": "fn",
-          "startLine": 22,
-          "endLine": 24,
-          "tokens": 21
-        },
-        {
-          "name": "getMonthRange",
-          "kind": "fn",
-          "startLine": 26,
-          "endLine": 34,
-          "tokens": 70
-        },
-        {
-          "name": "getYearRange",
-          "kind": "fn",
-          "startLine": 36,
-          "endLine": 43,
-          "tokens": 57
-        },
-        {
-          "name": "getCurrentMonthRange",
-          "kind": "fn",
-          "startLine": 45,
-          "endLine": 47,
-          "tokens": 21
-        },
-        {
-          "name": "Preset",
-          "kind": "section",
-          "startLine": 49,
-          "endLine": 52,
-          "tokens": 21
-        },
-        {
-          "name": "PRESETS",
-          "kind": "fn",
-          "startLine": 54,
-          "endLine": 58,
-          "tokens": 71
-        },
-        {
-          "name": "getMonthSpan",
-          "kind": "fn",
-          "startLine": 60,
-          "endLine": 68,
-          "tokens": 75
-        },
-        {
-          "name": "DateRangePicker",
-          "kind": "fn",
-          "startLine": 70,
-          "endLine": 151,
-          "tokens": 676
-        }
-      ],
-      "symbolSource": "ts",
-      "importance": 0.2817
+      "description": "Declares getMonthRange",
+      "tokens": 1188,
+      "hash": "ea89400db15386dc",
+      "size": 4173,
+      "mtimeMs": 1789725272407.8271,
+      "updatedAt": "2026-09-18T09:54:32.523Z",
+      "source": "hook"
     },
     "web/src/components/ui/input.tsx": {
       "description": "Input",
@@ -1445,27 +1345,13 @@
       "importance": 0.2817
     },
     "web/tests/components/app-sidebar.test.tsx": {
-      "description": "TEST_PAGES",
-      "tokens": 970,
-      "hash": "bca947e30dc88191",
-      "size": 3415,
-      "mtimeMs": 1789567164544.8064,
-      "updatedAt": "2026-09-17T15:24:13.984Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "renderSidebar",
-          "kind": "fn",
-          "startLine": 16,
-          "endLine": 25,
-          "tokens": 76
-        }
-      ],
-      "symbolSource": "ts",
-      "imports": [
-        "web/tests/utils/router.tsx"
-      ],
-      "importance": 0.2817
+      "description": "Declares TEST_PAGES",
+      "tokens": 971,
+      "hash": "0b59e8250559b673",
+      "size": 3416,
+      "mtimeMs": 1789725368013.084,
+      "updatedAt": "2026-09-18T09:56:08.046Z",
+      "source": "hook"
     },
     "web/tests/components/ui/date-range-picker.component.test.tsx": {
       "description": "EMPTY_LABEL",
@@ -1511,24 +1397,12 @@
     },
     "web/tests/components/ui/date-range-picker.test.ts": {
       "description": "Declares toParts",
-      "tokens": 2432,
-      "hash": "bd933eb9f07e4740",
-      "size": 8518,
-      "mtimeMs": 1789567164545.7852,
-      "updatedAt": "2026-09-17T15:24:13.986Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "toParts",
-          "kind": "fn",
-          "startLine": 15,
-          "endLine": 19,
-          "tokens": 40
-        }
-      ],
-      "symbolSource": "ts",
-      "skeleton": "function toParts(date: Date | undefined) {",
-      "importance": 0.2817
+      "tokens": 2286,
+      "hash": "2a032218cc0b11eb",
+      "size": 8008,
+      "mtimeMs": 1789725292590.4736,
+      "updatedAt": "2026-09-18T09:54:52.595Z",
+      "source": "hook"
     },
     "web/tests/components/ui/typography.test.tsx": {
       "description": "`font-semibold` is intentionally absent: `cn` runs tailwind-merge, so the",
@@ -1750,6 +1624,33 @@
       "size": 4281,
       "mtimeMs": 1789723488127.264,
       "updatedAt": "2026-09-18T09:24:48.132Z",
+      "source": "hook"
+    },
+    "web/src/lib/datetime.ts": {
+      "description": "Declares DISPLAY_LOCALE",
+      "tokens": 269,
+      "hash": "c36cc0e6f0246a94",
+      "size": 940,
+      "mtimeMs": 1789725502456.8567,
+      "updatedAt": "2026-09-18T09:58:22.472Z",
+      "source": "hook"
+    },
+    "web/tests/lib/datetime.test.ts": {
+      "description": "Declares toParts",
+      "tokens": 568,
+      "hash": "4657ad04238fe3e5",
+      "size": 1987,
+      "mtimeMs": 1789725297554.7466,
+      "updatedAt": "2026-09-18T09:54:57.578Z",
+      "source": "hook"
+    },
+    "web/src/models/pages.tsx": {
+      "description": "Exports PAGES",
+      "tokens": 139,
+      "hash": "15cb36f98bd90e53",
+      "size": 497,
+      "mtimeMs": 1789725359995.353,
+      "updatedAt": "2026-09-18T09:55:59.999Z",
       "source": "hook"
     }
   },

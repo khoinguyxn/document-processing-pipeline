@@ -7,6 +7,8 @@ type Page = {
   icon: React.ReactNode
 }
 
+export type { Page }
+
 export const PAGES: Page[] = [
   {
     title: "Hòm thư",

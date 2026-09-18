@@ -12,16 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
-const DATE_FORMATTER = new Intl.DateTimeFormat("vi-VN", {
-  day: "2-digit",
-  month: "2-digit",
-  year: "numeric",
-})
-
-function formatDate(date: Date) {
-  return DATE_FORMATTER.format(date)
-}
+import { formatDate, getCurrentDate } from "@/lib/datetime"
 
 function getMonthRange(reference: Date, offset: number): DateRange {
   const year = reference.getFullYear()
@@ -43,7 +34,7 @@ function getYearRange(reference: Date, offset: number): DateRange {
 }
 
 function getCurrentMonthRange() {
-  return getMonthRange(new Date(), 0)
+  return getMonthRange(getCurrentDate(), 0)
 }
 
 type Preset = {
@@ -89,7 +80,7 @@ function DateRangePicker({
     numberOfMonths === 2 && value?.to ? value.to : value?.from
 
   function applyPreset(preset: Preset) {
-    onValueChange?.(preset.getRange(new Date()))
+    onValueChange?.(preset.getRange(getCurrentDate()))
     setOpen(false)
   }
 
@@ -99,7 +90,10 @@ function DateRangePicker({
         <Button
           data-slot="date-range-picker"
           variant="outline"
-          className={cn("justify-start gap-2 font-normal bg-background", className)}
+          className={cn(
+            "justify-start gap-2 bg-background font-normal",
+            className
+          )}
           {...props}
         >
           <CalendarIcon data-icon="inline-start" />
@@ -152,7 +146,6 @@ function DateRangePicker({
 
 export {
   DateRangePicker,
-  formatDate,
   getCurrentMonthRange,
   getMonthRange,
   getMonthSpan,

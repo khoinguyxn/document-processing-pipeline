@@ -4,6 +4,7 @@ import { DayPicker, getDefaultClassNames } from "react-day-picker"
 import type { DayButton, Locale } from "react-day-picker"
 
 import { Button, BUTTON_VARIANTS } from "@/components/ui/button"
+import { DISPLAY_LOCALE, DISPLAY_TIME_ZONE } from "@/lib/datetime"
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -38,7 +39,10 @@ function Calendar({
       locale={locale}
       formatters={{
         formatMonthDropdown: (date) =>
-          date.toLocaleString(locale?.code, { month: "short" }),
+          date.toLocaleString(locale?.code ?? DISPLAY_LOCALE, {
+            month: "short",
+            timeZone: DISPLAY_TIME_ZONE,
+          }),
         ...formatters,
       }}
       classNames={{
@@ -200,7 +204,9 @@ function CalendarDayButton({
       ref={ref}
       variant="ghost"
       size="icon"
-      data-day={day.date.toLocaleDateString(locale?.code)}
+      data-day={day.date.toLocaleDateString(locale?.code ?? DISPLAY_LOCALE, {
+        timeZone: DISPLAY_TIME_ZONE,
+      })}
       data-selected-single={
         modifiers.selected &&
         !modifiers.range_start &&
