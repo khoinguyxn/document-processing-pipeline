@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T08:28:29.609Z
-> Files: 111 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T09:25:00.918Z
+> Files: 116 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -11,7 +11,7 @@
 
 - `.dockerignore` — Docker ignore rules (~1258 tok)
 - `.gitignore` — Git ignore rules (~314 tok)
-- `AGENTS.md` — Skill Loading (~6112 tok)
+- `AGENTS.md` — Skill Loading (~6276 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
@@ -160,7 +160,7 @@
 - `components.json` (~151 tok)
 - `Dockerfile` — Docker container definition (~353 tok)
 - `eslint.config.js` — ESLint flat configuration (~123 tok)
-- `package.json` — Node.js package manifest (~559 tok)
+- `package.json` — Node.js package manifest (~584 tok)
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
 - `vite.config.ts` — Declares config (~163 tok)
@@ -171,6 +171,10 @@
 - `manifest.json` (~143 tok)
 - `robots.txt` — https://www.robotstxt.org/robotstxt.html (~17 tok)
 
+## web/scripts/
+
+- `generate-receipt-types.ts` — Declares HEADER (~322 tok)
+
 ## web/src/
 
 - `router.tsx` — getRouter (~118 tok)
@@ -180,7 +184,7 @@
 ## web/src/components/
 
 - `app-sidebar.tsx` — AppSidebar (~580 tok)
-- `inbox-button-group.tsx` — Exports InboxButtonGroup (~349 tok)
+- `inbox-button-group.tsx` — Exports InboxButtonGroup (~514 tok)
 - `upload-status-alert.tsx` — Exports UploadStatusAlert (~963 tok)
 
 ## web/src/components/ui/
@@ -208,6 +212,11 @@
 - `pages.tsx` — Exports PAGES (~106 tok)
 - `utils.ts` — Exports cn (~48 tok)
 
+## web/src/models/
+
+- `receipt.ts` — Declares RECEIPT_STATUSES (~540 tok)
+- `reciept.ts` — Declares RECEIPT_BASE (~197 tok)
+
 ## web/src/routes/
 
 - `__root.tsx` — Route (~380 tok)
@@ -232,7 +241,7 @@
 ## web/tests/components/
 
 - `app-sidebar.test.tsx` — TEST_PAGES (~970 tok)
-- `inbox-button-group.test.tsx` — Declares BUTTON_SELECTOR (~519 tok)
+- `inbox-button-group.test.tsx` — Declares BUTTON_SELECTOR (~694 tok)
 - `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~2187 tok)
 
 ## web/tests/components/ui/
@@ -240,6 +249,11 @@
 - `date-range-picker.component.test.tsx` — EMPTY_LABEL (~2782 tok)
 - `date-range-picker.test.ts` — Declares toParts (~2432 tok)
 - `typography.test.tsx` — `font-semibold` is intentionally absent: `cn` runs tailwind-merge, so the (~1108 tok)
+
+## web/tests/models/
+
+- `receipt.test.ts` — Declares createReceipt (~1221 tok)
+- `reciept.test.ts` — Declares createReceipt (~699 tok)
 
 ## web/tests/routes/app/
 

@@ -1,11 +1,12 @@
 import { InboxButtonGroup } from "@/components/inbox-button-group"
-import { describe, expect, it } from "vitest"
+import { describe, expect, it, vi } from "vitest"
 import { render } from "vitest-browser-react"
 
 const BUTTON_SELECTOR = '[data-slot="button"]'
 
 const ALL_LABEL = "Tất cả"
 const REVIEW_LABEL = "Cần kiểm tra"
+const DONE_LABEL = "Hoàn tất"
 
 function getButtons(container: HTMLElement) {
   return [...container.querySelectorAll<HTMLButtonElement>(BUTTON_SELECTOR)]
@@ -52,5 +53,21 @@ describe("InboxButtonGroup", () => {
     const pressed = getPressedButtons(screen.container)
     expect(pressed).toHaveLength(1)
     expect(pressed[0].textContent).toContain(ALL_LABEL)
+  })
+
+  it("InboxButtonGroup_ShouldReportTheFilterStatuses_WhenAButtonIsClicked", async () => {
+    // Arrange
+    const onStatusesChange = vi.fn()
+    const screen = await render(
+      <InboxButtonGroup onStatusesChange={onStatusesChange} />
+    )
+
+    // Act
+    await screen.getByRole("button", { name: new RegExp(REVIEW_LABEL) }).click()
+    await screen.getByRole("button", { name: new RegExp(DONE_LABEL) }).click()
+
+    // Assert
+    expect(onStatusesChange).toHaveBeenNthCalledWith(1, ["needs_review"])
+    expect(onStatusesChange).toHaveBeenNthCalledWith(2, ["ready"])
   })
 })
