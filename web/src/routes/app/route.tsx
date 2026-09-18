@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { H1 } from "@/components/ui/typography"
-import { PAGES } from "@/lib/pages"
+import { PAGES } from "@/models/pages"
 import { Outlet, createFileRoute, useLocation } from "@tanstack/react-router"
 import * as React from "react"
 import type { DateRange } from "react-day-picker"
@@ -36,7 +36,7 @@ function AppLayout() {
       <SidebarProvider>
         <AppSidebar pages={PAGES} />
         <SidebarInset>
-          <header className="border-b flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+          <header className="flex h-16 shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
             <SidebarTrigger className="ml-2" />
             <div className="flex flex-1 items-center gap-4">
               <H1>{CURRENT_PAGE_TITLE}</H1>

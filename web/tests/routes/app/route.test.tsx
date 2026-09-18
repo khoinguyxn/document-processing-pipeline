@@ -1,4 +1,4 @@
-import { PAGES } from "@/lib/pages"
+import { PAGES } from "@/models/pages"
 import { describe, expect, it } from "vitest"
 import { userEvent } from "vitest/browser"
 import { renderRoute } from "../../utils/router"
