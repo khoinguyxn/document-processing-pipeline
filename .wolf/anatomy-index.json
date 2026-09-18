@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-18T07:42:47.977Z",
-    "fileCount": 108,
+    "lastScanned": "2026-09-18T08:28:29.609Z",
+    "fileCount": 111,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "790dfc3d94c454d18bed0aac17ef3995db84c1e82f983dac20afb782d635d45d",
-    "storeUpdatedAt": "2026-09-18T07:42:47.978Z",
+    "renderedHash": "938a70ef62542bb04e6a4c4c5994b3038e375892ec64b77e38e1ff9aa3bba643",
+    "storeUpdatedAt": "2026-09-18T08:28:29.612Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -1324,24 +1324,13 @@
       "source": "hook"
     },
     "web/src/routes/app/route.tsx": {
-      "description": "Route",
-      "tokens": 589,
-      "hash": "8bb08a884fc98bb0",
-      "size": 2072,
-      "mtimeMs": 1789567164542.128,
-      "updatedAt": "2026-09-17T15:24:13.981Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "AppLayout",
-          "kind": "fn",
-          "startLine": 41,
-          "endLine": 76,
-          "tokens": 316
-        }
-      ],
-      "symbolSource": "ts",
-      "importance": 0.345
+      "description": "Exports Route",
+      "tokens": 494,
+      "hash": "5e9a50d9904c6b55",
+      "size": 1726,
+      "mtimeMs": 1789720099349.8577,
+      "updatedAt": "2026-09-18T08:28:19.366Z",
+      "source": "hook"
     },
     "web/src/routes/app/suppliers.tsx": {
       "description": "Route",
@@ -1563,34 +1552,13 @@
       "source": "hook"
     },
     "web/tests/routes/app/route.test.tsx": {
-      "description": "`AppLayout` renders `<Outlet />`, so it has to be mounted through a real",
-      "tokens": 937,
-      "hash": "4166e66fd29ce49d",
-      "size": 3293,
-      "mtimeMs": 1789567164547.072,
-      "updatedAt": "2026-09-17T15:24:13.987Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "renderAppLayout",
-          "kind": "fn",
-          "startLine": 8,
-          "endLine": 12,
-          "tokens": 40
-        },
-        {
-          "name": "getDateRangeLabel",
-          "kind": "fn",
-          "startLine": 14,
-          "endLine": 17,
-          "tokens": 42
-        }
-      ],
-      "symbolSource": "ts",
-      "imports": [
-        "web/tests/utils/router.tsx"
-      ],
-      "importance": 0.2817
+      "description": "Declares renderAppLayout",
+      "tokens": 935,
+      "hash": "e799ef615ac7afcb",
+      "size": 3286,
+      "mtimeMs": 1789720109602.9724,
+      "updatedAt": "2026-09-18T08:28:29.609Z",
+      "source": "hook"
     },
     "web/tests/setup.ts": {
       "description": "",
@@ -1712,6 +1680,33 @@
       "size": 7739,
       "mtimeMs": 1789717367974.6567,
       "updatedAt": "2026-09-18T07:42:47.977Z",
+      "source": "hook"
+    },
+    "web/src/components/inbox-button-group.tsx": {
+      "description": "Exports InboxButtonGroup",
+      "tokens": 349,
+      "hash": "8c4cfc4b56b3a506",
+      "size": 1234,
+      "mtimeMs": 1789719943496.7979,
+      "updatedAt": "2026-09-18T08:25:43.502Z",
+      "source": "hook"
+    },
+    "web/tests/components/inbox-button-group.test.tsx": {
+      "description": "Declares BUTTON_SELECTOR",
+      "tokens": 519,
+      "hash": "3101e958e5fb5fa0",
+      "size": 1822,
+      "mtimeMs": 1789719948306.7976,
+      "updatedAt": "2026-09-18T08:25:48.317Z",
+      "source": "hook"
+    },
+    "web/src/lib/pages.tsx": {
+      "description": "Exports PAGES",
+      "tokens": 106,
+      "hash": "414f0581083defa1",
+      "size": 382,
+      "mtimeMs": 1789720096466.0315,
+      "updatedAt": "2026-09-18T08:28:16.474Z",
       "source": "hook"
     }
   },

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T07:42:47.977Z
-> Files: 108 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T08:28:29.609Z
+> Files: 111 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -180,6 +180,7 @@
 ## web/src/components/
 
 - `app-sidebar.tsx` — AppSidebar (~580 tok)
+- `inbox-button-group.tsx` — Exports InboxButtonGroup (~349 tok)
 - `upload-status-alert.tsx` — Exports UploadStatusAlert (~963 tok)
 
 ## web/src/components/ui/
@@ -204,6 +205,7 @@
 
 ## web/src/lib/
 
+- `pages.tsx` — Exports PAGES (~106 tok)
 - `utils.ts` — Exports cn (~48 tok)
 
 ## web/src/routes/
@@ -216,7 +218,7 @@
 
 - `exports.tsx` — Route (~62 tok)
 - `index.tsx` — Exports Route (~525 tok)
-- `route.tsx` — Route (~589 tok)
+- `route.tsx` — Exports Route (~494 tok)
 - `suppliers.tsx` — Route (~63 tok)
 
 ## web/src/types/
@@ -230,6 +232,7 @@
 ## web/tests/components/
 
 - `app-sidebar.test.tsx` — TEST_PAGES (~970 tok)
+- `inbox-button-group.test.tsx` — Declares BUTTON_SELECTOR (~519 tok)
 - `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~2187 tok)
 
 ## web/tests/components/ui/
@@ -241,7 +244,7 @@
 ## web/tests/routes/app/
 
 - `index.test.tsx` — Declares CARD_SELECTOR (~1634 tok)
-- `route.test.tsx` — `AppLayout` renders `<Outlet />`, so it has to be mounted through a real (~937 tok)
+- `route.test.tsx` — Declares renderAppLayout (~935 tok)
 
 ## web/tests/utils/
 
