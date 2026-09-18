@@ -28,13 +28,13 @@ function RouteComponent() {
             PNG tối đa 20 MB mỗi file.
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid grid-cols-2 grid-rows-1 gap-2">
-          <CardAction className="col-span-2 col-start-1 row-span-1 row-start-1 grid w-full grid-cols-[repeat(2,minmax(max-content,1fr))] grid-rows-1 gap-3 justify-self-stretch">
-            <Button className="w-full">
+        <CardContent className="flex flex-col gap-2">
+          <CardAction className="flex w-full flex-wrap gap-3">
+            <Button className="grow basis-0">
               <Upload className="stroke-white" />
               <span>Tải file lên</span>
             </Button>
-            <Button variant="secondary" className="w-full">
+            <Button variant="secondary" className="grow basis-0">
               <Image className="stroke-black" />
               <span>Chọn ảnh từ điện thoại</span>
             </Button>
