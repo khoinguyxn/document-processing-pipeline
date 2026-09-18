@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T04:15:12.406Z
-> Files: 105 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T07:22:29.707Z
+> Files: 108 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -180,9 +180,11 @@
 ## web/src/components/
 
 - `app-sidebar.tsx` — AppSidebar (~580 tok)
+- `upload-status-alert.tsx` — Exports UploadStatusAlert (~963 tok)
 
 ## web/src/components/ui/
 
+- `alert.tsx` — Declares ALERT_VARIANTS (~521 tok)
 - `button.tsx` — BUTTON_VARIANTS (~843 tok)
 - `calendar.tsx` — Calendar — uses useEffect (~2383 tok)
 - `card.tsx` — Declares Card (~707 tok)
@@ -213,7 +215,7 @@
 ## web/src/routes/app/
 
 - `exports.tsx` — Route (~62 tok)
-- `index.tsx` — Exports Route (~450 tok)
+- `index.tsx` — Exports Route (~525 tok)
 - `route.tsx` — Route (~589 tok)
 - `suppliers.tsx` — Route (~63 tok)
 
@@ -228,6 +230,7 @@
 ## web/tests/components/
 
 - `app-sidebar.test.tsx` — TEST_PAGES (~970 tok)
+- `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~1572 tok)
 
 ## web/tests/components/ui/
 
