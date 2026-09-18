@@ -90,6 +90,78 @@
       "last_seen": "2026-09-18T08:28:29.628Z",
       "occurrences": 1,
       "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/scripts/generate-receipt-types.ts",
+      "root_cause": "Had \"\\n\"",
+      "fix": "Changed to `export ${printNode(createTypeAlias(node, name))}`",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-006",
+      "timestamp": "2026-09-18T09:03:30.565Z",
+      "last_seen": "2026-09-18T09:03:30.565Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/tests/models/receipt.test.ts",
+      "root_cause": "Had \"@/models/reciept\"",
+      "fix": "Changed to \"@/models/receipt\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "ts"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-007",
+      "timestamp": "2026-09-18T09:04:01.280Z",
+      "last_seen": "2026-09-18T09:04:01.280Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Missing await",
+      "file": "web/tests/components/inbox-button-group.test.tsx",
+      "root_cause": "Async call without await",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-008",
+      "timestamp": "2026-09-18T09:04:58.810Z",
+      "last_seen": "2026-09-18T09:04:58.810Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/components/inbox-button-group.tsx",
+      "root_cause": "Had \"@/models/receipt.generated\"",
+      "fix": "Changed to \"@/models/receipt\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-009",
+      "timestamp": "2026-09-18T09:11:32.204Z",
+      "last_seen": "2026-09-18T09:11:32.204Z",
+      "occurrences": 1,
+      "related_bugs": []
     }
   ],
   "applied_observations": {
@@ -98,7 +170,11 @@
     "4bee1b48-560c-4045-9bd5-bce8a2a388fe": true,
     "618abc3d-c89f-4b67-bb79-ea36606de79d": true,
     "e88948a6-5c93-40b0-ae55-dd5067bcef15": true,
-    "2bbe54c7-509e-4f92-92a8-a48f6d690f8e": true
+    "2bbe54c7-509e-4f92-92a8-a48f6d690f8e": true,
+    "2bc58092-09f1-47dc-91b3-8cd3769659e2": true,
+    "53e5c0ee-9dcc-459a-a769-cd97c5be5361": true,
+    "d2b4370e-6047-4b05-adb4-a2ee11ddfed7": true,
+    "6ca71fbe-b73a-4132-abaf-c82b4181cd25": true
   },
-  "next_id": 6
+  "next_id": 10
 }

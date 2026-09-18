@@ -224,6 +224,10 @@ The `web` Vite app is added via `AddViteApp(...).WithBun()` and, on publish,
   declared inside functions and components keep camelCase. TanStack Router's exported
   `Route` is exempt — the router resolves routes by that exact identifier.
 - The app is built with the Nitro **bun** preset and served from `.output/`.
+- **Zod models are the source of truth for domain types.** `web/src/models/receipt.ts`
+  declares the hand-written types alongside their matching Zod schemas, bound with
+  `satisfies z.ZodType<T>` so the two cannot drift. Use `parseReceipt` for parsing — it
+  throws a `zod-validation-error` `ValidationError` with a user-friendly message.
 
 ---
 
@@ -258,6 +262,10 @@ The `web` Vite app is added via `AddViteApp(...).WithBun()` and, on publish,
   `vi.useRealTimers()` in an `afterEach`.
 - **Pure helpers are exported so they can be tested directly.** Prefer exporting a helper
   over asserting on it through a rendered component.
+- **Schema fuzzing** uses `@traversable/zod-test` (`fuzz`) with `fast-check`. Pass
+  `array: { minLength: 1 }` in the fuzz options: v0.0.28 ignores `z.array(...).min(1)` and
+  can emit empty arrays that fail the schema. Peer deps `@traversable/zod-types` and
+  `@traversable/registry` are installed alongside it.
 
 ### Backend
 

@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-18T08:28:29.609Z",
-    "fileCount": 111,
+    "lastScanned": "2026-09-18T09:25:00.918Z",
+    "fileCount": 116,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "938a70ef62542bb04e6a4c4c5994b3038e375892ec64b77e38e1ff9aa3bba643",
-    "storeUpdatedAt": "2026-09-18T08:28:29.612Z",
+    "renderedHash": "2311f953dae644a189754fe63ff001774c4bb9dbb3c51724279d6ed594931654",
+    "storeUpdatedAt": "2026-09-18T09:25:00.919Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -52,13 +52,12 @@
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 6112,
-      "hash": "be4d643f91709797",
-      "size": 24528,
-      "mtimeMs": 1789658643213.5107,
-      "updatedAt": "2026-09-17T15:24:13.945Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 6276,
+      "hash": "f2dab3bdcb31f2c1",
+      "size": 25183,
+      "mtimeMs": 1789723500913.2087,
+      "updatedAt": "2026-09-18T09:25:00.918Z",
+      "source": "hook"
     },
     "aspire.config.json": {
       "description": "",
@@ -652,13 +651,12 @@
     },
     "web/package.json": {
       "description": "Node.js package manifest",
-      "tokens": 559,
-      "hash": "de7ccd2a0830c74c",
-      "size": 1956,
-      "mtimeMs": 1789656818682.3618,
-      "updatedAt": "2026-09-17T15:24:13.967Z",
-      "source": "scan",
-      "importance": 0.2817
+      "tokens": 584,
+      "hash": "181126b007303057",
+      "size": 2042,
+      "mtimeMs": 1789722696545.9116,
+      "updatedAt": "2026-09-18T09:11:36.565Z",
+      "source": "hook"
     },
     "web/public/manifest.json": {
       "description": "",
@@ -1684,20 +1682,20 @@
     },
     "web/src/components/inbox-button-group.tsx": {
       "description": "Exports InboxButtonGroup",
-      "tokens": 349,
-      "hash": "8c4cfc4b56b3a506",
-      "size": 1234,
-      "mtimeMs": 1789719943496.7979,
-      "updatedAt": "2026-09-18T08:25:43.502Z",
+      "tokens": 514,
+      "hash": "b1164697cc9fd0c5",
+      "size": 1810,
+      "mtimeMs": 1789723417828.3113,
+      "updatedAt": "2026-09-18T09:23:37.849Z",
       "source": "hook"
     },
     "web/tests/components/inbox-button-group.test.tsx": {
       "description": "Declares BUTTON_SELECTOR",
-      "tokens": 519,
-      "hash": "3101e958e5fb5fa0",
-      "size": 1822,
-      "mtimeMs": 1789719948306.7976,
-      "updatedAt": "2026-09-18T08:25:48.317Z",
+      "tokens": 694,
+      "hash": "1191e8f1aa98a68c",
+      "size": 2437,
+      "mtimeMs": 1789723421594.0383,
+      "updatedAt": "2026-09-18T09:23:41.598Z",
       "source": "hook"
     },
     "web/src/lib/pages.tsx": {
@@ -1707,6 +1705,51 @@
       "size": 382,
       "mtimeMs": 1789720096466.0315,
       "updatedAt": "2026-09-18T08:28:16.474Z",
+      "source": "hook"
+    },
+    "web/src/models/reciept.ts": {
+      "description": "Declares RECEIPT_BASE",
+      "tokens": 197,
+      "hash": "706a7e5d819828dd",
+      "size": 687,
+      "mtimeMs": 1789721955591.0125,
+      "updatedAt": "2026-09-18T08:59:15.614Z",
+      "source": "hook"
+    },
+    "web/tests/models/reciept.test.ts": {
+      "description": "Declares createReceipt",
+      "tokens": 699,
+      "hash": "1cbfa9a6372a383a",
+      "size": 2452,
+      "mtimeMs": 1789721967939.9106,
+      "updatedAt": "2026-09-18T08:59:27.941Z",
+      "source": "hook"
+    },
+    "web/src/models/receipt.ts": {
+      "description": "Declares RECEIPT_STATUSES",
+      "tokens": 540,
+      "hash": "6e06e8133fb14928",
+      "size": 1888,
+      "mtimeMs": 1789723412384.9265,
+      "updatedAt": "2026-09-18T09:23:32.425Z",
+      "source": "hook"
+    },
+    "web/scripts/generate-receipt-types.ts": {
+      "description": "Declares HEADER",
+      "tokens": 322,
+      "hash": "954f6e14e63deb00",
+      "size": 1127,
+      "mtimeMs": 1789722366140.4954,
+      "updatedAt": "2026-09-18T09:06:06.292Z",
+      "source": "hook"
+    },
+    "web/tests/models/receipt.test.ts": {
+      "description": "Declares createReceipt",
+      "tokens": 1221,
+      "hash": "ba95d19e5f99d908",
+      "size": 4281,
+      "mtimeMs": 1789723488127.264,
+      "updatedAt": "2026-09-18T09:24:48.132Z",
       "source": "hook"
     }
   },
