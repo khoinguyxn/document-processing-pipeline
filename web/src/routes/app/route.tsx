@@ -10,33 +10,14 @@ import {
 } from "@/components/ui/sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { H1 } from "@/components/ui/typography"
-import type { Page } from "@/types/pages"
+import { PAGES } from "@/lib/pages"
 import { Outlet, createFileRoute, useLocation } from "@tanstack/react-router"
-import { CirclePile, Folder, Sheet } from "lucide-react"
 import * as React from "react"
 import type { DateRange } from "react-day-picker"
 
 export const Route = createFileRoute("/app")({
   component: AppLayout,
 })
-
-export const PAGES: Page[] = [
-  {
-    title: "Hòm thư",
-    to: "/app",
-    icon: <Folder />,
-  },
-  {
-    title: "Xuất dữ liệu",
-    to: "/app/exports",
-    icon: <Sheet />,
-  },
-  {
-    title: "Nhà cung cấp",
-    to: "/app/suppliers",
-    icon: <CirclePile />,
-  },
-]
 
 function AppLayout() {
   const CURRENT_LOCATION = useLocation({
