@@ -36,12 +36,50 @@
       "last_seen": "2026-09-16T13:26:48.414Z",
       "occurrences": 2,
       "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/routes/app/index.tsx",
+      "root_cause": "Had \"mt-4\"",
+      "fix": "Changed to \"loading\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-003",
+      "timestamp": "2026-09-18T07:19:36.389Z",
+      "last_seen": "2026-09-18T07:19:36.389Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Missing await",
+      "file": "web/tests/components/upload-status-alert.test.tsx",
+      "root_cause": "Async call without await",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-004",
+      "timestamp": "2026-09-18T07:42:47.991Z",
+      "last_seen": "2026-09-18T07:42:47.991Z",
+      "occurrences": 1,
+      "related_bugs": []
     }
   ],
   "applied_observations": {
     "ad88426f-ee7d-4f2c-941e-54b76847c3b8": true,
     "72d031f1-4951-4db8-a922-5758cf3049c4": true,
-    "4bee1b48-560c-4045-9bd5-bce8a2a388fe": true
+    "4bee1b48-560c-4045-9bd5-bce8a2a388fe": true,
+    "618abc3d-c89f-4b67-bb79-ea36606de79d": true,
+    "e88948a6-5c93-40b0-ae55-dd5067bcef15": true
   },
-  "next_id": 3
+  "next_id": 5
 }

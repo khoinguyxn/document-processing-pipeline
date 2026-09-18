@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-18T04:15:12.406Z",
-    "fileCount": 105,
+    "lastScanned": "2026-09-18T07:42:47.977Z",
+    "fileCount": 108,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "9d8dffcab5a2ccc87f69ad4664a984be9cd76dc8950441481ad24dfe485c8856",
-    "storeUpdatedAt": "2026-09-18T04:15:12.406Z",
+    "renderedHash": "790dfc3d94c454d18bed0aac17ef3995db84c1e82f983dac20afb782d635d45d",
+    "storeUpdatedAt": "2026-09-18T07:42:47.978Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -1316,11 +1316,11 @@
     },
     "web/src/routes/app/index.tsx": {
       "description": "Exports Route",
-      "tokens": 450,
-      "hash": "be3b67089c49df7f",
-      "size": 1621,
-      "mtimeMs": 1789704902798.414,
-      "updatedAt": "2026-09-18T04:15:02.805Z",
+      "tokens": 525,
+      "hash": "954b552cb7af2a02",
+      "size": 1883,
+      "mtimeMs": 1789715976364.8706,
+      "updatedAt": "2026-09-18T07:19:36.376Z",
       "source": "hook"
     },
     "web/src/routes/app/route.tsx": {
@@ -1686,6 +1686,33 @@
       "updatedAt": "2026-09-17T15:24:13.988Z",
       "source": "scan",
       "importance": 0.2817
+    },
+    "web/src/components/ui/alert.tsx": {
+      "description": "Declares ALERT_VARIANTS",
+      "tokens": 521,
+      "hash": "29605f9c0f6be6f2",
+      "size": 1821,
+      "mtimeMs": 1789707156368.3125,
+      "updatedAt": "2026-09-18T04:52:36.374Z",
+      "source": "hook"
+    },
+    "web/src/components/upload-status-alert.tsx": {
+      "description": "Exports UploadStatusAlert",
+      "tokens": 963,
+      "hash": "6390c1a0cfa88819",
+      "size": 3475,
+      "mtimeMs": 1789716149704.7915,
+      "updatedAt": "2026-09-18T07:22:29.707Z",
+      "source": "hook"
+    },
+    "web/tests/components/upload-status-alert.test.tsx": {
+      "description": "Declares ALERT_SELECTOR",
+      "tokens": 2187,
+      "hash": "2bbe92cda226660b",
+      "size": 7739,
+      "mtimeMs": 1789717367974.6567,
+      "updatedAt": "2026-09-18T07:42:47.977Z",
+      "source": "hook"
     }
   },
   "preamble": [
