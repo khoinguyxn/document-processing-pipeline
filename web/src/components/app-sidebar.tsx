@@ -7,7 +7,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import type { Page } from "@/types/pages"
+import type { Page } from "@/models/pages"
 
 import { Link } from "@tanstack/react-router"
 import { H3 } from "./ui/typography"

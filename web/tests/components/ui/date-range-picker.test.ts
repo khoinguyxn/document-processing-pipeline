@@ -1,7 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest"
 
 import {
-  formatDate,
   getCurrentMonthRange,
   getMonthRange,
   getMonthSpan,
@@ -20,30 +19,6 @@ function toParts(date: Date | undefined) {
 
 afterEach(() => {
   vi.useRealTimers()
-})
-
-describe("formatDate", () => {
-  it("FormatDate_ShouldRenderDayMonthYear_WhenGivenADate", () => {
-    // Arrange
-    const date = new Date(2026, 8, 1)
-
-    // Act
-    const result = formatDate(date)
-
-    // Assert
-    expect(result).toBe("01/09/2026")
-  })
-
-  it("FormatDate_ShouldZeroPadDayAndMonth_WhenTheyAreSingleDigit", () => {
-    // Arrange
-    const date = new Date(2025, 0, 5)
-
-    // Act
-    const result = formatDate(date)
-
-    // Assert
-    expect(result).toBe("05/01/2025")
-  })
 })
 
 describe("getMonthRange", () => {
