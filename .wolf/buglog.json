@@ -162,6 +162,60 @@
       "last_seen": "2026-09-18T09:11:32.204Z",
       "occurrences": 1,
       "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/components/app-sidebar.tsx",
+      "root_cause": "Had \"@/types/pages\"",
+      "fix": "Changed to \"@/models/pages\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-010",
+      "timestamp": "2026-09-18T09:56:04.419Z",
+      "last_seen": "2026-09-18T09:56:04.419Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/tests/components/app-sidebar.test.tsx",
+      "root_cause": "Had \"@/types/pages\"",
+      "fix": "Changed to \"@/models/pages\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-011",
+      "timestamp": "2026-09-18T09:56:08.076Z",
+      "last_seen": "2026-09-18T09:56:08.076Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Null/undefined access in calendar.tsx",
+      "file": "web/src/components/ui/calendar.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-012",
+      "timestamp": "2026-09-18T09:58:47.244Z",
+      "last_seen": "2026-09-18T09:58:51.968Z",
+      "occurrences": 2,
+      "related_bugs": []
     }
   ],
   "applied_observations": {
@@ -174,7 +228,11 @@
     "2bc58092-09f1-47dc-91b3-8cd3769659e2": true,
     "53e5c0ee-9dcc-459a-a769-cd97c5be5361": true,
     "d2b4370e-6047-4b05-adb4-a2ee11ddfed7": true,
-    "6ca71fbe-b73a-4132-abaf-c82b4181cd25": true
+    "6ca71fbe-b73a-4132-abaf-c82b4181cd25": true,
+    "7ca083e2-9710-42b4-95b5-001811797640": true,
+    "ef91e0e3-435a-47fd-85ef-cc432fce03ad": true,
+    "04785b0f-997b-43ac-a9bc-749d73d460c9": true,
+    "350c0c0b-25d3-4a26-b9b2-707a2fe25d4c": true
   },
-  "next_id": 10
+  "next_id": 13
 }
