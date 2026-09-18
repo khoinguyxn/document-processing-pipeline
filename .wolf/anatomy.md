@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T07:22:29.707Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T07:42:47.977Z
 > Files: 108 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -230,7 +230,7 @@
 ## web/tests/components/
 
 - `app-sidebar.test.tsx` — TEST_PAGES (~970 tok)
-- `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~1572 tok)
+- `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~2187 tok)
 
 ## web/tests/components/ui/
 

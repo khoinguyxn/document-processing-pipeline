@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-18T07:22:29.707Z",
+    "lastScanned": "2026-09-18T07:42:47.977Z",
     "fileCount": 108,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "419eff5c49c90a88328cb29b16ff0d5ae18df320a793d3de0ab660641c69d1c0",
-    "storeUpdatedAt": "2026-09-18T07:22:29.708Z",
+    "renderedHash": "790dfc3d94c454d18bed0aac17ef3995db84c1e82f983dac20afb782d635d45d",
+    "storeUpdatedAt": "2026-09-18T07:42:47.978Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -1707,11 +1707,11 @@
     },
     "web/tests/components/upload-status-alert.test.tsx": {
       "description": "Declares ALERT_SELECTOR",
-      "tokens": 1572,
-      "hash": "5ed5b2f8a995a27a",
-      "size": 5553,
-      "mtimeMs": 1789716036960.813,
-      "updatedAt": "2026-09-18T07:20:36.969Z",
+      "tokens": 2187,
+      "hash": "2bbe92cda226660b",
+      "size": 7739,
+      "mtimeMs": 1789717367974.6567,
+      "updatedAt": "2026-09-18T07:42:47.977Z",
       "source": "hook"
     }
   },

@@ -11,6 +11,7 @@ const SPINNER_SELECTOR = '[data-slot="spinner"]'
 const BUTTON_SELECTOR = '[data-slot="button"]'
 
 const CANCEL_LABEL = "Huỷ tải lên"
+const REVIEW_LABEL = "Kiểm tra"
 
 function getAlert(container: HTMLElement) {
   return container.querySelector<HTMLElement>(ALERT_SELECTOR)!
@@ -40,10 +41,10 @@ function rect(element: HTMLElement) {
   return element.getBoundingClientRect()
 }
 
-describe("UploadStatusAlert", () => {
-  it("UploadStatusAlert_ShouldRenderTheUploadProgressCopy_WhenRendered", async () => {
+describe("UploadStatusAlert — loading variant", () => {
+  it("UploadStatusAlert_ShouldRenderTheLoadingCopy_WhenVariantIsLoading", async () => {
     // Arrange & Act
-    const screen = await render(<UploadStatusAlert />)
+    const screen = await render(<UploadStatusAlert variant="loading" />)
 
     // Assert
     expect(getTitle(screen.container).textContent).toBe("Đang đọc 9 hoá đơn")
@@ -52,19 +53,20 @@ describe("UploadStatusAlert", () => {
     )
   })
 
-  it("UploadStatusAlert_ShouldRenderADisabledSpinnerButton_WhenRendered", async () => {
+  it("UploadStatusAlert_ShouldRenderADisabledSpinnerButton_WhenVariantIsLoading", async () => {
     // Arrange & Act
-    const screen = await render(<UploadStatusAlert />)
+    const screen = await render(<UploadStatusAlert variant="loading" />)
 
     // Assert
     const button = getStatusButton(screen.container)
     expect(button.disabled).toBe(true)
+    expect(button.getAttribute("aria-label")).toBe("Đang tải lên")
     expect(button.querySelector(SPINNER_SELECTOR)).not.toBeNull()
   })
 
-  it("UploadStatusAlert_ShouldPlaceTheTitleAndDescriptionOnTheSameRow", async () => {
+  it("UploadStatusAlert_ShouldPlaceTheTitleAndDescriptionOnTheSameRow_WhenVariantIsLoading", async () => {
     // Arrange & Act
-    const screen = await render(<UploadStatusAlert />)
+    const screen = await render(<UploadStatusAlert variant="loading" />)
 
     // Assert
     const titleRect = rect(getTitle(screen.container))
@@ -72,9 +74,9 @@ describe("UploadStatusAlert", () => {
     expect(Math.abs(titleRect.top - descriptionRect.top)).toBeLessThanOrEqual(2)
   })
 
-  it("UploadStatusAlert_ShouldPlaceTheSpinnerButtonLeftOfTheTitle", async () => {
+  it("UploadStatusAlert_ShouldPlaceTheSpinnerButtonLeftOfTheTitle_WhenVariantIsLoading", async () => {
     // Arrange & Act
-    const screen = await render(<UploadStatusAlert />)
+    const screen = await render(<UploadStatusAlert variant="loading" />)
 
     // Assert
     const buttonRect = rect(getStatusButton(screen.container))
@@ -82,9 +84,9 @@ describe("UploadStatusAlert", () => {
     expect(buttonRect.right).toBeLessThanOrEqual(titleRect.left)
   })
 
-  it("UploadStatusAlert_ShouldPlaceTheProgressBarBeneathTheCopyAndRightOfTheButton", async () => {
+  it("UploadStatusAlert_ShouldPlaceTheProgressBarBeneathTheCopyAndRightOfTheButton_WhenVariantIsLoading", async () => {
     // Arrange & Act
-    const screen = await render(<UploadStatusAlert />)
+    const screen = await render(<UploadStatusAlert variant="loading" />)
 
     // Assert
     const progressRect = rect(getProgress(screen.container))
@@ -96,9 +98,9 @@ describe("UploadStatusAlert", () => {
     expect(progressRect.left).toBeGreaterThanOrEqual(buttonRect.right)
   })
 
-  it("UploadStatusAlert_ShouldPlaceTheDestructiveActionOnTheFarRight", async () => {
+  it("UploadStatusAlert_ShouldPlaceTheDestructiveCancelActionOnTheFarRight_WhenVariantIsLoading", async () => {
     // Arrange & Act
-    const screen = await render(<UploadStatusAlert />)
+    const screen = await render(<UploadStatusAlert variant="loading" />)
 
     // Assert
     const alertRect = rect(getAlert(screen.container))
@@ -111,8 +113,21 @@ describe("UploadStatusAlert", () => {
     await expect.element(cancel).toBeVisible()
     expect(cancel.element().getAttribute("data-variant")).toBe("destructive")
   })
+})
 
-  it("UploadStatusAlert_ShouldRenderTheSuccessVariant_WhenVariantIsSuccess", async () => {
+describe("UploadStatusAlert — success variant", () => {
+  it("UploadStatusAlert_ShouldDefaultToTheSuccessVariant_WhenVariantIsOmitted", async () => {
+    // Arrange & Act
+    const screen = await render(<UploadStatusAlert />)
+
+    // Assert
+    expect(getTitle(screen.container).textContent).toBe("Đã tải lên")
+    expect(getStatusButton(screen.container).getAttribute("aria-label")).toBe(
+      "Đã tải lên"
+    )
+  })
+
+  it("UploadStatusAlert_ShouldRenderTheSuccessCopy_WhenVariantIsSuccess", async () => {
     // Arrange & Act
     const screen = await render(<UploadStatusAlert variant="success" />)
 
@@ -121,16 +136,32 @@ describe("UploadStatusAlert", () => {
     expect(getDescription(screen.container).textContent).toContain(
       "Đã tải lên 9 hoá đơn thành công"
     )
-    expect(getStatusButton(screen.container).getAttribute("aria-label")).toBe(
-      "Đã tải lên"
-    )
+  })
+
+  it("UploadStatusAlert_ShouldRenderADisabledSuccessButton_WhenVariantIsSuccess", async () => {
+    // Arrange & Act
+    const screen = await render(<UploadStatusAlert variant="success" />)
+
+    // Assert
+    const button = getStatusButton(screen.container)
+    expect(button.disabled).toBe(true)
+    expect(button.getAttribute("aria-label")).toBe("Đã tải lên")
+  })
+
+  it("UploadStatusAlert_ShouldOmitTheProgressBarAndAction_WhenVariantIsSuccess", async () => {
+    // Arrange & Act
+    const screen = await render(<UploadStatusAlert variant="success" />)
+
+    // Assert
     expect(
       getAlert(screen.container).querySelector(PROGRESS_SELECTOR)
     ).toBeNull()
     expect(getAction(screen.container)).toBeNull()
   })
+})
 
-  it("UploadStatusAlert_ShouldRenderTheDestructiveVariant_WhenVariantIsDestructive", async () => {
+describe("UploadStatusAlert — destructive variant", () => {
+  it("UploadStatusAlert_ShouldRenderTheWarningCopy_WhenVariantIsDestructive", async () => {
     // Arrange & Act
     const screen = await render(<UploadStatusAlert variant="destructive" />)
 
@@ -138,14 +169,39 @@ describe("UploadStatusAlert", () => {
     expect(getTitle(screen.container).textContent).toContain(
       "3 hoá đơn cần bạn kiểm tra"
     )
-    expect(getStatusButton(screen.container).getAttribute("aria-label")).toBe(
-      "Cần kiểm tra"
+    expect(getDescription(screen.container).textContent).toContain(
+      "2 hoá đơn có trường thông tin không chắc chắn"
     )
+  })
+
+  it("UploadStatusAlert_ShouldRenderADisabledWarningButton_WhenVariantIsDestructive", async () => {
+    // Arrange & Act
+    const screen = await render(<UploadStatusAlert variant="destructive" />)
+
+    // Assert
+    const button = getStatusButton(screen.container)
+    expect(button.disabled).toBe(true)
+    expect(button.getAttribute("aria-label")).toBe("Cần kiểm tra")
+  })
+
+  it("UploadStatusAlert_ShouldOmitTheProgressBar_WhenVariantIsDestructive", async () => {
+    // Arrange & Act
+    const screen = await render(<UploadStatusAlert variant="destructive" />)
+
+    // Assert
     expect(
       getAlert(screen.container).querySelector(PROGRESS_SELECTOR)
     ).toBeNull()
+  })
+
+  it("UploadStatusAlert_ShouldRenderTheReviewAction_WhenVariantIsDestructive", async () => {
+    // Arrange & Act
+    const screen = await render(<UploadStatusAlert variant="destructive" />)
+
+    // Assert
     await expect
-      .element(screen.getByRole("button", { name: "Kiểm tra", exact: true }))
+      .element(screen.getByRole("button", { name: REVIEW_LABEL, exact: true }))
       .toBeVisible()
+    expect(getAction(screen.container)).not.toBeNull()
   })
 })
