@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-17T15:24:14.111Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T04:15:12.406Z
 > Files: 105 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -185,7 +185,7 @@
 
 - `button.tsx` — BUTTON_VARIANTS (~843 tok)
 - `calendar.tsx` — Calendar — uses useEffect (~2383 tok)
-- `card.tsx` — Card (~709 tok)
+- `card.tsx` — Declares Card (~707 tok)
 - `date-range-picker.tsx` — DATE_FORMATTER — uses useState (~1226 tok)
 - `input.tsx` — Input (~257 tok)
 - `popover.tsx` — Popover (~674 tok)
@@ -213,7 +213,7 @@
 ## web/src/routes/app/
 
 - `exports.tsx` — Route (~62 tok)
-- `index.tsx` — Exports Route (~484 tok)
+- `index.tsx` — Exports Route (~450 tok)
 - `route.tsx` — Route (~589 tok)
 - `suppliers.tsx` — Route (~63 tok)
 
@@ -237,7 +237,7 @@
 
 ## web/tests/routes/app/
 
-- `index.test.tsx` — Declares CARD_SELECTOR (~1530 tok)
+- `index.test.tsx` — Declares CARD_SELECTOR (~1634 tok)
 - `route.test.tsx` — `AppLayout` renders `<Outlet />`, so it has to be mounted through a real (~937 tok)
 
 ## web/tests/utils/

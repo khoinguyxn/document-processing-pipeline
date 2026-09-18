@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-17T15:24:14.111Z",
+    "lastScanned": "2026-09-18T04:15:12.406Z",
     "fileCount": 105,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "a7ffbcd8adb661d93bdd2bc985033d5f4045398619f199739130b3ba352d3034",
-    "storeUpdatedAt": "2026-09-17T15:24:14.114Z",
+    "renderedHash": "9d8dffcab5a2ccc87f69ad4664a984be9cd76dc8950441481ad24dfe485c8856",
+    "storeUpdatedAt": "2026-09-18T04:15:12.406Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -769,66 +769,13 @@
       "importance": 0.2817
     },
     "web/src/components/ui/card.tsx": {
-      "description": "Card",
-      "tokens": 709,
-      "hash": "2d865755e507998a",
-      "size": 2481,
-      "mtimeMs": 1789567164534.9407,
-      "updatedAt": "2026-09-17T15:24:13.973Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "Card",
-          "kind": "fn",
-          "startLine": 4,
-          "endLine": 20,
-          "tokens": 173
-        },
-        {
-          "name": "CardHeader",
-          "kind": "fn",
-          "startLine": 22,
-          "endLine": 33,
-          "tokens": 132
-        },
-        {
-          "name": "CardTitle",
-          "kind": "fn",
-          "startLine": 35,
-          "endLine": 43,
-          "tokens": 64
-        },
-        {
-          "name": "CardDescription",
-          "kind": "fn",
-          "startLine": 45,
-          "endLine": 53,
-          "tokens": 66
-        },
-        {
-          "name": "CardAction",
-          "kind": "fn",
-          "startLine": 55,
-          "endLine": 66,
-          "tokens": 80
-        },
-        {
-          "name": "CardContent",
-          "kind": "fn",
-          "startLine": 68,
-          "endLine": 76,
-          "tokens": 61
-        },
-        {
-          "name": "CardFooter",
-          "kind": "fn",
-          "startLine": 78,
-          "endLine": 89,
-          "tokens": 85
-        }
-      ],
-      "symbolSource": "ts",
-      "importance": 0.2817
+      "description": "Declares Card",
+      "tokens": 707,
+      "hash": "cfb36d76f7a7353e",
+      "size": 2474,
+      "mtimeMs": 1789704899039.2827,
+      "updatedAt": "2026-09-18T04:14:59.046Z",
+      "source": "hook"
     },
     "web/src/components/ui/date-range-picker.tsx": {
       "description": "DATE_FORMATTER — uses useState",
@@ -1369,13 +1316,12 @@
     },
     "web/src/routes/app/index.tsx": {
       "description": "Exports Route",
-      "tokens": 484,
-      "hash": "78612834916d80e7",
-      "size": 1739,
-      "mtimeMs": 1789657520309.6123,
-      "updatedAt": "2026-09-17T15:24:13.980Z",
-      "source": "scan",
-      "importance": 0.345
+      "tokens": 450,
+      "hash": "be3b67089c49df7f",
+      "size": 1621,
+      "mtimeMs": 1789704902798.414,
+      "updatedAt": "2026-09-18T04:15:02.805Z",
+      "source": "hook"
     },
     "web/src/routes/app/route.tsx": {
       "description": "Route",
@@ -1609,61 +1555,12 @@
     },
     "web/tests/routes/app/index.test.tsx": {
       "description": "Declares CARD_SELECTOR",
-      "tokens": 1530,
-      "hash": "26e07a6f9163914c",
-      "size": 5384,
-      "mtimeMs": 1789567164546.6223,
-      "updatedAt": "2026-09-17T15:24:13.987Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "renderEmptyState",
-          "kind": "fn",
-          "startLine": 16,
-          "endLine": 18,
-          "tokens": 26
-        },
-        {
-          "name": "getCard",
-          "kind": "fn",
-          "startLine": 20,
-          "endLine": 22,
-          "tokens": 31
-        },
-        {
-          "name": "getAction",
-          "kind": "fn",
-          "startLine": 24,
-          "endLine": 26,
-          "tokens": 36
-        },
-        {
-          "name": "getIconButton",
-          "kind": "fn",
-          "startLine": 28,
-          "endLine": 32,
-          "tokens": 41
-        },
-        {
-          "name": "getActionButtons",
-          "kind": "fn",
-          "startLine": 34,
-          "endLine": 38,
-          "tokens": 42
-        },
-        {
-          "name": "centerX",
-          "kind": "fn",
-          "startLine": 40,
-          "endLine": 43,
-          "tokens": 36
-        }
-      ],
-      "symbolSource": "ts",
-      "imports": [
-        "web/tests/utils/router.tsx"
-      ],
-      "importance": 0.2817
+      "tokens": 1634,
+      "hash": "2965c61a02d0ec90",
+      "size": 5749,
+      "mtimeMs": 1789704912399.6804,
+      "updatedAt": "2026-09-18T04:15:12.406Z",
+      "source": "hook"
     },
     "web/tests/routes/app/route.test.tsx": {
       "description": "`AppLayout` renders `<Outlet />`, so it has to be mounted through a real",

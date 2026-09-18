@@ -93,17 +93,15 @@ describe("EmptyStateCard", () => {
     ).toBeLessThanOrEqual(1)
   })
 
-  it("EmptyStateCard_ShouldSpanTheActionAcrossTwoColumnsAndOneRow", async () => {
+  it("EmptyStateCard_ShouldLayOutTheActionAsAWrappingFlexRow", async () => {
     // Arrange & Act
     const screen = await renderEmptyState()
 
     // Assert
     const style = getComputedStyle(getAction(screen.container))
-    expect(style.display).toBe("grid")
-    expect(style.gridColumn).toBe("1 / span 2")
-    expect(style.gridRow).toBe("1 / span 1")
-    expect(style.gridTemplateColumns.split(" ")).toHaveLength(2)
-    expect(style.gridTemplateRows.split(" ")).toHaveLength(1)
+    expect(style.display).toBe("flex")
+    expect(style.flexWrap).toBe("wrap")
+    expect(style.columnGap).not.toBe("normal")
   })
 
   it("EmptyStateCard_ShouldPlaceTheActionButtonsSideBySideInOneRow", async () => {
@@ -121,14 +119,29 @@ describe("EmptyStateCard", () => {
     expect(secondRect.left).toBeGreaterThanOrEqual(firstRect.right)
   })
 
+  it("EmptyStateCard_ShouldStackTheActionButtonsVertically_WhenSpaceIsTight", async () => {
+    // Arrange
+    const screen = await renderEmptyState()
+    const card = getCard(screen.container)
+    card.style.width = "160px"
+
+    // Act
+    const [first, second] = getActionButtons(screen.container)
+    const firstRect = first.getBoundingClientRect()
+    const secondRect = second.getBoundingClientRect()
+
+    // Assert
+    expect(secondRect.top).toBeGreaterThanOrEqual(firstRect.bottom - 1)
+  })
+
   it("EmptyStateCard_ShouldSizeEachActionButtonToItsContent", async () => {
     // Arrange & Act
     const screen = await renderEmptyState()
 
     // Assert
     const [first, second] = getActionButtons(screen.container)
-    // The longer label earns the wider column, proving the grid tracks content
-    // instead of splitting the row into fixed equal halves.
+    // The longer label earns the wider button, proving the flex row tracks
+    // content instead of splitting the row into fixed equal halves.
     expect(second.getBoundingClientRect().width).toBeGreaterThan(
       first.getBoundingClientRect().width
     )
