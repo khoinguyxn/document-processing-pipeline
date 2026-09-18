@@ -1,5 +1,11 @@
-import type { Page } from "@/types/pages"
+import type { LinkProps } from "@tanstack/react-router"
 import { CirclePile, Folder, Sheet } from "lucide-react"
+
+type Page = {
+  title: string
+  to: LinkProps["to"]
+  icon: React.ReactNode
+}
 
 export const PAGES: Page[] = [
   {
