@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-18T09:58:51.938Z",
-    "fileCount": 119,
+    "lastScanned": "2026-09-20T07:49:35.810Z",
+    "fileCount": 121,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "139aef0dd7d88fdd50c6c85374a089b0587cdf2ff0e0583d2e428336a03e52ca",
-    "storeUpdatedAt": "2026-09-18T09:58:51.945Z",
+    "renderedHash": "3d70a52a2a28948ad1926c0e9dac7817be0ffd5a194747e21b88428b9e8fbc32",
+    "storeUpdatedAt": "2026-09-20T07:49:35.811Z",
     "rootHash": "fd57ab325b450a09"
   },
   "files": {
@@ -651,11 +651,11 @@
     },
     "web/package.json": {
       "description": "Node.js package manifest",
-      "tokens": 584,
-      "hash": "181126b007303057",
-      "size": 2042,
-      "mtimeMs": 1789722696545.9116,
-      "updatedAt": "2026-09-18T09:11:36.565Z",
+      "tokens": 629,
+      "hash": "e49536663013018f",
+      "size": 2199,
+      "mtimeMs": 1789890469663.4878,
+      "updatedAt": "2026-09-20T07:47:49.666Z",
       "source": "hook"
     },
     "web/public/manifest.json": {
@@ -1651,6 +1651,24 @@
       "size": 497,
       "mtimeMs": 1789725359995.353,
       "updatedAt": "2026-09-18T09:55:59.999Z",
+      "source": "hook"
+    },
+    "web/src/models/fake-receipts.ts": {
+      "description": "Declares FAKE_RECEIPT_COUNT",
+      "tokens": 776,
+      "hash": "f57642ed51fed546",
+      "size": 2796,
+      "mtimeMs": 1789890575804.809,
+      "updatedAt": "2026-09-20T07:49:35.810Z",
+      "source": "hook"
+    },
+    "web/tests/models/fake-receipts.test.ts": {
+      "description": "Declares requiresIssues",
+      "tokens": 388,
+      "hash": "d5e479fb1376138d",
+      "size": 1356,
+      "mtimeMs": 1789890101609.9575,
+      "updatedAt": "2026-09-20T07:41:41.612Z",
       "source": "hook"
     }
   },
