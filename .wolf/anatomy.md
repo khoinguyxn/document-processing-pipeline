@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T09:58:51.938Z
-> Files: 119 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-20T07:49:35.810Z
+> Files: 121 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -160,7 +160,7 @@
 - `components.json` (~151 tok)
 - `Dockerfile` — Docker container definition (~353 tok)
 - `eslint.config.js` — ESLint flat configuration (~123 tok)
-- `package.json` — Node.js package manifest (~584 tok)
+- `package.json` — Node.js package manifest (~629 tok)
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
 - `vite.config.ts` — Declares config (~163 tok)
@@ -215,6 +215,7 @@
 
 ## web/src/models/
 
+- `fake-receipts.ts` — Declares FAKE_RECEIPT_COUNT (~776 tok)
 - `pages.tsx` — Exports PAGES (~139 tok)
 - `receipt.ts` — Declares RECEIPT_STATUSES (~540 tok)
 - `reciept.ts` — Declares RECEIPT_BASE (~197 tok)
@@ -258,6 +259,7 @@
 
 ## web/tests/models/
 
+- `fake-receipts.test.ts` — Declares requiresIssues (~388 tok)
 - `receipt.test.ts` — Declares createReceipt (~1221 tok)
 - `reciept.test.ts` — Declares createReceipt (~699 tok)
 
