@@ -228,6 +228,10 @@ The `web` Vite app is added via `AddViteApp(...).WithBun()` and, on publish,
   declares the hand-written types alongside their matching Zod schemas, bound with
   `satisfies z.ZodType<T>` so the two cannot drift. Use `parseReceipt` for parsing — it
   throws a `zod-validation-error` `ValidationError` with a user-friendly message.
+- **Dates are formatted in a fixed display time zone.** Import `formatDate` / `getCurrentDate`
+  from `@/lib/datetime` (`vi-VN`, `Asia/Ho_Chi_Minh`) instead of `toLocaleString()` or
+  local-time `new Date()` math. Pinning the zone keeps SSR and client output identical and
+  avoids hydration mismatches; persistence is still UTC.
 
 ---
 

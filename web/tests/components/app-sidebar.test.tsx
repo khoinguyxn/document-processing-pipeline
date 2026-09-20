@@ -1,7 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import type { Page } from "@/types/pages"
+import type { Page } from "@/models/pages"
 import { Folder, Sheet } from "lucide-react"
 import { describe, expect, it } from "vitest"
 import { renderWithRouter } from "../utils/router"

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T09:25:00.918Z
-> Files: 116 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-18T09:58:51.938Z
+> Files: 119 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -11,7 +11,7 @@
 
 - `.dockerignore` — Docker ignore rules (~1258 tok)
 - `.gitignore` — Git ignore rules (~314 tok)
-- `AGENTS.md` — Skill Loading (~6276 tok)
+- `AGENTS.md` — Skill Loading (~6358 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
@@ -183,7 +183,7 @@
 
 ## web/src/components/
 
-- `app-sidebar.tsx` — AppSidebar (~580 tok)
+- `app-sidebar.tsx` — Exports AppSidebar (~580 tok)
 - `inbox-button-group.tsx` — Exports InboxButtonGroup (~514 tok)
 - `upload-status-alert.tsx` — Exports UploadStatusAlert (~963 tok)
 
@@ -191,9 +191,9 @@
 
 - `alert.tsx` — Declares ALERT_VARIANTS (~521 tok)
 - `button.tsx` — BUTTON_VARIANTS (~843 tok)
-- `calendar.tsx` — Calendar — uses useEffect (~2383 tok)
+- `calendar.tsx` — Declares Calendar (~2444 tok)
 - `card.tsx` — Declares Card (~707 tok)
-- `date-range-picker.tsx` — DATE_FORMATTER — uses useState (~1226 tok)
+- `date-range-picker.tsx` — Declares getMonthRange (~1188 tok)
 - `input.tsx` — Input (~257 tok)
 - `popover.tsx` — Popover (~674 tok)
 - `separator.tsx` — Separator (~178 tok)
@@ -209,11 +209,13 @@
 
 ## web/src/lib/
 
+- `datetime.ts` — Declares DISPLAY_LOCALE (~269 tok)
 - `pages.tsx` — Exports PAGES (~106 tok)
 - `utils.ts` — Exports cn (~48 tok)
 
 ## web/src/models/
 
+- `pages.tsx` — Exports PAGES (~139 tok)
 - `receipt.ts` — Declares RECEIPT_STATUSES (~540 tok)
 - `reciept.ts` — Declares RECEIPT_BASE (~197 tok)
 
@@ -240,15 +242,19 @@
 
 ## web/tests/components/
 
-- `app-sidebar.test.tsx` — TEST_PAGES (~970 tok)
+- `app-sidebar.test.tsx` — Declares TEST_PAGES (~971 tok)
 - `inbox-button-group.test.tsx` — Declares BUTTON_SELECTOR (~694 tok)
 - `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~2187 tok)
 
 ## web/tests/components/ui/
 
 - `date-range-picker.component.test.tsx` — EMPTY_LABEL (~2782 tok)
-- `date-range-picker.test.ts` — Declares toParts (~2432 tok)
+- `date-range-picker.test.ts` — Declares toParts (~2286 tok)
 - `typography.test.tsx` — `font-semibold` is intentionally absent: `cn` runs tailwind-merge, so the (~1108 tok)
+
+## web/tests/lib/
+
+- `datetime.test.ts` — Declares toParts (~568 tok)
 
 ## web/tests/models/
 
