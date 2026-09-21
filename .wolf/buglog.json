@@ -389,6 +389,24 @@
       "related_bugs": [
         "bug-016"
       ]
+    },
+    {
+      "error_message": "Null/undefined access in receipts-columns.tsx",
+      "file": "web/src/components/receipts/receipts-columns.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-022",
+      "timestamp": "2026-09-21T14:11:01.323Z",
+      "last_seen": "2026-09-21T14:11:01.323Z",
+      "occurrences": 1,
+      "related_bugs": []
     }
   ],
   "applied_observations": {
@@ -413,7 +431,8 @@
     "2900eda2-db32-415e-9dab-c40248244d78": true,
     "5ba0c059-ac3e-4c0e-8d02-d176e64bd421": true,
     "c8dd0a01-4cde-4900-8e3f-cfc32f04a13c": true,
-    "9b532b0f-a865-4a49-a317-86f7cc8b5e3b": true
+    "9b532b0f-a865-4a49-a317-86f7cc8b5e3b": true,
+    "b46b3d55-9de8-4aa0-91ca-a1a4d67985ac": true
   },
-  "next_id": 22
+  "next_id": 23
 }

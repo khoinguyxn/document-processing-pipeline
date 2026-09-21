@@ -1,4 +1,5 @@
 <!-- intent-skills:start -->
+
 ## Skill Loading
 
 Before editing files for a substantial task:
@@ -233,7 +234,7 @@ The `web` Vite app is added via `AddViteApp(...).WithBun()` and, on publish,
   local-time `new Date()` math. Pinning the zone keeps SSR and client output identical and
   avoids hydration mismatches; persistence is still UTC.
 - **Receipt rows are only actionable when the receipt is `ready`.** Pass the table an
-  `isRowDisabled` predicate (`/app` wires it from `isReceiptReady` in `@/models/receipt`).
+  `isRowDisabled` predicate (`/app` wires it from `isReceiptParsed` in `@/models/receipt`).
   Disabled rows render dimmed via `data-disabled` (`opacity-50`, hover suppressed) and
   their selection checkbox is disabled by `row.getCanSelect()`.
 
@@ -385,7 +386,7 @@ Observed in history — follow it:
 ## 13. OpenWolf (manual mode)
 
 The OpenWolf dashboard/daemon is deliberately **not** run in this repository. Its source
-watcher rescans on every source change *and* on `git HEAD`/`index`/`refs` updates, so a
+watcher rescans on every source change _and_ on `git HEAD`/`index`/`refs` updates, so a
 `git pull` triggers a rewrite of the tracked `.wolf/anatomy.md` and
 `.wolf/anatomy-index.json`, which then blocks the next pull ("local changes would be
 overwritten"). Do not start it with `openwolf dashboard` or `openwolf daemon start`.
@@ -425,7 +426,9 @@ Do not skip this when no files changed; a no-op review with an explicit "nothing
 summary is the expected result.
 
 <!-- openwolf:begin -->
+
 # OpenWolf
 
 This project uses OpenWolf for context management. Read and follow .wolf/OPENWOLF.md at session start. Check .wolf/cerebrum.md before generating code. Grep .wolf/anatomy.md for a file's path before reading it (never read the whole index).
+
 <!-- openwolf:end -->

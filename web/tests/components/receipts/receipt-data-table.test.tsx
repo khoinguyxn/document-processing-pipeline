@@ -30,11 +30,11 @@ const RECEIPTS: Receipt[] = [
   },
   {
     file: new File(["scan"], "a.pdf", { type: "application/pdf" }),
-    provider: "ABC",
-    receipt_number: 7,
+    provider: null,
+    receipt_number: null,
     created_datetime: new Date("2026-09-02T15:00:00Z"),
-    total: 99_000,
-    confidence_score: 0.5,
+    total: null,
+    confidence_score: null,
     status: "pending",
   },
 ]

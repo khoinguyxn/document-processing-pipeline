@@ -311,3 +311,53 @@ description: chronological action log per session, consolidated weekly
 | 17:50 | Edited web/tests/routes/app/index.test.tsx | — | ~138 |
 | 17:51 | Session end: 40 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 8 reads | ~16894 tok |
 | 17:53 | Session end: 40 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 8 reads | ~16894 tok |
+
+## Session: 2026-09-21 20:51
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-21 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-21 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-21 21:00
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-21 21:06
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:10 | Edited web/tests/models/receipt.test.ts | — | ~239 |
+| 21:10 | Edited web/tests/models/fake-receipts.test.ts | — | ~712 |
+| 21:10 | Edited web/tests/components/receipts/receipts-columns.test.ts | — | ~74 |
+| 21:10 | Edited web/tests/components/receipts/receipts-columns.test.ts | — | ~76 |
+| 21:10 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~68 |
+| 21:10 | Edited web/src/models/receipt.ts | — | ~50 |
+| 21:10 | Edited web/src/models/receipt.ts | — | ~78 |
+| 21:10 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~132 |
+| 21:11 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~92 |
+| 21:11 | Edited web/src/models/fake-receipts.ts | — | ~1018 |
+| 21:13 | Session end: 10 writes across 7 files (receipt.test.ts, fake-receipts.test.ts, receipts-columns.test.ts, receipt-data-table.test.tsx, receipt.ts) | 2 reads | ~2795 tok |
+| 21:13 | Session end: 10 writes across 7 files (receipt.test.ts, fake-receipts.test.ts, receipts-columns.test.ts, receipt-data-table.test.tsx, receipt.ts) | 2 reads | ~2795 tok |
+
+## Session: 2026-09-21 21:17
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 21:17 | Edited web/src/models/fake-receipts.ts | — | ~154 |
+| 21:17 | Edited web/src/models/fake-receipts.ts | — | ~255 |
+| 21:18 | Edited web/src/models/fake-receipts.ts | — | ~30 |
+| 21:18 | Edited web/src/models/fake-receipts.ts | — | ~20 |
+| 21:18 | Edited web/tests/models/fake-receipts.test.ts | — | ~30 |
+| 21:18 | Edited web/tests/models/fake-receipts.test.ts | — | ~150 |
+| 21:23 | Session end: 6 writes across 2 files (fake-receipts.ts, fake-receipts.test.ts) | 0 reads | ~639 tok |
+| 21:23 | Session end: 6 writes across 2 files (fake-receipts.ts, fake-receipts.test.ts) | 0 reads | ~639 tok |

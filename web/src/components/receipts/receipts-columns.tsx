@@ -17,17 +17,27 @@ const STATUS_CLASSES: Record<ReceiptStatus, string> = {
   ready: "text-emerald-600",
 }
 
+const EMPTY_VALUE = "—"
+
 const CURRENCY_FORMATTER = new Intl.NumberFormat("vi-VN", {
   style: "currency",
   currency: "VND",
   maximumFractionDigits: 0,
 })
 
-function formatCurrency(value: number): string {
+function formatCurrency(value: number | null): string {
+  if (value === null) {
+    return EMPTY_VALUE
+  }
+
   return CURRENCY_FORMATTER.format(value)
 }
 
-function formatConfidence(value: number): string {
+function formatConfidence(value: number | null): string {
+  if (value === null) {
+    return EMPTY_VALUE
+  }
+
   return `${Math.round(value * 100)}%`
 }
 
@@ -91,14 +101,16 @@ const COLUMNS = COLUMN_HELPER.columns([
     sortFn: "text",
     filterFn: "includesString",
     cell: (info) => (
-      <span className="block max-w-56 truncate">{info.getValue()}</span>
+      <span className="block max-w-56 truncate">
+        {info.getValue() ?? EMPTY_VALUE}
+      </span>
     ),
   }),
   COLUMN_HELPER.accessor("receipt_number", {
     header: "Số hoá đơn",
     sortFn: "basic",
     enableColumnFilter: false,
-    cell: (info) => info.getValue(),
+    cell: (info) => info.getValue() ?? EMPTY_VALUE,
   }),
   COLUMN_HELPER.accessor("created_datetime", {
     header: "Ngày tạo",
