@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { renderRoute } from "../../utils/router"
+import { RECEIPT_STATUS_LABELS } from "@/models/receipt"
 
 const TABLE_SELECTOR = '[data-slot="table"]'
 const BODY_ROW_SELECTOR = '[data-slot="table-body"] [data-slot="table-row"]'
@@ -9,7 +10,6 @@ const FOOTER_SELECTOR = '[data-slot="table-footer"]'
 
 const ROUTE_RECEIPT_COUNT = 9
 const EMPTY_STATE_TITLE = "Chưa có hoá đơn nào trong lô này"
-const READY_STATUS_LABEL = "Hoàn tất"
 const COLUMN_HEADERS = [
   "",
   "Tệp",
@@ -59,7 +59,7 @@ describe("RouteComponent", () => {
     )
   })
 
-  it("RouteComponent_ShouldDimOnlyTheRowsThatAreNotReady_WhenReceiptsAreMixed", async () => {
+  it("RouteComponent_ShouldDimOnlyTheRowsThatAreNotParsed_WhenReceiptsAreMixed", async () => {
     // Arrange & Act
     const screen = await renderAppIndex()
 
@@ -75,14 +75,17 @@ describe("RouteComponent", () => {
 
     // Assert — the dimmed set must be exactly the non-ready rows, and the fake
     // receipts are seeded with ready rows so the comparison can fail.
-    const readyRowCount = statuses.filter(
-      (status) => status === READY_STATUS_LABEL
+    const parsedRowCount = statuses.filter(
+      (status) =>
+        status === RECEIPT_STATUS_LABELS.ready ||
+        status === RECEIPT_STATUS_LABELS.failed ||
+        status === RECEIPT_STATUS_LABELS.needs_review
     ).length
     const dimmedRows = rows.filter(
       (row) => row.getAttribute("data-disabled") === "true"
     )
-    expect(readyRowCount).toBeGreaterThan(0)
-    expect(dimmedRows).toHaveLength(ROUTE_RECEIPT_COUNT - readyRowCount)
+    expect(parsedRowCount).toBeGreaterThan(0)
+    expect(dimmedRows).toHaveLength(ROUTE_RECEIPT_COUNT - parsedRowCount)
   })
 
   it("RouteComponent_ShouldShowTheSeededRowCountInTheFooter_WhenReceiptsExist", async () => {

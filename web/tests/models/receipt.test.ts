@@ -146,22 +146,10 @@ describe("parseReceipt", () => {
 })
 
 describe("isReceiptParsed", () => {
-  it("isReceiptReady_ShouldReturnTrue_WhenStatusIsReady", () => {
-    // Arrange
-    const receipt = parseReceipt(createReceipt({ status: "ready" }))
-
-    // Act
-    const result = isReceiptParsed(receipt)
-
-    // Assert
-    expect(result).toBe(true)
-  })
-
-  it("isReceiptReady_ShouldReturnFalse_WhenStatusIsAnythingElse", () => {
+  it("isReceiptParsed_ShouldReturnTrue_WhenStatusIsReady,Failed,orNeedsReview", () => {
     // Arrange
     const receipts = [
-      parseReceipt(createReceipt({ status: "pending" })),
-      parseReceipt(createReceipt({ status: "processing" })),
+      parseReceipt(createReceipt({ status: "ready" })),
       parseReceipt(
         createReceipt({ status: "needs_review", issues: [createIssue()] })
       ),
@@ -174,7 +162,21 @@ describe("isReceiptParsed", () => {
     const results = receipts.map(isReceiptParsed)
 
     // Assert
-    expect(results).toEqual([false, false, false, false])
+    expect(results).toEqual([true, true, true])
+  })
+
+  it("isReceiptParsed_ShouldReturnFalse_WhenStatusIsAnythingElse", () => {
+    // Arrange
+    const receipts = [
+      parseReceipt(createReceipt({ status: "pending" })),
+      parseReceipt(createReceipt({ status: "processing" })),
+    ]
+
+    // Act
+    const results = receipts.map(isReceiptParsed)
+
+    // Assert
+    expect(results).toEqual([false, false])
   })
 })
 
