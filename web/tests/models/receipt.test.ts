@@ -1,4 +1,4 @@
-import { RECEIPT, parseReceipt } from "@/models/receipt"
+import { RECEIPT, isReceiptReady, parseReceipt } from "@/models/receipt"
 import { fuzz } from "@traversable/zod-test"
 import * as fc from "fast-check"
 import { describe, expect, it } from "vitest"
@@ -119,6 +119,39 @@ describe("parseReceipt", () => {
     // Assert
     expect(isValidationError(thrown)).toBe(true)
     expect((thrown as Error).message).toContain("issues")
+  })
+})
+
+describe("isReceiptReady", () => {
+  it("isReceiptReady_ShouldReturnTrue_WhenStatusIsReady", () => {
+    // Arrange
+    const receipt = parseReceipt(createReceipt({ status: "ready" }))
+
+    // Act
+    const result = isReceiptReady(receipt)
+
+    // Assert
+    expect(result).toBe(true)
+  })
+
+  it("isReceiptReady_ShouldReturnFalse_WhenStatusIsAnythingElse", () => {
+    // Arrange
+    const receipts = [
+      parseReceipt(createReceipt({ status: "pending" })),
+      parseReceipt(createReceipt({ status: "processing" })),
+      parseReceipt(
+        createReceipt({ status: "needs_review", issues: [createIssue()] })
+      ),
+      parseReceipt(
+        createReceipt({ status: "failed", issues: [createIssue()] })
+      ),
+    ]
+
+    // Act
+    const results = receipts.map(isReceiptReady)
+
+    // Assert
+    expect(results).toEqual([false, false, false, false])
   })
 })
 

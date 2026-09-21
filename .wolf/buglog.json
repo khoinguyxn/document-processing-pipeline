@@ -216,6 +216,179 @@
       "last_seen": "2026-09-18T09:58:51.968Z",
       "occurrences": 2,
       "related_bugs": []
+    },
+    {
+      "error_message": "Null/undefined access in receipt-data-table.tsx",
+      "file": "web/src/components/receipts/receipt-data-table.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-013",
+      "timestamp": "2026-09-21T10:13:59.973Z",
+      "last_seen": "2026-09-21T10:13:59.973Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Null/undefined access in receipt-data-table.test.tsx",
+      "file": "web/tests/components/receipts/receipt-data-table.test.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-014",
+      "timestamp": "2026-09-21T10:14:48.678Z",
+      "last_seen": "2026-09-21T10:48:36.732Z",
+      "occurrences": 2,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Missing await",
+      "file": "web/tests/routes/app/index.test.tsx",
+      "root_cause": "Async call without await",
+      "fix": "Added await to async call",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-015",
+      "timestamp": "2026-09-21T10:14:55.552Z",
+      "last_seen": "2026-09-21T10:14:55.552Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Receipt table cell values did not line up with their column headers; row bottom borders did not render",
+      "file": "web/src/components/receipts/receipt-data-table.tsx",
+      "root_cause": "TableBody was rendered as a sibling of Table instead of a child. A stray <tbody> outside table context is dropped/reparented by the browser, so the header and body became two independent layouts with separate column-width calculations.",
+      "fix": "Moved TableBody inside the single Table so header and body share one column-width calculation. Added browser regression tests asserting exactly one table contains both thead and tbody, that every row keeps a computed bottom border, and that header/cell left edges match within 1px (measured 37.47px drift before the fix).",
+      "tags": [
+        "react",
+        "tanstack-table",
+        "html-structure",
+        "layout",
+        "alignment"
+      ],
+      "status": "fixed",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-016",
+      "timestamp": "2026-09-21T10:16:45.000Z",
+      "last_seen": "2026-09-21T10:16:45.000Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/components/receipts/receipt-data-table.tsx",
+      "root_cause": "Had \"bg-sidebar data-[disabled=true]:opacity-50 data-[",
+      "fix": "Changed to \"bg-sidebar data-[disabled=true]:opacity-50 data-[",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-017",
+      "timestamp": "2026-09-21T10:26:07.826Z",
+      "last_seen": "2026-09-21T10:26:07.826Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Missing await",
+      "file": "web/tests/components/receipts/receipt-data-table.test.tsx",
+      "root_cause": "Async call without await",
+      "fix": "Removed the misleading `async` from the renderReceiptTable helper (it only returned a promise, awaited by every caller). Audited all userEvent.hover and render calls in the file - all awaited.",
+      "tags": [
+        "auto-detected",
+        "async-fix",
+        "tsx"
+      ],
+      "status": "fixed",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-018",
+      "timestamp": "2026-09-21T10:26:17.999Z",
+      "last_seen": "2026-09-21T10:28:37.000Z",
+      "occurrences": 2,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Disabled (non-ready) receipt rows still changed background color on hover",
+      "file": "web/src/components/receipts/receipt-data-table.tsx",
+      "root_cause": "Hover suppression used `data-[disabled=true]:hover:bg-transparent`, which cancelled the row's own `bg-sidebar` while hovered. Hover stopped the muted highlight but introduced a different visible change (sidebar color -> transparent), so the row still reacted to the pointer.",
+      "fix": "Override hover back to the row's own background (`data-[disabled=true]:hover:bg-sidebar`) so hovering a disabled row is a visual no-op. Covered by a browser test that zeroes the row's transition-duration, hovers it, and asserts the computed background is unchanged, plus an enabled-row control asserting that hover still highlights.",
+      "tags": [
+        "react",
+        "tailwind",
+        "hover",
+        "disabled-state",
+        "regression-test"
+      ],
+      "status": "fixed",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-019",
+      "timestamp": "2026-09-21T10:27:39.000Z",
+      "last_seen": "2026-09-21T10:27:39.000Z",
+      "occurrences": 1,
+      "related_bugs": [
+        "bug-016"
+      ]
+    },
+    {
+      "error_message": "Null/undefined access in index.test.tsx",
+      "file": "web/tests/routes/app/index.test.tsx",
+      "root_cause": "Property access on potentially null/undefined value",
+      "fix": "Added null safety",
+      "tags": [
+        "auto-detected",
+        "null-safety",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-020",
+      "timestamp": "2026-09-21T10:50:41.937Z",
+      "last_seen": "2026-09-21T10:50:41.937Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Table footer note did not participate in the table layout - no footer cell existed and the note sat outside the column model",
+      "file": "web/src/components/receipts/receipt-data-table.tsx",
+      "root_cause": "The footer was written as `<TableFooter className=\"p-3 flex items-center\"><span>..</span></TableFooter>`, i.e. a bare <span> directly inside <tfoot> plus display:flex on the <tfoot> itself. A table section may only contain <tr>, so the note was never wrapped in a cell and the section stopped behaving as a row group, which perturbs the shared column layout.",
+      "fix": "Render a real footer row: <TableFooter><TableRow><TableCell colSpan={table.getVisibleLeafColumns().length}> with the note inside an inner flex div. Regression tests assert the footer lives inside the same <table>, that its cell spans every column, and that its left edge matches the first column within 1px.",
+      "tags": [
+        "react",
+        "tailwind",
+        "html-structure",
+        "table-footer",
+        "alignment",
+        "layout"
+      ],
+      "status": "fixed",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-021",
+      "timestamp": "2026-09-21T10:51:19.000Z",
+      "last_seen": "2026-09-21T10:51:19.000Z",
+      "occurrences": 1,
+      "related_bugs": [
+        "bug-016"
+      ]
     }
   ],
   "applied_observations": {
@@ -232,7 +405,15 @@
     "7ca083e2-9710-42b4-95b5-001811797640": true,
     "ef91e0e3-435a-47fd-85ef-cc432fce03ad": true,
     "04785b0f-997b-43ac-a9bc-749d73d460c9": true,
-    "350c0c0b-25d3-4a26-b9b2-707a2fe25d4c": true
+    "350c0c0b-25d3-4a26-b9b2-707a2fe25d4c": true,
+    "6975c0f7-8397-4d26-9ddf-5c4effd28ec5": true,
+    "53847be3-fe94-4abb-ae3d-d84d7b4c6185": true,
+    "4a8dae8f-8df2-403e-8cf3-d371717b8a26": true,
+    "689bce30-04de-440c-8742-c6754b0f1483": true,
+    "2900eda2-db32-415e-9dab-c40248244d78": true,
+    "5ba0c059-ac3e-4c0e-8d02-d176e64bd421": true,
+    "c8dd0a01-4cde-4900-8e3f-cfc32f04a13c": true,
+    "9b532b0f-a865-4a49-a317-86f7cc8b5e3b": true
   },
-  "next_id": 13
+  "next_id": 22
 }

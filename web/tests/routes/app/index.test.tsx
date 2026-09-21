@@ -1,168 +1,98 @@
 import { describe, expect, it } from "vitest"
 import { renderRoute } from "../../utils/router"
 
-const CARD_SELECTOR = '[data-slot="card"]'
-const CARD_ACTION_SELECTOR = '[data-slot="card-action"]'
-const BUTTON_SELECTOR = '[data-slot="button"]'
-const ICON_BUTTON_SELECTOR = `[data-slot="card-header"] ${BUTTON_SELECTOR}`
+const TABLE_SELECTOR = '[data-slot="table"]'
+const BODY_ROW_SELECTOR = '[data-slot="table-body"] [data-slot="table-row"]'
+const HEADER_CELL_SELECTOR = '[data-slot="table-head"]'
+const BODY_CELL_SELECTOR = '[data-slot="table-cell"]'
+const FOOTER_SELECTOR = '[data-slot="table-footer"]'
 
-const TITLE = "Chưa có hoá đơn nào trong lô này"
-const UPLOAD_LABEL = "Tải file lên"
-const PICK_IMAGE_LABEL = "Chọn ảnh từ điện thoại"
+const ROUTE_RECEIPT_COUNT = 9
+const EMPTY_STATE_TITLE = "Chưa có hoá đơn nào trong lô này"
+const READY_STATUS_LABEL = "Hoàn tất"
+const COLUMN_HEADERS = [
+  "",
+  "Tệp",
+  "Nhà cung cấp",
+  "Số hoá đơn",
+  "Ngày tạo",
+  "Tổng tiền",
+  "Độ tin cậy",
+  "Trạng thái",
+]
+const STATUS_COLUMN_INDEX = COLUMN_HEADERS.indexOf("Trạng thái")
 
-// The empty state lives on the `/app/` index route, nested under the `/app`
-// layout route. `RouteComponent` is not exported, so the real router is the only
-// way to reach it — same approach as the layout tests in `route.test.tsx`.
-function renderEmptyState() {
+// `src/routes/app/index.tsx` seeds `createFakeReceipts(9)` at module scope, so
+// the index route always takes the data-table branch. The empty-state card is
+// unreachable from here and is covered by its own component test
+// (`tests/components/receipts/receipt-empty-state-card.test.tsx`).
+// `RouteComponent` is not exported, so the real router is the only way to mount
+// it.
+function renderAppIndex() {
   return renderRoute(<div />, { initialLocation: "/app" })
 }
 
-function getCard(container: HTMLElement) {
-  return container.querySelector<HTMLElement>(CARD_SELECTOR)!
-}
-
-function getAction(container: HTMLElement) {
-  return getCard(container).querySelector<HTMLElement>(CARD_ACTION_SELECTOR)!
-}
-
-function getIconButton(container: HTMLElement) {
-  return getCard(container).querySelector<HTMLButtonElement>(
-    ICON_BUTTON_SELECTOR
-  )!
-}
-
-function getActionButtons(container: HTMLElement) {
-  return [
-    ...getAction(container).querySelectorAll<HTMLElement>(BUTTON_SELECTOR),
-  ]
-}
-
-function centerX(element: HTMLElement) {
-  const rect = element.getBoundingClientRect()
-  return rect.left + rect.width / 2
-}
-
-describe("EmptyStateCard", () => {
-  it("EmptyStateCard_ShouldRenderTheEmptyStateCopy_WhenThereAreNoDocuments", async () => {
+describe("RouteComponent", () => {
+  it("RouteComponent_ShouldRenderTheReceiptsTable_WhenReceiptsExist", async () => {
     // Arrange & Act
-    const screen = await renderEmptyState()
+    const screen = await renderAppIndex()
 
-    // Assert
-    const card = getCard(screen.container)
-    expect(card.querySelector('[data-slot="card-title"]')?.textContent).toBe(
-      TITLE
+    // Assert — guards the `REC` typo regression: the route must render the
+    // table instead of crashing into an empty container.
+    expect(screen.container.querySelector(TABLE_SELECTOR)).not.toBeNull()
+    expect(screen.container.querySelectorAll(BODY_ROW_SELECTOR)).toHaveLength(
+      ROUTE_RECEIPT_COUNT
     )
-    expect(
-      card.querySelector('[data-slot="card-description"]')?.textContent
-    ).toContain("Kéo thả bản scan vào đây")
+    expect(screen.container.textContent).not.toContain(EMPTY_STATE_TITLE)
   })
 
-  it("EmptyStateCard_ShouldRenderTheUploadButtonAsDisabled_WhenThereAreNoDocuments", async () => {
+  it("RouteComponent_ShouldRenderEveryReceiptColumnHeader_WhenReceiptsExist", async () => {
     // Arrange & Act
-    const screen = await renderEmptyState()
+    const screen = await renderAppIndex()
 
     // Assert
-    const iconButton = getIconButton(screen.container)
-    expect(iconButton.disabled).toBe(true)
-    expect(iconButton.getAttribute("data-size")).toBe("icon-lg")
-    expect(iconButton.querySelector("svg")).not.toBeNull()
-  })
-
-  it("EmptyStateCard_ShouldRenderBothActionButtonsWithTheirLabels", async () => {
-    // Arrange & Act
-    const screen = await renderEmptyState()
-
-    // Assert
-    await expect
-      .element(screen.getByRole("button", { name: UPLOAD_LABEL }))
-      .toBeVisible()
-    await expect
-      .element(screen.getByRole("button", { name: PICK_IMAGE_LABEL }))
-      .toBeVisible()
-    expect(getActionButtons(screen.container)).toHaveLength(2)
-  })
-
-  it("EmptyStateCard_ShouldCenterTheUploadButtonOnTheCard", async () => {
-    // Arrange & Act
-    const screen = await renderEmptyState()
-
-    // Assert
-    const card = getCard(screen.container)
-    expect(
-      Math.abs(centerX(card) - centerX(getIconButton(screen.container)))
-    ).toBeLessThanOrEqual(1)
-  })
-
-  it("EmptyStateCard_ShouldLayOutTheActionAsAWrappingFlexRow", async () => {
-    // Arrange & Act
-    const screen = await renderEmptyState()
-
-    // Assert
-    const style = getComputedStyle(getAction(screen.container))
-    expect(style.display).toBe("flex")
-    expect(style.flexWrap).toBe("wrap")
-    expect(style.columnGap).not.toBe("normal")
-  })
-
-  it("EmptyStateCard_ShouldPlaceTheActionButtonsSideBySideInOneRow", async () => {
-    // Arrange & Act
-    const screen = await renderEmptyState()
-
-    // Assert
-    const [first, second] = getActionButtons(screen.container)
-    const firstRect = first.getBoundingClientRect()
-    const secondRect = second.getBoundingClientRect()
-    expect(Math.abs(firstRect.top - secondRect.top)).toBeLessThanOrEqual(1)
-    expect(Math.abs(firstRect.bottom - secondRect.bottom)).toBeLessThanOrEqual(
-      1
+    const headerCells = [
+      ...screen.container.querySelectorAll<HTMLElement>(HEADER_CELL_SELECTOR),
+    ]
+    expect(headerCells.map((cell) => cell.textContent.trim())).toEqual(
+      COLUMN_HEADERS
     )
-    expect(secondRect.left).toBeGreaterThanOrEqual(firstRect.right)
   })
 
-  it("EmptyStateCard_ShouldStackTheActionButtonsVertically_WhenSpaceIsTight", async () => {
-    // Arrange
-    const screen = await renderEmptyState()
-    const card = getCard(screen.container)
-    card.style.width = "160px"
+  it("RouteComponent_ShouldDimOnlyTheRowsThatAreNotReady_WhenReceiptsAreMixed", async () => {
+    // Arrange & Act
+    const screen = await renderAppIndex()
 
     // Act
-    const [first, second] = getActionButtons(screen.container)
-    const firstRect = first.getBoundingClientRect()
-    const secondRect = second.getBoundingClientRect()
-
-    // Assert
-    expect(secondRect.top).toBeGreaterThanOrEqual(firstRect.bottom - 1)
-  })
-
-  it("EmptyStateCard_ShouldSizeEachActionButtonToItsContent", async () => {
-    // Arrange & Act
-    const screen = await renderEmptyState()
-
-    // Assert
-    const [first, second] = getActionButtons(screen.container)
-    // The longer label earns the wider button, proving the flex row tracks
-    // content instead of splitting the row into fixed equal halves.
-    expect(second.getBoundingClientRect().width).toBeGreaterThan(
-      first.getBoundingClientRect().width
+    const rows = [
+      ...screen.container.querySelectorAll<HTMLElement>(BODY_ROW_SELECTOR),
+    ]
+    const statuses = rows.map((row) =>
+      row
+        .querySelectorAll<HTMLElement>(BODY_CELL_SELECTOR)
+        [STATUS_COLUMN_INDEX].textContent.trim()
     )
-    for (const button of [first, second]) {
-      expect(button.scrollWidth).toBeLessThanOrEqual(button.clientWidth + 1)
-    }
+
+    // Assert — the dimmed set must be exactly the non-ready rows, and the fake
+    // receipts are seeded with ready rows so the comparison can fail.
+    const readyRowCount = statuses.filter(
+      (status) => status === READY_STATUS_LABEL
+    ).length
+    const dimmedRows = rows.filter(
+      (row) => row.getAttribute("data-disabled") === "true"
+    )
+    expect(readyRowCount).toBeGreaterThan(0)
+    expect(dimmedRows).toHaveLength(ROUTE_RECEIPT_COUNT - readyRowCount)
   })
 
-  it("EmptyStateCard_ShouldFillTheActionWidthWithBothButtons", async () => {
+  it("RouteComponent_ShouldShowTheSeededRowCountInTheFooter_WhenReceiptsExist", async () => {
     // Arrange & Act
-    const screen = await renderEmptyState()
+    const screen = await renderAppIndex()
 
     // Assert
-    const action = getAction(screen.container)
-    const [first, second] = getActionButtons(screen.container)
-    const gap = parseFloat(getComputedStyle(action).columnGap)
-    const used =
-      first.getBoundingClientRect().width +
-      second.getBoundingClientRect().width +
-      gap
-    expect(Math.abs(used - action.clientWidth)).toBeLessThanOrEqual(1)
-    expect(action.scrollWidth).toBeLessThanOrEqual(action.clientWidth)
+    const footer = screen.container.querySelector<HTMLElement>(FOOTER_SELECTOR)
+    expect(footer?.textContent).toContain(
+      `Có ${ROUTE_RECEIPT_COUNT} tệp trong lô này`
+    )
   })
 })

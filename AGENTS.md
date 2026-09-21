@@ -232,6 +232,10 @@ The `web` Vite app is added via `AddViteApp(...).WithBun()` and, on publish,
   from `@/lib/datetime` (`vi-VN`, `Asia/Ho_Chi_Minh`) instead of `toLocaleString()` or
   local-time `new Date()` math. Pinning the zone keeps SSR and client output identical and
   avoids hydration mismatches; persistence is still UTC.
+- **Receipt rows are only actionable when the receipt is `ready`.** Pass the table an
+  `isRowDisabled` predicate (`/app` wires it from `isReceiptReady` in `@/models/receipt`).
+  Disabled rows render dimmed via `data-disabled` (`opacity-50`, hover suppressed) and
+  their selection checkbox is disabled by `row.getCanSelect()`.
 
 ---
 

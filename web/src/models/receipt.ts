@@ -11,6 +11,14 @@ const RECEIPT_STATUSES = [
 
 type ReceiptStatus = (typeof RECEIPT_STATUSES)[number]
 
+const RECEIPT_STATUS_LABELS: Record<ReceiptStatus, string> = {
+  pending: "Đang chờ",
+  processing: "Đang xử lý",
+  needs_review: "Cần kiểm tra",
+  failed: "Lỗi",
+  ready: "Hoàn tất",
+}
+
 type ReceiptIssue = {
   code: string
   message: string
@@ -81,5 +89,15 @@ function parseReceipt(input: unknown): Receipt {
   return result.data
 }
 
-export { RECEIPT, RECEIPT_STATUSES, parseReceipt }
+function isReceiptReady(receipt: Receipt): boolean {
+  return receipt.status === "ready"
+}
+
+export {
+  RECEIPT,
+  RECEIPT_STATUSES,
+  RECEIPT_STATUS_LABELS,
+  isReceiptReady,
+  parseReceipt,
+}
 export type { Receipt, ReceiptIssue, ReceiptStatus }
