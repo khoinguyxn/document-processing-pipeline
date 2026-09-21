@@ -201,3 +201,113 @@ description: chronological action log per session, consolidated weekly
 | 14:49 | Session end: 10 writes across 3 files (fake-receipts.ts, fake-receipts.test.ts, package.json) | 3 reads | ~5522 tok |
 | 14:51 | Session end: 10 writes across 3 files (fake-receipts.ts, fake-receipts.test.ts, package.json) | 3 reads | ~5522 tok |
 | 14:53 | Session end: 10 writes across 3 files (fake-receipts.ts, fake-receipts.test.ts, package.json) | 3 reads | ~5522 tok |
+| 15:16 | Edited web/src/components/receipts/receipt-data-table-features.ts | — | ~47 |
+| 15:17 | Edited web/src/components/receipts/receipt-data-table-features.ts | — | ~39 |
+| 15:17 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~1206 |
+| 15:18 | Edited web/tests/components/receipts/receipts-columns.test.ts | — | ~368 |
+| 15:19 | Session end: 14 writes across 6 files (fake-receipts.ts, fake-receipts.test.ts, package.json, receipt-data-table-features.ts, receipts-columns.tsx) | 7 reads | ~8787 tok |
+| 15:24 | Edited web/src/models/receipt.ts | — | ~70 |
+| 15:24 | Edited web/src/models/receipt.ts | — | ~21 |
+| 15:25 | Edited web/src/components/inbox-button-group.tsx | — | ~37 |
+| 15:25 | Edited web/src/components/inbox-button-group.tsx | — | ~135 |
+| 15:25 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~108 |
+| 15:25 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~322 |
+| 15:26 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~89 |
+| 15:26 | Session end: 21 writes across 8 files (fake-receipts.ts, fake-receipts.test.ts, package.json, receipt-data-table-features.ts, receipts-columns.tsx) | 6 reads | ~8934 tok |
+| 15:30 | Edited web/src/components/receipts/receipts-columns.tsx | — | ~48 |
+| 15:31 | Session end: 22 writes across 8 files (fake-receipts.ts, fake-receipts.test.ts, package.json, receipt-data-table-features.ts, receipts-columns.tsx) | 6 reads | ~8982 tok |
+
+## Session: 2026-09-20 22:43
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:44 | Edited web/src/routes/app/index.tsx | — | ~20 |
+| 22:45 | Session end: 1 writes across 1 files (index.tsx) | 6 reads | ~7034 tok |
+| 22:45 | Session end: 1 writes across 1 files (index.tsx) | 6 reads | ~7034 tok |
+| 22:45 | Session end: 1 writes across 1 files (index.tsx) | 6 reads | ~7034 tok |
+| 22:46 | Session end: 1 writes across 1 files (index.tsx) | 6 reads | ~7034 tok |
+| 22:46 | Session end: 1 writes across 1 files (index.tsx) | 6 reads | ~7034 tok |
+| 22:46 | Session end: 1 writes across 1 files (index.tsx) | 6 reads | ~7034 tok |
+| 22:49 | Edited web/src/routes/app/index.tsx | — | ~19 |
+
+## Session: 2026-09-20 22:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-20 22:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-20 22:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-20 22:49
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 22:50 | Session end: 2 writes across 1 files (index.tsx) | 6 reads | ~7053 tok |
+| 22:50 | Session end: 2 writes across 1 files (index.tsx) | 6 reads | ~7053 tok |
+| 22:51 | Edited web/tests/routes/app/index.test.tsx | — | ~401 |
+| 22:51 | Edited web/tests/routes/app/index.test.tsx | — | ~146 |
+| 22:53 | Session end: 2 writes across 1 files (index.test.tsx) | 6 reads | ~4405 tok |
+| 22:53 | Session end: 2 writes across 1 files (index.test.tsx) | 6 reads | ~4405 tok |
+
+## Session: 2026-09-21 16:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 16:56 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~401 |
+| 16:58 | Edited web/tests/components/receipts/receipts-columns.test.ts | — | ~36 |
+| 16:58 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~1219 |
+| 17:00 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~79 |
+| 17:00 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~242 |
+| 17:01 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~5 |
+| 17:01 | Edited web/src/routes/app/index.tsx | — | ~5 |
+| 17:01 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~5 |
+| 17:01 | Session end: 8 writes across 4 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx) | 5 reads | ~10691 tok |
+| 17:05 | Session end: 8 writes across 4 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx) | 5 reads | ~10691 tok |
+| 17:05 | Session end: 8 writes across 4 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx) | 5 reads | ~10691 tok |
+| 17:05 | Session end: 8 writes across 4 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx) | 5 reads | ~10691 tok |
+| 17:06 | Edited web/tests/components/receipts/receipt-empty-state-card.test.tsx | — | ~1705 |
+| 17:06 | Edited web/tests/routes/app/index.test.tsx | — | ~556 |
+| 17:06 | Edited web/tests/routes/app/index.test.tsx | — | ~21 |
+| 17:07 | Edited web/tests/components/receipts/receipt-empty-state-card.test.tsx | — | ~294 |
+| 17:08 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~16 |
+| 17:08 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~9 |
+| 17:08 | Session end: 14 writes across 6 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 7 reads | ~13236 tok |
+| 17:13 | Edited web/src/models/receipt.ts | — | ~55 |
+| 17:13 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~146 |
+| 17:14 | Edited web/src/routes/app/index.tsx | — | ~32 |
+| 17:14 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~105 |
+| 17:14 | Edited web/src/routes/app/index.tsx | — | ~46 |
+| 17:14 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~46 |
+| 17:14 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~62 |
+| 17:14 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~275 |
+| 17:14 | Edited web/tests/routes/app/index.test.tsx | — | ~161 |
+| 17:14 | Edited web/tests/routes/app/index.test.tsx | — | ~296 |
+| 17:14 | Edited web/tests/models/receipt.test.ts | — | ~21 |
+| 17:15 | Edited web/tests/models/receipt.test.ts | — | ~260 |
+| 17:16 | Edited AGENTS.md | — | ~104 |
+| 17:17 | Session end: 27 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 7 reads | ~14417 tok |
+| 17:17 | Session end: 27 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 7 reads | ~14417 tok |
+| 17:26 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~31 |
+| 17:26 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~26 |
+| 17:26 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~324 |
+| 17:26 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~120 |
+| 17:28 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~9 |
+| 17:28 | Session end: 32 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 7 reads | ~14927 tok |
+| 17:44 | Session end: 32 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 7 reads | ~14927 tok |
+| 17:48 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~83 |
+| 17:48 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~408 |
+| 17:49 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~20 |
+| 17:49 | Edited web/src/components/receipts/receipt-data-table.tsx | — | ~149 |
+| 17:49 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~270 |
+| 17:50 | Edited web/tests/components/receipts/receipt-data-table.test.tsx | — | ~36 |
+| 17:50 | Edited web/tests/routes/app/index.test.tsx | — | ~47 |
+| 17:50 | Edited web/tests/routes/app/index.test.tsx | — | ~138 |
+| 17:51 | Session end: 40 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 8 reads | ~16894 tok |
+| 17:53 | Session end: 40 writes across 9 files (receipt-data-table.tsx, receipts-columns.test.ts, receipt-data-table.test.tsx, index.tsx, receipt-empty-state-card.test.tsx) | 8 reads | ~16894 tok |

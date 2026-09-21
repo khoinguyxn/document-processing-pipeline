@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { RECEIPT_STATUSES } from "@/models/receipt"
+import { RECEIPT_STATUSES, RECEIPT_STATUS_LABELS } from "@/models/receipt"
 import type { ReceiptStatus } from "@/models/receipt"
 
 import { Button } from "./ui/button"
@@ -15,9 +15,24 @@ type InboxFilter = {
 
 const INBOX_FILTERS = [
   { id: "all", label: "Tất cả", count: 9, statuses: RECEIPT_STATUSES },
-  { id: "review", label: "Cần kiểm tra", count: 2, statuses: ["needs_review"] },
-  { id: "error", label: "Lỗi", count: 1, statuses: ["failed"] },
-  { id: "done", label: "Hoàn tất", count: 6, statuses: ["ready"] },
+  {
+    id: "review",
+    label: RECEIPT_STATUS_LABELS.needs_review,
+    count: 2,
+    statuses: ["needs_review"],
+  },
+  {
+    id: "error",
+    label: RECEIPT_STATUS_LABELS.failed,
+    count: 1,
+    statuses: ["failed"],
+  },
+  {
+    id: "done",
+    label: RECEIPT_STATUS_LABELS.ready,
+    count: 6,
+    statuses: ["ready"],
+  },
 ] as const satisfies readonly InboxFilter[]
 
 type InboxFilterId = (typeof INBOX_FILTERS)[number]["id"]

@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-20T07:49:35.810Z
-> Files: 121 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-21T10:51:24.753Z
+> Files: 129 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -11,12 +11,13 @@
 
 - `.dockerignore` — Docker ignore rules (~1258 tok)
 - `.gitignore` — Git ignore rules (~314 tok)
-- `AGENTS.md` — Skill Loading (~6358 tok)
+- `AGENTS.md` — Skill Loading (~6440 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
 - `global.json` — .NET SDK configuration (~31 tok)
 - `mise.toml` — /coverage.cobertura.xml" "-targetdir:coverage" "-reporttypes:Html;lcov;Cobertura;TextSummary" (~272 tok)
+- `opencode.json` (~62 tok)
 - `package.json` — Node.js package manifest (~40 tok)
 - `qodana.yaml` — -------------------------------------------------------------------------------# (~553 tok)
 - `README.md` — Project documentation (~2336 tok)
@@ -29,6 +30,10 @@
 ## .github/workflows/
 
 - `main.yaml` — CI: main (~1520 tok)
+
+## .omo/run-continuation/
+
+- `ses_f3c9c45e0ffeCOh1OzWgmPMydJ.json` (~62 tok)
 
 ## DocumentProcessingPipeline.AppHost/
 
@@ -160,7 +165,7 @@
 - `components.json` (~151 tok)
 - `Dockerfile` — Docker container definition (~353 tok)
 - `eslint.config.js` — ESLint flat configuration (~123 tok)
-- `package.json` — Node.js package manifest (~629 tok)
+- `package.json` — Node.js package manifest (~640 tok)
 - `README.md` — Project documentation (~113 tok)
 - `tsconfig.json` — TypeScript configuration (~202 tok)
 - `vite.config.ts` — Declares config (~163 tok)
@@ -171,10 +176,6 @@
 - `manifest.json` (~143 tok)
 - `robots.txt` — https://www.robotstxt.org/robotstxt.html (~17 tok)
 
-## web/scripts/
-
-- `generate-receipt-types.ts` — Declares HEADER (~322 tok)
-
 ## web/src/
 
 - `router.tsx` — getRouter (~118 tok)
@@ -184,22 +185,33 @@
 ## web/src/components/
 
 - `app-sidebar.tsx` — Exports AppSidebar (~580 tok)
-- `inbox-button-group.tsx` — Exports InboxButtonGroup (~514 tok)
-- `upload-status-alert.tsx` — Exports UploadStatusAlert (~963 tok)
+- `inbox-button-group.tsx` — Exports InboxButtonGroup (~554 tok)
+- `upload-status-alert.tsx` — UPLOAD_STATUS_PRESETS (~972 tok)
+
+## web/src/components/receipts/
+
+- `receipt-data-table-features.ts` — Exports FEATURES, ReceiptDataTableFeatures (~224 tok)
+- `receipt-data-table.tsx` — ReceiptDataTable — renders table (~845 tok)
+- `receipt-empty-state-card.tsx` — ReceiptEmptyStateCard (~366 tok)
+- `receipts-columns.tsx` — COLUMN_HELPER (~1113 tok)
 
 ## web/src/components/ui/
 
 - `alert.tsx` — Declares ALERT_VARIANTS (~521 tok)
+- `button-group.tsx` — buttonGroupVariants (~685 tok)
 - `button.tsx` — BUTTON_VARIANTS (~843 tok)
 - `calendar.tsx` — Declares Calendar (~2444 tok)
 - `card.tsx` — Declares Card (~707 tok)
-- `date-range-picker.tsx` — Declares getMonthRange (~1188 tok)
+- `date-range-picker.tsx` — getMonthRange — uses useState (~1198 tok)
 - `input.tsx` — Input (~257 tok)
 - `popover.tsx` — Popover (~674 tok)
+- `progress.tsx` — Progress (~239 tok)
 - `separator.tsx` — Separator (~178 tok)
 - `sheet.tsx` — Sheet (~1302 tok)
 - `sidebar.tsx` — SIDEBAR_COOKIE_NAME — uses useContext, useState, useCallback, useEffect (~6100 tok)
 - `skeleton.tsx` — Skeleton (~76 tok)
+- `spinner.tsx` — Spinner (~100 tok)
+- `table.tsx` — Table — renders table (~678 tok)
 - `tooltip.tsx` — TooltipProvider (~623 tok)
 - `typography.tsx` — HEADING_BASE (~299 tok)
 
@@ -210,15 +222,13 @@
 ## web/src/lib/
 
 - `datetime.ts` — Declares DISPLAY_LOCALE (~269 tok)
-- `pages.tsx` — Exports PAGES (~106 tok)
 - `utils.ts` — Exports cn (~48 tok)
 
 ## web/src/models/
 
 - `fake-receipts.ts` — Declares FAKE_RECEIPT_COUNT (~776 tok)
 - `pages.tsx` — Exports PAGES (~139 tok)
-- `receipt.ts` — Declares RECEIPT_STATUSES (~540 tok)
-- `reciept.ts` — Declares RECEIPT_BASE (~197 tok)
+- `receipt.ts` — Declares RECEIPT_STATUSES (~634 tok)
 
 ## web/src/routes/
 
@@ -229,13 +239,9 @@
 ## web/src/routes/app/
 
 - `exports.tsx` — Route (~62 tok)
-- `index.tsx` — Exports Route (~525 tok)
-- `route.tsx` — Exports Route (~494 tok)
+- `index.tsx` — Exports Route (~263 tok)
+- `route.tsx` — Route (~494 tok)
 - `suppliers.tsx` — Route (~63 tok)
-
-## web/src/types/
-
-- `pages.d.ts` — Exports Page (~41 tok)
 
 ## web/tests/
 
@@ -246,6 +252,12 @@
 - `app-sidebar.test.tsx` — Declares TEST_PAGES (~971 tok)
 - `inbox-button-group.test.tsx` — Declares BUTTON_SELECTOR (~694 tok)
 - `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~2187 tok)
+
+## web/tests/components/receipts/
+
+- `receipt-data-table.test.tsx` — Declares TABLE_SELECTOR (~2350 tok)
+- `receipt-empty-state-card.test.tsx` — Declares CARD_SELECTOR (~1818 tok)
+- `receipts-columns.test.ts` — Declares total (~375 tok)
 
 ## web/tests/components/ui/
 
@@ -260,13 +272,12 @@
 ## web/tests/models/
 
 - `fake-receipts.test.ts` — Declares requiresIssues (~388 tok)
-- `receipt.test.ts` — Declares createReceipt (~1221 tok)
-- `reciept.test.ts` — Declares createReceipt (~699 tok)
+- `receipt.test.ts` — Declares createReceipt (~1475 tok)
 
 ## web/tests/routes/app/
 
-- `index.test.tsx` — Declares CARD_SELECTOR (~1634 tok)
-- `route.test.tsx` — Declares renderAppLayout (~935 tok)
+- `index.test.tsx` — Declares TABLE_SELECTOR (~980 tok)
+- `route.test.tsx` — `AppLayout` renders `<Outlet />`, so it has to be mounted through a real (~936 tok)
 
 ## web/tests/utils/
 
