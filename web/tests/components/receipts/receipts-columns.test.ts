@@ -16,6 +16,17 @@ describe("formatCurrency", () => {
     // Assert
     expect(result).toContain("1.250.000")
   })
+
+  it("formatCurrency_ShouldRenderAnEmDash_WhenValueIsNull", () => {
+    // Arrange
+    const total = null
+
+    // Act
+    const result = formatCurrency(total)
+
+    // Assert
+    expect(result).toBe("—")
+  })
 })
 
 describe("formatConfidence", () => {
@@ -33,6 +44,17 @@ describe("formatConfidence", () => {
   it("formatConfidence_ShouldRenderZeroPercent_WhenGivenZero", () => {
     // Act & Assert
     expect(formatConfidence(0)).toBe("0%")
+  })
+
+  it("formatConfidence_ShouldRenderAnEmDash_WhenValueIsNull", () => {
+    // Arrange
+    const score = null
+
+    // Act
+    const result = formatConfidence(score)
+
+    // Assert
+    expect(result).toBe("—")
   })
 })
 

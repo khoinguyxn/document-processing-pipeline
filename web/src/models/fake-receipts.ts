@@ -7,14 +7,6 @@ const FAKE_RECEIPT_COUNT = 9
 
 const RECEIPT_SEED = 2026
 
-const RECEIPT_STATUS_WEIGHTS: { value: ReceiptStatus; weight: number }[] = [
-  { value: "ready", weight: 4 },
-  { value: "needs_review", weight: 3 },
-  { value: "pending", weight: 2 },
-  { value: "processing", weight: 1 },
-  { value: "failed", weight: 1 },
-]
-
 const FILE_EXTENSIONS = ["pdf", "jpg", "png"] as const
 
 const MIME_TYPES: Record<(typeof FILE_EXTENSIONS)[number], string> = {
@@ -39,9 +31,64 @@ const RECEIPT_ISSUE_PRESETS: ReceiptIssue[] = [
     message: "Nghi ngờ trùng với hoá đơn đã xử lý",
   },
   { code: "invalid_date", message: "Ngày lập hoá đơn không hợp lệ" },
+  {
+    code: "blurry_scan",
+    message: "Bản quét bị mờ, không đọc được nội dung",
+  },
 ]
 
-fakerVI.seed(RECEIPT_SEED)
+const VAT_MISMATCH_ISSUE = RECEIPT_ISSUE_PRESETS[0]
+const LOW_CONFIDENCE_ISSUE = RECEIPT_ISSUE_PRESETS[1]
+const MISSING_TAX_ID_ISSUE = RECEIPT_ISSUE_PRESETS[2]
+const UNREADABLE_TOTAL_ISSUE = RECEIPT_ISSUE_PRESETS[3]
+const DUPLICATE_RECEIPT_ISSUE = RECEIPT_ISSUE_PRESETS[4]
+const INVALID_DATE_ISSUE = RECEIPT_ISSUE_PRESETS[5]
+const BLURRY_SCAN_ISSUE = RECEIPT_ISSUE_PRESETS[6]
+
+const NULL_EXTRACTED_FIELDS = {
+  provider: null,
+  receipt_number: null,
+  total: null,
+  confidence_score: null,
+}
+
+type ReceiptScenario = {
+  status: ReceiptStatus
+  confidence_score: number | null
+  issues?: ReceiptIssue[]
+}
+
+const RECEIPT_SCENARIOS: ReceiptScenario[] = [
+  { status: "pending", confidence_score: null },
+  { status: "processing", confidence_score: null },
+  {
+    status: "failed",
+    confidence_score: null,
+    issues: [UNREADABLE_TOTAL_ISSUE],
+  },
+  {
+    status: "failed",
+    confidence_score: null,
+    issues: [BLURRY_SCAN_ISSUE],
+  },
+  {
+    status: "needs_review",
+    confidence_score: 0.78,
+    issues: [VAT_MISMATCH_ISSUE],
+  },
+  {
+    status: "needs_review",
+    confidence_score: 0.45,
+    issues: [LOW_CONFIDENCE_ISSUE, MISSING_TAX_ID_ISSUE],
+  },
+  {
+    status: "needs_review",
+    confidence_score: 0.62,
+    issues: [INVALID_DATE_ISSUE, DUPLICATE_RECEIPT_ISSUE],
+  },
+  { status: "ready", confidence_score: 0.96 },
+  { status: "ready", confidence_score: 0.93 },
+]
 
 function createReceiptFile(): File {
   const extension = fakerVI.helpers.arrayElement(FILE_EXTENSIONS)
@@ -52,43 +99,42 @@ function createReceiptFile(): File {
   })
 }
 
-function createReceiptIssue(): ReceiptIssue {
-  return { ...fakerVI.helpers.arrayElement(RECEIPT_ISSUE_PRESETS) }
-}
-
-function createReceipt(status: ReceiptStatus): Receipt {
-  const base = {
-    file: createReceiptFile(),
+function createExtractedFields(confidence_score: number) {
+  return {
     provider: fakerVI.company.name(),
     receipt_number: fakerVI.number.int({ min: 1, max: 999_999 }),
-    created_datetime: fakerVI.date.recent({ days: 60 }),
     total: fakerVI.number.int({ min: 50_000, max: 25_000_000 }),
-    confidence_score: fakerVI.number.float({
-      min: 0.55,
-      max: 1,
-      fractionDigits: 2,
-    }),
+    confidence_score,
   }
+}
 
-  if (status === "needs_review" || status === "failed") {
-    const issueCount = fakerVI.number.int({ min: 1, max: 2 })
+function createReceiptFromScenario(scenario: ReceiptScenario): Receipt {
+  const extracted =
+    scenario.confidence_score === null
+      ? NULL_EXTRACTED_FIELDS
+      : createExtractedFields(scenario.confidence_score)
 
-    return parseReceipt({
-      ...base,
-      status,
-      issues: Array.from({ length: issueCount }, createReceiptIssue),
-    })
-  }
-
-  return parseReceipt({ ...base, status })
+  return parseReceipt({
+    file: createReceiptFile(),
+    created_datetime: fakerVI.date.recent({ days: 60 }),
+    ...extracted,
+    status: scenario.status,
+    ...(scenario.issues
+      ? { issues: scenario.issues.map((issue) => ({ ...issue })) }
+      : {}),
+  })
 }
 
 function createFakeReceipts(count = FAKE_RECEIPT_COUNT): Receipt[] {
-  return Array.from({ length: count }, () =>
-    createReceipt(fakerVI.helpers.weightedArrayElement(RECEIPT_STATUS_WEIGHTS))
+  fakerVI.seed(RECEIPT_SEED)
+
+  return Array.from({ length: count }, (_, index) =>
+    createReceiptFromScenario(
+      RECEIPT_SCENARIOS[index % RECEIPT_SCENARIOS.length]
+    )
   )
 }
 
 const FAKE_RECEIPTS: Receipt[] = createFakeReceipts()
 
-export { FAKE_RECEIPTS, createFakeReceipts }
+export { RECEIPT_ISSUE_PRESETS, FAKE_RECEIPTS, createFakeReceipts }

@@ -1,6 +1,6 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-21T10:51:24.753Z
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-21T14:18:34.392Z
 > Files: 129 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
@@ -193,7 +193,7 @@
 - `receipt-data-table-features.ts` — Exports FEATURES, ReceiptDataTableFeatures (~224 tok)
 - `receipt-data-table.tsx` — ReceiptDataTable — renders table (~845 tok)
 - `receipt-empty-state-card.tsx` — ReceiptEmptyStateCard (~366 tok)
-- `receipts-columns.tsx` — COLUMN_HELPER (~1113 tok)
+- `receipts-columns.tsx` — Declares COLUMN_HELPER (~1167 tok)
 
 ## web/src/components/ui/
 
@@ -226,9 +226,9 @@
 
 ## web/src/models/
 
-- `fake-receipts.ts` — Declares FAKE_RECEIPT_COUNT (~776 tok)
+- `fake-receipts.ts` — Declares FAKE_RECEIPT_COUNT (~1107 tok)
 - `pages.tsx` — Exports PAGES (~139 tok)
-- `receipt.ts` — Declares RECEIPT_STATUSES (~634 tok)
+- `receipt.ts` — Declares RECEIPT_STATUSES (~654 tok)
 
 ## web/src/routes/
 
@@ -257,7 +257,7 @@
 
 - `receipt-data-table.test.tsx` — Declares TABLE_SELECTOR (~2350 tok)
 - `receipt-empty-state-card.test.tsx` — Declares CARD_SELECTOR (~1818 tok)
-- `receipts-columns.test.ts` — Declares total (~375 tok)
+- `receipts-columns.test.ts` — Declares total (~496 tok)
 
 ## web/tests/components/ui/
 
@@ -271,8 +271,8 @@
 
 ## web/tests/models/
 
-- `fake-receipts.test.ts` — Declares requiresIssues (~388 tok)
-- `receipt.test.ts` — Declares createReceipt (~1475 tok)
+- `fake-receipts.test.ts` — Declares usedCodes (~1152 tok)
+- `receipt.test.ts` — Declares createReceipt (~1645 tok)
 
 ## web/tests/routes/app/
 

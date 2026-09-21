@@ -26,11 +26,11 @@ type ReceiptIssue = {
 
 type ReceiptBase = {
   file: File
-  provider: string
-  receipt_number: number
+  provider: string | null
+  receipt_number: number | null
   created_datetime: Date
-  total: number
-  confidence_score: number
+  total: number | null
+  confidence_score: number | null
 }
 
 type ReceiptNeedsReview = ReceiptBase & {
@@ -58,11 +58,11 @@ const RECEIPT_ISSUE = z.object({
 
 const RECEIPT_BASE = z.object({
   file: z.file(),
-  provider: z.string(),
-  receipt_number: z.number(),
+  provider: z.string().nullable(),
+  receipt_number: z.number().nullable(),
   created_datetime: z.coerce.date(),
-  total: z.number(),
-  confidence_score: z.number(),
+  total: z.number().nullable(),
+  confidence_score: z.number().nullable(),
 }) satisfies z.ZodType<ReceiptBase>
 
 const RECEIPT = z.discriminatedUnion("status", [
@@ -89,15 +89,19 @@ function parseReceipt(input: unknown): Receipt {
   return result.data
 }
 
-function isReceiptReady(receipt: Receipt): boolean {
-  return receipt.status === "ready"
+function isReceiptParsed(receipt: Receipt): boolean {
+  return (
+    receipt.status === "ready" ||
+    receipt.status === "failed" ||
+    receipt.status == "needs_review"
+  )
 }
 
 export {
   RECEIPT,
   RECEIPT_STATUSES,
   RECEIPT_STATUS_LABELS,
-  isReceiptReady,
+  isReceiptParsed,
   parseReceipt,
 }
 export type { Receipt, ReceiptIssue, ReceiptStatus }

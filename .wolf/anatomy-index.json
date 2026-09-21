@@ -1,12 +1,12 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-21T10:51:24.753Z",
+    "lastScanned": "2026-09-21T14:18:34.392Z",
     "fileCount": 129,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "ec7962e7fcb4118b9656039dd67531315261fb3c0b99ff08f5b915ec3230603f",
-    "storeUpdatedAt": "2026-09-21T10:51:24.754Z",
+    "renderedHash": "6c5bece8e67c9b22d6b7feb1b1e9e1f3c0bc30514a570cb3369f6f37bd77f1b2",
+    "storeUpdatedAt": "2026-09-21T14:18:34.393Z",
     "rootHash": "8b8573d23c238303"
   },
   "files": {
@@ -839,41 +839,13 @@
       "importance": 0.1905
     },
     "web/src/components/receipts/receipts-columns.tsx": {
-      "description": "COLUMN_HELPER",
-      "tokens": 1113,
-      "hash": "b0740a01599cc076",
-      "size": 3931,
-      "mtimeMs": 1789986261692.2742,
-      "updatedAt": "2026-09-21T10:51:24.598Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "formatCurrency",
-          "kind": "fn",
-          "startLine": 26,
-          "endLine": 28,
-          "tokens": 27
-        },
-        {
-          "name": "formatConfidence",
-          "kind": "fn",
-          "startLine": 30,
-          "endLine": 32,
-          "tokens": 26
-        },
-        {
-          "name": "renderFileIcon",
-          "kind": "fn",
-          "startLine": 34,
-          "endLine": 42,
-          "tokens": 76
-        }
-      ],
-      "symbolSource": "ts",
-      "imports": [
-        "web/src/components/receipts/receipt-data-table-features.ts"
-      ],
-      "importance": 0.1905
+      "description": "Declares COLUMN_HELPER",
+      "tokens": 1167,
+      "hash": "48f9b543d0d125b8",
+      "size": 4122,
+      "mtimeMs": 1789999861214.728,
+      "updatedAt": "2026-09-21T14:11:01.310Z",
+      "source": "hook"
     },
     "web/src/components/ui/alert.tsx": {
       "description": "Declares ALERT_VARIANTS",
@@ -1692,44 +1664,12 @@
     },
     "web/src/models/fake-receipts.ts": {
       "description": "Declares FAKE_RECEIPT_COUNT",
-      "tokens": 776,
-      "hash": "f57642ed51fed546",
-      "size": 2796,
-      "mtimeMs": 1789984938010.3672,
-      "updatedAt": "2026-09-21T10:51:24.605Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "createReceiptFile",
-          "kind": "fn",
-          "startLine": 46,
-          "endLine": 53,
-          "tokens": 81
-        },
-        {
-          "name": "createReceiptIssue",
-          "kind": "fn",
-          "startLine": 55,
-          "endLine": 57,
-          "tokens": 33
-        },
-        {
-          "name": "createReceipt",
-          "kind": "fn",
-          "startLine": 59,
-          "endLine": 84,
-          "tokens": 214
-        },
-        {
-          "name": "createFakeReceipts",
-          "kind": "fn",
-          "startLine": 86,
-          "endLine": 90,
-          "tokens": 57
-        }
-      ],
-      "symbolSource": "ts",
-      "importance": 0.1905
+      "tokens": 1107,
+      "hash": "a36227813e2016dd",
+      "size": 3971,
+      "mtimeMs": 1790000296021.7275,
+      "updatedAt": "2026-09-21T14:18:16.112Z",
+      "source": "hook"
     },
     "web/src/models/pages.tsx": {
       "description": "Exports PAGES",
@@ -1743,79 +1683,12 @@
     },
     "web/src/models/receipt.ts": {
       "description": "Declares RECEIPT_STATUSES",
-      "tokens": 634,
-      "hash": "836b36c880318a5c",
-      "size": 2233,
-      "mtimeMs": 1789985638264.9673,
-      "updatedAt": "2026-09-21T10:51:24.606Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "ReceiptStatus",
-          "kind": "section",
-          "startLine": 12,
-          "endLine": 12,
-          "tokens": 16
-        },
-        {
-          "name": "ReceiptIssue",
-          "kind": "section",
-          "startLine": 22,
-          "endLine": 25,
-          "tokens": 16
-        },
-        {
-          "name": "ReceiptBase",
-          "kind": "section",
-          "startLine": 27,
-          "endLine": 34,
-          "tokens": 42
-        },
-        {
-          "name": "ReceiptNeedsReview",
-          "kind": "section",
-          "startLine": 36,
-          "endLine": 39,
-          "tokens": 27
-        },
-        {
-          "name": "ReceiptFailed",
-          "kind": "section",
-          "startLine": 41,
-          "endLine": 44,
-          "tokens": 24
-        },
-        {
-          "name": "ReceiptClean",
-          "kind": "section",
-          "startLine": 46,
-          "endLine": 48,
-          "tokens": 28
-        },
-        {
-          "name": "Receipt",
-          "kind": "section",
-          "startLine": 50,
-          "endLine": 50,
-          "tokens": 19
-        },
-        {
-          "name": "parseReceipt",
-          "kind": "fn",
-          "startLine": 82,
-          "endLine": 90,
-          "tokens": 51
-        },
-        {
-          "name": "isReceiptReady",
-          "kind": "fn",
-          "startLine": 92,
-          "endLine": 94,
-          "tokens": 26
-        }
-      ],
-      "symbolSource": "ts",
-      "importance": 0.1905
+      "tokens": 654,
+      "hash": "365479f5d747c8a5",
+      "size": 2305,
+      "mtimeMs": 1789999845615.7292,
+      "updatedAt": "2026-09-21T14:10:45.701Z",
+      "source": "hook"
     },
     "web/src/router.tsx": {
       "description": "getRouter",
@@ -2027,47 +1900,11 @@
     "web/tests/components/receipts/receipt-data-table.test.tsx": {
       "description": "Declares TABLE_SELECTOR",
       "tokens": 2350,
-      "hash": "b42b7b75b98174b0",
-      "size": 8245,
-      "mtimeMs": 1789987816398.3635,
-      "updatedAt": "2026-09-21T10:51:24.611Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "renderReceiptTable",
-          "kind": "fn",
-          "startLine": 42,
-          "endLine": 50,
-          "tokens": 60
-        },
-        {
-          "name": "getBodyRows",
-          "kind": "fn",
-          "startLine": 52,
-          "endLine": 54,
-          "tokens": 35
-        },
-        {
-          "name": "getHeaderCells",
-          "kind": "fn",
-          "startLine": 56,
-          "endLine": 58,
-          "tokens": 37
-        },
-        {
-          "name": "hoverWithoutTransition",
-          "kind": "fn",
-          "startLine": 62,
-          "endLine": 66,
-          "tokens": 40
-        }
-      ],
-      "symbolSource": "ts",
-      "skeleton": "function renderReceiptTable() {\nfunction getBodyRows(container: HTMLElement) {\nfunction getHeaderCells(container: HTMLElement) {\nasync function hoverWithoutTransition(element: HTMLElement) {",
-      "imports": [
-        "web/tests/utils/router.tsx"
-      ],
-      "importance": 0.1905
+      "hash": "674645d3e317482c",
+      "size": 8246,
+      "mtimeMs": 1789999825650.7754,
+      "updatedAt": "2026-09-21T14:10:25.791Z",
+      "source": "hook"
     },
     "web/tests/components/receipts/receipt-empty-state-card.test.tsx": {
       "description": "Declares CARD_SELECTOR",
@@ -2129,13 +1966,12 @@
     },
     "web/tests/components/receipts/receipts-columns.test.ts": {
       "description": "Declares total",
-      "tokens": 375,
-      "hash": "0bf6c50cace37156",
-      "size": 1312,
-      "mtimeMs": 1789984682709.9324,
-      "updatedAt": "2026-09-21T10:51:24.612Z",
-      "source": "scan",
-      "importance": 0.1905
+      "tokens": 496,
+      "hash": "c4a0c62b3e9dcf03",
+      "size": 1738,
+      "mtimeMs": 1789999825650.4773,
+      "updatedAt": "2026-09-21T14:10:25.739Z",
+      "source": "hook"
     },
     "web/tests/components/ui/date-range-picker.component.test.tsx": {
       "description": "EMPTY_LABEL",
@@ -2294,41 +2130,22 @@
       "importance": 0.1905
     },
     "web/tests/models/fake-receipts.test.ts": {
-      "description": "Declares requiresIssues",
-      "tokens": 388,
-      "hash": "d5e479fb1376138d",
-      "size": 1356,
-      "mtimeMs": 1789890983460.8428,
-      "updatedAt": "2026-09-21T10:51:24.614Z",
-      "source": "scan",
-      "importance": 0.1905
+      "description": "Declares usedCodes",
+      "tokens": 1152,
+      "hash": "c16e416d5042ab0a",
+      "size": 4029,
+      "mtimeMs": 1790000314322.7178,
+      "updatedAt": "2026-09-21T14:18:34.392Z",
+      "source": "hook"
     },
     "web/tests/models/receipt.test.ts": {
       "description": "Declares createReceipt",
-      "tokens": 1475,
-      "hash": "4d95a02f9ee214f2",
-      "size": 5170,
-      "mtimeMs": 1789985702633.7522,
-      "updatedAt": "2026-09-21T10:51:24.614Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "createReceipt",
-          "kind": "fn",
-          "startLine": 7,
-          "endLine": 17,
-          "tokens": 94
-        },
-        {
-          "name": "createIssue",
-          "kind": "fn",
-          "startLine": 19,
-          "endLine": 21,
-          "tokens": 42
-        }
-      ],
-      "symbolSource": "ts",
-      "importance": 0.1905
+      "tokens": 1645,
+      "hash": "aab5119f74d97e48",
+      "size": 5767,
+      "mtimeMs": 1789999820216.5894,
+      "updatedAt": "2026-09-21T14:10:20.298Z",
+      "source": "hook"
     },
     "web/tests/routes/app/index.test.tsx": {
       "description": "Declares TABLE_SELECTOR",

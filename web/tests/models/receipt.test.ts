@@ -1,4 +1,4 @@
-import { RECEIPT, isReceiptReady, parseReceipt } from "@/models/receipt"
+import { RECEIPT, isReceiptParsed, parseReceipt } from "@/models/receipt"
 import { fuzz } from "@traversable/zod-test"
 import * as fc from "fast-check"
 import { describe, expect, it } from "vitest"
@@ -34,6 +34,29 @@ describe("RECEIPT", () => {
       expect(result.data.status).toBe("pending")
       expect(result.data.created_datetime).toBeInstanceOf(Date)
       expect("issues" in result.data).toBe(false)
+    }
+  })
+
+  it("RECEIPT_ShouldParseNullExtractedFields_WhenStatusIsPending", () => {
+    // Arrange
+    const input = createReceipt({
+      status: "pending",
+      provider: null,
+      receipt_number: null,
+      total: null,
+      confidence_score: null,
+    })
+
+    // Act
+    const result = RECEIPT.safeParse(input)
+
+    // Assert
+    expect(result.success).toBe(true)
+    if (result.success) {
+      expect(result.data.provider).toBeNull()
+      expect(result.data.receipt_number).toBeNull()
+      expect(result.data.total).toBeNull()
+      expect(result.data.confidence_score).toBeNull()
     }
   })
 
@@ -122,13 +145,13 @@ describe("parseReceipt", () => {
   })
 })
 
-describe("isReceiptReady", () => {
+describe("isReceiptParsed", () => {
   it("isReceiptReady_ShouldReturnTrue_WhenStatusIsReady", () => {
     // Arrange
     const receipt = parseReceipt(createReceipt({ status: "ready" }))
 
     // Act
-    const result = isReceiptReady(receipt)
+    const result = isReceiptParsed(receipt)
 
     // Assert
     expect(result).toBe(true)
@@ -148,7 +171,7 @@ describe("isReceiptReady", () => {
     ]
 
     // Act
-    const results = receipts.map(isReceiptReady)
+    const results = receipts.map(isReceiptParsed)
 
     // Assert
     expect(results).toEqual([false, false, false, false])
