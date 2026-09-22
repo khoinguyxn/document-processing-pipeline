@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-21T14:18:34.392Z
-> Files: 129 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-22T08:38:33.412Z
+> Files: 144 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -11,7 +11,7 @@
 
 - `.dockerignore` — Docker ignore rules (~1258 tok)
 - `.gitignore` — Git ignore rules (~314 tok)
-- `AGENTS.md` — Skill Loading (~6440 tok)
+- `AGENTS.md` — Skill Loading (~6576 tok)
 - `aspire.config.json` (~33 tok)
 - `CLAUDE.md` — OpenWolf (~99 tok)
 - `DocumentProcessingPipeline.slnx` (~219 tok)
@@ -21,7 +21,11 @@
 - `package.json` — Node.js package manifest (~40 tok)
 - `qodana.yaml` — -------------------------------------------------------------------------------# (~553 tok)
 - `README.md` — Project documentation (~2336 tok)
-- `skills-lock.json` (~2105 tok)
+- `skills-lock.json` (~3103 tok)
+
+## .codegraph/
+
+- `.gitignore` — Git ignore rules (~61 tok)
 
 ## .config/
 
@@ -33,6 +37,15 @@
 
 ## .omo/run-continuation/
 
+- `ses_f37d5d699ffenbSsRxJD7e4o6E.json` (~62 tok)
+- `ses_f37e43727ffe4GRrnMH4ASjzqN.json` (~62 tok)
+- `ses_f37e5283cffe61zLsqJDoyDSc7.json` (~62 tok)
+- `ses_f3babb906ffeN8blrz4iGZxalj.json` (~62 tok)
+- `ses_f3bb5bd74ffeRXeWU2H61IHkEA.json` (~62 tok)
+- `ses_f3bbb00e8ffeUqTrFax3SwPFdf.json` (~62 tok)
+- `ses_f3bbb05c3ffefdhQewFGFXURb8.json` (~62 tok)
+- `ses_f3bbb09b6ffeWUnnCJhJ3BEdF5.json` (~62 tok)
+- `ses_f3bc3d92dffead39DfHUe2kWBW.json` (~62 tok)
 - `ses_f3c9c45e0ffeCOh1OzWgmPMydJ.json` (~62 tok)
 
 ## DocumentProcessingPipeline.AppHost/
@@ -184,7 +197,11 @@
 
 ## web/src/components/
 
-- `app-sidebar.tsx` — Exports AppSidebar (~580 tok)
+- `app-header.tsx` — Declares AppHeaderProps (~414 tok)
+- `app-sidebar.tsx` — AppSidebar (~620 tok)
+- `header-actions.tsx` — Declares UploadActionButton (~207 tok)
+- `header-filters.tsx` — Declares DateRangeFilter (~188 tok)
+- `header-search.tsx` — Declares HeaderSearchProps (~232 tok)
 - `inbox-button-group.tsx` — Exports InboxButtonGroup (~554 tok)
 - `upload-status-alert.tsx` — UPLOAD_STATUS_PRESETS (~972 tok)
 
@@ -200,7 +217,7 @@
 - `alert.tsx` — Declares ALERT_VARIANTS (~521 tok)
 - `button-group.tsx` — buttonGroupVariants (~685 tok)
 - `button.tsx` — BUTTON_VARIANTS (~843 tok)
-- `calendar.tsx` — Declares Calendar (~2444 tok)
+- `calendar.tsx` — Declares Calendar (~2507 tok)
 - `card.tsx` — Declares Card (~707 tok)
 - `date-range-picker.tsx` — getMonthRange — uses useState (~1198 tok)
 - `input.tsx` — Input (~257 tok)
@@ -208,7 +225,7 @@
 - `progress.tsx` — Progress (~239 tok)
 - `separator.tsx` — Separator (~178 tok)
 - `sheet.tsx` — Sheet (~1302 tok)
-- `sidebar.tsx` — SIDEBAR_COOKIE_NAME — uses useContext, useState, useCallback, useEffect (~6100 tok)
+- `sidebar.tsx` — Declares SIDEBAR_COOKIE_NAME (~6106 tok)
 - `skeleton.tsx` — Skeleton (~76 tok)
 - `spinner.tsx` — Spinner (~100 tok)
 - `table.tsx` — Table — renders table (~678 tok)
@@ -227,8 +244,9 @@
 ## web/src/models/
 
 - `fake-receipts.ts` — Declares FAKE_RECEIPT_COUNT (~1107 tok)
-- `pages.tsx` — Exports PAGES (~139 tok)
-- `receipt.ts` — Declares RECEIPT_STATUSES (~654 tok)
+- `header.ts` — Exports HeaderAction, HeaderFilter (~88 tok)
+- `pages.tsx` — PAGE_TITLES (~216 tok)
+- `receipt.ts` — Zod schemas: RECEIPT_STATUS, RECEIPT_ISSUE, RECEIPT_BASE, RECEIPT (~679 tok)
 
 ## web/src/routes/
 
@@ -238,10 +256,10 @@
 
 ## web/src/routes/app/
 
-- `exports.tsx` — Route (~62 tok)
-- `index.tsx` — Exports Route (~263 tok)
-- `route.tsx` — Route (~494 tok)
-- `suppliers.tsx` — Route (~63 tok)
+- `exports.tsx` — Exports Route (~101 tok)
+- `index.tsx` — Exports Route (~327 tok)
+- `route.tsx` — Exports Route (~236 tok)
+- `suppliers.tsx` — Exports Route (~95 tok)
 
 ## web/tests/
 
@@ -249,7 +267,7 @@
 
 ## web/tests/components/
 
-- `app-sidebar.test.tsx` — Declares TEST_PAGES (~971 tok)
+- `app-sidebar.test.tsx` — TEST_PAGES (~969 tok)
 - `inbox-button-group.test.tsx` — Declares BUTTON_SELECTOR (~694 tok)
 - `upload-status-alert.test.tsx` — Declares ALERT_SELECTOR (~2187 tok)
 
@@ -272,12 +290,12 @@
 ## web/tests/models/
 
 - `fake-receipts.test.ts` — Declares usedCodes (~1152 tok)
-- `receipt.test.ts` — Declares createReceipt (~1645 tok)
+- `receipt.test.ts` — createReceipt: createIssue (~1660 tok)
 
 ## web/tests/routes/app/
 
-- `index.test.tsx` — Declares TABLE_SELECTOR (~980 tok)
-- `route.test.tsx` — `AppLayout` renders `<Outlet />`, so it has to be mounted through a real (~936 tok)
+- `index.test.tsx` — TABLE_SELECTOR (~1022 tok)
+- `route.test.tsx` — Declares renderAppLayout (~1150 tok)
 
 ## web/tests/utils/
 

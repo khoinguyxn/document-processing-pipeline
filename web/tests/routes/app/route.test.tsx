@@ -1,4 +1,4 @@
-import { PAGES } from "@/models/pages"
+import { PAGE_TITLE_LABELS, PAGES } from "@/models/pages"
 import { describe, expect, it } from "vitest"
 import { userEvent } from "vitest/browser"
 import { renderRoute } from "../../utils/router"
@@ -36,7 +36,9 @@ describe("AppLayout", () => {
     // Assert
     for (const page of PAGES) {
       await expect
-        .element(screen.getByRole("link", { name: page.title }))
+        .element(
+          screen.getByRole("link", { name: PAGE_TITLE_LABELS[page.title] })
+        )
         .toBeVisible()
     }
   })
@@ -104,5 +106,28 @@ describe("AppLayout", () => {
 
     // Assert
     await expect.element(screen.getByRole("main")).toBeVisible()
+  })
+
+  it("AppLayout_ShouldRenderTheHeaderActions_WhenThePageDeclaresThem", async () => {
+    // Arrange & Act
+    const screen = await renderAppLayout()
+
+    // Assert
+    await expect
+      .element(screen.getByRole("button", { name: "Tải file lên" }))
+      .toBeVisible()
+    await expect
+      .element(screen.getByRole("button", { name: "Chọn ảnh từ điện thoại" }))
+      .toBeVisible()
+  })
+
+  it("AppLayout_ShouldNotRenderTheDateRangePicker_WhenThePageDoesNotDeclareIt", async () => {
+    // Arrange & Act
+    const screen = await renderAppLayout("/app/suppliers")
+
+    // Assert
+    expect(
+      screen.container.querySelector('[data-slot="date-range-picker"]')
+    ).toBeNull()
   })
 })

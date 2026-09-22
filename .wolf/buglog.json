@@ -407,6 +407,42 @@
       "last_seen": "2026-09-21T14:11:01.323Z",
       "occurrences": 1,
       "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/components/header-search.tsx",
+      "root_cause": "Had \"relative w-full max-w-sm\"",
+      "fix": "Changed to \"relative min-w-0 max-w-sm flex-1\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-023",
+      "timestamp": "2026-09-22T08:35:13.070Z",
+      "last_seen": "2026-09-22T08:35:13.070Z",
+      "occurrences": 1,
+      "related_bugs": []
+    },
+    {
+      "error_message": "Incorrect value in code",
+      "file": "web/src/components/header-search.tsx",
+      "root_cause": "Had \"pl-9\"",
+      "fix": "Changed to \"bg-background pl-9\"",
+      "tags": [
+        "auto-detected",
+        "wrong-value",
+        "tsx"
+      ],
+      "status": "candidate",
+      "observed_worktree": "/Users/khoinguyxn/RiderProjects/document-processing-pipeline",
+      "id": "bug-024",
+      "timestamp": "2026-09-22T08:35:13.224Z",
+      "last_seen": "2026-09-22T08:35:13.224Z",
+      "occurrences": 1,
+      "related_bugs": []
     }
   ],
   "applied_observations": {
@@ -432,7 +468,9 @@
     "5ba0c059-ac3e-4c0e-8d02-d176e64bd421": true,
     "c8dd0a01-4cde-4900-8e3f-cfc32f04a13c": true,
     "9b532b0f-a865-4a49-a317-86f7cc8b5e3b": true,
-    "b46b3d55-9de8-4aa0-91ca-a1a4d67985ac": true
+    "b46b3d55-9de8-4aa0-91ca-a1a4d67985ac": true,
+    "391aa77a-5c24-4aa1-a352-81143e17772a": true,
+    "50cd1eef-4da7-47ab-835c-30025c8864ee": true
   },
-  "next_id": 23
+  "next_id": 25
 }

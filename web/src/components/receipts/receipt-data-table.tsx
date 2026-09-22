@@ -77,7 +77,7 @@ export function ReceiptDataTable<TData extends RowData>({
         <TableFooter>
           <TableRow>
             <TableCell colSpan={table.getVisibleLeafColumns().length}>
-              <div className="flex flex-wrap items-center justify-between gap-2 text-muted-foreground font-normal">
+              <div className="flex flex-wrap items-center justify-between gap-2 font-normal text-muted-foreground">
                 <span>
                   Có {table.getRowModel().rows.length} tệp trong lô này
                 </span>

@@ -7,8 +7,8 @@ import { describe, expect, it } from "vitest"
 import { renderWithRouter } from "../utils/router"
 
 const TEST_PAGES: Page[] = [
-  { title: "Hòm thư", to: "/app", icon: <Folder /> },
-  { title: "Xuất dữ liệu", to: "/app/exports", icon: <Sheet /> },
+  { title: "index", to: "/app", icon: <Folder /> },
+  { title: "exports", to: "/app/exports", icon: <Sheet /> },
 ]
 
 // `AppSidebar` renders `Link`s and `SidebarMenuButton`s, both of which need the
