@@ -361,3 +361,48 @@ description: chronological action log per session, consolidated weekly
 | 21:18 | Edited web/tests/models/fake-receipts.test.ts | — | ~150 |
 | 21:23 | Session end: 6 writes across 2 files (fake-receipts.ts, fake-receipts.test.ts) | 0 reads | ~639 tok |
 | 21:23 | Session end: 6 writes across 2 files (fake-receipts.ts, fake-receipts.test.ts) | 0 reads | ~639 tok |
+
+## Session: 2026-09-22 14:53
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-22 14:54
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+
+## Session: 2026-09-22 15:10
+
+| Time | Action | File(s) | Outcome | ~Tokens |
+|------|--------|---------|---------|--------|
+| 15:10 | Edited web/src/models/__augmentation-probe.ts | — | ~34 |
+| 15:10 | Edited web/src/models/__augmentation-probe-consumer.ts | — | ~39 |
+| 15:11 | Edited web/src/models/header.ts | — | ~88 |
+| 15:11 | Edited web/src/components/header-actions.tsx | — | ~199 |
+| 15:11 | Edited web/src/components/header-filters.tsx | — | ~185 |
+| 15:11 | Edited web/src/components/header-search.tsx | — | ~216 |
+| 15:11 | Edited web/src/components/app-header.tsx | — | ~406 |
+| 15:11 | Edited web/src/routes/app/route.tsx | — | ~236 |
+| 15:11 | Edited web/src/routes/app/index.tsx | — | ~327 |
+| 15:11 | Edited web/src/routes/app/exports.tsx | — | ~101 |
+| 15:11 | Edited web/src/routes/app/suppliers.tsx | — | ~95 |
+| 15:11 | Edited web/tests/routes/app/route.test.tsx | — | ~262 |
+| 15:13 | Session end: 12 writes across 12 files (__augmentation-probe.ts, __augmentation-probe-consumer.ts, header.ts, header-actions.tsx, header-filters.tsx) | 10 reads | ~9118 tok |
+| 15:13 | Session end: 12 writes across 12 files (__augmentation-probe.ts, __augmentation-probe-consumer.ts, header.ts, header-actions.tsx, header-filters.tsx) | 10 reads | ~9118 tok |
+| 15:17 | Edited web/src/components/header-search.tsx | — | ~131 |
+| 15:17 | Edited web/src/components/header-filters.tsx | — | ~69 |
+| 15:17 | Edited web/src/components/header-actions.tsx | — | ~36 |
+| 15:17 | Edited web/src/components/header-actions.tsx | — | ~44 |
+| 15:19 | Edited web/src/components/ui/calendar.tsx | — | ~81 |
+| 15:19 | Edited web/src/components/ui/calendar.tsx | — | ~276 |
+| 15:19 | Edited web/src/components/ui/sidebar.tsx | — | ~29 |
+| 15:22 | Session end: 7 writes across 5 files (header-search.tsx, header-filters.tsx, header-actions.tsx, calendar.tsx, sidebar.tsx) | 15 reads | ~7781 tok |
+| 15:32 | Session end: 7 writes across 5 files (header-search.tsx, header-filters.tsx, header-actions.tsx, calendar.tsx, sidebar.tsx) | 15 reads | ~7781 tok |
+| 15:32 | Session end: 7 writes across 5 files (header-search.tsx, header-filters.tsx, header-actions.tsx, calendar.tsx, sidebar.tsx) | 15 reads | ~7781 tok |
+| 15:32 | Session end: 7 writes across 5 files (header-search.tsx, header-filters.tsx, header-actions.tsx, calendar.tsx, sidebar.tsx) | 15 reads | ~7781 tok |
+| 15:35 | Edited web/src/components/header-search.tsx | — | ~21 |
+| 15:35 | Edited web/src/components/header-search.tsx | — | ~11 |
+| 15:35 | Edited web/src/components/app-header.tsx | — | ~20 |
+| 15:37 | Session end: 10 writes across 6 files (header-search.tsx, header-filters.tsx, header-actions.tsx, calendar.tsx, sidebar.tsx) | 17 reads | ~9149 tok |
+| 15:38 | Edited AGENTS.md | — | ~207 |

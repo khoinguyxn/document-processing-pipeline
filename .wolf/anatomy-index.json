@@ -1,22 +1,32 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-21T14:18:34.392Z",
-    "fileCount": 129,
+    "lastScanned": "2026-09-22T08:38:33.412Z",
+    "fileCount": 144,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "6c5bece8e67c9b22d6b7feb1b1e9e1f3c0bc30514a570cb3369f6f37bd77f1b2",
-    "storeUpdatedAt": "2026-09-21T14:18:34.393Z",
-    "rootHash": "8b8573d23c238303"
+    "renderedHash": "4206ad99157037aa753301512118e170f62580f1a08916ab04ac6ac6bb62d351",
+    "storeUpdatedAt": "2026-09-22T08:38:33.413Z",
+    "rootHash": "4307f095928e8ed6"
   },
   "files": {
+    ".codegraph/.gitignore": {
+      "description": "Git ignore rules",
+      "tokens": 61,
+      "hash": "47c0dacebca9f56c",
+      "size": 229,
+      "mtimeMs": 1789998455265.079,
+      "updatedAt": "2026-09-22T08:14:03.043Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
     ".config/dotnet-tools.json": {
       "description": "",
       "tokens": 61,
       "hash": "efc813153a2a6245",
       "size": 213,
       "mtimeMs": 1789656818677.482,
-      "updatedAt": "2026-09-21T10:51:24.572Z",
+      "updatedAt": "2026-09-22T08:14:03.044Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -26,7 +36,7 @@
       "hash": "65cb0a3ae1bd3665",
       "size": 7536,
       "mtimeMs": 1789704391035.4275,
-      "updatedAt": "2026-09-21T10:51:24.572Z",
+      "updatedAt": "2026-09-22T08:14:03.044Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -36,7 +46,7 @@
       "hash": "4defbdaf520f4c43",
       "size": 5318,
       "mtimeMs": 1789656818677.9211,
-      "updatedAt": "2026-09-21T10:51:24.572Z",
+      "updatedAt": "2026-09-22T08:14:03.044Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -46,29 +56,118 @@
       "hash": "2501b2ab790e8826",
       "size": 1174,
       "mtimeMs": 1789656818678.2463,
-      "updatedAt": "2026-09-21T10:51:24.572Z",
+      "updatedAt": "2026-09-22T08:14:03.044Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f37d5d699ffenbSsRxJD7e4o6E.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "1399a998c1921590",
+      "size": 214,
+      "mtimeMs": 1790064795596.0557,
+      "updatedAt": "2026-09-22T08:14:03.045Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f37e43727ffe4GRrnMH4ASjzqN.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "5ad367a255ec98e2",
+      "size": 214,
+      "mtimeMs": 1790063796153.647,
+      "updatedAt": "2026-09-22T08:14:03.045Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f37e5283cffe61zLsqJDoyDSc7.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "b7a0958ecfd86b49",
+      "size": 214,
+      "mtimeMs": 1790064478940.2156,
+      "updatedAt": "2026-09-22T08:14:03.045Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f3babb906ffeN8blrz4iGZxalj.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "e1fffcff150953ac",
+      "size": 214,
+      "mtimeMs": 1790004149008.7434,
+      "updatedAt": "2026-09-22T08:14:03.046Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f3bb5bd74ffeRXeWU2H61IHkEA.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "5ee05a27523801fb",
+      "size": 214,
+      "mtimeMs": 1790004149008.9429,
+      "updatedAt": "2026-09-22T08:14:03.046Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f3bbb00e8ffeUqTrFax3SwPFdf.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "4290f319fb2315c1",
+      "size": 214,
+      "mtimeMs": 1790004149009.1792,
+      "updatedAt": "2026-09-22T08:14:03.048Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f3bbb05c3ffefdhQewFGFXURb8.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "501f38a8d5bd9c22",
+      "size": 214,
+      "mtimeMs": 1790004149014.3687,
+      "updatedAt": "2026-09-22T08:14:03.048Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f3bbb09b6ffeWUnnCJhJ3BEdF5.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "6f7767ccc7701307",
+      "size": 214,
+      "mtimeMs": 1790004149015.0251,
+      "updatedAt": "2026-09-22T08:14:03.048Z",
+      "source": "scan",
+      "importance": 0.1905
+    },
+    ".omo/run-continuation/ses_f3bc3d92dffead39DfHUe2kWBW.json": {
+      "description": "",
+      "tokens": 62,
+      "hash": "65ccdc56cbf36576",
+      "size": 214,
+      "mtimeMs": 1790004149015.6003,
+      "updatedAt": "2026-09-22T08:14:03.048Z",
       "source": "scan",
       "importance": 0.1905
     },
     ".omo/run-continuation/ses_f3c9c45e0ffeCOh1OzWgmPMydJ.json": {
       "description": "",
       "tokens": 62,
-      "hash": "63917cc9b71336c6",
+      "hash": "99aea7fbceafd73c",
       "size": 214,
-      "mtimeMs": 1789987484436.8608,
-      "updatedAt": "2026-09-21T10:51:24.573Z",
+      "mtimeMs": 1789988790137.2542,
+      "updatedAt": "2026-09-22T08:14:03.050Z",
       "source": "scan",
       "importance": 0.1905
     },
     "AGENTS.md": {
       "description": "Skill Loading",
-      "tokens": 6440,
-      "hash": "b17a2826197e47f2",
-      "size": 25841,
-      "mtimeMs": 1789985809645.0513,
-      "updatedAt": "2026-09-21T10:51:24.573Z",
-      "source": "scan",
-      "importance": 0.1905
+      "tokens": 6576,
+      "hash": "be049befa5ca8548",
+      "size": 26389,
+      "mtimeMs": 1790066313318.0027,
+      "updatedAt": "2026-09-22T08:38:33.412Z",
+      "source": "hook"
     },
     "aspire.config.json": {
       "description": "",
@@ -76,7 +175,7 @@
       "hash": "afbeaafc9269fa26",
       "size": 114,
       "mtimeMs": 1788703552140.5537,
-      "updatedAt": "2026-09-21T10:51:24.573Z",
+      "updatedAt": "2026-09-22T08:14:03.052Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -86,7 +185,7 @@
       "hash": "074d6b42b583729a",
       "size": 395,
       "mtimeMs": 1789567164526.479,
-      "updatedAt": "2026-09-21T10:51:24.573Z",
+      "updatedAt": "2026-09-22T08:14:03.052Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -96,7 +195,7 @@
       "hash": "493c9f860a6bbc11",
       "size": 973,
       "mtimeMs": 1788703552133.77,
-      "updatedAt": "2026-09-21T10:51:24.574Z",
+      "updatedAt": "2026-09-22T08:14:03.053Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -106,7 +205,7 @@
       "hash": "69174a9d2398bd65",
       "size": 2561,
       "mtimeMs": 1789182714003.0334,
-      "updatedAt": "2026-09-21T10:51:24.575Z",
+      "updatedAt": "2026-09-22T08:14:03.053Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -116,7 +215,7 @@
       "hash": "817db0bf2ecca783",
       "size": 119,
       "mtimeMs": 1788703552134.3413,
-      "updatedAt": "2026-09-21T10:51:24.575Z",
+      "updatedAt": "2026-09-22T08:14:03.054Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -126,7 +225,7 @@
       "hash": "42f506bc3a9d676e",
       "size": 158,
       "mtimeMs": 1788703552134.4558,
-      "updatedAt": "2026-09-21T10:51:24.576Z",
+      "updatedAt": "2026-09-22T08:14:03.054Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -136,7 +235,7 @@
       "hash": "12c6049735fb78b5",
       "size": 1511,
       "mtimeMs": 1789182714004.1394,
-      "updatedAt": "2026-09-21T10:51:24.577Z",
+      "updatedAt": "2026-09-22T08:14:03.056Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -146,7 +245,7 @@
       "hash": "af2ffe61bc2a62d6",
       "size": 3697,
       "mtimeMs": 1789182714004.3926,
-      "updatedAt": "2026-09-21T10:51:24.578Z",
+      "updatedAt": "2026-09-22T08:14:03.056Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -156,7 +255,7 @@
       "hash": "a4c0bf12d9952405",
       "size": 1003,
       "mtimeMs": 1788703552134.2344,
-      "updatedAt": "2026-09-21T10:51:24.578Z",
+      "updatedAt": "2026-09-22T08:14:03.056Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -166,7 +265,7 @@
       "hash": "817db0bf2ecca783",
       "size": 119,
       "mtimeMs": 1789182566618.8005,
-      "updatedAt": "2026-09-21T10:51:24.578Z",
+      "updatedAt": "2026-09-22T08:14:03.056Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -176,7 +275,7 @@
       "hash": "2d8bb40059df2208",
       "size": 142,
       "mtimeMs": 1788703552140.0999,
-      "updatedAt": "2026-09-21T10:51:24.578Z",
+      "updatedAt": "2026-09-22T08:14:03.057Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -186,7 +285,7 @@
       "hash": "15c93c6078bddc83",
       "size": 1219,
       "mtimeMs": 1789704391036.557,
-      "updatedAt": "2026-09-21T10:51:24.578Z",
+      "updatedAt": "2026-09-22T08:14:03.057Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -196,7 +295,7 @@
       "hash": "ec750ac636269b3b",
       "size": 1781,
       "mtimeMs": 1788703552138.7754,
-      "updatedAt": "2026-09-21T10:51:24.579Z",
+      "updatedAt": "2026-09-22T08:14:03.057Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -206,7 +305,7 @@
       "hash": "63c39db798fd3d3c",
       "size": 122,
       "mtimeMs": 1788703552138.9,
-      "updatedAt": "2026-09-21T10:51:24.579Z",
+      "updatedAt": "2026-09-22T08:14:03.057Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -216,7 +315,7 @@
       "hash": "f9393dcea0eb9563",
       "size": 4680,
       "mtimeMs": 1788703552139.0344,
-      "updatedAt": "2026-09-21T10:51:24.579Z",
+      "updatedAt": "2026-09-22T08:14:03.057Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -226,7 +325,7 @@
       "hash": "20057da9bcf80377",
       "size": 670,
       "mtimeMs": 1788703552139.2944,
-      "updatedAt": "2026-09-21T10:51:24.579Z",
+      "updatedAt": "2026-09-22T08:14:03.058Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -236,7 +335,7 @@
       "hash": "392d409621268baa",
       "size": 2320,
       "mtimeMs": 1788703552139.5151,
-      "updatedAt": "2026-09-21T10:51:24.580Z",
+      "updatedAt": "2026-09-22T08:14:03.058Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -246,7 +345,7 @@
       "hash": "eae21eba2ee9fde8",
       "size": 1417,
       "mtimeMs": 1789182714010.4268,
-      "updatedAt": "2026-09-21T10:51:24.581Z",
+      "updatedAt": "2026-09-22T08:14:03.059Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -256,7 +355,7 @@
       "hash": "5ce9c7f12933ce33",
       "size": 618,
       "mtimeMs": 1788703552139.855,
-      "updatedAt": "2026-09-21T10:51:24.581Z",
+      "updatedAt": "2026-09-22T08:14:03.059Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -266,7 +365,7 @@
       "hash": "e842de9729c9aa92",
       "size": 512,
       "mtimeMs": 1788703552134.6611,
-      "updatedAt": "2026-09-21T10:51:24.582Z",
+      "updatedAt": "2026-09-22T08:14:03.060Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -276,7 +375,7 @@
       "hash": "03d4f4705e07d3a2",
       "size": 421,
       "mtimeMs": 1788703552134.7917,
-      "updatedAt": "2026-09-21T10:51:24.582Z",
+      "updatedAt": "2026-09-22T08:14:03.060Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -286,7 +385,7 @@
       "hash": "9b4bfe065ea704fd",
       "size": 1146,
       "mtimeMs": 1789182714005.0276,
-      "updatedAt": "2026-09-21T10:51:24.582Z",
+      "updatedAt": "2026-09-22T08:14:03.061Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -296,7 +395,7 @@
       "hash": "e616d547caabcc1d",
       "size": 2523,
       "mtimeMs": 1789182714005.314,
-      "updatedAt": "2026-09-21T10:51:24.583Z",
+      "updatedAt": "2026-09-22T08:14:03.061Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -306,7 +405,7 @@
       "hash": "1d732fe0f2b1a1df",
       "size": 422,
       "mtimeMs": 1789182714005.8655,
-      "updatedAt": "2026-09-21T10:51:24.583Z",
+      "updatedAt": "2026-09-22T08:14:03.061Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -316,7 +415,7 @@
       "hash": "b56c7977c1d345a5",
       "size": 259,
       "mtimeMs": 1788703552135.5195,
-      "updatedAt": "2026-09-21T10:51:24.583Z",
+      "updatedAt": "2026-09-22T08:14:03.061Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -326,7 +425,7 @@
       "hash": "934d73eae9324a60",
       "size": 402,
       "mtimeMs": 1789182714005.9487,
-      "updatedAt": "2026-09-21T10:51:24.583Z",
+      "updatedAt": "2026-09-22T08:14:03.061Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -336,7 +435,7 @@
       "hash": "d1863a2a409922c3",
       "size": 292,
       "mtimeMs": 1788703552135.6516,
-      "updatedAt": "2026-09-21T10:51:24.583Z",
+      "updatedAt": "2026-09-22T08:14:03.061Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -346,7 +445,7 @@
       "hash": "bba5cec57ce9b3d7",
       "size": 1305,
       "mtimeMs": 1789182714004.5042,
-      "updatedAt": "2026-09-21T10:51:24.583Z",
+      "updatedAt": "2026-09-22T08:14:03.062Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -356,7 +455,7 @@
       "hash": "26bdaa4d8f7a5abf",
       "size": 13782,
       "mtimeMs": 1789182714004.864,
-      "updatedAt": "2026-09-21T10:51:24.584Z",
+      "updatedAt": "2026-09-22T08:14:03.062Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -366,7 +465,7 @@
       "hash": "35bbd94d8ecf1a53",
       "size": 2816,
       "mtimeMs": 1789182714007.418,
-      "updatedAt": "2026-09-21T10:51:24.584Z",
+      "updatedAt": "2026-09-22T08:14:03.062Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -376,7 +475,7 @@
       "hash": "5844c7f98ccf7db4",
       "size": 1112,
       "mtimeMs": 1789182714007.7021,
-      "updatedAt": "2026-09-21T10:51:24.584Z",
+      "updatedAt": "2026-09-22T08:14:03.062Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -386,7 +485,7 @@
       "hash": "97be461fe1e93a85",
       "size": 220,
       "mtimeMs": 1789182714008.4866,
-      "updatedAt": "2026-09-21T10:51:24.585Z",
+      "updatedAt": "2026-09-22T08:14:03.063Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -396,7 +495,7 @@
       "hash": "af9d49601580706b",
       "size": 269,
       "mtimeMs": 1789182714008.8247,
-      "updatedAt": "2026-09-21T10:51:24.585Z",
+      "updatedAt": "2026-09-22T08:14:03.063Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -406,7 +505,7 @@
       "hash": "e51d6567ff8c4841",
       "size": 3245,
       "mtimeMs": 1789182714008.9644,
-      "updatedAt": "2026-09-21T10:51:24.585Z",
+      "updatedAt": "2026-09-22T08:14:03.064Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -416,7 +515,7 @@
       "hash": "e47b5dadc03d1877",
       "size": 2144,
       "mtimeMs": 1789182714009.092,
-      "updatedAt": "2026-09-21T10:51:24.586Z",
+      "updatedAt": "2026-09-22T08:14:03.064Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -426,7 +525,7 @@
       "hash": "cda34de298c3be6a",
       "size": 3230,
       "mtimeMs": 1789182714009.276,
-      "updatedAt": "2026-09-21T10:51:24.586Z",
+      "updatedAt": "2026-09-22T08:14:03.064Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -436,7 +535,7 @@
       "hash": "da6973506bbc28a6",
       "size": 2704,
       "mtimeMs": 1788703552137.877,
-      "updatedAt": "2026-09-21T10:51:24.586Z",
+      "updatedAt": "2026-09-22T08:14:03.064Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -446,7 +545,7 @@
       "hash": "06c5ea97a3be54de",
       "size": 1321,
       "mtimeMs": 1788703552135.855,
-      "updatedAt": "2026-09-21T10:51:24.586Z",
+      "updatedAt": "2026-09-22T08:14:03.064Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -456,7 +555,7 @@
       "hash": "3af608e5a83c7abd",
       "size": 5344,
       "mtimeMs": 1789182714006.199,
-      "updatedAt": "2026-09-21T10:51:24.586Z",
+      "updatedAt": "2026-09-22T08:14:03.065Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -466,7 +565,7 @@
       "hash": "7aaf13d2eae92a18",
       "size": 6819,
       "mtimeMs": 1789182714006.4973,
-      "updatedAt": "2026-09-21T10:51:24.587Z",
+      "updatedAt": "2026-09-22T08:14:03.065Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -476,7 +575,7 @@
       "hash": "94f03c621acb5037",
       "size": 7445,
       "mtimeMs": 1789182714006.926,
-      "updatedAt": "2026-09-21T10:51:24.587Z",
+      "updatedAt": "2026-09-22T08:14:03.066Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -486,7 +585,7 @@
       "hash": "1aaab70d3d4ee085",
       "size": 1816,
       "mtimeMs": 1789182714009.6946,
-      "updatedAt": "2026-09-21T10:51:24.588Z",
+      "updatedAt": "2026-09-22T08:14:03.066Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -496,7 +595,7 @@
       "hash": "38d89393e1c337d0",
       "size": 6558,
       "mtimeMs": 1789182714009.8896,
-      "updatedAt": "2026-09-21T10:51:24.588Z",
+      "updatedAt": "2026-09-22T08:14:03.066Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -506,7 +605,7 @@
       "hash": "df633b9d2d200fb2",
       "size": 2524,
       "mtimeMs": 1789182714010.1396,
-      "updatedAt": "2026-09-21T10:51:24.588Z",
+      "updatedAt": "2026-09-22T08:14:03.066Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -516,7 +615,7 @@
       "hash": "ae72fcad27775e3a",
       "size": 821,
       "mtimeMs": 1789182714010.593,
-      "updatedAt": "2026-09-21T10:51:24.588Z",
+      "updatedAt": "2026-09-22T08:14:03.066Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -526,7 +625,7 @@
       "hash": "1259bebb60dbe2b6",
       "size": 106,
       "mtimeMs": 1788703552144.9119,
-      "updatedAt": "2026-09-21T10:51:24.588Z",
+      "updatedAt": "2026-09-22T08:14:03.066Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -536,7 +635,7 @@
       "hash": "dc362c8b6db41a76",
       "size": 949,
       "mtimeMs": 1789656818680.2766,
-      "updatedAt": "2026-09-21T10:51:24.589Z",
+      "updatedAt": "2026-09-22T08:14:03.067Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -546,7 +645,7 @@
       "hash": "0e24fbd9c2fde227",
       "size": 217,
       "mtimeMs": 1789721017107.5803,
-      "updatedAt": "2026-09-21T10:51:24.589Z",
+      "updatedAt": "2026-09-22T08:14:03.067Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -556,7 +655,7 @@
       "hash": "34c8ab8d83d4b3b8",
       "size": 137,
       "mtimeMs": 1789654130620.0332,
-      "updatedAt": "2026-09-21T10:51:24.589Z",
+      "updatedAt": "2026-09-22T08:14:03.067Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -566,7 +665,7 @@
       "hash": "3eb688ca3d7e345f",
       "size": 1935,
       "mtimeMs": 1788703552145.1206,
-      "updatedAt": "2026-09-21T10:51:24.589Z",
+      "updatedAt": "2026-09-22T08:14:03.067Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -576,17 +675,17 @@
       "hash": "d21abc9c8af4e0eb",
       "size": 9983,
       "mtimeMs": 1789195828090.0974,
-      "updatedAt": "2026-09-21T10:51:24.589Z",
+      "updatedAt": "2026-09-22T08:14:03.067Z",
       "source": "scan",
       "importance": 0.1905
     },
     "skills-lock.json": {
       "description": "",
-      "tokens": 2105,
-      "hash": "7efb51291fe7664e",
-      "size": 7366,
-      "mtimeMs": 1789656818680.616,
-      "updatedAt": "2026-09-21T10:51:24.589Z",
+      "tokens": 3103,
+      "hash": "97b13293b8ba3407",
+      "size": 10858,
+      "mtimeMs": 1790062329071.8208,
+      "updatedAt": "2026-09-22T08:14:03.067Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -596,7 +695,7 @@
       "hash": "282db78c04682079",
       "size": 327,
       "mtimeMs": 1789182714010.7007,
-      "updatedAt": "2026-09-21T10:51:24.591Z",
+      "updatedAt": "2026-09-22T08:14:03.069Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -606,7 +705,7 @@
       "hash": "ee7549e9d2d0bacf",
       "size": 555,
       "mtimeMs": 1789704391036.7263,
-      "updatedAt": "2026-09-21T10:51:24.591Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -616,7 +715,7 @@
       "hash": "f658bb3156c86341",
       "size": 1733,
       "mtimeMs": 1789182714010.9446,
-      "updatedAt": "2026-09-21T10:51:24.591Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -626,7 +725,7 @@
       "hash": "c4e2f836fd703f43",
       "size": 42,
       "mtimeMs": 1789182714011.0208,
-      "updatedAt": "2026-09-21T10:51:24.592Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -636,7 +735,7 @@
       "hash": "2a6f29448b68a9bb",
       "size": 254,
       "mtimeMs": 1789459902521.1458,
-      "updatedAt": "2026-09-21T10:51:24.592Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -646,7 +745,7 @@
       "hash": "eaace538fdb4dda4",
       "size": 527,
       "mtimeMs": 1789182714012.6382,
-      "updatedAt": "2026-09-21T10:51:24.592Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -656,7 +755,7 @@
       "hash": "909db611e2451064",
       "size": 1322,
       "mtimeMs": 1789704391036.8748,
-      "updatedAt": "2026-09-21T10:51:24.592Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -666,7 +765,7 @@
       "hash": "657ad8664f5a9c17",
       "size": 428,
       "mtimeMs": 1789459957832.4775,
-      "updatedAt": "2026-09-21T10:51:24.592Z",
+      "updatedAt": "2026-09-22T08:14:03.070Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -675,8 +774,8 @@
       "tokens": 640,
       "hash": "8361d291787d7c6d",
       "size": 2238,
-      "mtimeMs": 1789891040384.865,
-      "updatedAt": "2026-09-21T10:51:24.592Z",
+      "mtimeMs": 1789988790270.924,
+      "updatedAt": "2026-09-22T08:14:03.071Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -686,7 +785,7 @@
       "hash": "13b73a709f53bfa2",
       "size": 498,
       "mtimeMs": 1789182714013.5835,
-      "updatedAt": "2026-09-21T10:51:24.593Z",
+      "updatedAt": "2026-09-22T08:14:03.071Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -696,7 +795,7 @@
       "hash": "90d24bc3bf698ac1",
       "size": 67,
       "mtimeMs": 1789182714013.6545,
-      "updatedAt": "2026-09-21T10:51:24.593Z",
+      "updatedAt": "2026-09-22T08:14:03.071Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -706,32 +805,41 @@
       "hash": "01784ddc7e7edd61",
       "size": 452,
       "mtimeMs": 1789182714011.493,
-      "updatedAt": "2026-09-21T10:51:24.594Z",
+      "updatedAt": "2026-09-22T08:14:03.072Z",
       "source": "scan",
       "importance": 0.1905
     },
+    "web/src/components/app-header.tsx": {
+      "description": "Declares AppHeaderProps",
+      "tokens": 414,
+      "hash": "a395514bbd483011",
+      "size": 1448,
+      "mtimeMs": 1790066113355.4485,
+      "updatedAt": "2026-09-22T08:35:13.733Z",
+      "source": "hook"
+    },
     "web/src/components/app-sidebar.tsx": {
-      "description": "Exports AppSidebar",
-      "tokens": 580,
-      "hash": "c10f320e2abd6720",
-      "size": 2032,
-      "mtimeMs": 1789889974979.921,
-      "updatedAt": "2026-09-21T10:51:24.596Z",
+      "description": "AppSidebar",
+      "tokens": 620,
+      "hash": "84fdb722ef17e5a4",
+      "size": 2174,
+      "mtimeMs": 1790061305391.5537,
+      "updatedAt": "2026-09-22T08:14:03.074Z",
       "source": "scan",
       "symbols": [
         {
           "name": "AppSidebarProps",
           "kind": "section",
-          "startLine": 15,
-          "endLine": 15,
+          "startLine": 16,
+          "endLine": 16,
           "tokens": 23
         },
         {
           "name": "AppSidebar",
           "kind": "fn",
-          "startLine": 17,
-          "endLine": 58,
-          "tokens": 475
+          "startLine": 18,
+          "endLine": 62,
+          "tokens": 501
         }
       ],
       "symbolSource": "ts",
@@ -740,13 +848,40 @@
       ],
       "importance": 0.1905
     },
+    "web/src/components/header-actions.tsx": {
+      "description": "Declares UploadActionButton",
+      "tokens": 207,
+      "hash": "fa009076b1591fab",
+      "size": 737,
+      "mtimeMs": 1790065051233.2683,
+      "updatedAt": "2026-09-22T08:17:32.800Z",
+      "source": "hook"
+    },
+    "web/src/components/header-filters.tsx": {
+      "description": "Declares DateRangeFilter",
+      "tokens": 188,
+      "hash": "622f0e2c70d7142b",
+      "size": 655,
+      "mtimeMs": 1790065049863.9417,
+      "updatedAt": "2026-09-22T08:17:30.274Z",
+      "source": "hook"
+    },
+    "web/src/components/header-search.tsx": {
+      "description": "Declares HeaderSearchProps",
+      "tokens": 232,
+      "hash": "9c1dad05c1a5684e",
+      "size": 809,
+      "mtimeMs": 1790066112823.067,
+      "updatedAt": "2026-09-22T08:35:13.217Z",
+      "source": "hook"
+    },
     "web/src/components/inbox-button-group.tsx": {
       "description": "Exports InboxButtonGroup",
       "tokens": 554,
       "hash": "6efdef429aa1fb08",
       "size": 1941,
-      "mtimeMs": 1789892704888.3716,
-      "updatedAt": "2026-09-21T10:51:24.596Z",
+      "mtimeMs": 1789988790271.6821,
+      "updatedAt": "2026-09-22T08:14:03.075Z",
       "source": "scan",
       "symbols": [
         {
@@ -790,18 +925,18 @@
       "tokens": 224,
       "hash": "efa08a63d90f8f54",
       "size": 783,
-      "mtimeMs": 1789893817496.1582,
-      "updatedAt": "2026-09-21T10:51:24.597Z",
+      "mtimeMs": 1789988790273.5288,
+      "updatedAt": "2026-09-22T08:14:03.076Z",
       "source": "scan",
       "importance": 0.5143
     },
     "web/src/components/receipts/receipt-data-table.tsx": {
       "description": "ReceiptDataTable — renders table",
       "tokens": 845,
-      "hash": "1b6ee3228a55bc9b",
+      "hash": "2089d08e025b8734",
       "size": 2979,
-      "mtimeMs": 1789987788937.9658,
-      "updatedAt": "2026-09-21T10:51:24.597Z",
+      "mtimeMs": 1790064718583.1208,
+      "updatedAt": "2026-09-22T08:14:03.077Z",
       "source": "scan",
       "symbols": [
         {
@@ -830,8 +965,8 @@
       "tokens": 366,
       "hash": "df95261466c6c8f3",
       "size": 1328,
-      "mtimeMs": 1789893992146.2217,
-      "updatedAt": "2026-09-21T10:51:24.597Z",
+      "mtimeMs": 1789988790281.422,
+      "updatedAt": "2026-09-22T08:14:03.077Z",
       "source": "scan",
       "imports": [
         "web/src/components/ui/button.tsx"
@@ -843,9 +978,37 @@
       "tokens": 1167,
       "hash": "48f9b543d0d125b8",
       "size": 4122,
-      "mtimeMs": 1789999861214.728,
-      "updatedAt": "2026-09-21T14:11:01.310Z",
-      "source": "hook"
+      "mtimeMs": 1790004149022.5583,
+      "updatedAt": "2026-09-22T08:14:03.078Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "formatCurrency",
+          "kind": "fn",
+          "startLine": 28,
+          "endLine": 34,
+          "tokens": 44
+        },
+        {
+          "name": "formatConfidence",
+          "kind": "fn",
+          "startLine": 36,
+          "endLine": 42,
+          "tokens": 43
+        },
+        {
+          "name": "renderFileIcon",
+          "kind": "fn",
+          "startLine": 44,
+          "endLine": 52,
+          "tokens": 76
+        }
+      ],
+      "symbolSource": "ts",
+      "imports": [
+        "web/src/components/receipts/receipt-data-table-features.ts"
+      ],
+      "importance": 0.1905
     },
     "web/src/components/ui/alert.tsx": {
       "description": "Declares ALERT_VARIANTS",
@@ -853,7 +1016,7 @@
       "hash": "29605f9c0f6be6f2",
       "size": 1821,
       "mtimeMs": 1789717785355.7705,
-      "updatedAt": "2026-09-21T10:51:24.598Z",
+      "updatedAt": "2026-09-22T08:14:03.078Z",
       "source": "scan",
       "symbols": [
         {
@@ -894,7 +1057,7 @@
       "hash": "c56a4d983e988f40",
       "size": 2396,
       "mtimeMs": 1789721017108.1626,
-      "updatedAt": "2026-09-21T10:51:24.598Z",
+      "updatedAt": "2026-09-22T08:14:03.078Z",
       "source": "scan",
       "symbols": [
         {
@@ -928,7 +1091,7 @@
       "hash": "4d65141732b48403",
       "size": 2948,
       "mtimeMs": 1789567164533.4226,
-      "updatedAt": "2026-09-21T10:51:24.599Z",
+      "updatedAt": "2026-09-22T08:14:03.078Z",
       "source": "scan",
       "symbols": [
         {
@@ -944,31 +1107,12 @@
     },
     "web/src/components/ui/calendar.tsx": {
       "description": "Declares Calendar",
-      "tokens": 2444,
-      "hash": "01fda0df49f3edea",
-      "size": 8554,
-      "mtimeMs": 1789889974980.379,
-      "updatedAt": "2026-09-21T10:51:24.599Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "Calendar",
-          "kind": "fn",
-          "startLine": 14,
-          "endLine": 186,
-          "tokens": 1763
-        },
-        {
-          "name": "CalendarDayButton",
-          "kind": "fn",
-          "startLine": 188,
-          "endLine": 227,
-          "tokens": 555
-        }
-      ],
-      "symbolSource": "ts",
-      "skeleton": "function Calendar({\nfunction CalendarDayButton({",
-      "importance": 0.1905
+      "tokens": 2507,
+      "hash": "db73e45cdca04300",
+      "size": 8772,
+      "mtimeMs": 1790065164386.176,
+      "updatedAt": "2026-09-22T08:19:24.879Z",
+      "source": "hook"
     },
     "web/src/components/ui/card.tsx": {
       "description": "Declares Card",
@@ -976,7 +1120,7 @@
       "hash": "cfb36d76f7a7353e",
       "size": 2474,
       "mtimeMs": 1789706037174.4343,
-      "updatedAt": "2026-09-21T10:51:24.599Z",
+      "updatedAt": "2026-09-22T08:14:03.079Z",
       "source": "scan",
       "symbols": [
         {
@@ -1038,7 +1182,7 @@
       "hash": "74bc1ca9e542f5d7",
       "size": 4209,
       "mtimeMs": 1789889974987.007,
-      "updatedAt": "2026-09-21T10:51:24.599Z",
+      "updatedAt": "2026-09-22T08:14:03.079Z",
       "source": "scan",
       "symbols": [
         {
@@ -1100,7 +1244,7 @@
       "hash": "8b4102e35e3f5721",
       "size": 898,
       "mtimeMs": 1789567164535.6006,
-      "updatedAt": "2026-09-21T10:51:24.600Z",
+      "updatedAt": "2026-09-22T08:14:03.079Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1110,7 +1254,7 @@
       "hash": "c9d3665df31269c6",
       "size": 2356,
       "mtimeMs": 1789567164536.13,
-      "updatedAt": "2026-09-21T10:51:24.600Z",
+      "updatedAt": "2026-09-22T08:14:03.080Z",
       "source": "scan",
       "symbols": [
         {
@@ -1172,7 +1316,7 @@
       "hash": "7eb19af0ada663a3",
       "size": 836,
       "mtimeMs": 1789717785355.92,
-      "updatedAt": "2026-09-21T10:51:24.600Z",
+      "updatedAt": "2026-09-22T08:14:03.080Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1182,7 +1326,7 @@
       "hash": "42aa6209fe9bec17",
       "size": 620,
       "mtimeMs": 1789567164536.4382,
-      "updatedAt": "2026-09-21T10:51:24.600Z",
+      "updatedAt": "2026-09-22T08:14:03.080Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1191,8 +1335,8 @@
       "tokens": 1302,
       "hash": "78636e5c7a0bae8d",
       "size": 4555,
-      "mtimeMs": 1789890141404.3008,
-      "updatedAt": "2026-09-21T10:51:24.600Z",
+      "mtimeMs": 1790064718585.1558,
+      "updatedAt": "2026-09-22T08:14:03.080Z",
       "source": "scan",
       "symbols": [
         {
@@ -1270,193 +1414,13 @@
       "importance": 0.1905
     },
     "web/src/components/ui/sidebar.tsx": {
-      "description": "SIDEBAR_COOKIE_NAME — uses useContext, useState, useCallback, useEffect",
-      "tokens": 6100,
-      "hash": "1955b53d7a99abf5",
-      "size": 21348,
-      "mtimeMs": 1789567164537.8787,
-      "updatedAt": "2026-09-21T10:51:24.601Z",
-      "source": "scan",
-      "symbols": [
-        {
-          "name": "SidebarContextProps",
-          "kind": "section",
-          "startLine": 33,
-          "endLine": 41,
-          "tokens": 65
-        },
-        {
-          "name": "useSidebar",
-          "kind": "fn",
-          "startLine": 45,
-          "endLine": 52,
-          "tokens": 55
-        },
-        {
-          "name": "SidebarProvider",
-          "kind": "fn",
-          "startLine": 54,
-          "endLine": 148,
-          "tokens": 784
-        },
-        {
-          "name": "Sidebar",
-          "kind": "fn",
-          "startLine": 150,
-          "endLine": 250,
-          "tokens": 1021
-        },
-        {
-          "name": "SidebarTrigger",
-          "kind": "fn",
-          "startLine": 252,
-          "endLine": 276,
-          "tokens": 147
-        },
-        {
-          "name": "SidebarRail",
-          "kind": "fn",
-          "startLine": 278,
-          "endLine": 301,
-          "tokens": 339
-        },
-        {
-          "name": "SidebarInset",
-          "kind": "fn",
-          "startLine": 303,
-          "endLine": 314,
-          "tokens": 137
-        },
-        {
-          "name": "SidebarInput",
-          "kind": "fn",
-          "startLine": 316,
-          "endLine": 328,
-          "tokens": 78
-        },
-        {
-          "name": "SidebarHeader",
-          "kind": "fn",
-          "startLine": 330,
-          "endLine": 342,
-          "tokens": 86
-        },
-        {
-          "name": "SidebarFooter",
-          "kind": "fn",
-          "startLine": 344,
-          "endLine": 353,
-          "tokens": 71
-        },
-        {
-          "name": "SidebarSeparator",
-          "kind": "fn",
-          "startLine": 355,
-          "endLine": 367,
-          "tokens": 82
-        },
-        {
-          "name": "SidebarContent",
-          "kind": "fn",
-          "startLine": 369,
-          "endLine": 381,
-          "tokens": 111
-        },
-        {
-          "name": "SidebarGroup",
-          "kind": "fn",
-          "startLine": 383,
-          "endLine": 392,
-          "tokens": 76
-        },
-        {
-          "name": "SidebarGroupLabel",
-          "kind": "fn",
-          "startLine": 394,
-          "endLine": 412,
-          "tokens": 190
-        },
-        {
-          "name": "SidebarGroupAction",
-          "kind": "fn",
-          "startLine": 414,
-          "endLine": 432,
-          "tokens": 209
-        },
-        {
-          "name": "SidebarGroupContent",
-          "kind": "fn",
-          "startLine": 434,
-          "endLine": 446,
-          "tokens": 76
-        },
-        {
-          "name": "SidebarMenu",
-          "kind": "fn",
-          "startLine": 448,
-          "endLine": 457,
-          "tokens": 72
-        },
-        {
-          "name": "SidebarMenuItem",
-          "kind": "fn",
-          "startLine": 459,
-          "endLine": 468,
-          "tokens": 73
-        },
-        {
-          "name": "SidebarMenuButton",
-          "kind": "fn",
-          "startLine": 492,
-          "endLine": 540,
-          "tokens": 308
-        },
-        {
-          "name": "SidebarMenuAction",
-          "kind": "fn",
-          "startLine": 542,
-          "endLine": 566,
-          "tokens": 332
-        },
-        {
-          "name": "SidebarMenuBadge",
-          "kind": "fn",
-          "startLine": 568,
-          "endLine": 583,
-          "tokens": 202
-        },
-        {
-          "name": "SidebarMenuSkeleton",
-          "kind": "fn",
-          "startLine": 585,
-          "endLine": 621,
-          "tokens": 247
-        },
-        {
-          "name": "SidebarMenuSub",
-          "kind": "fn",
-          "startLine": 623,
-          "endLine": 635,
-          "tokens": 110
-        },
-        {
-          "name": "SidebarMenuSubItem",
-          "kind": "fn",
-          "startLine": 637,
-          "endLine": 649,
-          "tokens": 79
-        },
-        {
-          "name": "SidebarMenuSubButton",
-          "kind": "fn",
-          "startLine": 651,
-          "endLine": 677,
-          "tokens": 327
-        }
-      ],
-      "symbolSource": "ts",
-      "skeleton": "type SidebarContextProps = {\nfunction useSidebar() {\nfunction SidebarProvider({\nfunction Sidebar({\nfunction SidebarTrigger({\nfunction SidebarRail({ className, ...props }: React.ComponentProps<\"button\">) {\nfunction SidebarInset({ className, ...props }: React.ComponentProps<\"main\">) {\nfunction SidebarInput({\nfunction SidebarHeader({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarFooter({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarSeparator({\nfunction SidebarContent({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\nfunction SidebarGroupLabel({\nfunction SidebarGroupAction({\nfunction SidebarGroupContent({\nfunction SidebarMenu({ className, ...props }: React.ComponentProps<\"ul\">) {\nfunction SidebarMenuItem({ className, ...props }: React.ComponentProps<\"li\">) {\nfunction SidebarMenuButton({\nfunction SidebarMenuAction({\nfunction SidebarMenuBadge({\nfunction SidebarMenuSkeleton({\nfunction SidebarMenuSub({ className, ...props }: React.ComponentProps<\"ul\">) {\nfunction SidebarMenuSubItem({\nfunction SidebarMenuSubButton({",
-      "importance": 0.1905
+      "description": "Declares SIDEBAR_COOKIE_NAME",
+      "tokens": 6106,
+      "hash": "50174a36cf4e1c63",
+      "size": 21368,
+      "mtimeMs": 1790065165455.982,
+      "updatedAt": "2026-09-22T08:19:26.716Z",
+      "source": "hook"
     },
     "web/src/components/ui/skeleton.tsx": {
       "description": "Skeleton",
@@ -1464,7 +1428,7 @@
       "hash": "b3c3c2b5449693bc",
       "size": 266,
       "mtimeMs": 1789567164538.3215,
-      "updatedAt": "2026-09-21T10:51:24.601Z",
+      "updatedAt": "2026-09-22T08:14:03.081Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1474,7 +1438,7 @@
       "hash": "1f1608c17752d4b0",
       "size": 347,
       "mtimeMs": 1789717785356.0652,
-      "updatedAt": "2026-09-21T10:51:24.602Z",
+      "updatedAt": "2026-09-22T08:14:03.081Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1483,8 +1447,8 @@
       "tokens": 678,
       "hash": "7c55ec3b7752a107",
       "size": 2372,
-      "mtimeMs": 1789987255441.417,
-      "updatedAt": "2026-09-21T10:51:24.602Z",
+      "mtimeMs": 1789988790287.1143,
+      "updatedAt": "2026-09-22T08:14:03.082Z",
       "source": "scan",
       "symbols": [
         {
@@ -1553,7 +1517,7 @@
       "hash": "912a9c9f8110c1c5",
       "size": 2179,
       "mtimeMs": 1789567164538.8425,
-      "updatedAt": "2026-09-21T10:51:24.602Z",
+      "updatedAt": "2026-09-22T08:14:03.082Z",
       "source": "scan",
       "symbols": [
         {
@@ -1594,7 +1558,7 @@
       "hash": "6bcfc6d053bd6afa",
       "size": 1045,
       "mtimeMs": 1789567164539.2444,
-      "updatedAt": "2026-09-21T10:51:24.602Z",
+      "updatedAt": "2026-09-22T08:14:03.082Z",
       "source": "scan",
       "importance": 0.3524
     },
@@ -1604,7 +1568,7 @@
       "hash": "1b011a51a694f039",
       "size": 3508,
       "mtimeMs": 1789717785356.2402,
-      "updatedAt": "2026-09-21T10:51:24.604Z",
+      "updatedAt": "2026-09-22T08:14:03.084Z",
       "source": "scan",
       "symbols": [
         {
@@ -1638,7 +1602,7 @@
       "hash": "ad0936f84f1df79d",
       "size": 565,
       "mtimeMs": 1789567164539.658,
-      "updatedAt": "2026-09-21T10:51:24.604Z",
+      "updatedAt": "2026-09-22T08:14:03.084Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1648,7 +1612,7 @@
       "hash": "c36cc0e6f0246a94",
       "size": 940,
       "mtimeMs": 1789889974987.5017,
-      "updatedAt": "2026-09-21T10:51:24.604Z",
+      "updatedAt": "2026-09-22T08:14:03.084Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1658,7 +1622,7 @@
       "hash": "7c8c3dfc0cdd370d",
       "size": 166,
       "mtimeMs": 1789182714014.3145,
-      "updatedAt": "2026-09-21T10:51:24.604Z",
+      "updatedAt": "2026-09-22T08:14:03.084Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -1667,28 +1631,144 @@
       "tokens": 1107,
       "hash": "a36227813e2016dd",
       "size": 3971,
-      "mtimeMs": 1790000296021.7275,
-      "updatedAt": "2026-09-21T14:18:16.112Z",
-      "source": "hook"
+      "mtimeMs": 1790004149022.987,
+      "updatedAt": "2026-09-22T08:14:03.085Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "ReceiptScenario",
+          "kind": "section",
+          "startLine": 55,
+          "endLine": 59,
+          "tokens": 32
+        },
+        {
+          "name": "createReceiptFile",
+          "kind": "fn",
+          "startLine": 93,
+          "endLine": 100,
+          "tokens": 81
+        },
+        {
+          "name": "createExtractedFields",
+          "kind": "fn",
+          "startLine": 102,
+          "endLine": 109,
+          "tokens": 76
+        },
+        {
+          "name": "createReceiptFromScenario",
+          "kind": "fn",
+          "startLine": 111,
+          "endLine": 126,
+          "tokens": 140
+        },
+        {
+          "name": "createFakeReceipts",
+          "kind": "fn",
+          "startLine": 128,
+          "endLine": 136,
+          "tokens": 72
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.1905
+    },
+    "web/src/models/header.ts": {
+      "description": "Exports HeaderAction, HeaderFilter",
+      "tokens": 88,
+      "hash": "fd19b05360c0c4af",
+      "size": 305,
+      "mtimeMs": 1790064681435.9949,
+      "updatedAt": "2026-09-22T08:14:03.085Z",
+      "source": "scan",
+      "importance": 0.1905
     },
     "web/src/models/pages.tsx": {
-      "description": "Exports PAGES",
-      "tokens": 139,
-      "hash": "15cb36f98bd90e53",
-      "size": 497,
-      "mtimeMs": 1789889974988.4495,
-      "updatedAt": "2026-09-21T10:51:24.605Z",
+      "description": "PAGE_TITLES",
+      "tokens": 216,
+      "hash": "cb9ec551c9dd2b9e",
+      "size": 764,
+      "mtimeMs": 1790061091830.6587,
+      "updatedAt": "2026-09-22T08:14:03.085Z",
       "source": "scan",
       "importance": 0.1905
     },
     "web/src/models/receipt.ts": {
-      "description": "Declares RECEIPT_STATUSES",
-      "tokens": 654,
-      "hash": "365479f5d747c8a5",
-      "size": 2305,
-      "mtimeMs": 1789999845615.7292,
-      "updatedAt": "2026-09-21T14:10:45.701Z",
-      "source": "hook"
+      "description": "Zod schemas: RECEIPT_STATUS, RECEIPT_ISSUE, RECEIPT_BASE, RECEIPT",
+      "tokens": 679,
+      "hash": "aa19f52ecb26a6c2",
+      "size": 2392,
+      "mtimeMs": 1790004149027.278,
+      "updatedAt": "2026-09-22T08:14:03.086Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "ReceiptStatus",
+          "kind": "section",
+          "startLine": 12,
+          "endLine": 12,
+          "tokens": 16
+        },
+        {
+          "name": "ReceiptIssue",
+          "kind": "section",
+          "startLine": 22,
+          "endLine": 25,
+          "tokens": 16
+        },
+        {
+          "name": "ReceiptBase",
+          "kind": "section",
+          "startLine": 27,
+          "endLine": 34,
+          "tokens": 50
+        },
+        {
+          "name": "ReceiptNeedsReview",
+          "kind": "section",
+          "startLine": 36,
+          "endLine": 39,
+          "tokens": 27
+        },
+        {
+          "name": "ReceiptFailed",
+          "kind": "section",
+          "startLine": 41,
+          "endLine": 44,
+          "tokens": 24
+        },
+        {
+          "name": "ReceiptClean",
+          "kind": "section",
+          "startLine": 46,
+          "endLine": 48,
+          "tokens": 28
+        },
+        {
+          "name": "Receipt",
+          "kind": "section",
+          "startLine": 50,
+          "endLine": 50,
+          "tokens": 19
+        },
+        {
+          "name": "parseReceipt",
+          "kind": "fn",
+          "startLine": 82,
+          "endLine": 90,
+          "tokens": 51
+        },
+        {
+          "name": "isReceiptParsed",
+          "kind": "fn",
+          "startLine": 92,
+          "endLine": 98,
+          "tokens": 51
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.1905
     },
     "web/src/router.tsx": {
       "description": "getRouter",
@@ -1696,7 +1776,7 @@
       "hash": "6a4b707a2e6205df",
       "size": 412,
       "mtimeMs": 1789182714014.5947,
-      "updatedAt": "2026-09-21T10:51:24.606Z",
+      "updatedAt": "2026-09-22T08:14:03.086Z",
       "source": "scan",
       "imports": [
         "web/src/routeTree.gen.ts"
@@ -1709,47 +1789,47 @@
       "hash": "4c7efcc92f54dcf3",
       "size": 1330,
       "mtimeMs": 1789182714014.699,
-      "updatedAt": "2026-09-21T10:51:24.607Z",
+      "updatedAt": "2026-09-22T08:14:03.086Z",
       "source": "scan",
       "importance": 0.2333
     },
     "web/src/routes/app/exports.tsx": {
-      "description": "Route",
-      "tokens": 62,
-      "hash": "b905c4dd96747020",
-      "size": 214,
-      "mtimeMs": 1789567164541.5535,
-      "updatedAt": "2026-09-21T10:51:24.607Z",
+      "description": "Exports Route",
+      "tokens": 101,
+      "hash": "de0cce0a9fdd89fc",
+      "size": 353,
+      "mtimeMs": 1790064689213.0361,
+      "updatedAt": "2026-09-22T08:14:03.087Z",
       "source": "scan",
       "importance": 0.2333
     },
     "web/src/routes/app/index.tsx": {
       "description": "Exports Route",
-      "tokens": 263,
-      "hash": "5db292b631918f92",
-      "size": 919,
-      "mtimeMs": 1789985658004.8914,
-      "updatedAt": "2026-09-21T10:51:24.608Z",
+      "tokens": 327,
+      "hash": "b1c9aa34ffb04817",
+      "size": 1151,
+      "mtimeMs": 1790064689170.8987,
+      "updatedAt": "2026-09-22T08:14:03.087Z",
       "source": "scan",
       "importance": 0.2333
     },
     "web/src/routes/app/route.tsx": {
-      "description": "Route",
-      "tokens": 494,
-      "hash": "1d684bb26120b1f6",
-      "size": 1729,
-      "mtimeMs": 1789724549226.9548,
-      "updatedAt": "2026-09-21T10:51:24.608Z",
+      "description": "Exports Route",
+      "tokens": 236,
+      "hash": "46bf0a67b7c21d16",
+      "size": 825,
+      "mtimeMs": 1790064687566.9685,
+      "updatedAt": "2026-09-22T08:14:03.088Z",
       "source": "scan",
       "importance": 0.2333
     },
     "web/src/routes/app/suppliers.tsx": {
-      "description": "Route",
-      "tokens": 63,
-      "hash": "3ba3e4b1003fb607",
-      "size": 218,
-      "mtimeMs": 1789567164543.031,
-      "updatedAt": "2026-09-21T10:51:24.608Z",
+      "description": "Exports Route",
+      "tokens": 95,
+      "hash": "fc478d91afd6d7f6",
+      "size": 330,
+      "mtimeMs": 1790064689330.1477,
+      "updatedAt": "2026-09-22T08:14:03.088Z",
       "source": "scan",
       "importance": 0.2333
     },
@@ -1759,7 +1839,7 @@
       "hash": "54f5482ad61575b2",
       "size": 405,
       "mtimeMs": 1789182714014.7686,
-      "updatedAt": "2026-09-21T10:51:24.608Z",
+      "updatedAt": "2026-09-22T08:14:03.088Z",
       "source": "scan",
       "importance": 0.2333
     },
@@ -1769,7 +1849,7 @@
       "hash": "501e3eeb4514b351",
       "size": 671,
       "mtimeMs": 1789567164543.5056,
-      "updatedAt": "2026-09-21T10:51:24.608Z",
+      "updatedAt": "2026-09-22T08:14:03.088Z",
       "source": "scan",
       "importance": 0.2333
     },
@@ -1778,8 +1858,8 @@
       "tokens": 1453,
       "hash": "b43ffff988ec27ca",
       "size": 5083,
-      "mtimeMs": 1789890141404.569,
-      "updatedAt": "2026-09-21T10:51:24.609Z",
+      "mtimeMs": 1790064718585.8691,
+      "updatedAt": "2026-09-22T08:14:03.090Z",
       "source": "scan",
       "symbols": [
         {
@@ -1843,17 +1923,17 @@
       "hash": "fab149dd2483200b",
       "size": 5055,
       "mtimeMs": 1789182714014.9973,
-      "updatedAt": "2026-09-21T10:51:24.610Z",
+      "updatedAt": "2026-09-22T08:14:03.090Z",
       "source": "scan",
       "importance": 0.1905
     },
     "web/tests/components/app-sidebar.test.tsx": {
-      "description": "Declares TEST_PAGES",
-      "tokens": 971,
-      "hash": "0b59e8250559b673",
-      "size": 3416,
-      "mtimeMs": 1789889974989.4631,
-      "updatedAt": "2026-09-21T10:51:24.610Z",
+      "description": "TEST_PAGES",
+      "tokens": 969,
+      "hash": "1174e5de0280dd34",
+      "size": 3401,
+      "mtimeMs": 1790061440177.9255,
+      "updatedAt": "2026-09-22T08:14:03.090Z",
       "source": "scan",
       "symbols": [
         {
@@ -1876,7 +1956,7 @@
       "hash": "1191e8f1aa98a68c",
       "size": 2437,
       "mtimeMs": 1789724210528.8489,
-      "updatedAt": "2026-09-21T10:51:24.611Z",
+      "updatedAt": "2026-09-22T08:14:03.091Z",
       "source": "scan",
       "symbols": [
         {
@@ -1902,17 +1982,53 @@
       "tokens": 2350,
       "hash": "674645d3e317482c",
       "size": 8246,
-      "mtimeMs": 1789999825650.7754,
-      "updatedAt": "2026-09-21T14:10:25.791Z",
-      "source": "hook"
+      "mtimeMs": 1790004149030.1726,
+      "updatedAt": "2026-09-22T08:14:03.091Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "renderReceiptTable",
+          "kind": "fn",
+          "startLine": 42,
+          "endLine": 50,
+          "tokens": 60
+        },
+        {
+          "name": "getBodyRows",
+          "kind": "fn",
+          "startLine": 52,
+          "endLine": 54,
+          "tokens": 35
+        },
+        {
+          "name": "getHeaderCells",
+          "kind": "fn",
+          "startLine": 56,
+          "endLine": 58,
+          "tokens": 37
+        },
+        {
+          "name": "hoverWithoutTransition",
+          "kind": "fn",
+          "startLine": 62,
+          "endLine": 66,
+          "tokens": 40
+        }
+      ],
+      "symbolSource": "ts",
+      "skeleton": "function renderReceiptTable() {\nfunction getBodyRows(container: HTMLElement) {\nfunction getHeaderCells(container: HTMLElement) {\nasync function hoverWithoutTransition(element: HTMLElement) {",
+      "imports": [
+        "web/tests/utils/router.tsx"
+      ],
+      "importance": 0.1905
     },
     "web/tests/components/receipts/receipt-empty-state-card.test.tsx": {
       "description": "Declares CARD_SELECTOR",
       "tokens": 1818,
       "hash": "0028c6809407872a",
       "size": 6398,
-      "mtimeMs": 1789985230230.9038,
-      "updatedAt": "2026-09-21T10:51:24.612Z",
+      "mtimeMs": 1789988790293.9604,
+      "updatedAt": "2026-09-22T08:14:03.091Z",
       "source": "scan",
       "symbols": [
         {
@@ -1969,9 +2085,10 @@
       "tokens": 496,
       "hash": "c4a0c62b3e9dcf03",
       "size": 1738,
-      "mtimeMs": 1789999825650.4773,
-      "updatedAt": "2026-09-21T14:10:25.739Z",
-      "source": "hook"
+      "mtimeMs": 1790004149031.4124,
+      "updatedAt": "2026-09-22T08:14:03.092Z",
+      "source": "scan",
+      "importance": 0.1905
     },
     "web/tests/components/ui/date-range-picker.component.test.tsx": {
       "description": "EMPTY_LABEL",
@@ -1979,7 +2096,7 @@
       "hash": "08d1c46f0bb6d7c6",
       "size": 9820,
       "mtimeMs": 1789567164545.3223,
-      "updatedAt": "2026-09-21T10:51:24.613Z",
+      "updatedAt": "2026-09-22T08:14:03.092Z",
       "source": "scan",
       "symbols": [
         {
@@ -2021,7 +2138,7 @@
       "hash": "2a032218cc0b11eb",
       "size": 8008,
       "mtimeMs": 1789889974992.1528,
-      "updatedAt": "2026-09-21T10:51:24.613Z",
+      "updatedAt": "2026-09-22T08:14:03.092Z",
       "source": "scan",
       "symbols": [
         {
@@ -2042,7 +2159,7 @@
       "hash": "4d419afd44061b29",
       "size": 3910,
       "mtimeMs": 1789567164546.0688,
-      "updatedAt": "2026-09-21T10:51:24.613Z",
+      "updatedAt": "2026-09-22T08:14:03.092Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -2052,7 +2169,7 @@
       "hash": "2bbe92cda226660b",
       "size": 7739,
       "mtimeMs": 1789717785356.5813,
-      "updatedAt": "2026-09-21T10:51:24.614Z",
+      "updatedAt": "2026-09-22T08:14:03.093Z",
       "source": "scan",
       "symbols": [
         {
@@ -2115,7 +2232,7 @@
       "hash": "4657ad04238fe3e5",
       "size": 1987,
       "mtimeMs": 1789889974993.372,
-      "updatedAt": "2026-09-21T10:51:24.614Z",
+      "updatedAt": "2026-09-22T08:14:03.093Z",
       "source": "scan",
       "symbols": [
         {
@@ -2134,26 +2251,45 @@
       "tokens": 1152,
       "hash": "c16e416d5042ab0a",
       "size": 4029,
-      "mtimeMs": 1790000314322.7178,
-      "updatedAt": "2026-09-21T14:18:34.392Z",
-      "source": "hook"
+      "mtimeMs": 1790004149032.0393,
+      "updatedAt": "2026-09-22T08:14:03.093Z",
+      "source": "scan",
+      "importance": 0.1905
     },
     "web/tests/models/receipt.test.ts": {
-      "description": "Declares createReceipt",
-      "tokens": 1645,
-      "hash": "aab5119f74d97e48",
-      "size": 5767,
-      "mtimeMs": 1789999820216.5894,
-      "updatedAt": "2026-09-21T14:10:20.298Z",
-      "source": "hook"
+      "description": "createReceipt: createIssue",
+      "tokens": 1660,
+      "hash": "1695813c8f2a2616",
+      "size": 5820,
+      "mtimeMs": 1790004149034.822,
+      "updatedAt": "2026-09-22T08:14:03.094Z",
+      "source": "scan",
+      "symbols": [
+        {
+          "name": "createReceipt",
+          "kind": "fn",
+          "startLine": 7,
+          "endLine": 17,
+          "tokens": 94
+        },
+        {
+          "name": "createIssue",
+          "kind": "fn",
+          "startLine": 19,
+          "endLine": 21,
+          "tokens": 42
+        }
+      ],
+      "symbolSource": "ts",
+      "importance": 0.1905
     },
     "web/tests/routes/app/index.test.tsx": {
-      "description": "Declares TABLE_SELECTOR",
-      "tokens": 980,
-      "hash": "799cad9d6b5189e7",
-      "size": 3476,
-      "mtimeMs": 1789987841159.1003,
-      "updatedAt": "2026-09-21T10:51:24.615Z",
+      "description": "TABLE_SELECTOR",
+      "tokens": 1022,
+      "hash": "b7a13c7eb0972278",
+      "size": 3621,
+      "mtimeMs": 1790004149041.1248,
+      "updatedAt": "2026-09-22T08:14:03.094Z",
       "source": "scan",
       "symbols": [
         {
@@ -2171,12 +2307,12 @@
       "importance": 0.1905
     },
     "web/tests/routes/app/route.test.tsx": {
-      "description": "`AppLayout` renders `<Outlet />`, so it has to be mounted through a real",
-      "tokens": 936,
-      "hash": "64dfbcd55834a7e2",
-      "size": 3289,
-      "mtimeMs": 1789724549228.6965,
-      "updatedAt": "2026-09-21T10:51:24.615Z",
+      "description": "Declares renderAppLayout",
+      "tokens": 1150,
+      "hash": "a68a3b7a47695864",
+      "size": 4051,
+      "mtimeMs": 1790064698185.7407,
+      "updatedAt": "2026-09-22T08:14:03.094Z",
       "source": "scan",
       "symbols": [
         {
@@ -2206,7 +2342,7 @@
       "hash": "751df1883b14c88a",
       "size": 22,
       "mtimeMs": 1789567164547.3394,
-      "updatedAt": "2026-09-21T10:51:24.615Z",
+      "updatedAt": "2026-09-22T08:14:03.095Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -2216,7 +2352,7 @@
       "hash": "f77a3aadb34c23d4",
       "size": 2518,
       "mtimeMs": 1789567164547.7866,
-      "updatedAt": "2026-09-21T10:51:24.615Z",
+      "updatedAt": "2026-09-22T08:14:03.095Z",
       "source": "scan",
       "symbols": [
         {
@@ -2271,7 +2407,7 @@
       "hash": "82d6f1ae0afa817c",
       "size": 707,
       "mtimeMs": 1789182714015.062,
-      "updatedAt": "2026-09-21T10:51:24.616Z",
+      "updatedAt": "2026-09-22T08:14:03.095Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -2281,7 +2417,7 @@
       "hash": "28210014a327bb63",
       "size": 568,
       "mtimeMs": 1789567164550.3518,
-      "updatedAt": "2026-09-21T10:51:24.616Z",
+      "updatedAt": "2026-09-22T08:14:03.095Z",
       "source": "scan",
       "importance": 0.1905
     },
@@ -2291,7 +2427,7 @@
       "hash": "c39418f95afda414",
       "size": 2656,
       "mtimeMs": 1789656818682.8196,
-      "updatedAt": "2026-09-21T10:51:24.616Z",
+      "updatedAt": "2026-09-22T08:14:03.095Z",
       "source": "scan",
       "importance": 0.1905
     }
