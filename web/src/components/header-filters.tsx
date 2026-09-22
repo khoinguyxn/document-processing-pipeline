@@ -8,17 +8,11 @@ import type { HeaderFilter } from "@/models/header"
 import type { DateRange } from "react-day-picker"
 
 function DateRangeFilter() {
-  const [range, setRange] = React.useState<DateRange>(getCurrentMonthRange)
-
-  return (
-    <DateRangePicker
-      size="sm"
-      value={range}
-      onValueChange={(nextRange) => {
-        if (nextRange) setRange(nextRange)
-      }}
-    />
+  const [range, setRange] = React.useState<DateRange | undefined>(
+    getCurrentMonthRange
   )
+
+  return <DateRangePicker size="sm" value={range} onValueChange={setRange} />
 }
 
 const HEADER_FILTERS: Record<HeaderFilter, React.ComponentType> = {
