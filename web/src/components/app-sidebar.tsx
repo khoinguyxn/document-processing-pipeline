@@ -7,6 +7,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { PAGE_TITLE_LABELS } from "@/models/pages"
 import type { Page } from "@/models/pages"
 
 import { Link } from "@tanstack/react-router"
@@ -39,11 +40,14 @@ export function AppSidebar({ pages, ...props }: AppSidebarProps) {
           <SidebarMenu>
             {pages.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton tooltip={item.title} asChild>
+                <SidebarMenuButton
+                  tooltip={PAGE_TITLE_LABELS[item.title]}
+                  asChild
+                >
                   <Link to={item.to}>
                     <div className="flex flex-row items-center gap-2 text-primary/50 transition-colors group-hover/menu-button:text-primary">
                       {item.icon}
-                      <span>{item.title}</span>
+                      <span>{PAGE_TITLE_LABELS[item.title]}</span>
                     </div>
                   </Link>
                 </SidebarMenuButton>

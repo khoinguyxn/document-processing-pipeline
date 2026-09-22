@@ -1,4 +1,4 @@
-import { PAGES } from "@/models/pages"
+import { PAGE_TITLE_LABELS, PAGES } from "@/models/pages"
 import { describe, expect, it } from "vitest"
 import { userEvent } from "vitest/browser"
 import { renderRoute } from "../../utils/router"
@@ -36,7 +36,9 @@ describe("AppLayout", () => {
     // Assert
     for (const page of PAGES) {
       await expect
-        .element(screen.getByRole("link", { name: page.title }))
+        .element(
+          screen.getByRole("link", { name: PAGE_TITLE_LABELS[page.title] })
+        )
         .toBeVisible()
     }
   })
