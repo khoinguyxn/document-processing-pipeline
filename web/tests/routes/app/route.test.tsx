@@ -107,4 +107,27 @@ describe("AppLayout", () => {
     // Assert
     await expect.element(screen.getByRole("main")).toBeVisible()
   })
+
+  it("AppLayout_ShouldRenderTheHeaderActions_WhenThePageDeclaresThem", async () => {
+    // Arrange & Act
+    const screen = await renderAppLayout()
+
+    // Assert
+    await expect
+      .element(screen.getByRole("button", { name: "Tải file lên" }))
+      .toBeVisible()
+    await expect
+      .element(screen.getByRole("button", { name: "Chọn ảnh từ điện thoại" }))
+      .toBeVisible()
+  })
+
+  it("AppLayout_ShouldNotRenderTheDateRangePicker_WhenThePageDoesNotDeclareIt", async () => {
+    // Arrange & Act
+    const screen = await renderAppLayout("/app/suppliers")
+
+    // Assert
+    expect(
+      screen.container.querySelector('[data-slot="date-range-picker"]')
+    ).toBeNull()
+  })
 })
