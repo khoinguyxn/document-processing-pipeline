@@ -76,3 +76,6 @@ node_modules/
 # Vitest stubs
 __screenshots__/
 .vitest-attachments/
+
+# OpenCode session state
+.omo/
